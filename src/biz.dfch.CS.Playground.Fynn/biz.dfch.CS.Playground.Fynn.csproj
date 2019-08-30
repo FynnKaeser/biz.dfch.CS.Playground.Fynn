@@ -41,11 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Archive\ClassWithSealedMethodChild.cs" />
+    <Compile Include="Archive\ClassWithSealedMethodGrandParent.cs" />
+    <Compile Include="Archive\ClassWithSealedMethodParent.cs" />
+    <Compile Include="Archive\MyObjectClass.cs" />
+    <Compile Include="Archive\SealedClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="2019-08-30\" />
-    <Folder Include="Archive\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
