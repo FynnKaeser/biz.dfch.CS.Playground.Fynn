@@ -27,20 +27,20 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20190830
         public void AddingTwoDifferentElementsToDictionarySucceeds()
         {
             // Arrange
-            var dictionary = new Dictionary<int, string>();
+            var sut = new Dictionary<int, string>();
             var value1 = "Hello";
             var value2 = "World";
 
             // Act
-            dictionary.Add(1, value1);
-            dictionary.Add(2, value2); 
+            sut.Add(1, value1);
+            sut.Add(2, value2); 
 
             // Assert
-            Assert.AreEqual(2, dictionary.Count);
-            Assert.IsTrue(dictionary.ContainsKey(1));
-            Assert.AreEqual(value1, dictionary[1]);
-            Assert.IsTrue(dictionary.ContainsKey(2));
-            Assert.AreEqual(value2, dictionary[2]);
+            Assert.AreEqual(2, sut.Count);
+            Assert.IsTrue(sut.ContainsKey(1));
+            Assert.AreEqual(value1, sut[1]);
+            Assert.IsTrue(sut.ContainsKey(2));
+            Assert.AreEqual(value2, sut[2]);
         }
 
         [TestMethod]
@@ -48,13 +48,13 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20190830
         public void AddingDuplicateElementToDictionaryThrowsArgumentException()
         {
             // Arrange
-            var dictionary = new Dictionary<int, string>();
+            var sut = new Dictionary<int, string>();
             var value1 = "Hello";
             var value2 = "World";
 
             // Act
-            dictionary.Add(1, value1);
-            dictionary.Add(1, value2);
+            sut.Add(1, value1);
+            sut.Add(1, value2);
 
             // Assert
 

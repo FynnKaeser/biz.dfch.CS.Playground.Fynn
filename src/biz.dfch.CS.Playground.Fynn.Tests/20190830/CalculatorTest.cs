@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+using System.Collections;
 using biz.dfch.CS.Playground.Fynn._20190830;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -26,10 +27,10 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20190830
         public void SumOfTwoAndTwoReturnsFour()
         {
             // Arrange
-            var calculator = new Calculator();
+            var sut = new Calculator();
 
             // Act
-            var result = calculator.Sum(2, 2);
+            var result = sut.Sum(2, 2);
 
             // Assert
             Assert.AreEqual(4, result);
