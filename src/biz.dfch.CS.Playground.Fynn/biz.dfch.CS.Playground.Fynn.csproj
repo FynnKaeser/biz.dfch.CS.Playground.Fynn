@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="20190830\Calculator.cs" />
+    <Compile Include="20190830\ClassWithMiddleManNoRegistrationAttribute.cs" />
+    <Compile Include="20190830\MiddleManNoRegistrationAttribute.cs" />
     <Compile Include="Archive\ClassWithSealedMethodChild.cs" />
     <Compile Include="Archive\ClassWithSealedMethodGrandParent.cs" />
     <Compile Include="Archive\ClassWithSealedMethodParent.cs" />
