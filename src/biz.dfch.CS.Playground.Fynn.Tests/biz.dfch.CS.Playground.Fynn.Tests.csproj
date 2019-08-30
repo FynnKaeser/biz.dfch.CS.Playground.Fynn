@@ -50,13 +50,18 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="20190830\CalculatorTest.cs" />
+    <Compile Include="20190830\DictionaryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="2019-08-30\" />
+    <ProjectReference Include="..\biz.dfch.CS.Playground.Fynn\biz.dfch.CS.Playground.Fynn.csproj">
+      <Project>{7cacb26c-0e2a-417d-abcf-6bfe7d988f91}</Project>
+      <Name>biz.dfch.CS.Playground.Fynn</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
