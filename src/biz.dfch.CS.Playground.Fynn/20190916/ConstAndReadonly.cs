@@ -20,15 +20,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace biz.dfch.CS.Playground.Fynn._20190902
+namespace biz.dfch.CS.Playground.Fynn._20190916
 {
-    class Animal
+    public class ConstAndReadonly
     {
-    }
+        public static readonly int startValue = 50;
+        public const int endValue = 40;
 
-    class Dog : Animal
-    {
-        Animal dog = new Dog();
-        IEnumerable<Animal> listOfDogs = new List<Dog>();
+        public bool GetHigherStartValue()
+        {
+            return startValue > endValue;
+        }
     }
 }

@@ -45,6 +45,9 @@
     <Compile Include="20190830\ClassWithMiddleManNoRegistrationAttribute.cs" />
     <Compile Include="20190830\MiddleManNoRegistrationAttribute.cs" />
     <Compile Include="20190902\CovarianceAndContravariance.cs" />
+    <Compile Include="20190905\StaticCtor.cs" />
+    <Compile Include="20190916\ConstAndReadonly.cs" />
+    <Compile Include="20190916\WhatIsTheType.cs" />
     <Compile Include="Archive\ClassWithSealedMethodChild.cs" />
     <Compile Include="Archive\ClassWithSealedMethodGrandParent.cs" />
     <Compile Include="Archive\ClassWithSealedMethodParent.cs" />

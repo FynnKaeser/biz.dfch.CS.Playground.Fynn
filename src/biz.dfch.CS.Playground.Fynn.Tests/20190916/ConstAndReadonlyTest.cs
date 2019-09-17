@@ -19,16 +19,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using biz.dfch.CS.Playground.Fynn._20190916;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace biz.dfch.CS.Playground.Fynn._20190902
+namespace biz.dfch.CS.Playground.Fynn.Tests._20190916
 {
-    class Animal
+    [TestClass]
+    public class ConstAndReadonlyTest
     {
-    }
+        [TestMethod]
+        public void ConstValueIsLowerThanReadonlyValueReturnsTrue()
+        {
+            var sut = new ConstAndReadonly();
 
-    class Dog : Animal
-    {
-        Animal dog = new Dog();
-        IEnumerable<Animal> listOfDogs = new List<Dog>();
+            var result = sut.GetHigherStartValue();
+
+            Assert.IsTrue(result);
+        }
     }
 }

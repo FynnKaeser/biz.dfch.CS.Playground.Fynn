@@ -13,22 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace biz.dfch.CS.Playground.Fynn._20190902
+ 
+namespace biz.dfch.CS.Playground.Fynn._20190905
 {
-    class Animal
+    public class StaticCtor
     {
+        static object o;
+
+        static StaticCtor()
+        {
+            o = new object();
+        }
     }
 
-    class Dog : Animal
+    public class StaticEmptyCtor
     {
-        Animal dog = new Dog();
-        IEnumerable<Animal> listOfDogs = new List<Dog>();
+        static object o = new object();
+
+        static StaticEmptyCtor() { }
     }
 }

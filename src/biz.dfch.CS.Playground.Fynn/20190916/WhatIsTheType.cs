@@ -20,15 +20,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace biz.dfch.CS.Playground.Fynn._20190902
+namespace biz.dfch.CS.Playground.Fynn._20190916
 {
-    class Animal
-    {
-    }
+    public class WhatIsTheType
+    { 
 
-    class Dog : Animal
-    {
-        Animal dog = new Dog();
-        IEnumerable<Animal> listOfDogs = new List<Dog>();
+        public void DeclaredType()
+        {
+            var f = 10;
+            var total = 100 * f / 6;
+            Console.WriteLine($"Type: {total.GetType().Name},  Value: {total}");
+
+
+        }
     }
 }

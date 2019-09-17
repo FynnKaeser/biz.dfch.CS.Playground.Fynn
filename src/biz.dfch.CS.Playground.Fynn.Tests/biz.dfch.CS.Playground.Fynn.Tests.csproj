@@ -72,6 +72,8 @@
     <Compile Include="20190830\DictionaryTest.cs" />
     <Compile Include="20190830\ClassWithInterfacesTest.cs" />
     <Compile Include="20190830\MiddleManNoRegistrationAttributeTest.cs" />
+    <Compile Include="20190916\ConstAndReadonlyTest.cs" />
+    <Compile Include="20190916\WhatIsTheTypeTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -83,6 +85,7 @@
       <Name>biz.dfch.CS.Playground.Fynn</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
