@@ -15,20 +15,22 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 
-namespace biz.dfch.CS.Playground.Fynn._20190916
+namespace biz.dfch.CS.Playground.Fynn._20190918
 {
-    public class WhatIsTheType
-    { 
-        public void DeclaredType()
+    public class MyStringClass
+    {
+        public string DifferentStringTypes()
         {
-            var f = 10;
-            var total = 100 * f / 6;
-            Console.WriteLine($"Type: {total.GetType().Name},  Value: {total}");
+            var varString = $"Today is the {DateTime.Now.Day}";
+
+            string stringString = $"The month is {DateTime.Now.Month}";
+
+            FormattableString formattableStringString = $"I am a new string {DateTime.Now.Year}";
+
+            return string.Format(null, CultureInfo.CreateSpecificCulture("de-de"),
+                formattableStringString.Format, formattableStringString.GetArguments());
         }
     }
 }

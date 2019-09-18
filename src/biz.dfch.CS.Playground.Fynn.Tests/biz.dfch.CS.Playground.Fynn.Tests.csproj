@@ -74,6 +74,7 @@
     <Compile Include="20190830\MiddleManNoRegistrationAttributeTest.cs" />
     <Compile Include="20190916\ConstAndReadonlyTest.cs" />
     <Compile Include="20190916\WhatIsTheTypeTest.cs" />
+    <Compile Include="20190918\NameOfClassTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

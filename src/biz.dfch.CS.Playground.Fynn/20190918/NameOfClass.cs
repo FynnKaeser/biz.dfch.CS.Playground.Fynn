@@ -20,15 +20,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace biz.dfch.CS.Playground.Fynn._20190916
+namespace biz.dfch.CS.Playground.Fynn._20190918
 {
-    public class WhatIsTheType
-    { 
-        public void DeclaredType()
+    public class NameOfClass
+    {
+        public void ExceptionMessage(object thisCantBeNull)
         {
-            var f = 10;
-            var total = 100 * f / 6;
-            Console.WriteLine($"Type: {total.GetType().Name},  Value: {total}");
+            if (null == thisCantBeNull)
+            {
+               throw new ArgumentNullException(nameof(thisCantBeNull),"Cant be null!");
+            }
+        }
+
+        private object SomeObject { get; set; }
+        private object SomeOtherObject { get; set; }
+
+        public bool ChangeNameOfProperty()
+        {
+            var obj1 = nameof(SomeObject);
+            var obj2 = SomeOtherObject.GetType().Name;
+
+            return obj1 == obj2;
         }
     }
 }
