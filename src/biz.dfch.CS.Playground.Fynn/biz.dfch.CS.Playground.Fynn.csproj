@@ -48,6 +48,8 @@
     <Compile Include="20190905\StaticCtor.cs" />
     <Compile Include="20190916\ConstAndReadonly.cs" />
     <Compile Include="20190916\WhatIsTheType.cs" />
+    <Compile Include="20190918\DelegatesAndExpressCallbacks.cs" />
+    <Compile Include="20190918\EventInvocation.cs" />
     <Compile Include="20190918\MyStringClass.cs" />
     <Compile Include="20190918\NameOfClass.cs" />
     <Compile Include="Archive\ClassWithSealedMethodChild.cs" />

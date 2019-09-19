@@ -1,5 +1,5 @@
 ﻿/**
- * Copyright 2018 d-fens GmbH
+ * Copyright 2019 d-fens GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,21 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace FynnBlog
+namespace biz.dfch.CS.Playground.Fynn._20190918
 {
-    // ReSharper disable once UnusedMember.Global
-    // ReSharper disable once ArrangeModifiersOrder
-    sealed public class SealedClass
+    public class EventInvocation
     {
+        private EventHandler<int> Updated;
 
+        public void RaiseUpdates()
+        {
+            counter++;
+            Updated?.Invoke(this, counter);
+        }
+        private int counter;
     }
 }

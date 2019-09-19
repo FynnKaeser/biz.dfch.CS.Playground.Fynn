@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace FynnBlog
 {
+    [SuppressMessage("ReSharper", "ArrangeAccessorOwnerBody")]
     public class MyObjectClass
     {
         public object Obj1 = new object();
