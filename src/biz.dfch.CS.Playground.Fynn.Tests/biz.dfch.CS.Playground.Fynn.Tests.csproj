@@ -75,6 +75,8 @@
     <Compile Include="20190916\ConstAndReadonlyTest.cs" />
     <Compile Include="20190916\WhatIsTheTypeTest.cs" />
     <Compile Include="20190918\NameOfClassTest.cs" />
+    <Compile Include="20190920\BoxingTest.cs" />
+    <Compile Include="20190925\MinimizeConstructorInitializationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

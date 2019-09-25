@@ -52,6 +52,10 @@
     <Compile Include="20190918\EventInvocation.cs" />
     <Compile Include="20190918\MyStringClass.cs" />
     <Compile Include="20190918\NameOfClass.cs" />
+    <Compile Include="20190920\NewModifierBase.cs" />
+    <Compile Include="20190920\NewModifierSub.cs" />
+    <Compile Include="20190925\MinimizeConstructorInitialization.cs" />
+    <Compile Include="20190925\HashSetOperation.cs" />
     <Compile Include="Archive\ClassWithSealedMethodChild.cs" />
     <Compile Include="Archive\ClassWithSealedMethodGrandParent.cs" />
     <Compile Include="Archive\ClassWithSealedMethodParent.cs" />
