@@ -14,11 +14,6 @@
  * limitations under the License.
  */
 
-using System;
-using System.Drawing;
-using System.Linq.Expressions;
-using FynnBlog;
-
 namespace biz.dfch.CS.Playground.Fynn._20190927
 {
     public class UnnecessaryObjectCreating
