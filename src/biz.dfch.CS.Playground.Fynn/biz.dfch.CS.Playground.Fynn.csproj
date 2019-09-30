@@ -59,6 +59,7 @@
     <Compile Include="20190925\HashSetOperation.cs" />
     <Compile Include="20190926\MySingleton.cs" />
     <Compile Include="20190927\UnnecessaryObjectCreating.cs" />
+    <Compile Include="20190930\MyConstraintClass.cs" />
     <Compile Include="Archive\ClassWithSealedMethodChild.cs" />
     <Compile Include="Archive\ClassWithSealedMethodGrandParent.cs" />
     <Compile Include="Archive\ClassWithSealedMethodParent.cs" />
