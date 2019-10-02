@@ -79,6 +79,9 @@
     <Compile Include="20190925\MinimizeConstructorInitializationTest.cs" />
     <Compile Include="20190927\UnnecessaryObjectCreatingTest.cs" />
     <Compile Include="20190930\MyConstraintClassTest.cs" />
+    <Compile Include="20191002\HelperGenericCovarianceAndContravarianceTest.cs" />
+    <Compile Include="20191002\StringExtenisonsTest.cs" />
+    <Compile Include="20191002\ClassHierarchyFromBookTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

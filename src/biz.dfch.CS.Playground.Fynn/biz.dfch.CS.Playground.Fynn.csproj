@@ -60,6 +60,9 @@
     <Compile Include="20190926\MySingleton.cs" />
     <Compile Include="20190927\UnnecessaryObjectCreating.cs" />
     <Compile Include="20190930\MyConstraintClass.cs" />
+    <Compile Include="20191002\ClassHierarchyFromBook.cs" />
+    <Compile Include="20191002\StringExtensions.cs" />
+    <Compile Include="20191002\GenericCovarianceAndContravariance.cs" />
     <Compile Include="Archive\ClassWithSealedMethodChild.cs" />
     <Compile Include="Archive\ClassWithSealedMethodGrandParent.cs" />
     <Compile Include="Archive\ClassWithSealedMethodParent.cs" />
