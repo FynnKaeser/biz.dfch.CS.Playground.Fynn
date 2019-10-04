@@ -30,14 +30,14 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191002
         {
             // Arrange
             var sut = new Planet();
-            var moon = new Moon();
-            Moon[] moons = new Moon[5];
-            IEnumerable<Moon> enumerable = new List<Moon>();
-            IComparable<Moon> comparable = null;
+            var planet = new Planet();
+            Planet[] planets = new Planet[5];
+            IEnumerable<Planet> enumerable = null;
+            IComparable<Planet> comparable = null;
 
             // Act
-            sut.DoStuffWithArray(moons);
-            sut.DoStuff(moon);
+            sut.DoStuffWithArray(planets);
+            sut.DoStuff(planet);
             sut.DoStuffWithIEnumerable(enumerable);
             //sut.DoStuffWithIComparable(comparable);
 

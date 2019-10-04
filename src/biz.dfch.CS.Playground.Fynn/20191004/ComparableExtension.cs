@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-namespace biz.dfch.CS.Playground.Fynn._20190916
-{
-    public class ConstAndReadonly
-    {
-        public static readonly int startValue = 50;
-        public const int endValue = 40;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-        public bool GetHigherStartValue()
-        {
-            return startValue > endValue;
-        }
+namespace biz.dfch.CS.Playground.Fynn._20191004
+{
+    public static class ComparableExtension
+    {
+        public static bool LessThan<T>(this T left, T right) where T : IComparable<T> => left.CompareTo(right) < 0;
     }
 }

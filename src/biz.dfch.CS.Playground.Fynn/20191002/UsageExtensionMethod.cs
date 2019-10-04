@@ -14,16 +14,17 @@
  * limitations under the License.
  */
 
-namespace biz.dfch.CS.Playground.Fynn._20190916
+namespace biz.dfch.CS.Playground.Fynn._20191002
 {
-    public class ConstAndReadonly
+    public class UsageExtensionMethod
     {
-        public static readonly int startValue = 50;
-        public const int endValue = 40;
+        public string MyString = "abc 123";
+        public string MySecondString = "aaacccddd";
 
-        public bool GetHigherStartValue()
+        public void DoStuff()
         {
-            return startValue > endValue;
+            var newString = MyString.RemoveSpaces();
+            var newSecondString = MySecondString.CountLetter('a');
         }
     }
 }

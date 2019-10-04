@@ -38,23 +38,27 @@ namespace biz.dfch.CS.Playground.Fynn._20191002
             //}
 
             // VARIANTE 2
-            //var result = "";
+            var result = "";
 
-            //for (int i = 0; i < str.Length; i++)
-            //{
-            //    if (' ' != str[i])
-            //    {
-            //        result += str[i];
-            //        //result = $"{result}{str[i]}";
-            //        //result = result + str[i];
-            //    }
-            //}
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (' ' == str[i])
+                {
+                    result += str[i];
+                    //result = $"{result}{str[i]}";
+                    //result = result + str[i];
 
+                    //str = str.Remove(i,1);
+                    //i--;
+                }
+            }
 
-            //return result;
+            return result;
+
+            //return str;
 
             // VARIANTE 3
-            return str.Replace(" ", string.Empty);
+            //return str.Replace(" ", string.Empty);
         }
 
         public static int CountLetter(this string str, char c)

@@ -26,7 +26,7 @@ namespace biz.dfch.CS.Playground.Fynn._20191002
     {
         public double Mass { get; set; }
         public string Name { get; set; }
-        // elided
+      
 
         public int CompareTo(CelestialBody other)
         {
@@ -55,16 +55,9 @@ namespace biz.dfch.CS.Playground.Fynn._20191002
         {
 
         }
-        // elided
     }
 
     public class Moon : CelestialBody
     {
-        // elided
-    }
-
-    public class Asteroid : CelestialBody
-    {
-        // elided
     }
 }

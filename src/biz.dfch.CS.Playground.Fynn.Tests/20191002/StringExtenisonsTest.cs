@@ -94,6 +94,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191002
             // Arrange
             var sut = "Hello _ e _ e _ e";
 
+            "Hello".CountLetter('l');
             // Act
             var result = sut.CountLetter('e');
 
