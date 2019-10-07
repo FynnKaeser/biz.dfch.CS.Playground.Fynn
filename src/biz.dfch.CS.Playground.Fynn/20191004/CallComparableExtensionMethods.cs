@@ -19,24 +19,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using biz.dfch.CS.Playground.Fynn._20191004;
 
 namespace biz.dfch.CS.Playground.Fynn._20191004
 {
-    public static class ComparableExtension
+    public class CallComparableExtensionMethods
     {
-        public static bool LessThan<T>(this T left, T right)
-            where T : IComparable<T> => left.CompareTo(right) < 0;
+        public void CompareValues()
+        {
+            var x = new MyComparableClass();
+            var y = new MyComparableClass();
 
-        public static bool GreaterThan<T>(this T left, T right)
-            where T : IComparable<T> => left.CompareTo(right) > 0;
+            var integer = 4;
+            var number = 5;
 
-        public static bool LessThanEqual<T>(this T left, T right)
-            where T : IComparable<T> => left.CompareTo(right) <= 0;
+            var firstName = "Max";
+            var lastname = "Mayer";
 
-        public static bool GreaterThanEqual<T>(this T left, T right)
-            where T : IComparable<T> => left.CompareTo(right) >= 0;
+            var result = y.IsEqualTo(x);
+            var intResult = number.GreaterThanEqual(5);
+            var stringResult = firstName.LessThan(lastname);
+        }
+    }
 
-        public static bool IsEqualTo<T>(this T left, T right)
-            where T : IComparable<T> => left.CompareTo(right) == 0;
+    public class MyComparableClass : IComparable<MyComparableClass>
+    {
+        public int CompareTo(MyComparableClass other)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
