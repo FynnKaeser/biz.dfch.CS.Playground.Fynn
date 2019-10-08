@@ -61,6 +61,7 @@
     <Compile Include="20191004\ComparableExtension.cs" />
     <Compile Include="20191007\InterfaceVsExtensionMethod.cs" />
     <Compile Include="20191007\ReverseEnumerable.cs" />
+    <Compile Include="20191008\MyProgram.cs" />
     <Compile Include="Archive\ClassWithSealedMethodChild.cs" />
     <Compile Include="Archive\ClassWithSealedMethodGrandParent.cs" />
     <Compile Include="Archive\ClassWithSealedMethodParent.cs" />

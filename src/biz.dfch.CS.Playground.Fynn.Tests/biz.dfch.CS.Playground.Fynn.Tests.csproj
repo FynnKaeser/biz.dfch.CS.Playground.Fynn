@@ -76,6 +76,7 @@
     <Compile Include="20191002\HelperGenericCovarianceAndContravarianceTest.cs" />
     <Compile Include="20191002\StringExtenisonsTest.cs" />
     <Compile Include="20191002\ClassHierarchyFromBookTest.cs" />
+    <Compile Include="20191008\MyProgramTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -87,9 +88,7 @@
       <Name>biz.dfch.CS.Playground.Fynn</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="20191007\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
