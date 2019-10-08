@@ -16,6 +16,7 @@
  */
 
 using System;
+using System.Diagnostics;
 using static System.Console;
 
 namespace biz.dfch.CS.Playground.Fynn._20191008
@@ -30,58 +31,58 @@ namespace biz.dfch.CS.Playground.Fynn._20191008
         void WriteMessage();
     }
 
-    public class MyDerived : MyBase, IMessageWriter
+    public class MySub : MyBase, IMessageWriter
     {
         void IMessageWriter.WriteMessage() =>
-            WriteLine("Inside MyDerived.WriteMessage");
+            Debug.WriteLine("Inside MySub.WriteMessage");
     }
 
     public class AnotherType : IMessageWriter
     {
         public void WriteMessage() =>
-            WriteLine("Inside AnotherType.WriteMessage");
+            Debug.WriteLine("Inside AnotherType.WriteMessage");
     }
 
     public class MyProgram
     {
         static void WriteMessage(MyBase b)
         {
-            WriteLine("Inside WriteMessage(MyBase)");
+            Debug.WriteLine("Inside WriteMessage(MyBase)");
         }
 
         static void WriteMessage<T>(T obj)
         {
-            Write("Inside WriteMessage<T>(T):  ");
-            WriteLine(obj.ToString());
+            Debug.Write("Inside WriteMessage<T>(T):  ");
+            Debug.WriteLine(obj.ToString());
         }
 
         static void WriteMessage(IMessageWriter obj)
         {
-            Write("Inside WriteMessage(IMessageWriter):  ");
+            Debug.Write("Inside WriteMessage(IMessageWriter):  ");
             obj.WriteMessage();
         }
 
         public void Main()
         {
-            MyDerived d = new MyDerived();
-            WriteLine("Calling Program.WriteMessage");
+            MySub d = new MySub();
+            Debug.WriteLine("Calling Program.WriteMessage");
             WriteMessage(d);
             WriteLine();
 
-            WriteLine("Calling through IMessageWriter interface");
+            Debug.WriteLine("Calling through IMessageWriter interface");
             WriteMessage((IMessageWriter)d);
             WriteLine();
 
-            WriteLine("Cast to base object");
+            Debug.WriteLine("Cast to base object");
             WriteMessage((MyBase)d);
             WriteLine();
 
-            WriteLine("Another Type test:");
+            Debug.WriteLine("Another Type test:");
             AnotherType anObject = new AnotherType();
             WriteMessage(anObject);
             WriteLine();
 
-            WriteLine("Cast to IMessageWriter:");
+            Debug.WriteLine("Cast to IMessageWriter:");
             WriteMessage((IMessageWriter)anObject);
         }
     }
