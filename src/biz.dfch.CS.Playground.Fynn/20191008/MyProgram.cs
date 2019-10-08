@@ -17,7 +17,6 @@
 
 using System;
 using System.Diagnostics;
-using static System.Console;
 
 namespace biz.dfch.CS.Playground.Fynn._20191008
 {
@@ -67,20 +66,16 @@ namespace biz.dfch.CS.Playground.Fynn._20191008
             MySub d = new MySub();
             Debug.WriteLine("Calling Program.WriteMessage");
             WriteMessage(d);
-            WriteLine();
 
             Debug.WriteLine("Calling through IMessageWriter interface");
             WriteMessage((IMessageWriter)d);
-            WriteLine();
 
             Debug.WriteLine("Cast to base object");
             WriteMessage((MyBase)d);
-            WriteLine();
 
             Debug.WriteLine("Another Type test:");
             AnotherType anObject = new AnotherType();
             WriteMessage(anObject);
-            WriteLine();
 
             Debug.WriteLine("Cast to IMessageWriter:");
             WriteMessage((IMessageWriter)anObject);
