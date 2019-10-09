@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 
-using System;
 using static System.Console;
 using static System.String;
-using static biz.dfch.CS.Playground.Fynn._20191009.MyStaticType;
+using static biz.dfch.CS.Playground.Fynn._20191009.MyType;
 
 namespace biz.dfch.CS.Playground.Fynn._20191009
 {
@@ -45,18 +44,18 @@ namespace biz.dfch.CS.Playground.Fynn._20191009
             WriteLine(Format($"Total '{max + min}'"));
 
 
-            // --- using static biz.dfch.CS.Playground.Fynn._20191009.MyStaticType ---
-            //var stringPublicStaticString = MyStaticType.PublicStaticString;
-            //MyStaticType.PublicMethod();
+            // --- using static biz.dfch.CS.Playground.Fynn._20191009.MyType ---
+            //var stringPublicStaticString = MyType.PublicStaticString;
+            //MyType.PublicMethod();
             var stringPublicStaticString = PublicStaticString;
             PublicMethod();
         }
     }
 
-    public static class MyStaticType
+    public class MyType
     {
         public static string PublicStaticString { get; set; }
-
+        
         public static void PublicMethod()
         {
             // Do Stuff
