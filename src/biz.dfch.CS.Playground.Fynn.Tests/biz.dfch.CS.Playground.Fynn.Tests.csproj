@@ -77,6 +77,8 @@
     <Compile Include="20191002\StringExtenisonsTest.cs" />
     <Compile Include="20191002\ClassHierarchyFromBookTest.cs" />
     <Compile Include="20191008\MyProgramTest.cs" />
+    <Compile Include="20191009\ReverseEnumerableTest.cs" />
+    <Compile Include="20191009\HelperTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
