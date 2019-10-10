@@ -64,6 +64,8 @@
     <Compile Include="20191008\MyProgram.cs" />
     <Compile Include="20191009\Helper.cs" />
     <Compile Include="20191009\StaticUsing.cs" />
+    <Compile Include="20191010\BookIterator.cs" />
+    <Compile Include="20191010\IteratorMethod.cs" />
     <Compile Include="Archive\ClassWithSealedMethodChild.cs" />
     <Compile Include="Archive\ClassWithSealedMethodGrandParent.cs" />
     <Compile Include="Archive\ClassWithSealedMethodParent.cs" />

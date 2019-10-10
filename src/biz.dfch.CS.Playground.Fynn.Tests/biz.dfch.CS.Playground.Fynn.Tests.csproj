@@ -79,6 +79,7 @@
     <Compile Include="20191008\MyProgramTest.cs" />
     <Compile Include="20191009\ReverseEnumerableTest.cs" />
     <Compile Include="20191009\HelperTest.cs" />
+    <Compile Include="20191010\IteratorMethodTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
