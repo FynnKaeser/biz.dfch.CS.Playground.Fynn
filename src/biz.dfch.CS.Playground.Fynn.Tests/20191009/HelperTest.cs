@@ -24,43 +24,20 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191009
     [TestClass]
     public class HelperTest
     {
-        [TestMethod]
-        public void CallMaxWithIntegerWhereLeftIsBiggerThanRightSucceeds()
+        [DataRow(2, 1, DisplayName = "Integer")]
+        [DataRow(2.2d, 1.1d, DisplayName = "Double")]
+        [DataRow(2.222f, 1.111f, DisplayName = "Float")]
+        [DataTestMethod]
+        public void CallMaxWithNumericWhereLeftIsBiggerThanRightSucceeds(object left, object right)
         {
             // Arrange
-            var max = Helper.Max(2, 1);
+            var max = Helper.Max(left, right);
 
             // Act
             // N/A
 
             // Assert
-            Assert.AreEqual(2, max);
-        }
-
-        [TestMethod]
-        public void CallMaxWithFloatWhereLeftIsBiggerThanRightSucceeds()
-        {
-            // Arrange
-            var max = Helper.Max(2.222f, 1.11f);
-
-            // Act
-            // N/A
-            
-            // Assert
-            Assert.AreEqual(2.222f, max);
-        }
-
-        [TestMethod]
-        public void CallMaxWithDoubleWhereLeftIsBiggerThanRightSucceeds()
-        {
-            // Arrange
-            var max = Helper.Max(2.2d, 1.1d);
-
-            // Act
-            // N/A
-
-            // Assert
-            Assert.AreEqual(2.2d, max);
+            Assert.AreEqual(left, max);
         }
 
         [TestMethod]
