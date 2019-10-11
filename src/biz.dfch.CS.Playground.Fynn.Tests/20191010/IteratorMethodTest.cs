@@ -15,7 +15,11 @@
  */
 
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using biz.dfch.CS.Playground.Fynn._20191010;
+using biz.dfch.CS.Playground.Fynn._20191011;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace biz.dfch.CS.Playground.Fynn.Tests._20191010
@@ -45,8 +49,10 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191010
             // Act
             var result = sut.CallIteratorMethod();
 
+            var s = Item32.ProduceIndices();
+            var l = s.Count();
             // Assert
             Assert.AreNotSame("12345", result);
-        }
+        } 
     }
 }
