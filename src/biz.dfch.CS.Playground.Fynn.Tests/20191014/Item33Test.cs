@@ -24,7 +24,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace biz.dfch.CS.Playground.Fynn.Tests._20191014
 {
     [TestClass]
-    public class Item32Test
+    public class Item33Test
     {
 
         [TestMethod]
@@ -37,7 +37,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191014
             IList<int> expected = new List<int> { 0, 3, 6, 9, 12, 15, 18, 21, 24, 27 };
 
             // Act 
-            var actual = Item32.CreateSequence(NUMBER_OF_ELEMENTS, START_AT, STEP_BY);
+            var actual = Item33.CreateSequence(NUMBER_OF_ELEMENTS, START_AT, STEP_BY);
             var result = expected.SequenceEqual(actual);
 
             // Assert
@@ -54,7 +54,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191014
             IList<int> expected = new List<int> { 0, 3, 6, 9, 12, 15, 18, 21, 24, 26 };
 
             // Act 
-            var actual = Item32.CreateSequence(NUMBER_OF_ELEMENTS, START_AT, STEP_BY);
+            var actual = Item33.CreateSequence(NUMBER_OF_ELEMENTS, START_AT, STEP_BY);
             var result = expected.SequenceEqual(actual);
 
             // Assert
@@ -71,7 +71,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191014
             IList<int> expected = new List<int> { 0, 0, 0, 0, 0 };
 
             // Act 
-            var actual = Item32.CreateSequence(NUMBER_OF_ELEMENTS, START_AT, STEP_BY);
+            var actual = Item33.CreateSequence(NUMBER_OF_ELEMENTS, START_AT, STEP_BY);
             var result = expected.SequenceEqual(actual);
 
             // Assert
@@ -88,7 +88,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191014
             IList<int> expected = new List<int> { -5, -5, -5, -5, -5 };
 
             // Act 
-            var actual = Item32.CreateSequence(NUMBER_OF_ELEMENTS, START_AT, STEP_BY);
+            var actual = Item33.CreateSequence(NUMBER_OF_ELEMENTS, START_AT, STEP_BY);
             var result = expected.SequenceEqual(actual);
 
             // Assert
@@ -96,8 +96,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191014
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void CreateSequenceWithNegativeNumberOfElementsThrowsArgumentOutOfRangeException()
+        public void CreateSequenceWithNegativeNumberOfElementsIsNull()
         {
             // Arrange
             const int NUMBER_OF_ELEMENTS = -10;
@@ -105,10 +104,10 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191014
             const int STEP_BY = 10;
 
             // Act 
-            var actual = Item32.CreateSequence(NUMBER_OF_ELEMENTS, START_AT, STEP_BY);
-
+            var actual = Item33.CreateSequence(NUMBER_OF_ELEMENTS, START_AT, STEP_BY);
+           
             // Assert
-            // N/A
+            Assert.AreEqual("" ,actual);
         }
     }
 }
