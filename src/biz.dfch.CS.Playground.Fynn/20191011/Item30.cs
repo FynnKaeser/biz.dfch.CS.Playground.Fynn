@@ -22,8 +22,9 @@ using System.Threading.Tasks;
 
 namespace biz.dfch.CS.Playground.Fynn._20191011
 {
-    public class Item32
+    public class Item30
     {
+
         private static IEnumerable<Tuple<int, int>> Linq()
         {
             return Enumerable.Range(0, 100)
@@ -44,11 +45,11 @@ namespace biz.dfch.CS.Playground.Fynn._20191011
 
         public static IEnumerable<Tuple<int, int>> ProduceIndices()
         {
-            return from x in Enumerable.Range(0, 100)
-                from y in Enumerable.Range(0, 100)
-                where x + y < 100
-                orderby (x * x + y * y) descending
-                select Tuple.Create(x, y);
+            return Enumerable.Range(0, 100)
+                .SelectMany(x => Enumerable.Range(0, 100), (x, y) => new {x, y})
+                .Where(@t => @t.x + @t.y < 100)
+                .OrderByDescending(@t => (@t.x * @t.x + @t.y * @t.y))
+                .Select(@t => Tuple.Create(@t.x, @t.y));
         }
     }
 }
