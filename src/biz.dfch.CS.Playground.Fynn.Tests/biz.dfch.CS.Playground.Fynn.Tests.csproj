@@ -81,6 +81,7 @@
     <Compile Include="20191009\HelperTest.cs" />
     <Compile Include="20191010\IteratorMethodTest.cs" />
     <Compile Include="20191014\Item31Test.cs" />
+    <Compile Include="20191014\Item32Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
