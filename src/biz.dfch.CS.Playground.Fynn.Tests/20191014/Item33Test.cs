@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using biz.dfch.CS.Playground.Fynn._20191014;
@@ -26,7 +24,6 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191014
     [TestClass]
     public class Item33Test
     {
-
         [TestMethod]
         public void CreateSequenceWithTenElementsStartsAtZeroStepsByThreeIsEqualToExpectedListSucceeds()
         {
@@ -108,6 +105,19 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191014
            
             // Assert
             Assert.AreEqual("" ,actual);
+        }
+
+        [TestMethod]
+        public void TestForDebug()
+        {
+            // Arrange
+            var sequence = Item33.CreateSequence(10000, 0, 7).TakeWhile((num) => num < 1000);
+
+            // Act
+            var x = sequence.Count();
+
+            // Assert
+
         }
     }
 }

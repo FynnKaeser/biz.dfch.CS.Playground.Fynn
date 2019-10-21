@@ -26,157 +26,85 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191014
     public class Item31Test
     {
         [TestMethod]
-        public void ZipTwoIEnumerableSequencesReturnOneSequenceSucceeds()
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void ZipWithNullFirstSequenceThrowsArgumentNullException()
+        {
+            // Arrange
+            var second = new List<string> { "fourth", "fifth", "sixth" };
+
+            // Act
+            var result = Item31.Zip(null, second);
+
+            foreach (var resultItem in result)
+            {
+                // intentionally left empty
+            }
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void ZipWithNullSecondSequenceThrowsArgumentNullException()
+        {
+            // Arrange
+            var first = new List<string> { "fourth", "fifth", "sixth" };
+
+            // Act
+            var result = Item31.Zip(first, null);
+
+            foreach (var resultItem in result)
+            {
+                // intentionally left empty
+            }
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "Sequences don't have the same lenght")]
+        public void ZipWithTwoSequencesOfDifferentLengthThrowsArgumentException()
+        {
+            // Arrange
+            var first = new List<string> { "first", "second", "third", "firstFourth" };
+            var second = new List<string> { "fourth", "fifth", "sixth" };
+
+            // Act
+            var result = Item31.Zip(first, second);
+
+            foreach (var resultItem in result)
+            {
+                // intentionally left empty
+            }
+
+            // Assert
+        }
+
+        [TestMethod]
+        public void ZipTwoIEnumerableSequencesReturnsZippedSequenceSucceeds()
         {
             // Arrange
             var first = new List<string>{"first", "second", "third"};
             var second = new List<string>{"fourth", "fifth", "sixth"};
-            string[] expected = {"first fourth", "second fifth", "third sixth"};
+            var expected = new List<string>
+            {
+                "first fourth",
+                "second fifth",
+                "third sixth"
+            };
 
             // Act
-            var result = Item31.Zip(first, second).ToArray();
+            var result = Item31.Zip(first, second);
+
+            foreach (var resultItem in result)
+            {
+                // intentionally left empty
+            }
 
             // Assert
-            if (expected.Length == result.Length)
-            {
-                for (int i = 0; i < result.Length; i++)
-                {
-                    Assert.AreEqual(expected[i], result[i]);
-                }
-            }
-            else
-            {
-                throw new System.ArgumentOutOfRangeException($"Arrays don't have the same lenght");
-            }
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException), "'result' is greater than 'expected'")]
-        public void ExpectedResultIsSmallerThanResultThrowsArgumentOutOfRangeException()
-        {
-            // Arrange
-            var first = new List<string> { "first", "second", "third", "firstFourth" };
-            var second = new List<string> { "fourth", "fifth", "sixth", "secondSeventh" };
-            string[] expected = { "first fourth", "second fifth", "third sixth" };
-
-            // Act
-            var result = Item31.Zip(first, second).ToArray();
-
-            // Assert
-            if (expected.Length == result.Length)
-            {
-                for (int i = 0; i < result.Length; i++)
-                {
-                    Assert.AreEqual(expected[i], result[i]);
-                }
-            }
-            else
-            {
-                throw new System.ArgumentOutOfRangeException($"Arrays don't have the same lenght");
-            }
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException), "'result' is smaller than 'expected'")]
-        public void ExpectedResultIsGreaterThanResultThrowsArgumentOutOfRangeException()
-        {
-            // Arrange
-            var first = new List<string> { "first", "second"};
-            var second = new List<string> { "fourth", "fifth" };
-            string[] expected = { "first fourth", "second fifth", "third sixth" };
-
-            // Act
-            var result = Item31.Zip(first, second).ToArray();
-
-            // Assert
-            if (expected.Length == result.Length)
-            {
-                for (int i = 0; i < result.Length; i++)
-                {
-                    Assert.AreEqual(expected[i], result[i]);
-                }
-            }
-            else
-            {
-                throw new System.ArgumentOutOfRangeException($"Arrays don't have the same lenght");
-            }
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException), "'result' is smaller than 'expected'")]
-        public void BiggerListsDoNotHaveTheSameAmountOfStringsToZipThrowsArgumentOutOfRangeException()
-        {
-            // Arrange
-            var first = new List<string> { "first", "second", "third", "fourth" };
-            var second = new List<string> { "fourth", "fifth", "sixth", "seventh", "eight" };
-            string[] expected = { "first fourth", "second fifth", "third sixth" };
-
-            // Act
-            var result = Item31.Zip(first, second).ToArray();
-
-            // Assert
-            if (expected.Length == result.Length)
-            {
-                for (int i = 0; i < result.Length; i++)
-                {
-                    Assert.AreEqual(expected[i], result[i]);
-                }
-            }
-            else
-            {
-                throw new System.ArgumentOutOfRangeException($"Arrays don't have the same lenght");
-            }
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException), "'result' is smaller than 'expected'")]
-        public void SmallerListsDoNotHaveTheSameAmountOfStringsToZipThrowsArgumentOutOfRangeException()
-        {
-            // Arrange
-            var first = new List<string> { "first", "second" };
-            var second = new List<string> { "fourth", "fifth", "sixth" };
-            string[] expected = { "first fourth", "second fifth", "third sixth" };
-
-            // Act
-            var result = Item31.Zip(first, second).ToArray();
-
-            // Assert
-            if (expected.Length == result.Length)
-            {
-                for (int i = 0; i < result.Length; i++)
-                {
-                    Assert.AreEqual(expected[i], result[i]);
-                }
-            }
-            else
-            {
-                throw new System.ArgumentOutOfRangeException($"Arrays don't have the same lenght");
-            }
-        }
-
-        [TestMethod]
-        public void SecondListIsOneLongerThanFirstListAndFirstListHasSameAmountOfElementsThanExpectedListSucceedsAndReturnsExpectedList()
-        {
-            // Arrange
-            var first = new List<string> { "first", "second", "third" };
-            var second = new List<string> { "fourth", "fifth", "sixth", "seventh" };
-            string[] expected = { "first fourth", "second fifth", "third sixth" };
-
-            // Act
-            var result = Item31.Zip(first, second).ToArray();
-
-            // Assert
-            if (expected.Length == result.Length)
-            {
-                for (int i = 0; i < result.Length; i++)
-                {
-                    Assert.AreEqual(expected[i], result[i]);
-                }
-            }
-            else
-            {
-                throw new System.ArgumentOutOfRangeException($"Arrays don't have the same lenght");
-            }
+            Assert.IsNotNull(result);
+            Assert.AreEqual(expected.Count, result.Count());
+            CollectionAssert.AreEqual(expected, result.ToList());
         }
     }
 }

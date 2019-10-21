@@ -16,39 +16,41 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace biz.dfch.CS.Playground.Fynn._20191014
+namespace biz.dfch.CS.Playground.Fynn._20191016
 {
-    public class Item31
+    // Improper extra coupling.
+    public interface IPredicate<T>
     {
-        public static IEnumerable<string> Zip(IEnumerable<string> first, IEnumerable<string> second)
+        bool Match(T soughtObject);
+    }
+
+    public class List<T>
+    {
+        public void RemoveAll(IPredicate<T> match)
         {
-            if (null == first || null == second)
-            {
-                throw new ArgumentNullException();
-            }
-
-            if (first.Count() != second.Count())
-            {
-                throw new ArgumentException($"Sequences don't have the same lenght");
-            }
-
-            using (var firstSequence = first.GetEnumerator())
-            {
-                using (var secondSequence =
-                    second.GetEnumerator())
-                {
-                    while (firstSequence.MoveNext() &&
-                           secondSequence.MoveNext())
-                    {
-                        yield return $"{firstSequence.Current} {secondSequence.Current}";
-                    }
-                }
-            }
+            // elided
+            var x = new Component();
         }
+        // Other apis elided
 
-        public static IEnumerable<TResult> ZipFunc<T1, T2, TResult>(IEnumerable<T1> first, IEnumerable<T2> second, Func<T1, T2, TResult> zipper)
+    }
+    //The usage for this second version is quite a bit more work:
+    public class MyPredicate : IPredicate<int>
+    {
+        public bool Match(int target) => target < 100;
+    }
+
+    public static class Item34
+    {
+        public static IEnumerable<TResult> Zip<T1, T2, TResult>(
+            IEnumerable<T1> first,
+            IEnumerable<T2> second,
+            Func<T1, T2, TResult> zipper)
         {
             using (var firstSequence = first.GetEnumerator())
             {

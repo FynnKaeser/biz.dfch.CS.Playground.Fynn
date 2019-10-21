@@ -69,6 +69,8 @@
     <Compile Include="20191011\Item30.cs" />
     <Compile Include="20191014\Item31.cs" />
     <Compile Include="20191014\Item33.cs" />
+    <Compile Include="20191016\Item34.cs" />
+    <Compile Include="20191018\Item40.cs" />
     <Compile Include="Archive\ClassWithSealedMethodChild.cs" />
     <Compile Include="Archive\ClassWithSealedMethodGrandParent.cs" />
     <Compile Include="Archive\ClassWithSealedMethodParent.cs" />

@@ -24,17 +24,32 @@ namespace biz.dfch.CS.Playground.Fynn._20191014
 {
     public class Item33
     {
-        //public static IList<int> CreateSequence(int numberOfElements, int startAt, int stepBy)
-        //{
-        //    var collection = new List<int>(numberOfElements);
-        //    for (var i = 0; i < numberOfElements; i++) collection.Add(startAt + i * stepBy);
-        //    return collection;
-        //}
-
-        public static IEnumerable<int> CreateSequence(int numberOfElements, int startAt, int stepBy)
+        public static IList<int> CreateSequence(int numberOfElements, int startAt, int stepBy)
         {
+            var collection = new List<int>(numberOfElements);
             for (var i = 0; i < numberOfElements; i++)
-                yield return startAt + i * stepBy;
+            {
+                collection.Add(startAt + i * stepBy);
+                if (i == 9000)
+                {
+                    var test = "stops here";
+                }
+            }
+
+            return collection;
         }
+
+        //public static IEnumerable<int> CreateSequence(int numberOfElements, int startAt, int stepBy)
+        //{
+        //    for (var i = 0; i < numberOfElements; i++)
+        //    {
+        //        if (i == 9000)
+        //        {
+        //            var test = "stops here";
+        //        }
+        //        yield return startAt + i * stepBy;
+
+        //    }
+        //}
     }
 }
