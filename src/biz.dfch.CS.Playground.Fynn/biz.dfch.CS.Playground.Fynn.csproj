@@ -71,7 +71,11 @@
     <Compile Include="20191014\Item33.cs" />
     <Compile Include="20191016\Item34.cs" />
     <Compile Include="20191018\Item40.cs" />
-    <Compile Include="20191021\Item43.cs" />
+    <Compile Include="20191021\PlayerManager.cs" />
+    <Compile Include="20191022\Item44.cs" />
+    <Compile Include="20191023\CustomerManager.cs" />
+    <Compile Include="20191023\FileReader.cs" />
+    <Compile Include="20191023\Customer.cs" />
     <Compile Include="Archive\ClassWithSealedMethodChild.cs" />
     <Compile Include="Archive\ClassWithSealedMethodGrandParent.cs" />
     <Compile Include="Archive\ClassWithSealedMethodParent.cs" />
@@ -79,6 +83,8 @@
     <Compile Include="Archive\SealedClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="20191023\Assets\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

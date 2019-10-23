@@ -21,13 +21,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace biz.dfch.CS.Playground.Fynn.Tests._20191021
 {
     [TestClass]
-    public class Item43Test
+    public class PlayerManagerTest
     {
         [TestMethod]
-        public void GetFirstPlayerIsEqualToExpected()
+        public void GetFirstPlayerWithMatchReturnsFirstPlayer()
         {
             // Arrange
-            var sut = new Item43();
+            var sut = new PlayerManager();
             var expected = sut.CreatePlayer("Fynn", "Kaeser", 10);
             var meier = sut.CreatePlayer("Fynn", "Meier", 10);
 
@@ -40,10 +40,10 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191021
 
         [ExpectedException(typeof(InvalidOperationException))]
         [TestMethod]
-        public void GetFirstPlayerThrowsExceptionIfNoPlayerFound()
+        public void GetFirstPlayerWithNotExistingFirstNameThrowsInvalidOperationException()
         {
             // Arrange
-            var sut = new Item43();
+            var sut = new PlayerManager();
             var kaeser = sut.CreatePlayer("Fynn", "Kaeser", 10);
             var meier = sut.CreatePlayer("Fynn", "Meier", 10);
 
@@ -56,10 +56,10 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191021
 
         [ExpectedException(typeof(InvalidOperationException))]
         [TestMethod]
-        public void GetSinglePlayerThrowsExceptionIfMultipleResultWereFound()
+        public void GetSinglePlayerWithMultipleFirstnameMatchThrowsInvalidOperationException()
         {
             // Arrange
-            var sut = new Item43();
+            var sut = new PlayerManager();
             var kaeser = sut.CreatePlayer("Fynn", "Kaeser", 10);
             var meier = sut.CreatePlayer("Fynn", "Meier", 10);
 
@@ -72,10 +72,10 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191021
 
         [ExpectedException(typeof(InvalidOperationException))]
         [TestMethod]
-        public void GetSinglePlayerThrowsExceptionIfNoResultWereFound()
+        public void GetSinglePlayerWithNoMatchingResultsThrowsInvalidOperationException()
         {
             // Arrange
-            var sut = new Item43();
+            var sut = new PlayerManager();
             var kaeser = sut.CreatePlayer("Fynn", "Kaeser", 10);
             var meier = sut.CreatePlayer("Fynn", "Meier", 10);
 
@@ -87,10 +87,10 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191021
         }
 
         [TestMethod]
-        public void GetFirstOrDefaultWhenNoMatchReturnsNull()
+        public void GetFirstOrDefaultWithNoMatchReturnsNull()
         {
             // Arrange
-            var sut = new Item43();
+            var sut = new PlayerManager();
             var kaeser = sut.CreatePlayer("Fynn", "Kaeser", 10);
             var meier = sut.CreatePlayer("Fynn", "Meier", 10);
 
@@ -102,10 +102,10 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191021
         }
 
         [TestMethod]
-        public void GetFirstOrDefaultWhenMultipleReturnsExpected()
+        public void GetFirstOrDefaultPlayerWithMultipleExistingFirstnameReturnsFirstPlayer()
         {
             // Arrange
-            var sut = new Item43();
+            var sut = new PlayerManager();
             var expected = sut.CreatePlayer("Fynn", "Kaeser", 10);
             var meier = sut.CreatePlayer("Fynn", "Meier", 10);
 
@@ -118,10 +118,10 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191021
 
 
         [TestMethod]
-        public void GetSingleOrDefaultWhenNoMatchReturnsNull()
+        public void GetSingleOrDefaultWithNoMatchReturnsNull()
         {
             // Arrange
-            var sut = new Item43();
+            var sut = new PlayerManager();
             var kaeser = sut.CreatePlayer("Fynn", "Kaeser", 10);
             var meier = sut.CreatePlayer("Fynn", "Meier", 10);
 
@@ -134,10 +134,10 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191021
 
         [ExpectedException(typeof(InvalidOperationException))]
         [TestMethod]
-        public void GetSingleOrDefaultWhenMultipleThrowsException()
+        public void GetSingleOrDefaultWithMultipleFirstnameMatchThrowsInvalidOperationException()
         {
             // Arrange
-            var sut = new Item43();
+            var sut = new PlayerManager();
             var kaeser = sut.CreatePlayer("Fynn", "Kaeser", 10);
             var meier = sut.CreatePlayer("Fynn", "Meier", 10);
 
@@ -147,7 +147,6 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191021
             // Assert
             // Intentionally nothing
         }
-
 
     }
 }

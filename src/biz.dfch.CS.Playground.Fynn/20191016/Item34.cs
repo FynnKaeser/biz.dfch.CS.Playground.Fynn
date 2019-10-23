@@ -29,7 +29,7 @@ namespace biz.dfch.CS.Playground.Fynn._20191016
         bool Match(T soughtObject);
     }
 
-    public class List<T>
+    public class ListItem<T>
     {
         public void RemoveAll(IPredicate<T> match)
         {

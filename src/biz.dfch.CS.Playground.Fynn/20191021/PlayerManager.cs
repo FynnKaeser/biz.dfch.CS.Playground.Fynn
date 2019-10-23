@@ -17,12 +17,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace biz.dfch.CS.Playground.Fynn._20191021
 {
-    public class Item43
+    public class PlayerManager
     {
         private IList<Player> players = new List<Player>();
 
@@ -31,9 +32,9 @@ namespace biz.dfch.CS.Playground.Fynn._20191021
             return players;
         }
 
-        public Player CreatePlayer(string firstName, string lastName, int goalScored)
+        public Player CreatePlayer(string firstName, string lastName, int goalsScored)
         {
-            var player = new Player(firstName, lastName, goalScored);
+            var player = new Player(firstName, lastName, goalsScored);
             players.Add(player);
 
             return player;
@@ -41,66 +42,48 @@ namespace biz.dfch.CS.Playground.Fynn._20191021
 
         public Player GetFirstPlayer(string firstName)
         {
-            try
-            {
-                var player = (from p in players
-                              where p.FirstName == firstName
-                              select p).First();
+            var player = (from p in players
+                          where p.FirstName == firstName
+                          select p).First();
 
-                return player;
-            }
-            catch (InvalidOperationException e)
-            {
-                throw new InvalidOperationException(e.Message);
-            }
+            return player;
         }
 
         public Player GetSinglePlayer(string firstName)
         {
-            try
-            {
-                var player = (from p in GetPlayers()
-                              where p.FirstName == firstName
-                              select p).Single();
+            var player = (from p in GetPlayers()
+                          where p.FirstName == firstName
+                          select p).Single();
 
-                return player;
-            }
-            catch (InvalidOperationException e)
-            {
-                throw new InvalidOperationException(e.Message);
-            }
+            return player;
         }
 
         public Player GetFirstOrDefaultPlayer(string firstName)
         {
-            try
-            {
-                var player = (from p in players
-                              where p.FirstName == firstName
-                              select p).FirstOrDefault();
+            var player = (from p in players
+                          where p.FirstName == firstName
+                          select p).FirstOrDefault();
 
-                return player;
-            }
-            catch (InvalidOperationException e)
-            {
-                throw new InvalidOperationException(e.Message);
-            }
+            return player;
         }
 
         public Player GetSingleOrDefaultPlayer(string firstName)
         {
-            try
-            {
-                var player = (from p in GetPlayers()
-                              where p.FirstName == firstName
-                              select p).SingleOrDefault();
+            var player = (from p in GetPlayers()
+                          where p.FirstName == firstName
+                          select p).SingleOrDefault();
 
-                return player;
-            }
-            catch (InvalidOperationException e)
-            {
-                throw new InvalidOperationException(e.Message);
-            }
+            return player;
+        }
+
+        public Player GetNthFirstPlayerScoredLessThanTenGoals(int skipCount)
+        {
+            var player = (from p in GetPlayers()
+                          where p.GoalsScored < 10
+                          orderby p.GoalsScored descending
+                          select p).Skip(skipCount - 1).First();
+
+            return player;
         }
     }
 
