@@ -52,11 +52,10 @@ namespace biz.dfch.CS.Playground.Fynn._20191023
 
         }
 
-        private static Customer Remove(Customer customer, int amount)
+        private static void Remove(Customer customer, int amount)
         {
             // Do work here
             customer.Money -= amount;
-            return customer;
         }
     }
 }

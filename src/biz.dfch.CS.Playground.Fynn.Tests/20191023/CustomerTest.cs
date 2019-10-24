@@ -23,6 +23,20 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191023
     [TestClass]
     public class CustomerTest
     {
+        [TestMethod]
+        public void RemoveMoneyWithNullCustomerReturnsFalse()
+        {
+            // Arrange
+            var currentMoney = 1000;
+            Customer sut = null;
+
+            // Act
+            var result = sut.RemoveMoney(currentMoney);
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
         [DataRow(1000, DisplayName = "Remove 1000 money from 1000")]
         [DataRow(0, DisplayName = "Remove 0 money from 1000")]
         [DataRow(42, DisplayName = "Remove 42 money from 1000")]
@@ -73,14 +87,5 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191023
             Assert.IsFalse(result);
         }
 
-
-        // DOTO --- CleanUp Test
-        [TestMethod]
-        public void X()
-        {
-            Customer x = null;
-            var result = x.RemoveMoney(50);
-            Assert.IsFalse(result);
-        }
     }
 }

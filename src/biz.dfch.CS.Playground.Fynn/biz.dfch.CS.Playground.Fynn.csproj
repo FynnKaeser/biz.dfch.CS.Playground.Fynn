@@ -74,6 +74,7 @@
     <Compile Include="20191021\PlayerManager.cs" />
     <Compile Include="20191022\Item44.cs" />
     <Compile Include="20191023\CustomerManager.cs" />
+    <Compile Include="20191023\ExceptionFilter.cs" />
     <Compile Include="20191023\FileReader.cs" />
     <Compile Include="20191023\Customer.cs" />
     <Compile Include="Archive\ClassWithSealedMethodChild.cs" />

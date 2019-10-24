@@ -88,6 +88,7 @@
     <Compile Include="20191023\FileReaderTest.cs" />
     <Compile Include="20191023\FileReaderTryCatchTest.cs" />
     <Compile Include="20191023\CustomerTest.cs" />
+    <Compile Include="20191023\ExceptionFilterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
