@@ -26,7 +26,7 @@ namespace biz.dfch.CS.Playground.Fynn._20191023
     {
         public static bool RemoveMoney(this Customer customer, int amount)
         {
-            if (customer == null) return false;
+            if (null == customer) return false;
 
             if (!TestConditions(customer, amount)) return false;
             Remove(customer, amount);
@@ -36,7 +36,7 @@ namespace biz.dfch.CS.Playground.Fynn._20191023
         private static bool TestConditions(Customer customer, int amount)
         {
             // Test conditions if work can be done
-            if (customer.Money < amount)
+            if (customer.Balance < amount)
             {
                 Console.WriteLine("You can't remove more money than you have!");
                 return false;
@@ -55,7 +55,18 @@ namespace biz.dfch.CS.Playground.Fynn._20191023
         private static void Remove(Customer customer, int amount)
         {
             // Do work here
-            customer.Money -= amount;
+            customer.Balance -= amount;
+
+            //if (customer.Balance < 0)
+            //{
+            //    customer.Balance += amount;
+            //    throw new MoneyBelowZeroException();
+            //}
+        }
+
+        public class MoneyBelowZeroException : Exception
+        {
+
         }
     }
 }

@@ -14,22 +14,20 @@
  * limitations under the License.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
-namespace biz.dfch.CS.Playground.Fynn._20191023
+namespace biz.dfch.CS.Playground.Fynn._20191025
 {
-    public class Customer
+    public class DatabaseManager
     {
-        public int Balance { get; set; }
-
-        public Customer(int balance)
+        private static void CreateCommand(string queryString, string connectionString)
         {
-            Balance = balance;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Connection.Open();
+                command.ExecuteNonQuery();
+            }
         }
     }
 }

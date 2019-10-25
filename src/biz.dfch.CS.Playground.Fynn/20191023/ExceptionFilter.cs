@@ -16,6 +16,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +30,7 @@ namespace biz.dfch.CS.Playground.Fynn._20191023
             var retryCount = 0;
             var dataString = default(string);
 
-            while (dataString == null)
+            while (null == dataString)
             {
                 try
                 {

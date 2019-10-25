@@ -21,7 +21,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace biz.dfch.CS.Playground.Fynn.Tests._20191023
 {
     [TestClass]
-    public class CustomerTest
+    public class CustomerManagerTest
     {
         [TestMethod]
         public void RemoveMoneyWithNullCustomerReturnsFalse()
@@ -52,7 +52,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191023
 
             // Assert
             Assert.IsTrue(result);
-            Assert.AreEqual(sut.Money, currentMoney - value);
+            Assert.AreEqual(sut.Balance, currentMoney - value);
         }
 
         [DataRow(1001, DisplayName = "Remove 1001 from 1000")]

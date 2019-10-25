@@ -87,7 +87,7 @@
     <Compile Include="20191021\PlayerManagerTest.cs" />
     <Compile Include="20191023\FileReaderTest.cs" />
     <Compile Include="20191023\FileReaderTryCatchTest.cs" />
-    <Compile Include="20191023\CustomerTest.cs" />
+    <Compile Include="20191023\CustomerManagerTest.cs" />
     <Compile Include="20191023\ExceptionFilterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -100,7 +100,9 @@
       <Name>biz.dfch.CS.Playground.Fynn</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="20191025\" />
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
