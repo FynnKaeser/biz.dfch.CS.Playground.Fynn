@@ -18,8 +18,8 @@ namespace biz.dfch.CS.Playground.Fynn._20190916
 {
     public class ConstAndReadonly
     {
-        public static readonly int startValue = 50;
         public const int endValue = 40;
+        public static readonly int startValue = 50;
 
         public bool GetHigherStartValue()
         {

@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-using System;
 using biz.dfch.CS.Playground.Fynn._20190927;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

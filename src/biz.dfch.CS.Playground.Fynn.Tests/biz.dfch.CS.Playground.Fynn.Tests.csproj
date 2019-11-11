@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>biz.dfch.CS.Playground.Fynn.Tests</RootNamespace>
     <AssemblyName>biz.dfch.CS.Playground.Fynn.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
@@ -89,6 +89,8 @@
     <Compile Include="20191023\FileReaderTryCatchTest.cs" />
     <Compile Include="20191023\CustomerManagerTest.cs" />
     <Compile Include="20191023\ExceptionFilterTest.cs" />
+    <Compile Include="20191029\ExceptionManagerTest.cs" />
+    <Compile Include="20191111\PrimeNumbersManagerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="20191025\" />
+    <Folder Include="20191028\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

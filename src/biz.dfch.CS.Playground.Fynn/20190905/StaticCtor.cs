@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 namespace biz.dfch.CS.Playground.Fynn._20190905
 {
     public class StaticCtor
     {
-        static object o;
+        private static object o;
 
         static StaticCtor()
         {
@@ -28,8 +28,10 @@ namespace biz.dfch.CS.Playground.Fynn._20190905
 
     public class StaticEmptyCtor
     {
-        static object o = new object();
+        private static object o = new object();
 
-        static StaticEmptyCtor() { }
+        static StaticEmptyCtor()
+        {
+        }
     }
 }

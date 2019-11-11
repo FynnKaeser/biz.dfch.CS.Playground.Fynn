@@ -14,18 +14,14 @@
  * limitations under the License.
  */
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace biz.dfch.CS.Playground.Fynn._20191021
 {
     public class PlayerManager
     {
-        private IList<Player> players = new List<Player>();
+        private readonly IList<Player> players = new List<Player>();
 
         public IList<Player> GetPlayers()
         {
@@ -43,8 +39,8 @@ namespace biz.dfch.CS.Playground.Fynn._20191021
         public Player GetFirstPlayer(string firstName)
         {
             var player = (from p in players
-                          where p.FirstName == firstName
-                          select p).First();
+                where p.FirstName == firstName
+                select p).First();
 
             return player;
         }
@@ -52,8 +48,8 @@ namespace biz.dfch.CS.Playground.Fynn._20191021
         public Player GetSinglePlayer(string firstName)
         {
             var player = (from p in GetPlayers()
-                          where p.FirstName == firstName
-                          select p).Single();
+                where p.FirstName == firstName
+                select p).Single();
 
             return player;
         }
@@ -61,8 +57,8 @@ namespace biz.dfch.CS.Playground.Fynn._20191021
         public Player GetFirstOrDefaultPlayer(string firstName)
         {
             var player = (from p in players
-                          where p.FirstName == firstName
-                          select p).FirstOrDefault();
+                where p.FirstName == firstName
+                select p).FirstOrDefault();
 
             return player;
         }
@@ -70,8 +66,8 @@ namespace biz.dfch.CS.Playground.Fynn._20191021
         public Player GetSingleOrDefaultPlayer(string firstName)
         {
             var player = (from p in GetPlayers()
-                          where p.FirstName == firstName
-                          select p).SingleOrDefault();
+                where p.FirstName == firstName
+                select p).SingleOrDefault();
 
             return player;
         }
@@ -79,9 +75,9 @@ namespace biz.dfch.CS.Playground.Fynn._20191021
         public Player GetNthFirstPlayerScoredLessThanTenGoals(int skipCount)
         {
             var player = (from p in GetPlayers()
-                          where p.GoalsScored < 10
-                          orderby p.GoalsScored descending
-                          select p).Skip(skipCount - 1).First();
+                where p.GoalsScored < 10
+                orderby p.GoalsScored descending
+                select p).Skip(skipCount - 1).First();
 
             return player;
         }
@@ -89,15 +85,15 @@ namespace biz.dfch.CS.Playground.Fynn._20191021
 
     public class Player
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int GoalsScored { get; set; }
-
         public Player(string firstName, string lastName, int goalsScored)
         {
             FirstName = firstName;
             LastName = lastName;
             GoalsScored = goalsScored;
         }
+
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int GoalsScored { get; set; }
     }
 }

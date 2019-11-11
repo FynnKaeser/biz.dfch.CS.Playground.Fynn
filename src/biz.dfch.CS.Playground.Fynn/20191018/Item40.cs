@@ -15,10 +15,6 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace biz.dfch.CS.Playground.Fynn._20191018
 {
@@ -33,6 +29,7 @@ namespace biz.dfch.CS.Playground.Fynn._20191018
         {
             return "Ha";
         }
+
         public static string Two()
         {
             return "llo";
@@ -41,7 +38,7 @@ namespace biz.dfch.CS.Playground.Fynn._20191018
         public static object DoStuff(Func<string> x, Func<string> y, Func<string> s)
         {
             var result = x.Invoke() + y.Invoke();
-            
+
             return result;
         }
 

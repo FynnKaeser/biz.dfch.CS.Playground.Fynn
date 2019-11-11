@@ -14,17 +14,28 @@
  * limitations under the License.
  */
 
-using System.Collections.Generic;
+using System;
+using System.Runtime.Serialization;
 
-namespace biz.dfch.CS.Playground.Fynn._20190902
+namespace biz.dfch.CS.Playground.Fynn._20191028
 {
-    internal class Animal
+    [Serializable]
+    public class MyAssemblyException : Exception
     {
-    }
+        public MyAssemblyException()
+        {
+        }
 
-    internal class Dog : Animal
-    {
-        private Animal dog = new Dog();
-        private IEnumerable<Animal> listOfDogs = new List<Dog>();
+        public MyAssemblyException(string s) : base(s)
+        {
+        }
+
+        public MyAssemblyException(string s, Exception e) : base(s, e)
+        {
+        }
+
+        protected MyAssemblyException(SerializationInfo info, StreamingContext cxt) : base(info, cxt)
+        {
+        }
     }
 }

@@ -25,8 +25,7 @@ namespace biz.dfch.CS.Playground.Fynn._20190927
         {
             var resultEndsWith = element.EndsWith(SUFFIX);
             var resultStartsWith = element.StartsWith(PREFIX);
-            return (resultStartsWith && resultEndsWith);
-
+            return resultStartsWith && resultEndsWith;
         }
 
 
@@ -38,6 +37,5 @@ namespace biz.dfch.CS.Playground.Fynn._20190927
         //    var resultStartsWith = element.StartsWith(Prefix);
         //    return (resultStartsWith && resultEndsWith);
         //}
-
     }
 }

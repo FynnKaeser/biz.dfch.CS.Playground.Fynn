@@ -17,94 +17,88 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace biz.dfch.CS.Playground.Fynn._20191022
 {
     public class Item44
     {
+        private static Func<int, int> HiddenDelegateDefinition;
+
         public static void Seq()
         {
-            int[] someNumbers = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int[] someNumbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
             var answers = from n in someNumbers
-                          select n * n;
-
+                select n * n;
         }
 
-        private static int HiddenFunc(int n) => (n * n);
-
-        private static Func<int, int> HiddenDelegateDefinition;
+        private static int HiddenFunc(int n)
+        {
+            return n * n;
+        }
 
         public static void DelegateMethod()
         {
-            int[] someNumbers = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int[] someNumbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-            if (HiddenDelegateDefinition == null)
-            {
-                HiddenDelegateDefinition = new
-                    Func<int, int>(HiddenFunc);
-            }
+            if (HiddenDelegateDefinition == null) HiddenDelegateDefinition = HiddenFunc;
             var answers = someNumbers
-                .Select<int, int>(HiddenDelegateDefinition);
+                .Select(HiddenDelegateDefinition);
         }
     }
 
     public class ModFilter
     {
+        // original delegate
+        private static Func<int, int> SelectDelegate;
         private readonly int modulus;
 
         // New method
-        private bool WhereClause(int n) =>
-            ((n % this.modulus) == 0);
+        private bool WhereClause(int n)
+        {
+            return n % modulus == 0;
+        }
 
         // original method
-        private static int SelectClause(int n) =>
-            (n * n);
-
-        // original delegate
-        private static Func<int, int> SelectDelegate;
+        private static int SelectClause(int n)
+        {
+            return n * n;
+        }
 
         public IEnumerable<int> FindValues(
             IEnumerable<int> sequence)
         {
-            if (SelectDelegate == null)
-            {
-                SelectDelegate = new Func<int, int>(SelectClause);
-            }
-            return sequence.Where<int>(
-                    new Func<int, bool>(this.WhereClause)).
-                Select<int, int>(SelectClause);
+            if (SelectDelegate == null) SelectDelegate = SelectClause;
+            return sequence.Where(
+                WhereClause).Select(SelectClause);
         }
+
         // Other methods elided.
     }
 
     public class ModFilter2
     {
+        // original delegate
+        private static Func<int, int> SelectDelegate;
         private readonly int modulus;
 
         // New method
-        private bool WhereClause(int n) =>
-            ((n % this.modulus) == 0);
+        private bool WhereClause(int n)
+        {
+            return n % modulus == 0;
+        }
 
         // original method
-        private static int SelectClause(int n) =>
-            (n * n);
-
-        // original delegate
-        private static Func<int, int> SelectDelegate;
+        private static int SelectClause(int n)
+        {
+            return n * n;
+        }
 
         public IEnumerable<int> FindValues(
             IEnumerable<int> sequence)
         {
-            if (SelectDelegate == null)
-            {
-                SelectDelegate = new Func<int, int>(SelectClause);
-            }
-            return sequence.Where<int>(
-                    new Func<int, bool>(this.WhereClause)).
-                Select<int, int>(SelectClause);
+            if (SelectDelegate == null) SelectDelegate = SelectClause;
+            return sequence.Where(
+                WhereClause).Select(SelectClause);
         }
     }
-
 }

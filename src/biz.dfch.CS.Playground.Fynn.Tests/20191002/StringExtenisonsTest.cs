@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-using System;
 using biz.dfch.CS.Playground.Fynn._20191002;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -100,7 +99,6 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191002
 
             // Assert
             Assert.AreEqual(4, result);
-
         }
     }
 }

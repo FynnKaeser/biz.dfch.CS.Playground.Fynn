@@ -14,13 +14,6 @@
  * limitations under the License.
  */
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace biz.dfch.CS.Playground.Fynn._20191002
 {
     public static class StringExtensions
@@ -40,18 +33,14 @@ namespace biz.dfch.CS.Playground.Fynn._20191002
             // VARIANTE 2
             var result = "";
 
-            for (int i = 0; i < str.Length; i++)
-            {
+            for (var i = 0; i < str.Length; i++)
                 if (' ' == str[i])
-                {
                     result += str[i];
-                    //result = $"{result}{str[i]}";
-                    //result = result + str[i];
+                //result = $"{result}{str[i]}";
+                //result = result + str[i];
 
-                    //str = str.Remove(i,1);
-                    //i--;
-                }
-            }
+                //str = str.Remove(i,1);
+                //i--;
 
             return result;
 
@@ -64,13 +53,9 @@ namespace biz.dfch.CS.Playground.Fynn._20191002
         public static int CountLetter(this string str, char c)
         {
             var count = 0;
-            for (int i = 0; i < str.Length; i++)
-            {
+            for (var i = 0; i < str.Length; i++)
                 if (str[i] == c)
-                {
                     count++;
-                }
-            }
 
             return count;
         }

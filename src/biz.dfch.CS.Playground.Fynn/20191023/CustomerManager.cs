@@ -15,10 +15,6 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace biz.dfch.CS.Playground.Fynn._20191023
 {
@@ -49,7 +45,6 @@ namespace biz.dfch.CS.Playground.Fynn._20191023
             }
 
             return true;
-
         }
 
         private static void Remove(Customer customer, int amount)
@@ -66,7 +61,6 @@ namespace biz.dfch.CS.Playground.Fynn._20191023
 
         public class MoneyBelowZeroException : Exception
         {
-
         }
     }
 }

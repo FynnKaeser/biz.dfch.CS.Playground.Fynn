@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-using System;
 using System.Collections.Generic;
 using biz.dfch.CS.Playground.Fynn._20191016;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -28,8 +27,8 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191016
         public void TestMethod1()
         {
             // Arrange
-            IEnumerable<string> sut1 = new System.Collections.Generic.List<string> {"one", "oneone"};
-            IEnumerable<string> sut2 = new System.Collections.Generic.List<string> {"two", "twotwo"};
+            IEnumerable<string> sut1 = new List<string> {"one", "oneone"};
+            IEnumerable<string> sut2 = new List<string> {"two", "twotwo"};
 
             // Act
             var result = Item34.Zip(sut1, sut2, (one, two) => $"{two} {two}");
@@ -38,6 +37,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191016
             {
                 // Intentionally nothing
             }
+
             // Assert
         }
     }

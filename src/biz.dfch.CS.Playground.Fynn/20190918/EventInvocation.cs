@@ -15,15 +15,12 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace biz.dfch.CS.Playground.Fynn._20190918
 {
     public class EventInvocation
     {
+        private int counter;
         private EventHandler<int> Updated;
 
         public void RaiseUpdates()
@@ -31,6 +28,5 @@ namespace biz.dfch.CS.Playground.Fynn._20190918
             counter++;
             Updated?.Invoke(this, counter);
         }
-        private int counter;
     }
 }

@@ -15,25 +15,18 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace biz.dfch.CS.Playground.Fynn._20190918
 {
     public class NameOfClass
     {
-        public void ExceptionMessage(object thisCantBeNull)
-        {
-            if (null == thisCantBeNull)
-            {
-               throw new ArgumentNullException(nameof(thisCantBeNull),"Cant be null!");
-            }
-        }
-
         private object SomeObject { get; set; }
         private object SomeOtherObject { get; set; }
+
+        public void ExceptionMessage(object thisCantBeNull)
+        {
+            if (null == thisCantBeNull) throw new ArgumentNullException(nameof(thisCantBeNull), "Cant be null!");
+        }
 
         public bool ChangeNameOfProperty()
         {

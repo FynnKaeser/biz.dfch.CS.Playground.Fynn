@@ -14,12 +14,7 @@
  * limitations under the License.
  */
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using biz.dfch.CS.Playground.Fynn._20191010;
-using biz.dfch.CS.Playground.Fynn._20191011;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace biz.dfch.CS.Playground.Fynn.Tests._20191010
@@ -41,7 +36,8 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191010
         }
 
         [TestMethod]
-        public void CallingIteratorReturnsStringWithConnectedNumbersFromOneToFourChecksForWrongResultToShowThatBreakWorksSucceeds()
+        public void
+            CallingIteratorReturnsStringWithConnectedNumbersFromOneToFourChecksForWrongResultToShowThatBreakWorksSucceeds()
         {
             // Arrange
             var sut = new IteratorMethod();
@@ -51,6 +47,6 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191010
 
             // Assert
             Assert.AreNotSame("12345", result);
-        } 
+        }
     }
 }

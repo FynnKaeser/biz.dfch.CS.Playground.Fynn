@@ -17,9 +17,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace biz.dfch.CS.Playground.Fynn._20191002
 {
@@ -27,7 +24,7 @@ namespace biz.dfch.CS.Playground.Fynn._20191002
     {
         public IEnumerator<GenericCovarianceAndContravariance> GetEnumerator()
         {
-           throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -50,9 +47,9 @@ namespace biz.dfch.CS.Playground.Fynn._20191002
             // IEnumerable<Object> resultObject = new List<object>();
             // return resultObject;
 
-            IEnumerable<GenericCovarianceAndContravariance> resultMyType = new List<GenericCovarianceAndContravariance>();
+            IEnumerable<GenericCovarianceAndContravariance> resultMyType =
+                new List<GenericCovarianceAndContravariance>();
             return resultMyType;
         }
-
     }
 }

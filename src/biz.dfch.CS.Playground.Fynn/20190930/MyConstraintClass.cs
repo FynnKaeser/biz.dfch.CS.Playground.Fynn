@@ -15,10 +15,6 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace biz.dfch.CS.Playground.Fynn._20190930
 {
@@ -48,7 +44,9 @@ namespace biz.dfch.CS.Playground.Fynn._20190930
         }
         */
 
-        public static bool AreEqual<T>(T expected, T actual) where T : IComparable<T> => expected.CompareTo(actual) == 0;
-
+        public static bool AreEqual<T>(T expected, T actual) where T : IComparable<T>
+        {
+            return expected.CompareTo(actual) == 0;
+        }
     }
 }

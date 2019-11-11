@@ -15,12 +15,10 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace FynnBlog
 {
-    class ClassWithSealedMethodChild : ClassWithSealedMethodParent
+    internal class ClassWithSealedMethodChild : ClassWithSealedMethodParent
     {
         //protected virtual override void SealedMethod()
         //{

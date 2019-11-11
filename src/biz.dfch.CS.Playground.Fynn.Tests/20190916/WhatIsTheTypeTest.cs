@@ -14,9 +14,6 @@
  * limitations under the License.
  */
 
-using System;
-using System.Text;
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace biz.dfch.CS.Playground.Fynn.Tests._20190916
@@ -29,8 +26,17 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20190916
             var whatIsTheType = new WhatIsTheTypeTest();
             whatIsTheType.GetTheDeclaringType();
         }
-        
+
+        [TestMethod]
+        public void TestMethod1()
+        {
+            //
+            // TODO: Add test logic here
+            //
+        }
+
         #region Additional test attributes
+
         //
         // You can use the following additional attributes as you write your tests:
         //
@@ -50,14 +56,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20190916
         // [TestCleanup()]
         // public void MyTestCleanup() { }
         //
-        #endregion
 
-        [TestMethod]
-        public void TestMethod1()
-        {
-            //
-            // TODO: Add test logic here
-            //
-        }
+        #endregion
     }
 }

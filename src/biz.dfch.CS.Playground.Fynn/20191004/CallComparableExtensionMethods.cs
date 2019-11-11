@@ -15,11 +15,6 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using biz.dfch.CS.Playground.Fynn._20191004;
 
 namespace biz.dfch.CS.Playground.Fynn._20191004
 {

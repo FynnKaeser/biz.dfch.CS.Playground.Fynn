@@ -14,30 +14,22 @@
  * limitations under the License.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace biz.dfch.CS.Playground.Fynn._20190925
 {
     public class MinimizeConstructorInitialization
     {
-        public int StartValue;
         public string Name;
+        public int StartValue;
 
         public MinimizeConstructorInitialization() :
-            this(0, "")
+            this(0)
         {
-
         }
 
         public MinimizeConstructorInitialization(int startValue = 0, string name = "")
         {
-            this.StartValue = startValue > 0 ? startValue : 42;
-            this.Name = "" != name ? name : "Muster";
+            StartValue = startValue > 0 ? startValue : 42;
+            Name = "" != name ? name : "Muster";
         }
-
-    } 
+    }
 }

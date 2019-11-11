@@ -15,10 +15,6 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace biz.dfch.CS.Playground.Fynn._20191023
@@ -31,16 +27,14 @@ namespace biz.dfch.CS.Playground.Fynn._20191023
             var dataString = default(string);
 
             while (null == dataString)
-            {
                 try
                 {
                     dataString = MakeWebRequest();
                 }
-                catch (TimeoutException e) when(retryCount++ < 5)
+                catch (TimeoutException e) when (retryCount++ < 5)
                 {
                     Console.WriteLine("Operation timed out. Trying again");
                 }
-            }
 
             return dataString;
         }
@@ -48,10 +42,9 @@ namespace biz.dfch.CS.Playground.Fynn._20191023
         public static string GetDataStringWrong()
         {
             var retryCount = 0;
-            var dataString = default(String);
+            var dataString = default(string);
 
             while (dataString == null)
-            {
                 try
                 {
                     dataString = MakeWebRequest();
@@ -65,9 +58,10 @@ namespace biz.dfch.CS.Playground.Fynn._20191023
                         Task.Delay(1000 * retryCount);
                     }
                     else
+                    {
                         throw;
+                    }
                 }
-            }
 
             return dataString;
         }

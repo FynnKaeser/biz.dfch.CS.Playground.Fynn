@@ -25,7 +25,7 @@ namespace biz.dfch.CS.Playground.Fynn._20190918
         {
             var varString = $"Today is the {DateTime.Now.Day}";
 
-            string stringString = $"The month is {DateTime.Now.Month}";
+            var stringString = $"The month is {DateTime.Now.Month}";
 
             FormattableString formattableStringString = $"I am a new string {DateTime.Now.Year}";
 

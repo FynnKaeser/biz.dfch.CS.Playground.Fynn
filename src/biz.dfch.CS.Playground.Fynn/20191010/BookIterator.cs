@@ -17,13 +17,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace biz.dfch.CS.Playground.Fynn._20191010
 {
-
     public class Iterator
     {
         public static IEnumerable<char> GenerateAlphabet()
@@ -39,35 +35,42 @@ namespace biz.dfch.CS.Playground.Fynn._20191010
 
     public class EmbeddedIterator : IEnumerable<char>
     {
-        public IEnumerator<char> GetEnumerator() =>
-            new LetterEnumerator();
+        public IEnumerator<char> GetEnumerator()
+        {
+            return new LetterEnumerator();
+        }
 
-        IEnumerator IEnumerable.GetEnumerator() =>
-            new LetterEnumerator();
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return new LetterEnumerator();
+        }
 
-        public static IEnumerable<char> GenerateAlphabet() =>
-            new EmbeddedIterator();
+        public static IEnumerable<char> GenerateAlphabet()
+        {
+            return new EmbeddedIterator();
+        }
 
         private class LetterEnumerator : IEnumerator<char>
         {
-            private char letter = (char)('a' - 1);
-
             public bool MoveNext()
             {
-                letter++;
-                return letter <= 'z';
+                Current++;
+                return Current <= 'z';
             }
 
-            public char Current => letter;
+            public char Current { get; private set; } = (char) ('a' - 1);
 
-            object IEnumerator.Current => letter;
+            object IEnumerator.Current => Current;
 
-            public void Reset() =>
-                letter = (char)('a' - 1);
+            public void Reset()
+            {
+                Current = (char) ('a' - 1);
+            }
 
 
-            void IDisposable.Dispose() { }
+            void IDisposable.Dispose()
+            {
+            }
         }
     }
-
 }

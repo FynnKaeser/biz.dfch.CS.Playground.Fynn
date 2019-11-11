@@ -14,12 +14,7 @@
  * limitations under the License.
  */
 
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace biz.dfch.CS.Playground.Fynn._20191010
 {
@@ -28,10 +23,7 @@ namespace biz.dfch.CS.Playground.Fynn._20191010
         public string CallIteratorMethod()
         {
             var allNumbersAsString = "";
-            foreach (var number in Numbers())
-            {
-                allNumbersAsString += number.ToString();
-            }
+            foreach (var number in Numbers()) allNumbersAsString += number.ToString();
 
             return allNumbersAsString;
         }

@@ -18,8 +18,8 @@ namespace biz.dfch.CS.Playground.Fynn._20191002
 {
     public class UsageExtensionMethod
     {
-        public string MyString = "abc 123";
         public string MySecondString = "aaacccddd";
+        public string MyString = "abc 123";
 
         public void DoStuff()
         {

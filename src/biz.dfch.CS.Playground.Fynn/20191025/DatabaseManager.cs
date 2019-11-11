@@ -20,13 +20,78 @@ namespace biz.dfch.CS.Playground.Fynn._20191025
 {
     public class DatabaseManager
     {
-        private static void CreateCommand(string queryString, string connectionString)
+        public void ExecuteCommandWrong(string connString, string commandString)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            var myConnection = new SqlConnection(connString);
+            var mySqlCommand = new SqlCommand(commandString, myConnection);
+
+            myConnection.Open();
+            mySqlCommand.ExecuteNonQuery();
+        }
+
+        public void ExecuteCommand(string connString, string commandString)
+        {
+            using (var myConnection = new SqlConnection(connString))
             {
-                SqlCommand command = new SqlCommand(queryString, connection);
-                command.Connection.Open();
-                command.ExecuteNonQuery();
+                using (var mySqlCommand = new SqlCommand(commandString, myConnection))
+                {
+                    myConnection.Open();
+                    mySqlCommand.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void ExecuteCommandTryFinallyNested(string connString, string commandString)
+        {
+            SqlConnection myConnection = null;
+            SqlCommand mySqlCommand = null;
+            try
+            {
+                myConnection = new SqlConnection(connString);
+                try
+                {
+                    mySqlCommand = new SqlCommand(commandString, myConnection);
+
+                    myConnection.Open();
+                    mySqlCommand.ExecuteNonQuery();
+                }
+                finally
+                {
+                    mySqlCommand?.Dispose();
+                }
+            }
+            finally
+            {
+                myConnection?.Dispose();
+            }
+        }
+
+        public void ExecuteCommandTryFinally(string connString, string commandString)
+        {
+            SqlConnection myConnection = null;
+            SqlCommand mySqlCommand = null;
+            try
+            {
+                myConnection = new SqlConnection(connString);
+                mySqlCommand = new SqlCommand(commandString, myConnection);
+
+                myConnection.Open();
+                mySqlCommand.ExecuteNonQuery();
+            }
+            finally
+            {
+                mySqlCommand?.Dispose();
+                myConnection?.Dispose();
+            }
+        }
+
+        public void ExecuteCommand2(string connString, string commandString)
+        {
+            using (var myConnection = new SqlConnection(connString))
+            using (var mySqlCommand = new SqlCommand(commandString, myConnection))
+            {
+                myConnection.Open();
+                mySqlCommand.ExecuteNonQuery();
             }
         }
     }

@@ -24,15 +24,9 @@ namespace biz.dfch.CS.Playground.Fynn._20191014
     {
         public static IEnumerable<string> Zip(IEnumerable<string> first, IEnumerable<string> second)
         {
-            if (null == first || null == second)
-            {
-                throw new ArgumentNullException();
-            }
+            if (null == first || null == second) throw new ArgumentNullException();
 
-            if (first.Count() != second.Count())
-            {
-                throw new ArgumentException($"Sequences don't have the same lenght");
-            }
+            if (first.Count() != second.Count()) throw new ArgumentException("Sequences don't have the same lenght");
 
             using (var firstSequence = first.GetEnumerator())
             {
@@ -41,14 +35,13 @@ namespace biz.dfch.CS.Playground.Fynn._20191014
                 {
                     while (firstSequence.MoveNext() &&
                            secondSequence.MoveNext())
-                    {
                         yield return $"{firstSequence.Current} {secondSequence.Current}";
-                    }
                 }
             }
         }
 
-        public static IEnumerable<TResult> ZipFunc<T1, T2, TResult>(IEnumerable<T1> first, IEnumerable<T2> second, Func<T1, T2, TResult> zipper)
+        public static IEnumerable<TResult> ZipFunc<T1, T2, TResult>(IEnumerable<T1> first, IEnumerable<T2> second,
+            Func<T1, T2, TResult> zipper)
         {
             using (var firstSequence = first.GetEnumerator())
             {
@@ -57,10 +50,8 @@ namespace biz.dfch.CS.Playground.Fynn._20191014
                 {
                     while (firstSequence.MoveNext() &&
                            secondSequence.MoveNext())
-                    {
                         yield return zipper(firstSequence.Current,
                             secondSequence.Current);
-                    }
                 }
             }
         }

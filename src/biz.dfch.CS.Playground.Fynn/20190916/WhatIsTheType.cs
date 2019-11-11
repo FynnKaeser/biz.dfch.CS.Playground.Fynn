@@ -15,15 +15,11 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace biz.dfch.CS.Playground.Fynn._20190916
 {
     public class WhatIsTheType
-    { 
+    {
         public void DeclaredType()
         {
             var f = 10;

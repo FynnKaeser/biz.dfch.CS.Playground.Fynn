@@ -14,16 +14,11 @@
  * limitations under the License.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace FynnBlog
 {
     // ReSharper disable once UnusedMember.Global
     // ReSharper disable once ArrangeModifiersOrder
     sealed public class SealedClass
     {
-
     }
 }

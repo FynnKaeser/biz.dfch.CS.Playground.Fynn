@@ -14,22 +14,15 @@
  * limitations under the License.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace biz.dfch.CS.Playground.Fynn._20191023
 {
     public class Customer
     {
-        public int Balance { get; set; }
-
         public Customer(int balance)
         {
             Balance = balance;
         }
+
+        public int Balance { get; set; }
     }
 }

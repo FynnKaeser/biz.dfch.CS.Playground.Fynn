@@ -17,9 +17,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace biz.dfch.CS.Playground.Fynn._20191016
 {
@@ -36,13 +33,17 @@ namespace biz.dfch.CS.Playground.Fynn._20191016
             // elided
             var x = new Component();
         }
-        // Other apis elided
 
+        // Other apis elided
     }
+
     //The usage for this second version is quite a bit more work:
     public class MyPredicate : IPredicate<int>
     {
-        public bool Match(int target) => target < 100;
+        public bool Match(int target)
+        {
+            return target < 100;
+        }
     }
 
     public static class Item34
@@ -59,10 +60,8 @@ namespace biz.dfch.CS.Playground.Fynn._20191016
                 {
                     while (firstSequence.MoveNext() &&
                            secondSequence.MoveNext())
-                    {
                         yield return zipper(firstSequence.Current,
                             secondSequence.Current);
-                    }
                 }
             }
         }

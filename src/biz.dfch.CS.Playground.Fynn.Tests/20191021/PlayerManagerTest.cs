@@ -32,7 +32,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191021
             var meier = sut.CreatePlayer("Fynn", "Meier", 10);
 
             // Act
-            var result = sut.GetFirstPlayer(firstName: "Fynn");
+            var result = sut.GetFirstPlayer("Fynn");
 
             // Assert
             Assert.AreEqual(result.LastName, expected.LastName);
@@ -48,7 +48,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191021
             var meier = sut.CreatePlayer("Fynn", "Meier", 10);
 
             // Act
-            var x = sut.GetFirstPlayer(firstName: "Kevin");
+            var x = sut.GetFirstPlayer("Kevin");
 
             // Assert
             // Intentionally nothing
@@ -64,7 +64,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191021
             var meier = sut.CreatePlayer("Fynn", "Meier", 10);
 
             // Act
-            var x = sut.GetSinglePlayer(firstName: "Fynn");
+            var x = sut.GetSinglePlayer("Fynn");
 
             // Assert
             // Intentionally nothing
@@ -80,7 +80,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191021
             var meier = sut.CreatePlayer("Fynn", "Meier", 10);
 
             // Act
-            var x = sut.GetSinglePlayer(firstName: "Kevin");
+            var x = sut.GetSinglePlayer("Kevin");
 
             // Assert
             // Intentionally nothing
@@ -95,7 +95,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191021
             var meier = sut.CreatePlayer("Fynn", "Meier", 10);
 
             // Act
-            var result = sut.GetFirstOrDefaultPlayer(firstName: "Kevin");
+            var result = sut.GetFirstOrDefaultPlayer("Kevin");
 
             // Assert
             Assert.AreEqual(result, null);
@@ -110,7 +110,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191021
             var meier = sut.CreatePlayer("Fynn", "Meier", 10);
 
             // Act
-            var result = sut.GetFirstOrDefaultPlayer(firstName: "Fynn");
+            var result = sut.GetFirstOrDefaultPlayer("Fynn");
 
             // Assert
             Assert.AreEqual(result.LastName, expected.LastName);
@@ -126,7 +126,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191021
             var meier = sut.CreatePlayer("Fynn", "Meier", 10);
 
             // Act
-            var result = sut.GetSingleOrDefaultPlayer(firstName: "Kevin");
+            var result = sut.GetSingleOrDefaultPlayer("Kevin");
 
             // Assert
             Assert.AreEqual(result, null);
@@ -142,11 +142,10 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191021
             var meier = sut.CreatePlayer("Fynn", "Meier", 10);
 
             // Act
-            var result = sut.GetSingleOrDefaultPlayer(firstName: "Fynn");
+            var result = sut.GetSingleOrDefaultPlayer("Fynn");
 
             // Assert
             // Intentionally nothing
         }
-
     }
 }

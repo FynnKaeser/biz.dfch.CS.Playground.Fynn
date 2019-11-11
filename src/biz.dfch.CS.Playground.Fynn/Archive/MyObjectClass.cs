@@ -9,16 +9,22 @@ namespace FynnBlog
         public object Obj1 = new object();
 
         public object Obj2 => new object();
-                      
+
         public object Obj3 { get; } = new object();
-                      
-        public object Obj4 { get => new object();}
-                      
-        public object Obj5 { get { return new object(); } }
+
+        public object Obj4
+        {
+            get => new object();
+        }
+
+        public object Obj5
+        {
+            get { return new object(); }
+        }
 
         public void DoSomething()
         {
-            for (int i = 0; i < 11; i++)
+            for (var i = 0; i < 11; i++)
             {
                 Console.WriteLine("OBJ1: " + Obj1.GetHashCode());
                 Console.WriteLine("OBJ2: " + Obj2.GetHashCode());
@@ -28,8 +34,7 @@ namespace FynnBlog
             }
         }
 
-        
-        
+
         /*
          * All except for Obj1 are properties and Obj1 is a field
          * All properties have no setter => they are read only

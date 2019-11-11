@@ -14,30 +14,19 @@
  * limitations under the License.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace biz.dfch.CS.Playground.Fynn._20190926
 {
     public class MySingleton
     {
-        private static readonly MySingleton _mySingleton;
-
         static MySingleton()
         {
-            _mySingleton = new MySingleton();
-        }
-
-        public static MySingleton Singleton
-        {
-            get { return _mySingleton; }
+            Singleton = new MySingleton();
         }
 
         private MySingleton()
         {
         }
+
+        public static MySingleton Singleton { get; }
     }
 }

@@ -30,7 +30,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191014
         public void ZipWithNullFirstSequenceThrowsArgumentNullException()
         {
             // Arrange
-            var second = new List<string> { "fourth", "fifth", "sixth" };
+            var second = new List<string> {"fourth", "fifth", "sixth"};
 
             // Act
             var result = Item31.Zip(null, second);
@@ -48,7 +48,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191014
         public void ZipWithNullSecondSequenceThrowsArgumentNullException()
         {
             // Arrange
-            var first = new List<string> { "fourth", "fifth", "sixth" };
+            var first = new List<string> {"fourth", "fifth", "sixth"};
 
             // Act
             var result = Item31.Zip(first, null);
@@ -66,8 +66,8 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191014
         public void ZipWithTwoSequencesOfDifferentLengthThrowsArgumentException()
         {
             // Arrange
-            var first = new List<string> { "first", "second", "third", "firstFourth" };
-            var second = new List<string> { "fourth", "fifth", "sixth" };
+            var first = new List<string> {"first", "second", "third", "firstFourth"};
+            var second = new List<string> {"fourth", "fifth", "sixth"};
 
             // Act
             var result = Item31.Zip(first, second);
@@ -84,8 +84,8 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191014
         public void ZipTwoIEnumerableSequencesReturnsZippedSequenceSucceeds()
         {
             // Arrange
-            var first = new List<string>{"first", "second", "third"};
-            var second = new List<string>{"fourth", "fifth", "sixth"};
+            var first = new List<string> {"first", "second", "third"};
+            var second = new List<string> {"fourth", "fifth", "sixth"};
             var expected = new List<string>
             {
                 "first fourth",

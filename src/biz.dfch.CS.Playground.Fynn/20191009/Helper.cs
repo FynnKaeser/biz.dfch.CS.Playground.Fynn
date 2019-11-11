@@ -21,16 +21,44 @@ namespace biz.dfch.CS.Playground.Fynn._20191009
 {
     public static class Helper
     {
-        public static T Max<T>(T left, T right) => Comparer<T>.Default.Compare(left, right) < 0 ? right : left;
-        public static T Min<T>(T left, T right) => Comparer<T>.Default.Compare(left, right) < 0 ? left : right;
+        public static T Max<T>(T left, T right)
+        {
+            return Comparer<T>.Default.Compare(left, right) < 0 ? right : left;
+        }
 
-        public static int Max(int left, int right) => Math.Max(left, right);
-        public static int Min(int left, int right) => Math.Min(left, right);
+        public static T Min<T>(T left, T right)
+        {
+            return Comparer<T>.Default.Compare(left, right) < 0 ? left : right;
+        }
 
-        public static float Max(float left, float right) => Math.Max(left, right);
-        public static float Min(float left, float right) => Math.Min(left, right);
+        public static int Max(int left, int right)
+        {
+            return Math.Max(left, right);
+        }
 
-        public static double Max(double left, double right) => Math.Max(left, right);
-        public static double Min(double left, double right) => Math.Min(left, right);
+        public static int Min(int left, int right)
+        {
+            return Math.Min(left, right);
+        }
+
+        public static float Max(float left, float right)
+        {
+            return Math.Max(left, right);
+        }
+
+        public static float Min(float left, float right)
+        {
+            return Math.Min(left, right);
+        }
+
+        public static double Max(double left, double right)
+        {
+            return Math.Max(left, right);
+        }
+
+        public static double Min(double left, double right)
+        {
+            return Math.Min(left, right);
+        }
     }
 }

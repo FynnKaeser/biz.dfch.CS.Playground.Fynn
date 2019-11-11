@@ -33,7 +33,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20190830
 
             // Act
             sut.Add(1, value1);
-            sut.Add(2, value2); 
+            sut.Add(2, value2);
 
             // Assert
             Assert.AreEqual(2, sut.Count);
@@ -57,7 +57,6 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20190830
             sut.Add(1, value2);
 
             // Assert
-
         }
     }
 }

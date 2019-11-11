@@ -55,7 +55,7 @@ namespace biz.dfch.CS.Playground.Fynn._20191009
     public class MyType
     {
         public static string PublicStaticString { get; set; }
-        
+
         public static void PublicMethod()
         {
             // Do Stuff

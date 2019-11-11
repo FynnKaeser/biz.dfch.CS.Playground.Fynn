@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-using System;
 using System.Collections.Generic;
 using biz.dfch.CS.Playground.Fynn._20191002;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -32,7 +31,8 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191002
 
             // Act
             IEnumerable<object> enumerable = new List<object>();
-            IEnumerable<GenericCovarianceAndContravariance> enumerableMyType = new List<GenericCovarianceAndContravariance>();
+            IEnumerable<GenericCovarianceAndContravariance> enumerableMyType =
+                new List<GenericCovarianceAndContravariance>();
             sut.ObjectEnumerableGenericType(enumerable);
             sut.ObjectEnumerableGenericType(enumerableMyType);
 

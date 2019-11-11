@@ -14,39 +14,23 @@
  * limitations under the License.
  */
 
-using System;
-using biz.dfch.CS.Playground.Fynn._20190918;
+using biz.dfch.CS.Playground.Fynn._20191029;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace biz.dfch.CS.Playground.Fynn.Tests._20190918
+namespace biz.dfch.CS.Playground.Fynn.Tests._20191029
 {
     [TestClass]
-    public class NameOfClassTest
+    public class ExceptionManagerTest
     {
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException), "Cant be null!")]
-        public void CallingExceptionMessageMethodWithNullSucceedsIfThrowsAnArgumentNullException()
+        public void TestMethod1()
         {
             // Arrange
-            var sut = new NameOfClass();
 
             // Act
-            sut.ExceptionMessage(null);
+            ExceptionManager.DoStuff();
 
-            //Assert
-            // N/A
-        }
-
-        [TestMethod]
-        public void NameOfTwoObjectsAreTheSameAndReturnTrue()
-        {
-            // Arrange
-            var sut = new NameOfClass();
-
-            // Act
-            sut.ChangeNameOfProperty();
-
-            //Assert
+            // Assert
         }
     }
 }

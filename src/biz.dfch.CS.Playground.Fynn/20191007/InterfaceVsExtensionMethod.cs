@@ -16,7 +16,6 @@
 
 
 using System;
-using System.Globalization;
 
 namespace biz.dfch.CS.Playground.Fynn._20191007
 {
@@ -65,8 +64,6 @@ namespace biz.dfch.CS.Playground.Fynn._20191007
                 Console.WriteLine("-");
                 // Draw rectangle
             }
-
-            
         }
 
         public class Circle : IDrawable
@@ -78,7 +75,6 @@ namespace biz.dfch.CS.Playground.Fynn._20191007
                 this.DrawBold(x);
                 x.DrawBold();
             }
-            
         }
 
         public class Triangle : IDrawable

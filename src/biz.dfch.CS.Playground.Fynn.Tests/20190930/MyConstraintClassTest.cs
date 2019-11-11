@@ -14,22 +14,14 @@
  * limitations under the License.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using biz.dfch.CS.Playground.Fynn._20190830;
 using biz.dfch.CS.Playground.Fynn._20190930;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Telerik.JustMock.AutoMock.Ninject.Syntax;
 
 namespace biz.dfch.CS.Playground.Fynn.Tests._20190930
 {
     [TestClass]
     public class MyConstraintClassTest
     {
-
         [TestMethod]
         public void TwoIntegerValuesAreComparableAndReturnTrue()
         {

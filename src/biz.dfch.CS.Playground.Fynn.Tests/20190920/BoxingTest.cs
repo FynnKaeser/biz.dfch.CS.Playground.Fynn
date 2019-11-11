@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace biz.dfch.CS.Playground.Fynn.Tests._20190920
@@ -26,7 +25,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20190920
         public void BoxingIntSucceeds()
         {
             // Arrange
-            int i = 5;
+            var i = 5;
 
             // Act
             var result = $"Result = {i}";
@@ -39,7 +38,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20190920
         public void BoxingIntSucceeds2()
         {
             // Arrange
-            int i = 5;
+            var i = 5;
             object o = i; // box
 
             o = new Arbitrary();

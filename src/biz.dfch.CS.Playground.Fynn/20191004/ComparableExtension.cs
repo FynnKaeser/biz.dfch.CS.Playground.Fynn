@@ -15,28 +15,39 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace biz.dfch.CS.Playground.Fynn._20191004
 {
     public static class ComparableExtension
     {
         public static bool LessThan<T>(this T left, T right)
-            where T : IComparable<T> => left.CompareTo(right) < 0;
+            where T : IComparable<T>
+        {
+            return left.CompareTo(right) < 0;
+        }
 
         public static bool GreaterThan<T>(this T left, T right)
-            where T : IComparable<T> => left.CompareTo(right) > 0;
+            where T : IComparable<T>
+        {
+            return left.CompareTo(right) > 0;
+        }
 
         public static bool LessThanEqual<T>(this T left, T right)
-            where T : IComparable<T> => left.CompareTo(right) <= 0;
+            where T : IComparable<T>
+        {
+            return left.CompareTo(right) <= 0;
+        }
 
         public static bool GreaterThanEqual<T>(this T left, T right)
-            where T : IComparable<T> => left.CompareTo(right) >= 0;
+            where T : IComparable<T>
+        {
+            return left.CompareTo(right) >= 0;
+        }
 
         public static bool IsEqualTo<T>(this T left, T right)
-            where T : IComparable<T> => left.CompareTo(right) == 0;
+            where T : IComparable<T>
+        {
+            return left.CompareTo(right) == 0;
+        }
     }
 }

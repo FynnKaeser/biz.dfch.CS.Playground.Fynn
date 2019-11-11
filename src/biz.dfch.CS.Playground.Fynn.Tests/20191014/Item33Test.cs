@@ -31,7 +31,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191014
             const int NUMBER_OF_ELEMENTS = 10;
             const int START_AT = 0;
             const int STEP_BY = 3;
-            IList<int> expected = new List<int> { 0, 3, 6, 9, 12, 15, 18, 21, 24, 27 };
+            IList<int> expected = new List<int> {0, 3, 6, 9, 12, 15, 18, 21, 24, 27};
 
             // Act 
             var actual = Item33.CreateSequence(NUMBER_OF_ELEMENTS, START_AT, STEP_BY);
@@ -48,7 +48,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191014
             const int NUMBER_OF_ELEMENTS = 10;
             const int START_AT = 0;
             const int STEP_BY = 3;
-            IList<int> expected = new List<int> { 0, 3, 6, 9, 12, 15, 18, 21, 24, 26 };
+            IList<int> expected = new List<int> {0, 3, 6, 9, 12, 15, 18, 21, 24, 26};
 
             // Act 
             var actual = Item33.CreateSequence(NUMBER_OF_ELEMENTS, START_AT, STEP_BY);
@@ -65,7 +65,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191014
             const int NUMBER_OF_ELEMENTS = 5;
             const int START_AT = 0;
             const int STEP_BY = 0;
-            IList<int> expected = new List<int> { 0, 0, 0, 0, 0 };
+            IList<int> expected = new List<int> {0, 0, 0, 0, 0};
 
             // Act 
             var actual = Item33.CreateSequence(NUMBER_OF_ELEMENTS, START_AT, STEP_BY);
@@ -82,7 +82,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191014
             const int NUMBER_OF_ELEMENTS = 5;
             const int START_AT = -5;
             const int STEP_BY = 0;
-            IList<int> expected = new List<int> { -5, -5, -5, -5, -5 };
+            IList<int> expected = new List<int> {-5, -5, -5, -5, -5};
 
             // Act 
             var actual = Item33.CreateSequence(NUMBER_OF_ELEMENTS, START_AT, STEP_BY);
@@ -102,22 +102,21 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191014
 
             // Act 
             var actual = Item33.CreateSequence(NUMBER_OF_ELEMENTS, START_AT, STEP_BY);
-           
+
             // Assert
-            Assert.AreEqual("" ,actual);
+            Assert.AreEqual("", actual);
         }
 
         [TestMethod]
         public void TestForDebug()
         {
             // Arrange
-            var sequence = Item33.CreateSequence(10000, 0, 7).TakeWhile((num) => num < 1000);
+            var sequence = Item33.CreateSequence(10000, 0, 7).TakeWhile(num => num < 1000);
 
             // Act
             var x = sequence.Count();
 
             // Assert
-
         }
     }
 }

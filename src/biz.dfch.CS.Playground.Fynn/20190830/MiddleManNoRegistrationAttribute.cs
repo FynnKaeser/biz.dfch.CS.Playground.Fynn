@@ -21,6 +21,5 @@ namespace biz.dfch.CS.Playground.Fynn._20190830
     [AttributeUsage(AttributeTargets.Class)]
     public class MiddleManNoRegistrationAttribute : Attribute
     {
-        
     }
 }

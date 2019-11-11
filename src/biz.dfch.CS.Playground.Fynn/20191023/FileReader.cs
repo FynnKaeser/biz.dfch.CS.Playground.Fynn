@@ -15,17 +15,14 @@
  */
 
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace biz.dfch.CS.Playground.Fynn._20191023
 {
     public class FileReader
     {
-        private const string FILE_PATH = @"C:\\src\\biz.dfch.CS.Playground.Fynn\\src\\biz.dfch.CS.Playground.Fynn\\20191023\\Assets\\";
+        private const string FILE_PATH =
+            @"C:\\src\\biz.dfch.CS.Playground.Fynn\\src\\biz.dfch.CS.Playground.Fynn\\20191023\\Assets\\";
 
         public static bool OpenFile(string fileName)
         {
@@ -43,7 +40,6 @@ namespace biz.dfch.CS.Playground.Fynn._20191023
 
         public static bool OpenFileTryCatch(string fileName)
         {
-
             var filePath = FILE_PATH + fileName;
             StreamReader myStream = null;
 

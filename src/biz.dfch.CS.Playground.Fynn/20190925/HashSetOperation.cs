@@ -29,7 +29,8 @@ namespace biz.dfch.CS.Playground.Fynn._20190925
             var map = MyHashSet;
 
             map.UnionWith(MyTestHashSet); // Has no return --> modify the current collection
-            var unionEnumerable = map.Union(MyTestHashSet); // Using LINQ set operations, has always a return value (new IEnumerable<T> collection)
+            var unionEnumerable =
+                map.Union(MyTestHashSet); // Using LINQ set operations, has always a return value (new IEnumerable<T> collection)
 
             map.IntersectWith(MyTestHashSet);
             var intersectEnumerable = map.Intersect(MyHashSet);

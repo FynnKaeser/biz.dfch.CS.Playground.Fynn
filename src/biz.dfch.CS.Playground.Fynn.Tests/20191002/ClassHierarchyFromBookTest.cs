@@ -15,7 +15,6 @@
  */
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using biz.dfch.CS.Playground.Fynn._20191002;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -31,7 +30,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191002
             // Arrange
             var sut = new Planet();
             var planet = new Planet();
-            Planet[] planets = new Planet[5];
+            var planets = new Planet[5];
             IEnumerable<Planet> enumerable = null;
             IComparable<Planet> comparable = null;
 
@@ -43,7 +42,6 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191002
 
             // Assert
             // N/A
-
         }
     }
 }

@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-using System;
 using biz.dfch.CS.Playground.Fynn._20191018;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -28,7 +27,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20191018
         {
             var x = Item40.DoStuff(Item40.One(), Item40.Two(), Item40.Three());
 
-            var answer = Item40.DoStuff(() => Item40.One(),() => Item40.Two(),() => Item40.Three());
+            var answer = Item40.DoStuff(() => Item40.One(), () => Item40.Two(), () => Item40.Three());
         }
     }
 }

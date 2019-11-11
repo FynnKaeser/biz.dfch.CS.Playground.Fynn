@@ -15,12 +15,10 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace FynnBlog
 {
-    abstract class ClassWithSealedMethodGrandParent
+    internal abstract class ClassWithSealedMethodGrandParent
     {
         protected virtual void SealedMethod()
         {
@@ -28,6 +26,5 @@ namespace FynnBlog
         }
 
         protected abstract void Method();
-
     }
 }

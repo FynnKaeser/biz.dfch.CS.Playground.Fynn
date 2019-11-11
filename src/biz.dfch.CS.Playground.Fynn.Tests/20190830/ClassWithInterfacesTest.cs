@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Telerik.JustMock.AutoMock.Ninject.Infrastructure.Language;
 /**
  * Copyright 2019 d-fens GmbH
  *
@@ -15,44 +17,11 @@
  * limitations under the License.
  */
 
-using System.Linq;
-using Telerik.JustMock.AutoMock.Ninject.Infrastructure.Language;
-
 namespace biz.dfch.CS.Playground.Fynn.Tests._20190830
 {
     [TestClass]
     public class ClassWithInterfacesTest
     {
-        public interface IDirectInterface
-        {
-
-        }
-
-        public interface IIndirectInterface
-        {
-
-        }
-
-        public class BaseClassWithIndirectInterface : IIndirectInterface
-        {
-
-        }
-
-        public class BaseClassWithDirectAndIndirectInterface : IIndirectInterface, IDirectInterface
-        {
-
-        }
-
-        public class ClassWithInterfaces : BaseClassWithIndirectInterface, IDirectInterface
-        {
-
-        }
-
-        public class ClassWithInterfacesAndBaseClassWithInheritedInterface : BaseClassWithDirectAndIndirectInterface
-        {
-
-        }
-
         [TestMethod]
         public void ClassWithOnlyDirectInterfaceReturnsTrue()
         {
@@ -91,6 +60,30 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20190830
 
             // Assert
             Assert.IsFalse(result);
+        }
+
+        public interface IDirectInterface
+        {
+        }
+
+        public interface IIndirectInterface
+        {
+        }
+
+        public class BaseClassWithIndirectInterface : IIndirectInterface
+        {
+        }
+
+        public class BaseClassWithDirectAndIndirectInterface : IIndirectInterface, IDirectInterface
+        {
+        }
+
+        public class ClassWithInterfaces : BaseClassWithIndirectInterface, IDirectInterface
+        {
+        }
+
+        public class ClassWithInterfacesAndBaseClassWithInheritedInterface : BaseClassWithDirectAndIndirectInterface
+        {
         }
     }
 }

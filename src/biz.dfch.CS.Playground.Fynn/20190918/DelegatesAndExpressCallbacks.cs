@@ -14,23 +14,17 @@
  * limitations under the License.
  */
 
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace biz.dfch.CS.Playground.Fynn._20190918
 {
     public class DelegatesAndExpressCallbacks
     {
-
         public void OddNumbers()
         {
-            List<int> numbers = Enumerable.Range(1, 200).ToList();
+            var numbers = Enumerable.Range(1, 200).ToList();
 
             var oddNumbers = numbers.Find(n => n % 2 == 1);
-
         }
     }
 }

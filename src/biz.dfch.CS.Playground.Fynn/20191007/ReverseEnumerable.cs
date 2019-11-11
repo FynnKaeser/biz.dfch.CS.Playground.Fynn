@@ -14,50 +14,16 @@
  * limitations under the License.
  */
 
-using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace biz.dfch.CS.Playground.Fynn._20191007
 {
     public sealed class ReverseEnumerable<T> : IEnumerable<T>
     {
-        private class ReverseEnumerator : IEnumerator<T>
-        {
-            int currentIndex;
-            IList<T> collection;
+        private IList<T> originalSequenceList;
 
-            public ReverseEnumerator(IList<T> srcCollection)
-            {
-                collection = srcCollection;
-                currentIndex = collection.Count;
-            }
-
-            //  IEnumerator<T> Members
-            public T Current => collection[currentIndex];
-
-            // IDisposable Members
-            public void Dispose()
-            {
-                // no implementation but necessary
-                // because IEnumerator<T> implements IDisposable
-                // No protected Dispose() needed
-                // because this class is sealed.
-            }
-
-            //   IEnumerator Members
-            object System.Collections.IEnumerator.Current
-                => this.Current;
-
-            public bool MoveNext() => --currentIndex >= 0;
-
-            public void Reset() => currentIndex = collection.Count;
-        }
-
-        IEnumerable<T> sourceSequenceEnumerable;
-        IList<T> originalSequenceList;
+        private readonly IEnumerable<T> sourceSequenceEnumerable;
 
         public ReverseEnumerable(IEnumerable<T> sequence)
         {
@@ -82,15 +48,56 @@ namespace biz.dfch.CS.Playground.Fynn._20191007
             if (originalSequenceList == null)
             {
                 originalSequenceList = new List<T>();
-                foreach (T item in sourceSequenceEnumerable)
+                foreach (var item in sourceSequenceEnumerable)
                     originalSequenceList.Add(item);
             }
+
             return new ReverseEnumerator(originalSequenceList);
         }
 
         // IEnumerable Members
-        System.Collections.IEnumerator
-            System.Collections.IEnumerable.GetEnumerator() =>
-            this.GetEnumerator();
+        IEnumerator
+            IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        private class ReverseEnumerator : IEnumerator<T>
+        {
+            private readonly IList<T> collection;
+            private int currentIndex;
+
+            public ReverseEnumerator(IList<T> srcCollection)
+            {
+                collection = srcCollection;
+                currentIndex = collection.Count;
+            }
+
+            //  IEnumerator<T> Members
+            public T Current => collection[currentIndex];
+
+            // IDisposable Members
+            public void Dispose()
+            {
+                // no implementation but necessary
+                // because IEnumerator<T> implements IDisposable
+                // No protected Dispose() needed
+                // because this class is sealed.
+            }
+
+            //   IEnumerator Members
+            object IEnumerator.Current
+                => Current;
+
+            public bool MoveNext()
+            {
+                return --currentIndex >= 0;
+            }
+
+            public void Reset()
+            {
+                currentIndex = collection.Count;
+            }
+        }
     }
 }

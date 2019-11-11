@@ -15,14 +15,14 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace FynnBlog
 {
-    class ClassWithSealedMethodParent : ClassWithSealedMethodGrandParent
+    internal class ClassWithSealedMethodParent : ClassWithSealedMethodGrandParent
     {
-        protected sealed override void SealedMethod(){}
+        protected sealed override void SealedMethod()
+        {
+        }
 
         protected override void Method()
         {
