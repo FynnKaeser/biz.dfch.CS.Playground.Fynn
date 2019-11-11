@@ -90,7 +90,6 @@
     <Compile Include="20191025\DatabaseManager.cs" />
     <Compile Include="20191028\Foo.cs" />
     <Compile Include="20191029\ExceptionManager.cs" />
-    <Compile Include="20191111\PrimeNumbersManager.cs" />
     <Compile Include="Archive\ClassWithSealedMethodChild.cs" />
     <Compile Include="Archive\ClassWithSealedMethodGrandParent.cs" />
     <Compile Include="Archive\ClassWithSealedMethodParent.cs" />
