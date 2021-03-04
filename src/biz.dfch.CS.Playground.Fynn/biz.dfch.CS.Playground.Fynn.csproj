@@ -150,7 +150,6 @@
     <Compile Include="20210114\FileNamingConventionExample\MyClass.IMySecondInterface.cs" />
     <Compile Include="20210114\FileNamingConventionExample\MyClass.MyAbstractClass.cs" />
     <None Include="20210304\KANTON_ZUERICH_43.csv" />
-    <None Include="20210304\taz.view_masterplan_velo.csv" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

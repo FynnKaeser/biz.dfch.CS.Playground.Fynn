@@ -30,14 +30,6 @@ namespace biz.dfch.CS.Playground.Fynn._20210304
         public string UnitShort { get; set; }
         public string UnitLong { get; set; }
 
-        private bool Equals(StatisticalOfficeZurichCsvData other)
-        {
-            return BfsNr.Equals(other.BfsNr) && RegionName.Equals(other.RegionName) && TopicName.Equals(other.TopicName) &&
-                   SetName.Equals(other.SetName) && SubsetName.Equals(other.SubsetName) && IndicatorId.Equals(other.IndicatorId) &&
-                   IndicatorName.Equals(other.IndicatorName) && IndicatorYear.Equals(other.IndicatorYear) && IndicatorValue.Equals(other.IndicatorValue) &&
-                   UnitShort.Equals(other.UnitShort) && UnitLong.Equals(other.UnitLong); 
-        }
-
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj)) return false;
@@ -62,6 +54,14 @@ namespace biz.dfch.CS.Playground.Fynn._20210304
             var unitLong = UnitLong == null ? 0 : UnitLong.GetHashCode();
 
             return bfsNr ^ regionName ^ topicName ^ setName ^ subsetName ^ indicatorId ^ indicatorName ^ indicatorYear ^ indicatorValue ^ unitShort ^ unitLong;
+        }
+
+        private bool Equals(StatisticalOfficeZurichCsvData other)
+        {
+            return BfsNr.Equals(other.BfsNr) && RegionName.Equals(other.RegionName) && TopicName.Equals(other.TopicName) &&
+                   SetName.Equals(other.SetName) && SubsetName.Equals(other.SubsetName) && IndicatorId.Equals(other.IndicatorId) &&
+                   IndicatorName.Equals(other.IndicatorName) && IndicatorYear.Equals(other.IndicatorYear) && IndicatorValue.Equals(other.IndicatorValue) &&
+                   UnitShort.Equals(other.UnitShort) && UnitLong.Equals(other.UnitLong);
         }
     }
 }

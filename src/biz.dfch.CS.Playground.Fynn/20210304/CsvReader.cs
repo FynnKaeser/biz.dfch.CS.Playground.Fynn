@@ -14,10 +14,8 @@
  * limitations under the License.
  */
 
-
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using System.IO;
 using System.Linq;
 using CsvHelper;
@@ -30,6 +28,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210304
         private const char Dot = '.';
         private const string Csv = "csv";
         private const string Txt = "txt";
+
         public List<TCsvData> GetCsvData<TCsvDataClassMap>(string filePath, CsvConfiguration csvConfiguration) where TCsvDataClassMap : ClassMap
         {
             if (null == filePath || null == csvConfiguration)
