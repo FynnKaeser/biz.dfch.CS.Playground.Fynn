@@ -22,8 +22,8 @@ namespace biz.dfch.CS.Playground.Fynn._20210202
         public void DoStuff()
         {
             var myFirstClass = new MyFirstClass();
-            myFirstClass.MyString = "Hello";
-            myFirstClass.MySecondString = "Hello";
+            //myFirstClass.MyString = "Hello";
+            //myFirstClass.MySecondString = "Hello";
         }
     }
 }

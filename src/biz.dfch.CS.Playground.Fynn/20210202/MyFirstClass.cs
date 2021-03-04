@@ -29,7 +29,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210202
 
         public void DoStuff()
         {
-            MyString = "Hello Class";
+            //MyString = "Hello Class";
             MySecondString = "Hello Class";
         }
     }

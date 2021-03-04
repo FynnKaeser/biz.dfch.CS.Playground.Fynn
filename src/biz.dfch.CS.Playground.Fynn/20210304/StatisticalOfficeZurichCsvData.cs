@@ -22,7 +22,7 @@ using System.Threading.Tasks;
 
 namespace biz.dfch.CS.Playground.Fynn._20210304
 {
-    public class CsvData
+    public class StatisticalOfficeZurichCsvData
     {
         public int BfsNr { get; set; }
         public string RegionName { get; set; }

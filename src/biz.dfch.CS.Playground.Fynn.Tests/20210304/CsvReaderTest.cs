@@ -14,13 +14,10 @@
  * limitations under the License.
  */
 
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
 using biz.dfch.CS.Playground.Fynn._20210304;
+using CsvHelper.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace biz.dfch.CS.Playground.Fynn.Tests
@@ -28,16 +25,22 @@ namespace biz.dfch.CS.Playground.Fynn.Tests
     [TestClass]
     public class CsvReaderTest
     {
-        private readonly List<CsvData> expectedCsvData = new List<CsvData>();
+        private readonly List<CsvGeographyData> expectedCsvData = new List<CsvGeographyData>();
+        private readonly string Semicolon = ";";
+        private readonly string FilePath = "C:\\src\\biz.dfch.CS.Playground.Fynn\\src\\biz.dfch.CS.Playground.Fynn\\20210304\\KANTON_ZUERICH_43.csv";
 
         [TestMethod]
         public void GetCsvDataReturnsExpectedData()
         {
            // Arrange
-           var sut = new CsvReader();
+           var sut = new CsvReader<CsvGeographyData>();
+           var csvConfiguration = new CsvConfiguration(CultureInfo.InvariantCulture)
+           {
+               Delimiter = Semicolon
+           };
 
-           // Act
-           var result = sut.GetCsvData("path");
+            // Act
+            var result = sut.GetCsvData<CsvGeographyDataMap>(FilePath, csvConfiguration);
 
            // Assert
            Assert.AreEqual(expectedCsvData, result);

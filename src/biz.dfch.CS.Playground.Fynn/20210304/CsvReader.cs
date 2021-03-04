@@ -16,14 +16,26 @@
 
 
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using CsvHelper.Configuration;
 
 namespace biz.dfch.CS.Playground.Fynn._20210304
 {
-    public class CsvReader
+    public class CsvReader<TCsvData>
     {
-        public List<CsvData> GetCsvData(string filePath)
+        public IEnumerable<TCsvData> GetCsvData<TCsvDataClassMap>(string filePath, CsvConfiguration csvConfiguration) where TCsvDataClassMap : ClassMap
         {
-            return default;
+            IEnumerable<TCsvData> csvDataRecords;
+
+            using (var reader = new StreamReader(filePath))
+            using (var csv = new CsvHelper.CsvReader(reader, csvConfiguration))
+            {
+                csv.Context.RegisterClassMap<TCsvDataClassMap>();
+                csvDataRecords = csv.GetRecords<TCsvData>();
+            }
+
+            return csvDataRecords;
         }
     }
 }
