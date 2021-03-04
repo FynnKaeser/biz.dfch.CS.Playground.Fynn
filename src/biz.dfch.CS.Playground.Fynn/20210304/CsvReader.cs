@@ -62,7 +62,6 @@ namespace biz.dfch.CS.Playground.Fynn._20210304
                     Console.WriteLine(e);
                     throw;
                 }
-
             }
         }
     }
