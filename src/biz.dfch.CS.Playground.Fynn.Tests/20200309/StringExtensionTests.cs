@@ -34,6 +34,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20200309
 
             // Act
             var result = str.Short();
+            var result2 = str.Short2();
 
             // Assert
             Assert.AreEqual(expected, result);

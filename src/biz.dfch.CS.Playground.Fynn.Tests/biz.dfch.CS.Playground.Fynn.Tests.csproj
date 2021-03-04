@@ -91,6 +91,8 @@
     <Compile Include="20191023\ExceptionFilterTest.cs" />
     <Compile Include="20191029\ExceptionManagerTest.cs" />
     <Compile Include="20200309\StringExtensionTests.cs" />
+    <Compile Include="20200417\TestClass1.cs" />
+    <Compile Include="20200417\TestClass2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

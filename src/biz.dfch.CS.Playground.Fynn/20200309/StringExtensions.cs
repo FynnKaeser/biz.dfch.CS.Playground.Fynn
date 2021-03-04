@@ -40,5 +40,20 @@ namespace biz.dfch.CS.Playground.Fynn._20200309
 
             return result.ToString();
         }
+
+        public static string Short2(this string str)
+        {
+            if (string.IsNullOrWhiteSpace(str)) return str;
+            var result = new StringBuilder();
+
+            var words = str.Split(SpaceSeparator).ToList();
+            words.ForEach(s =>
+            {
+                var myString = s.First().ToString().ToLower() + s.Substring(1);
+                result.Append(myString + "-");
+            });
+
+            return result.ToString();
+        }
     }
 }
