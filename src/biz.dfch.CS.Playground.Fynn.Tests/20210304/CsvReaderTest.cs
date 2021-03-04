@@ -14,9 +14,13 @@
  * limitations under the License.
  */
 
+using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
+using System.Linq;
 using biz.dfch.CS.Playground.Fynn._20210304;
+using CsvHelper;
 using CsvHelper.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -25,25 +29,157 @@ namespace biz.dfch.CS.Playground.Fynn.Tests
     [TestClass]
     public class CsvReaderTest
     {
-        private readonly List<CsvGeographyData> expectedCsvData = new List<CsvGeographyData>();
+        private readonly List<StatisticalOfficeZurichCsvData> expectedCsvData = new List<StatisticalOfficeZurichCsvData>
+        {
+            new StatisticalOfficeZurichCsvData
+            {
+                BfsNr = 1,
+                RegionName = "Aeugst a.A.",
+                TopicName = "Raum und Umwelt",
+                SetName = "Geographie, Flächen",
+                SubsetName = "Höhe",
+                IndicatorId = 43,
+                IndicatorName = "Höhe [m.ü.M.]",
+                IndicatorYear = 1995,
+                IndicatorValue = 700,
+                UnitShort = "m.ü.M.",
+                UnitLong = "Meter über Meer"
+            },
+            new StatisticalOfficeZurichCsvData
+            {
+                BfsNr = 2,
+                RegionName = "Affoltern a.A.",
+                TopicName = "Raum und Umwelt",
+                SetName = "Geographie, Flächen",
+                SubsetName = "Höhe",
+                IndicatorId = 43,
+                IndicatorName = "Höhe [m.ü.M.]",
+                IndicatorYear = 1995,
+                IndicatorValue = 494,
+                UnitShort = "m.ü.M.",
+                UnitLong = "Meter über Meer"
+            },
+            new StatisticalOfficeZurichCsvData
+            {
+                BfsNr = 3,
+                RegionName = "Bonstetten",
+                TopicName = "Raum und Umwelt",
+                SetName = "Geographie, Flächen",
+                SubsetName = "Höhe",
+                IndicatorId = 43,
+                IndicatorName = "Höhe [m.ü.M.]",
+                IndicatorYear = 1995,
+                IndicatorValue = 528,
+                UnitShort = "m.ü.M.",
+                UnitLong = "Meter über Meer"
+            },
+            new StatisticalOfficeZurichCsvData
+            {
+                BfsNr = 4,
+                RegionName = "Hausen a.A.",
+                TopicName = "Raum und Umwelt",
+                SetName = "Geographie, Flächen",
+                SubsetName = "Höhe",
+                IndicatorId = 43,
+                IndicatorName = "Höhe [m.ü.M.]",
+                IndicatorYear = 1995,
+                IndicatorValue = 617,
+                UnitShort = "m.ü.M.",
+                UnitLong = "Meter über Meer"
+            }
+        };
         private readonly string Semicolon = ";";
+        private readonly string Comma = ",";
         private readonly string FilePath = "C:\\src\\biz.dfch.CS.Playground.Fynn\\src\\biz.dfch.CS.Playground.Fynn\\20210304\\KANTON_ZUERICH_43.csv";
+        private readonly string WrongFilePath = "C:\\src\\biz.dfch.CS.Playground.Fynn\\src\\biz.dfch.CS.Playground.Fynn\\20210304\\ThisFileDoesNotExist.csv";
+        private readonly string FilePathNotEndingWithCsv = "C:\\src\\biz.dfch.CS.Playground.Fynn\\src\\biz.dfch.CS.Playground.Fynn\\20210304\\CsvReader.cs";
 
         [TestMethod]
-        public void GetCsvDataReturnsExpectedData()
+        public void GetCsvDataFromStatisticalOfficeZurichCsvDataReturnsExpectedData()
         {
-           // Arrange
-           var sut = new CsvReader<CsvGeographyData>();
-           var csvConfiguration = new CsvConfiguration(CultureInfo.InvariantCulture)
-           {
-               Delimiter = Semicolon
-           };
+            // Arrange
+            var sut = new CsvReader<StatisticalOfficeZurichCsvData>();
+
+            var csvConfiguration = new CsvConfiguration(CultureInfo.InvariantCulture)
+            {
+                Delimiter = Semicolon
+            };
 
             // Act
-            var result = sut.GetCsvData<CsvGeographyDataMap>(FilePath, csvConfiguration);
+            var result = sut.GetCsvData<StatisticalOfficeZurichCsvDataMap>(FilePath, csvConfiguration).ToList();
 
-           // Assert
-           Assert.AreEqual(expectedCsvData, result);
+            // Assert
+            for (int i = 0; i < expectedCsvData.Count; i++)
+            {
+                Assert.AreEqual(expectedCsvData[i], result[i]);
+            }
+        }
+        
+        [TestMethod]
+        [ExpectedException(typeof(FileNotFoundException))]
+        public void GetCsvDataWithNotExistingFileThrowsFileNotFoundException()
+        {
+            // Arrange
+            var sut = new CsvReader<StatisticalOfficeZurichCsvData>();
+
+            var csvConfiguration = new CsvConfiguration(CultureInfo.InvariantCulture)
+            {
+                Delimiter = Semicolon
+            };
+
+            // Act
+            var result = sut.GetCsvData<StatisticalOfficeZurichCsvDataMap>(WrongFilePath, csvConfiguration);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidDataException))]
+        public void GetCsvDataWithFileEndingNotEqualToCsvThrowsInvalidDataException()
+        {
+            // Arrange
+            var sut = new CsvReader<StatisticalOfficeZurichCsvData>();
+
+            var csvConfiguration = new CsvConfiguration(CultureInfo.InvariantCulture)
+            {
+                Delimiter = Semicolon
+            };
+
+            // Act
+            var result = sut.GetCsvData<StatisticalOfficeZurichCsvDataMap>(FilePathNotEndingWithCsv, csvConfiguration);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(HeaderValidationException))]
+        public void GetCsvDataFromStatisticalOfficeZurichCsvDataWithWrongCsvConfigurationThrowsFileNotFoundException()
+        {
+            // Arrange
+            var sut = new CsvReader<StatisticalOfficeZurichCsvData>();
+
+            var csvConfiguration = new CsvConfiguration(CultureInfo.InvariantCulture)
+            {
+                Delimiter = Comma
+            };
+
+            // Act
+            var result = sut.GetCsvData<StatisticalOfficeZurichCsvDataMap>(FilePath, csvConfiguration);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void GetCsvDataFromStatisticalOfficeZurichCsvDataWithCsvConfigurationSetToNullThrowsArgumentNullException()
+        {
+            // Arrange
+            var sut = new CsvReader<StatisticalOfficeZurichCsvData>();
+
+            // Act
+            var result = sut.GetCsvData<StatisticalOfficeZurichCsvDataMap>(FilePath, null);
+
+            // Assert
         }
     }
 }

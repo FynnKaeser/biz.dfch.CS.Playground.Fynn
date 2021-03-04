@@ -15,26 +15,56 @@
  */
 
 
+using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.IO;
+using System.Linq;
+using CsvHelper;
 using CsvHelper.Configuration;
 
 namespace biz.dfch.CS.Playground.Fynn._20210304
 {
     public class CsvReader<TCsvData>
     {
-        public IEnumerable<TCsvData> GetCsvData<TCsvDataClassMap>(string filePath, CsvConfiguration csvConfiguration) where TCsvDataClassMap : ClassMap
+        private const char Dot = '.';
+        private const string Csv = "csv";
+        private const string Txt = "txt";
+        public List<TCsvData> GetCsvData<TCsvDataClassMap>(string filePath, CsvConfiguration csvConfiguration) where TCsvDataClassMap : ClassMap
         {
-            IEnumerable<TCsvData> csvDataRecords;
-
-            using (var reader = new StreamReader(filePath))
-            using (var csv = new CsvHelper.CsvReader(reader, csvConfiguration))
+            if (null == filePath || null == csvConfiguration)
             {
-                csv.Context.RegisterClassMap<TCsvDataClassMap>();
-                csvDataRecords = csv.GetRecords<TCsvData>();
+                throw new ArgumentNullException();
             }
 
-            return csvDataRecords;
+            if (!File.Exists(filePath))
+            {
+                throw new FileNotFoundException();
+            }
+
+            var fileEnding = filePath.Substring(filePath.LastIndexOf(Dot) + 1);
+            if (fileEnding != Csv && fileEnding!= Txt)
+            {
+                throw new InvalidDataException();
+            }
+
+            using (var reader = new StreamReader(filePath))
+            using (var csv = new CsvReader(reader, csvConfiguration))
+            {
+                try
+                {
+                    csv.Context.RegisterClassMap<TCsvDataClassMap>();
+                    var csvDataRecords = csv.GetRecords<TCsvData>();
+
+                    return csvDataRecords.ToList();
+                }
+                catch (CsvHelperException e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+
+            }
         }
     }
 }
