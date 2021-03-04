@@ -17,7 +17,6 @@
 
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using CsvHelper.Configuration;
 
 namespace biz.dfch.CS.Playground.Fynn._20210304

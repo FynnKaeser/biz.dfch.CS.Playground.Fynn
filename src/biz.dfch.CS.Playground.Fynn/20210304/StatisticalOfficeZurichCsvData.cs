@@ -14,12 +14,6 @@
  * limitations under the License.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace biz.dfch.CS.Playground.Fynn._20210304
 {
     public class StatisticalOfficeZurichCsvData
@@ -32,8 +26,42 @@ namespace biz.dfch.CS.Playground.Fynn._20210304
         public int IndicatorId { get; set; }
         public string IndicatorName { get; set; }
         public int IndicatorYear { get; set; }
-        public int IndicatorValue { get; set; }
+        public double IndicatorValue { get; set; }
         public string UnitShort { get; set; }
         public string UnitLong { get; set; }
+
+        private bool Equals(StatisticalOfficeZurichCsvData other)
+        {
+            return BfsNr.Equals(other.BfsNr) && RegionName.Equals(other.RegionName) && TopicName.Equals(other.TopicName) &&
+                   SetName.Equals(other.SetName) && SubsetName.Equals(other.SubsetName) && IndicatorId.Equals(other.IndicatorId) &&
+                   IndicatorName.Equals(other.IndicatorName) && IndicatorYear.Equals(other.IndicatorYear) && IndicatorValue.Equals(other.IndicatorValue) &&
+                   UnitShort.Equals(other.UnitShort) && UnitLong.Equals(other.UnitLong); 
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != GetType()) return false;
+
+            return Equals((StatisticalOfficeZurichCsvData)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            var bfsNr = BfsNr.GetHashCode();
+            var regionName = RegionName == null ? 0 : RegionName.GetHashCode();
+            var topicName = TopicName == null ? 0 : TopicName.GetHashCode();
+            var setName = SetName == null ? 0 : SetName.GetHashCode();
+            var subsetName = SubsetName == null ? 0 : SubsetName.GetHashCode();
+            var indicatorId = IndicatorId.GetHashCode();
+            var indicatorName = IndicatorName == null ? 0 : IndicatorName.GetHashCode();
+            var indicatorYear = IndicatorYear.GetHashCode();
+            var indicatorValue = IndicatorId.GetHashCode();
+            var unitShort = UnitShort == null ? 0 : UnitShort.GetHashCode();
+            var unitLong = UnitLong == null ? 0 : UnitLong.GetHashCode();
+
+            return bfsNr ^ regionName ^ topicName ^ setName ^ subsetName ^ indicatorId ^ indicatorName ^ indicatorYear ^ indicatorValue ^ unitShort ^ unitLong;
+        }
     }
 }
