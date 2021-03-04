@@ -24,5 +24,16 @@ namespace biz.dfch.CS.Playground.Fynn._20210304
 {
     public class CsvData
     {
+        public int BfsNr { get; set; }
+        public string RegionName { get; set; }
+        public string TopicName { get; set; }
+        public string SetName { get; set; }
+        public string SubsetName { get; set; }
+        public int IndicatorId { get; set; }
+        public string IndicatorName { get; set; }
+        public int IndicatorYear { get; set; }
+        public int IndicatorValue { get; set; }
+        public string UnitShort { get; set; }
+        public string UnitLong { get; set; }
     }
 }
