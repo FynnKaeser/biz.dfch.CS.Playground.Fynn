@@ -106,6 +106,8 @@
     <Compile Include="20210114\FileNamingConventionExample\MyClass.IMyFirstInterface.cs" />
     <Compile Include="20210202\MyFirstClass.cs" />
     <Compile Include="20210202\MySecondClass.cs" />
+    <Compile Include="20210304\CsvData.cs" />
+    <Compile Include="20210304\CsvReader.cs" />
     <Compile Include="Archive\ClassWithSealedMethodChild.cs" />
     <Compile Include="Archive\ClassWithSealedMethodGrandParent.cs" />
     <Compile Include="Archive\ClassWithSealedMethodParent.cs" />
