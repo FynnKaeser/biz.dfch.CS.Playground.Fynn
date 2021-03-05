@@ -22,17 +22,17 @@ namespace biz.dfch.CS.Playground.Fynn._20210304
     {
         public StatisticalOfficeZurichCsvDataMap()
         {
-            Map(m => m.BfsNr).Name(StatisticalOfficeZurichCsvFieldNameConstants.CsvFieldBfsNr);
-            Map(m => m.RegionName).Name(StatisticalOfficeZurichCsvFieldNameConstants.CsvFieldRegionName);
-            Map(m => m.TopicName).Name(StatisticalOfficeZurichCsvFieldNameConstants.CsvFieldTopicName);
-            Map(m => m.SetName).Name(StatisticalOfficeZurichCsvFieldNameConstants.CsvFieldSetName);
-            Map(m => m.SubsetName).Name(StatisticalOfficeZurichCsvFieldNameConstants.CsvFieldSubsetName);
-            Map(m => m.IndicatorId).Name(StatisticalOfficeZurichCsvFieldNameConstants.CsvFieldIndicatorId);
-            Map(m => m.IndicatorName).Name(StatisticalOfficeZurichCsvFieldNameConstants.CsvFieldIndicatorName);
-            Map(m => m.IndicatorYear).Name(StatisticalOfficeZurichCsvFieldNameConstants.CsvFieldIndicatorYear);
-            Map(m => m.IndicatorValue).Name(StatisticalOfficeZurichCsvFieldNameConstants.CsvFieldIndicatorValue);
-            Map(m => m.UnitLong).Name(StatisticalOfficeZurichCsvFieldNameConstants.CsvFieldUnitLong);
-            Map(m => m.UnitShort).Name(StatisticalOfficeZurichCsvFieldNameConstants.CsvFieldUnitShort);
+            Map(m => m.BfsNr).Name(StatisticalOfficeZurichCsvFieldName.BfsNr);
+            Map(m => m.RegionName).Name(StatisticalOfficeZurichCsvFieldName.CsvFieldRegionName);
+            Map(m => m.TopicName).Name(StatisticalOfficeZurichCsvFieldName.CsvFieldTopicName);
+            Map(m => m.SetName).Name(StatisticalOfficeZurichCsvFieldName.CsvFieldSetName);
+            Map(m => m.SubsetName).Name(StatisticalOfficeZurichCsvFieldName.CsvFieldSubsetName);
+            Map(m => m.IndicatorId).Name(StatisticalOfficeZurichCsvFieldName.CsvFieldIndicatorId);
+            Map(m => m.IndicatorName).Name(StatisticalOfficeZurichCsvFieldName.CsvFieldIndicatorName);
+            Map(m => m.IndicatorYear).Name(StatisticalOfficeZurichCsvFieldName.CsvFieldIndicatorYear);
+            Map(m => m.IndicatorValue).Name(StatisticalOfficeZurichCsvFieldName.CsvFieldIndicatorValue);
+            Map(m => m.UnitLong).Name(StatisticalOfficeZurichCsvFieldName.CsvFieldUnitLong);
+            Map(m => m.UnitShort).Name(StatisticalOfficeZurichCsvFieldName.CsvFieldUnitShort);
         }
     }
 }

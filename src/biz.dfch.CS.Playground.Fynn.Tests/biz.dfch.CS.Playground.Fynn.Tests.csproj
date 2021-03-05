@@ -120,6 +120,7 @@
     <Compile Include="20200417\TestClass1.cs" />
     <Compile Include="20200417\TestClass2.cs" />
     <Compile Include="20210304\CsvReaderTest.cs" />
+    <Compile Include="20210305\MyListTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

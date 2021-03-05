@@ -15,6 +15,7 @@
  */
 
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,45 +24,46 @@ using CsvHelper.Configuration;
 
 namespace biz.dfch.CS.Playground.Fynn._20210304
 {
-    public class CsvReader<TCsvData>
+    public class CsvReader<TCsvData> where TCsvData : class
     {
-        private const char Dot = '.';
-        private const string Csv = "csv";
-        private const string Txt = "txt";
-
-        public List<TCsvData> GetCsvData<TCsvDataClassMap>(string filePath, CsvConfiguration csvConfiguration) where TCsvDataClassMap : ClassMap
+        private readonly List<string> allowedFileEndings = new List<string>()
         {
-            if (null == filePath || null == csvConfiguration)
-            {
-                throw new ArgumentNullException();
-            }
+            "csv",
+            "txt"
+        };
+        private readonly CsvConfiguration csvConfiguration;
 
-            if (!File.Exists(filePath))
-            {
-                throw new FileNotFoundException();
-            }
+        public CsvReader(CsvConfiguration csvConfiguration)
+        {
+            this.csvConfiguration = csvConfiguration;
+        }
 
-            var fileEnding = filePath.Substring(filePath.LastIndexOf(Dot) + 1);
-            if (fileEnding != Csv && fileEnding!= Txt)
-            {
-                throw new InvalidDataException();
-            }
+        public List<TCsvData> GetCsvData<TCsvDataClassMap>(string filePath) where TCsvDataClassMap : ClassMap
+        {
+            if (null == filePath || null == csvConfiguration) throw new ArgumentNullException(nameof(filePath));
+            if (!File.Exists(filePath)) throw new FileNotFoundException();
+
+            var fileChecker = new FileChecker();
+            var hasCorrectFileEnding = fileChecker.CheckFileEnding(allowedFileEndings, filePath);
+            if (!hasCorrectFileEnding) throw new InvalidDataException();
 
             using (var reader = new StreamReader(filePath))
             using (var csv = new CsvReader(reader, csvConfiguration))
             {
+                csv.Context.RegisterClassMap<TCsvDataClassMap>();
+
+                IEnumerable<TCsvData> csvDataRecords;
                 try
                 {
-                    csv.Context.RegisterClassMap<TCsvDataClassMap>();
-                    var csvDataRecords = csv.GetRecords<TCsvData>();
-
-                    return csvDataRecords.ToList();
+                    csvDataRecords = csv.GetRecords<TCsvData>();
                 }
                 catch (CsvHelperException e)
                 {
                     Console.WriteLine(e);
                     throw;
                 }
+
+                return csvDataRecords.ToList();
             }
         }
     }

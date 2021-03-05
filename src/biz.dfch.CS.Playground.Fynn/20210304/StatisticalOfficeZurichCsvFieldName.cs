@@ -16,9 +16,9 @@
 
 namespace biz.dfch.CS.Playground.Fynn._20210304
 {
-    public class StatisticalOfficeZurichCsvFieldNameConstants
+    public class StatisticalOfficeZurichCsvFieldName
     {
-        public const string CsvFieldBfsNr = "BFS_NR";
+        public const string BfsNr = "BFS_NR";
         public const string CsvFieldRegionName = "GEBIET_NAME";
         public const string CsvFieldTopicName = "THEMA_NAME";
         public const string CsvFieldSetName = "SET_NAME";

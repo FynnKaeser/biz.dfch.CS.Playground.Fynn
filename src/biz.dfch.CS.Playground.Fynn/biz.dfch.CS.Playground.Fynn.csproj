@@ -132,8 +132,9 @@
     <Compile Include="20210114\FileNamingConventionExample\MyClass.IMyFirstInterface.cs" />
     <Compile Include="20210202\MyFirstClass.cs" />
     <Compile Include="20210202\MySecondClass.cs" />
+    <Compile Include="20210304\FileChecker.cs" />
     <Compile Include="20210304\StatisticalOfficeZurichCsvData.cs" />
-    <Compile Include="20210304\StatisticalOfficeZurichCsvFieldNameConstants.cs" />
+    <Compile Include="20210304\StatisticalOfficeZurichCsvFieldName.cs" />
     <Compile Include="20210304\StatisticalOfficeZurichCsvDataMap.cs" />
     <Compile Include="20210304\CsvReader.cs" />
     <Compile Include="Archive\ClassWithSealedMethodChild.cs" />
@@ -145,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="20191023\Assets\" />
+    <Folder Include="20210305\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="20210114\FileNamingConventionExample\MyClass.IMySecondInterface.cs" />

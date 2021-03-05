@@ -88,25 +88,23 @@ namespace biz.dfch.CS.Playground.Fynn.Tests
                 UnitLong = "Meter über Meer"
             }
         };
-        private readonly string Semicolon = ";";
         private readonly string Comma = ",";
         private readonly string FilePath = "C:\\src\\biz.dfch.CS.Playground.Fynn\\src\\biz.dfch.CS.Playground.Fynn\\20210304\\KANTON_ZUERICH_43.csv";
         private readonly string WrongFilePath = "C:\\src\\biz.dfch.CS.Playground.Fynn\\src\\biz.dfch.CS.Playground.Fynn\\20210304\\ThisFileDoesNotExist.csv";
         private readonly string FilePathNotEndingWithCsv = "C:\\src\\biz.dfch.CS.Playground.Fynn\\src\\biz.dfch.CS.Playground.Fynn\\20210304\\CsvReader.cs";
+        private readonly CsvConfiguration csvConfiguration = new CsvConfiguration(CultureInfo.InvariantCulture)
+        {
+            Delimiter = ";"
+        };
 
         [TestMethod]
         public void GetCsvDataFromStatisticalOfficeZurichCsvDataReturnsExpectedData()
         {
             // Arrange
-            var sut = new CsvReader<StatisticalOfficeZurichCsvData>();
-
-            var csvConfiguration = new CsvConfiguration(CultureInfo.InvariantCulture)
-            {
-                Delimiter = Semicolon
-            };
+            var sut = new CsvReader<StatisticalOfficeZurichCsvData>(csvConfiguration);
 
             // Act
-            var result = sut.GetCsvData<StatisticalOfficeZurichCsvDataMap>(FilePath, csvConfiguration).ToList();
+            var result = sut.GetCsvData<StatisticalOfficeZurichCsvDataMap>(FilePath).ToList();
 
             // Assert
             for (int i = 0; i < expectedCsvData.Count; i++)
@@ -120,15 +118,10 @@ namespace biz.dfch.CS.Playground.Fynn.Tests
         public void GetCsvDataWithNotExistingFileThrowsFileNotFoundException()
         {
             // Arrange
-            var sut = new CsvReader<StatisticalOfficeZurichCsvData>();
-
-            var csvConfiguration = new CsvConfiguration(CultureInfo.InvariantCulture)
-            {
-                Delimiter = Semicolon
-            };
+            var sut = new CsvReader<StatisticalOfficeZurichCsvData>(csvConfiguration);
 
             // Act
-            var result = sut.GetCsvData<StatisticalOfficeZurichCsvDataMap>(WrongFilePath, csvConfiguration);
+            var result = sut.GetCsvData<StatisticalOfficeZurichCsvDataMap>(WrongFilePath);
 
             // Assert
         }
@@ -138,33 +131,27 @@ namespace biz.dfch.CS.Playground.Fynn.Tests
         public void GetCsvDataWithFileEndingNotEqualToCsvThrowsInvalidDataException()
         {
             // Arrange
-            var sut = new CsvReader<StatisticalOfficeZurichCsvData>();
-
-            var csvConfiguration = new CsvConfiguration(CultureInfo.InvariantCulture)
-            {
-                Delimiter = Semicolon
-            };
+            var sut = new CsvReader<StatisticalOfficeZurichCsvData>(csvConfiguration);
 
             // Act
-            var result = sut.GetCsvData<StatisticalOfficeZurichCsvDataMap>(FilePathNotEndingWithCsv, csvConfiguration);
+            var result = sut.GetCsvData<StatisticalOfficeZurichCsvDataMap>(FilePathNotEndingWithCsv);
 
             // Assert
         }
 
         [TestMethod]
         [ExpectedException(typeof(HeaderValidationException))]
-        public void GetCsvDataFromStatisticalOfficeZurichCsvDataWithWrongCsvConfigurationThrowsFileNotFoundException()
+        public void GetCsvDataFromStatisticalOfficeZurichCsvDataWithWrongCsvConfigurationThrowsHeaderValidationException()
         {
             // Arrange
-            var sut = new CsvReader<StatisticalOfficeZurichCsvData>();
-
-            var csvConfiguration = new CsvConfiguration(CultureInfo.InvariantCulture)
+            CsvConfiguration wrongCsvConfiguration = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
                 Delimiter = Comma
             };
 
+            var sut = new CsvReader<StatisticalOfficeZurichCsvData>(wrongCsvConfiguration);
             // Act
-            var result = sut.GetCsvData<StatisticalOfficeZurichCsvDataMap>(FilePath, csvConfiguration);
+            var result = sut.GetCsvData<StatisticalOfficeZurichCsvDataMap>(FilePath);
 
             // Assert
         }
@@ -174,10 +161,10 @@ namespace biz.dfch.CS.Playground.Fynn.Tests
         public void GetCsvDataFromStatisticalOfficeZurichCsvDataWithCsvConfigurationSetToNullThrowsArgumentNullException()
         {
             // Arrange
-            var sut = new CsvReader<StatisticalOfficeZurichCsvData>();
+            var sut = new CsvReader<StatisticalOfficeZurichCsvData>(null);
 
             // Act
-            var result = sut.GetCsvData<StatisticalOfficeZurichCsvDataMap>(FilePath, null);
+            var result = sut.GetCsvData<StatisticalOfficeZurichCsvDataMap>(FilePath);
 
             // Assert
         }
