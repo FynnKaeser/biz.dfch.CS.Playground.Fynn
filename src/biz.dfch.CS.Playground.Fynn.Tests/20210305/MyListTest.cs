@@ -16,7 +16,7 @@
 
 using System;
 using System.IO;
-using System.Reflection;
+using biz.dfch.CS.Playground.Fynn._20210305;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
@@ -28,11 +28,10 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
         public void SearchForElementInListReturnsElement()
         {
             // Arrange
-            var sut = new MyList<string>(2)
-            {
-                "Hello",
-                "World"
-            };
+            var sut = new MyList<string>(2);
+            sut.Add("World");
+            sut.Add("Helmet");
+            sut.Add("Breakpoint");
 
             // Act
             var result = sut.Search("World");
@@ -42,156 +41,230 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
         }
 
         [TestMethod]
-        public void AddingElementAtLastPositionSucceeds()
+        public void SearchForElementWhichDoesNotExistReturnsDefault()
         {
             // Arrange
-            var sut = new MyList<string>(4)
-            {
-                "Hello",
-                "My",
-                "World"
-            };
+            var sut = new MyList<string>(2);
+            sut.Add("World");
+            sut.Add("Helmet");
+            sut.Add("Breakpoint");
 
             // Act
-            sut.Add("!");
+            var result = sut.Search("Console");
 
             // Assert
-            Assert.AreEqual(4, sut.Count);
-            Assert.AreEqual("!", sut[4]);
+            Assert.AreEqual(default(string), result);
         }
 
+        [TestMethod]
+        public void AddingElementsSucceeds()
+        {
+            // Arrange
+            var sut = new MyList<string>(4);
+        
+            // Act
+            sut.Add("1");
+            sut.Add("2");
+            sut.Add("3");
+            sut.Add("4");
+
+            var start = sut.Start;
+            var end = sut.End;
+
+            // Assert
+            Assert.AreEqual("1", start.Value);
+            Assert.AreEqual("2", start.Next.Value);
+            Assert.AreEqual("3", start.Next.Next.Value);
+            Assert.AreEqual("4", start.Next.Next.Next.Value);
+            
+            Assert.AreEqual("4", end.Value);
+            Assert.AreEqual("3", end.Previous.Value);
+            Assert.AreEqual("2", end.Previous.Previous.Value);
+            Assert.AreEqual("1", end.Previous.Previous.Previous.Value);
+        }
+        
         [TestMethod]
         public void AddingElementAtPositionThreeSucceeds()
         {
             // Arrange
-            var sut = new MyList<string>(4)
-            {
-                "Hello",
-                "My",
-                "!"
-            };
+            var sut = new MyList<string>(100);
+            sut.Add("Hello");
+            sut.Add("My");
+            sut.Add("World");
 
             // Act
-            sut.AddAt(3, "World");
+            sut.AddAt(2, "AddAt");
+
+            var start = sut.Start;
+            var end = sut.End;
 
             // Assert
-            Assert.AreEqual(4, sut.Count);
-            Assert.AreEqual("World", sut[3]);
-            Assert.AreEqual("!", sut[4]);
+            Assert.AreEqual("Hello", start.Value);
+            Assert.AreEqual("My", start.Next.Value);
+            Assert.AreEqual("AddAt", start.Next.Next.Value);
+            Assert.AreEqual("World", start.Next.Next.Next.Value);
+
+            Assert.AreEqual("World", end.Value);
+            Assert.AreEqual("AddAt", end.Previous.Value);
+            Assert.AreEqual("My", end.Previous.Previous.Value);
+            Assert.AreEqual("Hello", end.Previous.Previous.Previous.Value);
         }
 
         [TestMethod]
-        public void DeletingElementAtPositionThreeFromListSucceeds()
+        public void AddingElementAtPositionFourWhenListIsThreeElementSucceeds()
         {
             // Arrange
-            var sut = new MyList<string>(3)
-            {
-                "Hello",
-                "My",
-                "World"
-            };
+            var sut = new MyList<string>(100);
+            sut.Add("Hello");
+            sut.Add("My");
+            sut.Add("World");
 
             // Act
-            sut.DeleteAt(3);
+            sut.AddAt(3, "AddAt");
+
+            var start = sut.Start;
+            var end = sut.End;
 
             // Assert
-            Assert.AreEqual(2, sut.Count);
+            Assert.AreEqual("Hello", start.Value);
+            Assert.AreEqual("My", start.Next.Value);
+            Assert.AreEqual("World", start.Next.Next.Value);
+            Assert.AreEqual("AddAt", start.Next.Next.Next.Value);
 
+            Assert.AreEqual("AddAt", end.Value);
+            Assert.AreEqual("World", end.Previous.Value);
+            Assert.AreEqual("My", end.Previous.Previous.Value);
+            Assert.AreEqual("Hello", end.Previous.Previous.Previous.Value);
         }
 
         [TestMethod]
-        public void DeletingElementFromListSucceeds()
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void AddingElementAtPositionSixWhenListIsOnlyThreeElementsLongThrowsArgumentOutOfRangeException()
         {
             // Arrange
-            var sut = new MyList<string>(3)
-            {
-                "Hello",
-                "My",
-                "World"
-            };
+            var sut = new MyList<string>(100);
+            sut.Add("Hello");
+            sut.Add("My");
+            sut.Add("World");
 
             // Act
-            sut.Delete("World");
-
-            // Assert
-            Assert.AreEqual(2, sut.Count);
-        }
-
-        [TestMethod]
-        public void DeletingListSucceeds()
-        {
-            // Arrange
-            var sut = new MyList<string>(3)
-            {
-                "Hello",
-                "My",
-                "World"
-            };
-
-            // Act
-            sut.DeleteList();
-
-            // Assert
-            Assert.AreEqual(null, sut);
-        }
-
-        [TestMethod]
-        public void MovingElementFromPositionOneToPositionThreeSucceeds()
-        {
-            // Arrange
-            var sut = new MyList<string>(3)
-            {
-                "World",
-                "Hello",
-                "My"
-            };
-
-            // Act
-            sut.Move(1, 3);
-
-            // Assert
-            Assert.AreEqual("Hello", sut[1]);
-            Assert.AreEqual("My", sut[2]);
-            Assert.AreEqual("World", sut[3]);
-        }
-
-        [TestMethod]
-        public void SwitchElementAtPositionOneWithElementAtPositionThreeSucceeds()
-        {
-            // Arrange
-            var sut = new MyList<string>(3)
-            {
-                "World",
-                "My",
-                "Hello"
-            };
-
-            // Act
-            sut.Swap(1, 3);
-
-            // Assert
-            Assert.AreEqual("Hello", sut[1]);
-            Assert.AreEqual("My", sut[2]);
-            Assert.AreEqual("World", sut[3]);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(Exception))]
-        public void AddingFifthElementToListWithCapacityOfFourThrowsException()
-        {
-            // Arrange
-            var sut = new MyList<string>(4)
-            {
-                "Hello",
-                "My",
-                "World",
-                "!"
-            };
-
-            // Act
-            sut.Add("Bad");
+            sut.AddAt(6, "AddAt");
 
             // Assert
         }
-    }
+        //
+        //[TestMethod]
+        //public void DeletingElementAtPositionThreeFromListSucceeds()
+        //{
+        //    // Arrange
+        //    var sut = new MyList<string>(3)
+        //    {
+        //        "Hello",
+        //        "My",
+        //        "World"
+        //    };
+        //
+        //    // Act
+        //    sut.DeleteAt(3);
+        //
+        //    // Assert
+        //    Assert.AreEqual(2, sut.Count);
+        //
+        //}
+        //
+        //[TestMethod]
+        //public void DeletingElementFromListSucceeds()
+        //{
+        //    // Arrange
+        //    var sut = new MyList<string>(3)
+        //    {
+        //        "Hello",
+        //        "My",
+        //        "World"
+        //    };
+        //
+        //    // Act
+        //    sut.Delete("World");
+        //
+        //    // Assert
+        //    Assert.AreEqual(2, sut.Count);
+        //}
+        //
+        //[TestMethod]
+        //public void DeletingListSucceeds()
+        //{
+        //    // Arrange
+        //    var sut = new MyList<string>(3)
+        //    {
+        //        "Hello",
+        //        "My",
+        //        "World"
+        //    };
+        //
+        //    // Act
+        //    sut.DeleteList();
+        //
+        //    // Assert
+        //    Assert.AreEqual(null, sut);
+        //}
+        //
+        //[TestMethod]
+        //public void MovingElementFromPositionOneToPositionThreeSucceeds()
+        //{
+        //    // Arrange
+        //    var sut = new MyList<string>(3)
+        //    {
+        //        "World",
+        //        "Hello",
+        //        "My"
+        //    };
+        //
+        //    // Act
+        //    sut.Move("World", 3);
+        //
+        //    // Assert
+        //    Assert.AreEqual("Hello", sut[1]);
+        //    Assert.AreEqual("My", sut[2]);
+        //    Assert.AreEqual("World", sut[3]);
+        //}
+        //
+        //[TestMethod]
+        //public void SwitchElementAtPositionOneWithElementAtPositionThreeSucceeds()
+        //{
+        //    // Arrange
+        //    var sut = new MyList<string>(3)
+        //    {
+        //        "World",
+        //        "My",
+        //        "Hello"
+        //    };
+        //
+        //    // Act
+        //    sut.Swap(1, 3);
+        //
+        //    // Assert
+        //    Assert.AreEqual("Hello", sut[1]);
+        //    Assert.AreEqual("My", sut[2]);
+        //    Assert.AreEqual("World", sut[3]);
+        //}
+        //
+        //[TestMethod]
+        //[ExpectedException(typeof(Exception))]
+        //public void AddingFifthElementToListWithCapacityOfFourThrowsException()
+        //{
+        //    // Arrange
+        //    var sut = new MyList<string>(4)
+        //    {
+        //        "Hello",
+        //        "My",
+        //        "World",
+        //        "!"
+        //    };
+        //
+        //    // Act
+        //    sut.Add("Bad");
+        //
+        //    // Assert
+        //}
+    }  
 }

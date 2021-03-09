@@ -137,6 +137,9 @@
     <Compile Include="20210304\StatisticalOfficeZurichCsvFieldName.cs" />
     <Compile Include="20210304\StatisticalOfficeZurichCsvDataMap.cs" />
     <Compile Include="20210304\CsvReader.cs" />
+    <Compile Include="20210305\MyList.cs" />
+    <Compile Include="20210305\MyListElement.cs" />
+    <Compile Include="20210305\MyListEnumerator.cs" />
     <Compile Include="Archive\ClassWithSealedMethodChild.cs" />
     <Compile Include="Archive\ClassWithSealedMethodGrandParent.cs" />
     <Compile Include="Archive\ClassWithSealedMethodParent.cs" />
@@ -146,7 +149,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="20191023\Assets\" />
-    <Folder Include="20210305\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="20210114\FileNamingConventionExample\MyClass.IMySecondInterface.cs" />
