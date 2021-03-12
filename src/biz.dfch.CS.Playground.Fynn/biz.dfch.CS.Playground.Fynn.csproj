@@ -139,7 +139,6 @@
     <Compile Include="20210304\CsvReader.cs" />
     <Compile Include="20210305\MyList.cs" />
     <Compile Include="20210305\MyListElement.cs" />
-    <Compile Include="20210305\MyListEnumerator.cs" />
     <Compile Include="Archive\ClassWithSealedMethodChild.cs" />
     <Compile Include="Archive\ClassWithSealedMethodGrandParent.cs" />
     <Compile Include="Archive\ClassWithSealedMethodParent.cs" />
