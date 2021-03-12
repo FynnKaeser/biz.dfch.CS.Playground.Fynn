@@ -80,7 +80,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
             }
         }
         
-        public void AddAt(int index, TItem item)
+        public void Insert(int index, TItem item)
         {
             if (capacity == Count)
             {
