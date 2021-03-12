@@ -339,11 +339,15 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             sut.Add("My");
             sut.Add("F5");
 
+            var expectedListCount = 0;
+
             // Act
             sut.DeleteList();
+
+            var resultListCount = sut.Count();
         
             // Assert
-            Assert.AreEqual(null, sut);
+            Assert.AreEqual(expectedListCount, resultListCount);
         }
         
         [TestMethod]
