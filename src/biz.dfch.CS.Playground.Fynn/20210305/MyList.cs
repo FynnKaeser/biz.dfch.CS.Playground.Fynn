@@ -231,57 +231,50 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
                 throw new IndexOutOfRangeException();
             }
 
-            var tempListElement = start;
-            var elementIndex = 0;
             var elementToMoveNext = elementToMove.Next;
             var elementToMovePrevious = elementToMove.Previous;
 
-            while (null != tempListElement)
+            var listElementByToIndex = GetListElementByIndex(toIndex);
+
+            if (fromIndex > toIndex)
             {
-                if (elementIndex == toIndex)
+                var listElementPrevious = listElementByToIndex.Previous;
+
+                if (null == listElementPrevious)
                 {
-                    if (fromIndex > toIndex)
-                    {
-                        var tempListElementPrevious = tempListElement.Previous;
-
-                        if (null == tempListElementPrevious)
-                        {
-                            start = elementToMove;
-                            start.Previous = tempListElementPrevious;
-                            start.Next = tempListElement;
-                            tempListElement.Previous = start;
-                            break;
-                        }
-
-                        tempListElementPrevious.Next = elementToMove;
-                        elementToMove.Previous = tempListElementPrevious;
-                        elementToMove.Next = tempListElement;
-                        tempListElement.Previous = elementToMove;
-                        break;
-                    }
-
-                    var tempListElementNext = tempListElement.Next;
-
-                    if (null == tempListElementNext)
-                    {
-                        end = elementToMove;
-                        end.Next = tempListElementNext;
-                        end.Previous = tempListElement;
-                        tempListElement.Next = end;
-                        break;
-                    }
-
-                    tempListElementNext.Previous = elementToMove;
-                    elementToMove.Next = tempListElementNext;
-                    elementToMove.Previous = tempListElement;
-                    tempListElement.Next = elementToMove;
-                    break;
+                    start = elementToMove;
+                    start.Previous = listElementPrevious;
+                    start.Next = listElementByToIndex;
+                    listElementByToIndex.Previous = start;
                 }
-
-                tempListElement = tempListElement.Next;
-                elementIndex++;
+                else
+                {
+                    listElementPrevious.Next = elementToMove;
+                    elementToMove.Previous = listElementPrevious;
+                    elementToMove.Next = listElementByToIndex;
+                    listElementByToIndex.Previous = elementToMove;
+                }
             }
+            else
+            {
+                var listElementNext = listElementByToIndex.Next;
 
+                if (null == listElementNext)
+                {
+                    end = elementToMove;
+                    end.Next = listElementNext;
+                    end.Previous = listElementByToIndex;
+                    listElementByToIndex.Next = end;
+                }
+                else
+                {
+                    listElementNext.Previous = elementToMove;
+                    elementToMove.Next = listElementNext;
+                    elementToMove.Previous = listElementByToIndex;
+                    listElementByToIndex.Next = elementToMove;
+                }
+            }
+            
             if (null == elementToMovePrevious)
             {
                 start = elementToMoveNext;
