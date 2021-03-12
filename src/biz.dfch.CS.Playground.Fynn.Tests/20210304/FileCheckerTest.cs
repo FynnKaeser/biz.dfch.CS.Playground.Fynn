@@ -24,18 +24,26 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210304
 
     public class FileCheckerTest
     {
-
-
         [TestMethod]
-        [DataRow("texttext.txt")]
-        [DataRow("texttext.csv")]
-        [DataRow("texttext.docx")]
-        public void Test(string filePath)
+        [DataRow("texttext.txt", true)]
+        [DataRow("texttext.csv", true)]
+        [DataRow("texttext.docx", true)]
+        [DataRow("texttext.cs", false)]
+        [DataRow("texttext.doc", false)]
+        [DataRow("texttext", false)]
+        [DataRow("docx", false)]
+        [DataRow(null, false)]
+        public void Test(string filePath, bool expectedResult)
         {
+            // Arrange
             var sut = new FileChecker();
             var allowedFileEndings = new List<string>() {"txt", "csv", "docx"};
 
-            sut.CheckFileEnding(allowedFileEndings, filePath);
+            // Act
+            var result = sut.CheckFileEnding(allowedFileEndings, filePath);
+            
+            // Assert
+            Assert.AreEqual(expectedResult, result);
         }
     }
 }
