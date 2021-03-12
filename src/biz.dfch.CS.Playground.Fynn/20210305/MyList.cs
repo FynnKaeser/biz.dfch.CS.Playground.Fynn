@@ -305,30 +305,55 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
             var listElementOnePrevious = listElementOne.Previous;
             var listElementTwoNext = listElementTwo.Next;
             var listElementTwoPrevious = listElementTwo.Previous;
-
+            
             listElementOne.Next = listElementTwoNext;
             listElementTwo.Next = listElementOneNext;
             listElementOne.Previous = listElementTwoPrevious;
             listElementTwo.Previous = listElementOnePrevious;
 
-            listElementOnePrevious.Next = listElementTwo;
-            listElementTwoPrevious.Next = listElementOne;
-            listElementOneNext.Previous = listElementTwo;
-            listElementTwoNext.Previous = listElementOne;
-        }
+            if (null == listElementTwo.Previous)
+            {
+                start = listElementTwo;
+            }
+            else
+            {
+                listElementOnePrevious.Next = listElementTwo;
+            }
 
         public int Count()
         {
             var tempListElement = start;
             var elementIndex = 0;
+            if (null == listElementTwoPrevious)
+            {
+                start = listElementOne;
+            }
+            else
+            {
+                listElementTwoPrevious.Next = listElementOne;
+            }
 
             while (null != tempListElement)
+            if (null == listElementOneNext)
             {
                 tempListElement = tempListElement.Next;
                 elementIndex++;
+                end = listElementTwo;
+            }
+            else
+            {
+                listElementOneNext.Previous = listElementTwo;
             }
 
             return elementIndex;
+            if (null == listElementTwoNext)
+            {
+                end = listElementOne;
+            }
+            else
+            {
+                listElementTwoNext.Previous = listElementOne;
+            }
         }
 
         private MyListElement<TItem> GetListElementByIndex(int index)
