@@ -162,8 +162,27 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
                 {
                     var previous = tempListElement.Previous;
                     var next = tempListElement.Next;
-                    previous.Next = next;
+
+                    if (null == previous)
+                    {
+                        start = next;
+                    }
+                    else
+                    {
+                        previous.Next = next;
+                    }
+
+                    if (null == next)
+                    {
+                        end = previous;
+
+                        Count--;
+                        return;
+                    }
+
                     next.Previous = previous;
+
+                    Count--;
                     return;
                 }
 
