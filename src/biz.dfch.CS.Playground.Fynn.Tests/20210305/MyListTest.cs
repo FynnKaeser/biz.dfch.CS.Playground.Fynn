@@ -72,7 +72,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             sut.Add("3");
             sut.Add("4");
 
-            var resultCount = sut.Count();
+            var resultCount = sut.Count;
             var resultIndexElementOne = sut.Search("1");
             var resultIndexElementTwo = sut.Search("2");
             var resultIndexElementThree = sut.Search("3");
@@ -192,7 +192,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             sut.DeleteAt(2);
             var resultIndexEngElement = sut.Search("ENG");
 
-            var resultListCount = sut.Count();
+            var resultListCount = sut.Count;
 
             // Assert
             Assert.AreEqual(expectedListCount, resultListCount);
@@ -217,7 +217,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             sut.DeleteAt(0);
             var resultIndexMyElement = sut.Search("My");
 
-            var resultListCount = sut.Count();
+            var resultListCount = sut.Count;
 
             // Assert
             Assert.AreEqual(expectedListCount, resultListCount);
@@ -242,7 +242,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             sut.DeleteAt(4);
             var resultIndexWorldElement = sut.Search("World");
 
-            var resultListCount = sut.Count();
+            var resultListCount = sut.Count;
 
             // Assert
             Assert.AreEqual(expectedListCount, resultListCount);
@@ -267,7 +267,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             // Act
             sut.Delete("F5");
 
-            var resultListCount = sut.Count();
+            var resultListCount = sut.Count;
             var resultIndexEngElement = sut.Search("ENG");
             var resultIndexF5Element = sut.Search("F5");
 
@@ -295,7 +295,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             // Act
             sut.Delete("Hello");
 
-            var resultListCount = sut.Count();
+            var resultListCount = sut.Count;
             var resultIndexMyElement = sut.Search("My");
             var resultIndexHelloElement = sut.Search("Hello");
 
@@ -322,7 +322,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             // Act
             sut.Delete("World");
 
-            var resultListCount = sut.Count();
+            var resultListCount = sut.Count;
             var resultIndexWorldElement = sut.Search("World");
 
             // Assert
@@ -344,7 +344,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             // Act
             sut.DeleteList();
 
-            var resultListCount = sut.Count();
+            var resultListCount = sut.Count;
         
             // Assert
             Assert.AreEqual(expectedListCount, resultListCount);
@@ -464,6 +464,100 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
                 Assert.AreEqual(expectedIndex, indexOfSearchedElement);
                 expectedIndex++;
             }
+        }
+        
+        [TestMethod]
+        public void AddingElementsToListWithAddHasCorrectCount()
+        {
+            // Arrange
+            var sut = new MyList<string>(4);
+            sut.Add("Hello");
+            sut.Add("My");
+            sut.Add("F5");
+            sut.Add("ENG");
+
+            var expectedCount = 4;
+
+            // Act
+            var result = sut.Count;
+
+            // Assert
+            Assert.AreEqual(expectedCount, result);
+        }
+        
+        [TestMethod]
+        public void AddingElementsToListWithAddAtHasCorrectCount()
+        {
+            // Arrange
+            var sut = new MyList<string>(3);
+            sut.AddAt(0, "Hello");
+            sut.AddAt(0, "My");
+            sut.AddAt(0, "World");
+
+            var expectedCount = 3;
+
+            // Act
+            var result = sut.Count;
+
+            // Assert
+            Assert.AreEqual(expectedCount, result);
+        }
+
+        [TestMethod]
+        public void DeletingElementsFromListWithDeleteHasCorrectCount()
+        {
+            // Arrange
+            var sut = new MyList<string>(3);
+            sut.Add("Hello");
+            sut.Add("My");
+            sut.Add("World");
+
+            var expectedCount = 2;
+
+            // Act
+            sut.Delete("World");
+            var result = sut.Count;
+
+            // Assert
+            Assert.AreEqual(expectedCount, result);
+        }
+
+        [TestMethod]
+        public void DeletingElementsFromListWithDeleteAtHasCorrectCount()
+        {
+            // Arrange
+            var sut = new MyList<string>(3);
+            sut.Add("Hello");
+            sut.Add("My");
+            sut.Add("World");
+
+            var expectedCount = 2;
+
+            // Act
+            sut.DeleteAt(1);
+            var result = sut.Count;
+
+            // Assert
+            Assert.AreEqual(expectedCount, result);
+        }
+
+        [TestMethod]
+        public void DeletingListSetsCountToZeroSucceeds()
+        {
+            // Arrange
+            var sut = new MyList<string>(3);
+            sut.Add("Hello");
+            sut.Add("My");
+            sut.Add("World");
+
+            var expectedCount = 0;
+
+            // Act
+            sut.DeleteList();
+            var result = sut.Count;
+
+            // Assert
+            Assert.AreEqual(expectedCount, result);
         }
     }  
 }

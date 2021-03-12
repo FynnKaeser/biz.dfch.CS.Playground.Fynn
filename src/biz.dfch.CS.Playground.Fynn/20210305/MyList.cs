@@ -25,6 +25,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
         private readonly int capacity;
         private MyListElement<TItem> start;
         private MyListElement<TItem> end;
+        public int Count { private set; get; }
 
         public MyList(int capacity)
         {
@@ -52,8 +53,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
         
         public void Add(TItem item)
         {
-            var elementCount = Count();
-            if (capacity == elementCount)
+            if (capacity == Count)
             {
                 throw new ArgumentOutOfRangeException();
             }
@@ -64,6 +64,8 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
             {
                 start = newListElement;
                 end = newListElement;
+
+                Count++;
             }
             else
             {
@@ -73,13 +75,14 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
 
                 end = newListElement;
                 end.Previous = oldEnd;
+
+                Count++;
             }
         }
         
         public void AddAt(int index, TItem item)
         {
-            var elementCount = Count();
-            if (capacity == elementCount)
+            if (capacity == Count)
             {
                 throw new ArgumentOutOfRangeException();
             }
@@ -100,6 +103,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
                         start.Next = tempListElement;
                         tempListElement.Previous = start;
                         
+                        Count++;
                         return;
                     }
 
@@ -107,6 +111,8 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
                     newListElement.Previous = tempListElementPrevious;
                     newListElement.Next = tempListElement;
                     tempListElement.Previous = newListElement;
+                    
+                    Count++;
                     return;
                 }
 
@@ -148,9 +154,11 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
             {
                 end = previous;
 
+                Count--;
                 return;
             }
 
+            Count--;
             next.Previous = previous;
         }
 
@@ -198,6 +206,8 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
         {
             start = null;
             end = null;
+
+            Count = 0;
         }
         
         public void Move(TItem item, int toIndex)
@@ -322,10 +332,6 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
                 listElementOnePrevious.Next = listElementTwo;
             }
 
-        public int Count()
-        {
-            var tempListElement = start;
-            var elementIndex = 0;
             if (null == listElementTwoPrevious)
             {
                 start = listElementOne;
@@ -335,11 +341,8 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
                 listElementTwoPrevious.Next = listElementOne;
             }
 
-            while (null != tempListElement)
             if (null == listElementOneNext)
             {
-                tempListElement = tempListElement.Next;
-                elementIndex++;
                 end = listElementTwo;
             }
             else
@@ -347,7 +350,6 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
                 listElementOneNext.Previous = listElementTwo;
             }
 
-            return elementIndex;
             if (null == listElementTwoNext)
             {
                 end = listElementOne;
