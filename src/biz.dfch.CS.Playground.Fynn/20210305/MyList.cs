@@ -100,7 +100,6 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
 
             var isIndexCloserToStart = Count < index * 2;
             var tempListElement = isIndexCloserToStart ? start : end;
-
             var elementIndex = isIndexCloserToStart ? 0 : Count - 1;
 
             while (null != tempListElement)
@@ -369,8 +368,9 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
 
         private MyListElement<TItem> GetListElementByIndex(int index)
         {
-            var tempListElement = start;
-            var elementIndex = 0;
+            var isIndexCloserToStart = Count < index * 2;
+            var tempListElement = isIndexCloserToStart ? start : end;
+            var elementIndex = isIndexCloserToStart ? 0 : Count - 1;
 
             while (null != tempListElement)
             {
@@ -378,8 +378,8 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
                 {
                     return tempListElement;
                 }
-                tempListElement = tempListElement.Next;
-                elementIndex++;
+                tempListElement = isIndexCloserToStart ? tempListElement.Next : tempListElement.Previous;
+                elementIndex += isIndexCloserToStart ? 1 : -1;
             }
 
             return null;
