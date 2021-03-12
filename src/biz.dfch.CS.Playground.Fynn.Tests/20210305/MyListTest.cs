@@ -268,7 +268,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             sut.Delete("F5");
 
             var resultListCount = sut.Count();
-            var resultIndexEngElement = sut.Search("Eng");
+            var resultIndexEngElement = sut.Search("ENG");
             var resultIndexF5Element = sut.Search("F5");
 
             // Assert
@@ -293,7 +293,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             var expectedIndexHelloElement = -1;
 
             // Act
-            sut.Delete("F5");
+            sut.Delete("Hello");
 
             var resultListCount = sut.Count();
             var resultIndexMyElement = sut.Search("My");
