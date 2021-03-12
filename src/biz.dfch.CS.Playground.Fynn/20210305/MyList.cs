@@ -132,7 +132,23 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
 
             var previous = listElementToBeDeleted.Previous;
             var next = listElementToBeDeleted.Next;
-            previous.Next = next;
+
+            if (null == previous)
+            {
+                start = next;
+            }
+            else
+            {
+                previous.Next = next;
+            }
+
+            if (null == next)
+            {
+                end = previous;
+
+                return;
+            }
+
             next.Previous = previous;
         }
 
