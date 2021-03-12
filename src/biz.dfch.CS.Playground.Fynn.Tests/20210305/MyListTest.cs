@@ -304,6 +304,31 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             Assert.AreEqual(expectedIndexMyElement, resultIndexMyElement);
             Assert.AreEqual(expectedIndexHelloElement, resultIndexHelloElement);
         }
+        
+        [TestMethod]
+        public void DeletingEndElementFromListSucceeds()
+        {
+            // Arrange
+            var sut = new MyList<string>(5);
+            sut.Add("Hello");
+            sut.Add("My");
+            sut.Add("F5");
+            sut.Add("ENG");
+            sut.Add("World");
+
+            var expectedListCount = 4;
+            var expectedIndexWorldElement = -1;
+
+            // Act
+            sut.Delete("World");
+
+            var resultListCount = sut.Count();
+            var resultIndexWorldElement = sut.Search("World");
+
+            // Assert
+            Assert.AreEqual(expectedListCount, resultListCount);
+            Assert.AreEqual(expectedIndexWorldElement, resultIndexWorldElement);
+        }
 
         [TestMethod]
         public void DeletingListSucceeds()
