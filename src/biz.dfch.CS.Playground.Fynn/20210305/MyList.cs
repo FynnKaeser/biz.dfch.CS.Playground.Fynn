@@ -226,6 +226,15 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
                     {
                         var tempListElementPrevious = tempListElement.Previous;
 
+                        if (null == tempListElementPrevious)
+                        {
+                            start = elementToMove;
+                            start.Previous = tempListElementPrevious;
+                            start.Next = tempListElement;
+                            tempListElement.Previous = start;
+                            break;
+                        }
+
                         tempListElementPrevious.Next = elementToMove;
                         elementToMove.Previous = tempListElementPrevious;
                         elementToMove.Next = tempListElement;
@@ -234,6 +243,15 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
                     }
 
                     var tempListElementNext = tempListElement.Next;
+
+                    if (null == tempListElementNext)
+                    {
+                        end = elementToMove;
+                        end.Next = tempListElementNext;
+                        end.Previous = tempListElement;
+                        tempListElement.Next = end;
+                        break;
+                    }
 
                     tempListElementNext.Previous = elementToMove;
                     elementToMove.Next = tempListElementNext;
