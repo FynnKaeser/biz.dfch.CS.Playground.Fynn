@@ -440,5 +440,26 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
         
             // Assert
         }
+
+        [TestMethod]
+        public void IteratingOverListWithForeachSucceeds()
+        {
+            // Arrange
+            var sut = new MyList<string>(4);
+            sut.Add("Hello");
+            sut.Add("My");
+            sut.Add("F5");
+            sut.Add("ENG");
+
+            var expectedIndex = 0;
+
+            // Act & Assert
+            foreach (var element in sut)
+            {
+                var indexOfSearchedElement = sut.Search(element);
+                Assert.AreEqual(expectedIndex, indexOfSearchedElement);
+                expectedIndex++;
+            }
+        }
     }  
 }
