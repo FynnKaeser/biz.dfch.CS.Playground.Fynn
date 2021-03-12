@@ -388,9 +388,9 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
             return GetEnumerator();
         }
 
-        private class MyListEnumerator<TItem> : IEnumerator<TItem>
+        private class MyListEnumerator<TEnumeratorItem> : IEnumerator<TEnumeratorItem>
         {
-            public MyListEnumerator(MyList<TItem> myList)
+            public MyListEnumerator(MyList<TEnumeratorItem> myList)
             {
                 throw new NotImplementedException();
             }
@@ -410,7 +410,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
                 throw new NotImplementedException();
             }
 
-            public TItem Current { get; }
+            public TEnumeratorItem Current { get; }
 
             object IEnumerator.Current => Current;
         }
