@@ -87,8 +87,21 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
                 throw new ArgumentOutOfRangeException();
             }
 
-            var tempListElement = start;
-            var elementIndex = 0;
+            if (Count < index)
+            {
+                throw new IndexOutOfRangeException();
+            }
+
+            if (Count == index)
+            {
+                Add(item);
+                return;
+            }
+
+            var isIndexCloserToStart = Count < index * 2;
+            var tempListElement = isIndexCloserToStart ? start : end;
+
+            var elementIndex = isIndexCloserToStart ? 0 : Count - 1;
 
             while (null != tempListElement)
             {
@@ -115,15 +128,9 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
                     Count++;
                     return;
                 }
-
-                tempListElement = tempListElement.Next;
-                elementIndex++;
-            }
-
-            if (elementIndex == index)
-            {
-                Add(item);
-                return;
+                
+                tempListElement = isIndexCloserToStart ? tempListElement.Next : tempListElement.Previous;
+                elementIndex += isIndexCloserToStart ? 1 : -1;
             }
 
             throw new IndexOutOfRangeException();
