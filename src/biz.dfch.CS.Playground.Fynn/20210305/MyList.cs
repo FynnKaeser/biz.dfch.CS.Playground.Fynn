@@ -15,10 +15,12 @@
  */
 
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace biz.dfch.CS.Playground.Fynn._20210305
 {
-    public class MyList<TItem>
+    public class MyList<TItem> : IEnumerable<TItem>
     {
         private readonly int capacity;
         private MyListElement<TItem> start;
@@ -372,6 +374,43 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
             }
 
             return null;
+        }
+
+        public IEnumerator<TItem> GetEnumerator()
+        {
+            return new MyListEnumerator<TItem>(this);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        private class MyListEnumerator<TItem> : IEnumerator<TItem>
+        {
+            public MyListEnumerator(MyList<TItem> myList)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void Dispose()
+            {
+                throw new NotImplementedException();
+            }
+
+            public bool MoveNext()
+            {
+                throw new NotImplementedException();
+            }
+
+            public void Reset()
+            {
+                throw new NotImplementedException();
+            }
+
+            public TItem Current { get; }
+
+            object IEnumerator.Current => Current;
         }
     }
 }
