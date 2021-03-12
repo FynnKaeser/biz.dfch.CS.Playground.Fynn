@@ -147,25 +147,10 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
             var previous = listElementToBeDeleted.Previous;
             var next = listElementToBeDeleted.Next;
 
-            if (null == previous)
-            {
-                start = next;
-            }
-            else
-            {
-                previous.Next = next;
-            }
-
-            if (null == next)
-            {
-                end = previous;
-
-                Count--;
-                return;
-            }
+            SetNextElement(previous, next);
+            SetPreviousElement(next, previous);
 
             Count--;
-            next.Previous = previous;
         }
 
         public void Delete(TItem item)
@@ -179,25 +164,9 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
                     var previous = tempListElement.Previous;
                     var next = tempListElement.Next;
 
-                    if (null == previous)
-                    {
-                        start = next;
-                    }
-                    else
-                    {
-                        previous.Next = next;
-                    }
-
-                    if (null == next)
-                    {
-                        end = previous;
-
-                        Count--;
-                        return;
-                    }
-
-                    next.Previous = previous;
-
+                    SetNextElement(previous, next);
+                    SetPreviousElement(next, previous);
+                    
                     Count--;
                     return;
                 }
@@ -274,26 +243,11 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
                     listElementByToIndex.Next = elementToMove;
                 }
             }
-            
-            if (null == elementToMovePrevious)
-            {
-                start = elementToMoveNext;
-            }
-            else
-            {
-                elementToMovePrevious.Next = elementToMoveNext;
-            }
-            
-            if (null == elementToMoveNext)
-            {
-                end = elementToMovePrevious;
-            }
-            else
-            {
-                elementToMoveNext.Previous = elementToMovePrevious;
-            }
+
+            SetNextElement(elementToMovePrevious, elementToMoveNext);
+            SetPreviousElement(elementToMoveNext, elementToMovePrevious);
         }
-        
+
         public void Swap(TItem itemOne, TItem itemTwo)
         {
             var indexFirstItem = Search(itemOne);
@@ -322,41 +276,11 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
             listElementOne.Previous = listElementTwoPrevious;
             listElementTwo.Previous = listElementOnePrevious;
 
-            if (null == listElementTwo.Previous)
-            {
-                start = listElementTwo;
-            }
-            else
-            {
-                listElementOnePrevious.Next = listElementTwo;
-            }
+            SetNextElement(listElementOnePrevious, listElementTwo);
+            SetNextElement(listElementTwoPrevious, listElementOne);
 
-            if (null == listElementTwoPrevious)
-            {
-                start = listElementOne;
-            }
-            else
-            {
-                listElementTwoPrevious.Next = listElementOne;
-            }
-
-            if (null == listElementOneNext)
-            {
-                end = listElementTwo;
-            }
-            else
-            {
-                listElementOneNext.Previous = listElementTwo;
-            }
-
-            if (null == listElementTwoNext)
-            {
-                end = listElementOne;
-            }
-            else
-            {
-                listElementTwoNext.Previous = listElementOne;
-            }
+            SetPreviousElement(listElementOneNext, listElementTwo);
+            SetPreviousElement(listElementTwoNext, listElementOne);
         }
 
         private MyListElement<TItem> GetListElementByIndex(int index)
@@ -376,6 +300,30 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
             }
 
             return null;
+        }
+        
+        private void SetNextElement(MyListElement<TItem> element, MyListElement<TItem> next)
+        {
+            if (null == element)
+            {
+                start = next;
+            }
+            else
+            {
+                element.Next = next;
+            }
+        }
+
+        private void SetPreviousElement(MyListElement<TItem> element, MyListElement<TItem> previous)
+        {
+            if (null == element)
+            {
+                end = previous;
+            }
+            else
+            {
+                element.Previous = previous;
+            }
         }
 
         public IEnumerator<TItem> GetEnumerator()
