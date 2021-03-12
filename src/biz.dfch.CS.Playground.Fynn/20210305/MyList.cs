@@ -285,6 +285,9 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
 
         private MyListElement<TItem> GetListElementByIndex(int index)
         {
+            if (Count <= index) return null;
+            if (index < 0) return null;
+
             var isIndexCloserToStart = Count < index * 2;
             var tempListElement = isIndexCloserToStart ? start : end;
             var elementIndex = isIndexCloserToStart ? 0 : Count - 1;
