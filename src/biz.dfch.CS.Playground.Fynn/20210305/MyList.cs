@@ -92,6 +92,15 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
                     var newListElement = new MyListElement<TItem>(item);
                     var tempListElementPrevious = tempListElement.Previous;
 
+                    if (null == tempListElementPrevious)
+                    {
+                        start = newListElement;
+                        start.Next = tempListElement;
+                        tempListElement.Previous = start;
+                        
+                        return;
+                    }
+
                     tempListElementPrevious.Next = newListElement;
                     newListElement.Previous = tempListElementPrevious;
                     newListElement.Next = tempListElement;
