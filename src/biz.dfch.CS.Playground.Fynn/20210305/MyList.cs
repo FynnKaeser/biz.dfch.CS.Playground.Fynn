@@ -20,7 +20,7 @@ using System.Collections.Generic;
 
 namespace biz.dfch.CS.Playground.Fynn._20210305
 {
-    public class MyList<TItem> : IEnumerable<TItem>
+    public class MyList<TItem> : IEnumerable<TItem> where TItem : class
     {
         private readonly int capacity;
         private MyListElement<TItem> start;
@@ -388,7 +388,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
             return GetEnumerator();
         }
 
-        private class MyListEnumerator<TEnumeratorItem> : IEnumerator<TEnumeratorItem>
+        private class MyListEnumerator<TEnumeratorItem> : IEnumerator<TEnumeratorItem> where TEnumeratorItem : class
         {
             public MyListEnumerator(MyList<TEnumeratorItem> myList)
             {
