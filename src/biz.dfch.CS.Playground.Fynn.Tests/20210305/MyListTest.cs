@@ -96,17 +96,17 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             sut.Add("My");
             sut.Add("World");
 
-            var expectedIndexAddAtElement = 2;
+            var expectedIndexInsertElement = 2;
             var expectedIndexWorldElement = 3;
 
             // Act
-            sut.AddAt(2, "AddAt");
+            sut.Insert(2, "Insert");
 
-            var resultIndexAddAtElement = sut.Search("AddAt");
+            var resultIndexInsertElement = sut.Search("Insert");
             var resultIndexWorldElement = sut.Search("World");
 
             // Assert
-            Assert.AreEqual(expectedIndexAddAtElement, resultIndexAddAtElement);
+            Assert.AreEqual(expectedIndexInsertElement, resultIndexInsertElement);
             Assert.AreEqual(expectedIndexWorldElement, resultIndexWorldElement);
         }
 
@@ -119,14 +119,14 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             sut.Add("My");
             sut.Add("World");
 
-            var expectedIndexAddAtElement = 3;
+            var expectedIndexInsertElement = 3;
 
             // Act
-            sut.AddAt(3, "AddAt");
-            var resultIndexAddAtElement = sut.Search("AddAt");
+            sut.Insert(3, "Insert");
+            var resultIndexInsertElement = sut.Search("Insert");
 
             // Assert
-            Assert.AreEqual(expectedIndexAddAtElement, resultIndexAddAtElement);
+            Assert.AreEqual(expectedIndexInsertElement, resultIndexInsertElement);
         }
 
         [TestMethod]
@@ -137,19 +137,19 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             sut.Add("Hello");
             sut.Add("My");
 
-            var expectedIndexAddAtElement = 0;
+            var expectedIndexInsertElement = 0;
             var expectedIndexHelloElement = 1;
             var expectedIndexMyElement = 2;
 
             // Act
-            sut.AddAt(0, "AddAt");
+            sut.Insert(0, "Insert");
 
-            var resultIndexAddAtElement = sut.Search("AddAt");
+            var resultIndexInsertElement = sut.Search("Insert");
             var resultIndexHelloElement = sut.Search("Hello");
             var resultIndexMyElement = sut.Search("My");
 
             // Assert
-            Assert.AreEqual(expectedIndexAddAtElement, resultIndexAddAtElement);
+            Assert.AreEqual(expectedIndexInsertElement, resultIndexInsertElement);
             Assert.AreEqual(expectedIndexHelloElement, resultIndexHelloElement);
             Assert.AreEqual(expectedIndexMyElement, resultIndexMyElement);
         }
@@ -169,7 +169,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             sut.Add("World");
 
             // Act
-            sut.AddAt(index, "AddAt");
+            sut.Insert(index, "Insert");
 
             // Assert
         }
@@ -490,9 +490,9 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
         {
             // Arrange
             var sut = new MyList<string>(3);
-            sut.AddAt(0, "Hello");
-            sut.AddAt(0, "My");
-            sut.AddAt(0, "World");
+            sut.Insert(0, "Hello");
+            sut.Insert(0, "My");
+            sut.Insert(0, "World");
 
             var expectedCount = 3;
 
