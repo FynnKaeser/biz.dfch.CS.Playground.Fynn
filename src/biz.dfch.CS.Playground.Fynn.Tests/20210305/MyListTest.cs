@@ -559,5 +559,59 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             // Assert
             Assert.AreEqual(expectedCount, result);
         }
+
+        [TestMethod]
+        public void SearchForMyClassElementReturnsExpectedIndex()
+        {
+            // Arrange
+            var myFirstTestClass = new MyTestClass();
+            var mySecondTestClass = new MyTestClass();
+
+            var sut = new MyList<MyTestClass>(2);
+            sut.Add(myFirstTestClass);
+            sut.Add(mySecondTestClass);
+
+            var expectedIndexSecondTestClassElement = 1;
+
+            // Act
+            var result = sut.Search(mySecondTestClass);
+            
+            // Assert
+            Assert.AreEqual(expectedIndexSecondTestClassElement, result);
+        }
+
+        [TestMethod]
+        public void SearchForMyEqualsClassElementReturnsExpectedIndex()
+        {
+            // Arrange
+            var myFirstEqualsTestClass = new MyEqualsTestClass
+            {
+                MyString = "Hallo",
+                MyInt = 10,
+                MyDouble = 2.11d,
+                MyChar = 'c',
+                MyBool = false
+            };
+            var mySecondEqualsTestClass = new MyEqualsTestClass
+            {
+                MyString = "Peter",
+                MyInt = 15,
+                MyDouble = 6.41d,
+                MyChar = 'm',
+                MyBool = true
+            };
+
+            var sut = new MyList<MyEqualsTestClass>(2);
+            sut.Add(myFirstEqualsTestClass);
+            sut.Add(mySecondEqualsTestClass);
+
+            var expectedIndexSecondEqualsTestClassElement = 1;
+
+            // Act
+            var result = sut.Search(mySecondEqualsTestClass);
+
+            // Assert
+            Assert.AreEqual(expectedIndexSecondEqualsTestClassElement, result);
+        }
     }  
 }
