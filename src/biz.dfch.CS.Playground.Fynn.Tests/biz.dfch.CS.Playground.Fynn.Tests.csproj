@@ -122,6 +122,7 @@
     <Compile Include="20210304\CsvReaderTest.cs" />
     <Compile Include="20210304\FileCheckerTest.cs" />
     <Compile Include="20210305\MyListTest.cs" />
+    <Compile Include="20210305\MyTestClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
