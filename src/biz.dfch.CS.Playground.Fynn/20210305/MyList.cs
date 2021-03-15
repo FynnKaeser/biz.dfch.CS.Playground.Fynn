@@ -27,6 +27,12 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
         private MyListElement<TItem> end;
         public int Count { private set; get; }
 
+        public int this[int index]
+        {
+            get => throw new NotImplementedException();
+            set => throw new NotImplementedException();
+        }
+
         public MyList(int capacity)
         {
             if (capacity <= 0)
