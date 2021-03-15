@@ -783,5 +783,50 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
 
             // Assert
         }
+
+        [TestMethod]
+        public void UsingIndexersOnListReturnsValueOfElement()
+        {
+            // Arrange
+            var sut = new MyList<string>(5);
+            sut.Add("A");
+            sut.Add("B");
+            sut.Add("C");
+            sut.Add("D");
+            sut.Add("E");
+
+            var expectedValue = "C";
+
+            // Act
+            var result = sut[2];
+
+            // Assert
+            Assert.AreEqual(expectedValue, result);
+        }
+
+        [TestMethod]
+        public void SettingElementUsingIndexersOnListSucceeds()
+        {
+            // Arrange
+            var sut = new MyList<string>(5);
+            sut.Add("A");
+            sut.Add("B");
+            sut.Add("C");
+            sut.Add("D");
+            sut.Add("E");
+
+            var expectedValue = 2;
+            var expectedCount = 5;
+
+            // Act
+            sut[2] = "Indexer";
+
+            var result = sut.Search("Indexer");
+            var resultCount = sut.Count;
+
+            // Assert
+            Assert.AreEqual(expectedValue, result);
+            Assert.AreEqual(expectedCount, resultCount);
+        }
     }  
 }

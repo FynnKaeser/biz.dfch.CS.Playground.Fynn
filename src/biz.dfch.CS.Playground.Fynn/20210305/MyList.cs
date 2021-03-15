@@ -27,10 +27,10 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
         private MyListElement<TItem> end;
         public int Count { private set; get; }
 
-        public int this[int index]
+        public TItem this[int index]
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get => GetListElementByIndex(index).Value;
+            set => GetListElementByIndex(index).Value = value;
         }
 
         public MyList(int capacity)
