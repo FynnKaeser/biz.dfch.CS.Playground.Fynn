@@ -627,5 +627,145 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
 
             // Assert
         }
+
+        [TestMethod]
+        public void InvokingSearchMethodWithNullReturnsNegativeOneIndex()
+        {
+            // Arrange
+            var sut = new MyList<string>(1);
+            var expectedIndex = -1;
+
+            // Act
+            var result = sut.Search(null);
+
+            // Assert
+            Assert.AreEqual(expectedIndex, result);
+        }
+
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void InvokingAddMethodWithNullThrowsArgumentNullException()
+        {
+            // Arrange
+            var sut = new MyList<string>(1);
+
+            // Act
+            sut.Add(null);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void InvokingInsertMethodWithNullThrowsArgumentNullException()
+        {
+            // Arrange
+            var sut = new MyList<string>(1);
+
+            // Act
+            sut.Insert(0, null);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void InvokingDeleteMethodWithNullThrowsArgumentNullException()
+        {
+            // Arrange
+            var sut = new MyList<string>(1);
+
+            // Act
+            sut.Delete(null);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [DataRow(-1)]
+        [DataRow(-42)]
+        [DataRow(2)]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void InvokingDeleteAtWithInvalidIndexThrowsIndexOutOfRangeException(int index)
+        {
+            // Arrange
+            var sut = new MyList<string>(1);
+
+            // Act
+            sut.DeleteAt(index);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [DataRow(-1)]
+        [DataRow(-42)]
+        [DataRow(3)]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void InvokingMoveWithInvalidIndexThrowsIndexOutOfRangeException(int index)
+        {
+            // Arrange
+            var sut = new MyList<string>(3);
+            sut.Add("A");
+            sut.Add("B");
+            sut.Add("C");
+
+            // Act
+            sut.Move("A", index);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void InvokingMoveWithNullThrowsArgumentNullException()
+        {
+            // Arrange
+            var sut = new MyList<string>(3);
+            sut.Add("A");
+            sut.Add("B");
+            sut.Add("C");
+
+            // Act
+            sut.Move(null, 1);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void InvokingSwapWithNullThrowsArgumentNullException()
+        {
+            // Arrange
+            var sut = new MyList<string>(3);
+            sut.Add("A");
+            sut.Add("B");
+            sut.Add("C");
+
+            // Act
+            sut.Swap(null, "A");
+
+            // Assert
+        }
+
+        [TestMethod]
+        [DataRow(-1)]
+        [DataRow(-42)]
+        [DataRow(3)]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void InvokingSwapWithInvalidIndexThrowsIndexOutOfRangeException(int index)
+        {
+            // Arrange
+            var sut = new MyList<string>(3);
+            sut.Add("A");
+            sut.Add("B");
+            sut.Add("C");
+
+            // Act
+            sut.Swap(1, index);
+
+            // Assert
+        }
     }  
 }
