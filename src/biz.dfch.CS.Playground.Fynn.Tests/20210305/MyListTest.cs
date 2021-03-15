@@ -613,5 +613,19 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             // Assert
             Assert.AreEqual(expectedIndexSecondEqualsTestClassElement, result);
         }
+
+        [TestMethod]
+        [DataRow(-1)]
+        [DataRow(0)]
+        [DataRow(-42)]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void CreateListWithInvalidCapacityThrowsArgumentOutOfRangeException(int capacity)
+        {
+            // Arrange
+            // Act
+            var sut = new MyList<string>(capacity);
+
+            // Assert
+        }
     }  
 }

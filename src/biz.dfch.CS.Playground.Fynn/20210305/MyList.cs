@@ -17,6 +17,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace biz.dfch.CS.Playground.Fynn._20210305
 {
@@ -29,6 +30,11 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
 
         public MyList(int capacity)
         {
+            if (capacity <= 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
             this.capacity = capacity;
         }
 
