@@ -644,7 +644,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
 
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void InvokingAddMethodWithNullThrowsArgumentNullException()
         {
             // Arrange
@@ -657,7 +657,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void InvokingInsertMethodWithNullThrowsArgumentNullException()
         {
             // Arrange
@@ -670,7 +670,23 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [DataRow(-1)]
+        [DataRow(-42)]
+        [DataRow(2)]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        public void InvokingInsertAtWithInvalidIndexThrowsIndexOutOfRangeException(int index)
+        {
+            // Arrange
+            var sut = new MyList<string>(1);
+
+            // Act
+            sut.DeleteAt(index);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void InvokingDeleteMethodWithNullThrowsArgumentNullException()
         {
             // Arrange
@@ -686,7 +702,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
         [DataRow(-1)]
         [DataRow(-42)]
         [DataRow(2)]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
         public void InvokingDeleteAtWithInvalidIndexThrowsIndexOutOfRangeException(int index)
         {
             // Arrange
@@ -702,7 +718,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
         [DataRow(-1)]
         [DataRow(-42)]
         [DataRow(3)]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
         public void InvokingMoveWithInvalidIndexThrowsIndexOutOfRangeException(int index)
         {
             // Arrange
@@ -718,7 +734,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void InvokingMoveWithNullThrowsArgumentNullException()
         {
             // Arrange
@@ -734,7 +750,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [ExpectedException(typeof(ArgumentNullException))]
         public void InvokingSwapWithNullThrowsArgumentNullException()
         {
             // Arrange
@@ -753,7 +769,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
         [DataRow(-1)]
         [DataRow(-42)]
         [DataRow(3)]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
         public void InvokingSwapWithInvalidIndexThrowsIndexOutOfRangeException(int index)
         {
             // Arrange
