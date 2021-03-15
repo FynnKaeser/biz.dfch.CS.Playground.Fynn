@@ -17,7 +17,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 
 namespace biz.dfch.CS.Playground.Fynn._20210305
 {
@@ -40,6 +39,11 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
 
         public int Search(TItem item)
         {
+            if (null == item)
+            {
+                return -1;
+            }
+
             var tempElement = start;
             var elementIndex = 0;
 
@@ -62,6 +66,11 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
             if (capacity == Count)
             {
                 throw new ArgumentOutOfRangeException();
+            }
+
+            if (null == item)
+            {
+                throw new ArgumentNullException();
             }
 
             var newListElement = new MyListElement<TItem>(item);
@@ -88,12 +97,17 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
         
         public void Insert(int index, TItem item)
         {
+            if (null == item)
+            {
+                throw new ArgumentNullException();
+            }
+
             if (capacity == Count)
             {
                 throw new ArgumentOutOfRangeException();
             }
 
-            if (Count < index)
+            if (Count < index || 0 > index)
             {
                 throw new IndexOutOfRangeException();
             }
@@ -143,6 +157,9 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
         
         public void DeleteAt(int index)
         {
+            var isValidIndex = IsValidIndex(index);
+            if (!isValidIndex) throw new IndexOutOfRangeException();
+
             var listElementToBeDeleted = GetListElementByIndex(index);
 
             if (null == listElementToBeDeleted)
@@ -161,6 +178,11 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
 
         public void Delete(TItem item)
         {
+            if (null == item)
+            {
+                throw new ArgumentNullException();
+            }
+
             var tempListElement = start;
 
             while (null != tempListElement)
@@ -193,13 +215,27 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
         
         public void Move(TItem item, int toIndex)
         {
+            if (null == item)
+            {
+                throw new ArgumentNullException();
+            }
+
+            var isValidIndex = IsValidIndex(toIndex);
+            if (!isValidIndex) throw new IndexOutOfRangeException();
+
             var indexItem = Search(item);
+            if (-1 == indexItem) throw new ArgumentOutOfRangeException();
 
             Move(indexItem, toIndex);
         }
 
         public void Move(int fromIndex, int toIndex)
         {
+            var isValidFromIndex = IsValidIndex(fromIndex);
+            if (!isValidFromIndex) throw new IndexOutOfRangeException();
+            var isValidToIndex = IsValidIndex(toIndex);
+            if (!isValidToIndex) throw new IndexOutOfRangeException();
+
             var elementToMove = GetListElementByIndex(fromIndex);
             if (null == elementToMove)
             {
@@ -210,6 +246,10 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
             var elementToMovePrevious = elementToMove.Previous;
 
             var listElementByToIndex = GetListElementByIndex(toIndex);
+            if (null == listElementByToIndex)
+            {
+                throw new IndexOutOfRangeException();
+            }
 
             if (fromIndex > toIndex)
             {
@@ -256,6 +296,11 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
 
         public void Swap(TItem itemOne, TItem itemTwo)
         {
+            if (null == itemOne || null == itemTwo)
+            {
+                throw new ArgumentNullException();
+            }
+
             var indexFirstItem = Search(itemOne);
             var indexSecondItem = Search(itemTwo);
 
@@ -264,6 +309,11 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
         
         public void Swap(int indexOne, int indexTwo)
         {
+            var isValidOneIndex = IsValidIndex(indexOne);
+            if (!isValidOneIndex) throw new IndexOutOfRangeException();
+            var isValidTwoIndex = IsValidIndex(indexTwo);
+            if (!isValidTwoIndex) throw new IndexOutOfRangeException();
+
             var listElementOne = GetListElementByIndex(indexOne);
             var listElementTwo = GetListElementByIndex(indexTwo);
 
@@ -333,6 +383,16 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
             {
                 element.Previous = previous;
             }
+        }
+
+        private bool IsValidIndex(int index)
+        {
+            if (Count <= index || 0 > index)
+            { 
+                return false;
+            }
+
+            return true;
         }
 
         public IEnumerator<TItem> GetEnumerator()
