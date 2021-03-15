@@ -397,7 +397,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
 
         public IEnumerator<TItem> GetEnumerator()
         {
-            return new MyListEnumerator<TItem>(this);
+            return new MyListEnumerator<TItem>(start);
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -407,27 +407,33 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
 
         private class MyListEnumerator<TEnumeratorItem> : IEnumerator<TEnumeratorItem> where TEnumeratorItem : class
         {
-            public MyListEnumerator(MyList<TEnumeratorItem> myList)
+            private MyListElement<TEnumeratorItem> start;
+            private MyListElement<TEnumeratorItem> currentElement;
+
+            public MyListEnumerator(MyListElement<TEnumeratorItem> start)
             {
-                throw new NotImplementedException();
+                this.start = start;
             }
 
             public void Dispose()
             {
-                throw new NotImplementedException();
+                start = null;
+                currentElement = null;
             }
 
             public bool MoveNext()
             {
-                throw new NotImplementedException();
+                currentElement = null == currentElement ? start : currentElement.Next;
+
+                return currentElement != null;
             }
 
             public void Reset()
             {
-                throw new NotImplementedException();
+                currentElement = start;
             }
 
-            public TEnumeratorItem Current { get; }
+            public TEnumeratorItem Current => currentElement.Value;
 
             object IEnumerator.Current => Current;
         }
