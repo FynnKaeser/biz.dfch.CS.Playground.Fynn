@@ -163,7 +163,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
         
         public void DeleteAt(int index)
         {
-            var isValidIndex = IsValidIndex(index);
+            var isValidIndex = IsValid(index);
             if (!isValidIndex) throw new IndexOutOfRangeException();
 
             var listElementToBeDeleted = GetListElementByIndex(index);
@@ -226,7 +226,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
                 throw new ArgumentNullException();
             }
 
-            var isValidIndex = IsValidIndex(toIndex);
+            var isValidIndex = IsValid(toIndex);
             if (!isValidIndex) throw new IndexOutOfRangeException();
 
             var indexItem = Search(item);
@@ -237,9 +237,9 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
 
         public void Move(int fromIndex, int toIndex)
         {
-            var isValidFromIndex = IsValidIndex(fromIndex);
+            var isValidFromIndex = IsValid(fromIndex);
             if (!isValidFromIndex) throw new IndexOutOfRangeException();
-            var isValidToIndex = IsValidIndex(toIndex);
+            var isValidToIndex = IsValid(toIndex);
             if (!isValidToIndex) throw new IndexOutOfRangeException();
 
             var elementToMove = GetListElementByIndex(fromIndex);
@@ -315,9 +315,9 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
         
         public void Swap(int indexOne, int indexTwo)
         {
-            var isValidOneIndex = IsValidIndex(indexOne);
+            var isValidOneIndex = IsValid(indexOne);
             if (!isValidOneIndex) throw new IndexOutOfRangeException();
-            var isValidTwoIndex = IsValidIndex(indexTwo);
+            var isValidTwoIndex = IsValid(indexTwo);
             if (!isValidTwoIndex) throw new IndexOutOfRangeException();
 
             var listElementOne = GetListElementByIndex(indexOne);
@@ -391,14 +391,9 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
             }
         }
 
-        private bool IsValidIndex(int index)
+        private bool IsValid(int index)
         {
-            if (Count <= index || 0 > index)
-            { 
-                return false;
-            }
-
-            return true;
+            return Count > index && 0 <= index;
         }
 
         public IEnumerator<TItem> GetEnumerator()
