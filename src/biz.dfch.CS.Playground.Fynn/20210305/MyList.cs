@@ -431,7 +431,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
 
             public void Reset()
             {
-                currentElement = start;
+                currentElement = null;
             }
 
             public TEnumeratorItem Current => currentElement.Value;
