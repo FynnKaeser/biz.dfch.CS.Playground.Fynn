@@ -828,5 +828,30 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             Assert.AreEqual(expectedValue, result);
             Assert.AreEqual(expectedCount, resultCount);
         }
+        
+        [TestMethod]
+        public void DeleteElementAtMiddleIndexSucceeds()
+        {
+            // Arrange
+            var sut = new MyList<string>(5);
+            sut.Add("A");
+            sut.Add("B");
+            sut.Add("C");
+            sut.Add("D");
+            sut.Add("E");
+
+            var expectedIndex = 2;
+            var expectedCount = 4;
+
+            // Act
+            sut.DeleteAt(2);
+
+            var resultIndex = sut.Search("D");
+            var resultCount = sut.Count;
+
+            // Assert
+            Assert.AreEqual(expectedIndex, resultIndex);
+            Assert.AreEqual(expectedCount, resultCount);
+        }
     }  
 }
