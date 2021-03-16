@@ -804,6 +804,29 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             Assert.AreEqual(expectedValue, result);
         }
 
+
+        [TestMethod]
+        [DataRow(-1)]
+        [DataRow(-42)]
+        [DataRow(5)]
+        [DataRow(42)]
+        [ExpectedException(typeof(NullReferenceException))]
+        public void UsingIndexersOnListWithInvalidIndexThrowsNullReferenceException(int index)
+        {
+            // Arrange
+            var sut = new MyList<string>(5);
+            sut.Add("A");
+            sut.Add("B");
+            sut.Add("C");
+            sut.Add("D");
+            sut.Add("E");
+
+            // Act
+            var result = sut[index];
+
+            // Assert
+        }
+
         [TestMethod]
         public void SettingElementUsingIndexersOnListSucceeds()
         {
@@ -828,7 +851,29 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             Assert.AreEqual(expectedValue, result);
             Assert.AreEqual(expectedCount, resultCount);
         }
-        
+
+        [TestMethod]
+        [DataRow(-1)]
+        [DataRow(-42)]
+        [DataRow(5)]
+        [DataRow(42)]
+        [ExpectedException(typeof(NullReferenceException))]
+        public void SettingElementUsingIndexersWithInValidIndexesThrowsNullReferenceException(int index)
+        {
+            // Arrange
+            var sut = new MyList<string>(5);
+            sut.Add("A");
+            sut.Add("B");
+            sut.Add("C");
+            sut.Add("D");
+            sut.Add("E");
+
+            // Act
+            sut[index] = "Indexer";
+
+            // Assert
+        }
+
         [TestMethod]
         public void DeleteElementAtMiddleIndexSucceeds()
         {
