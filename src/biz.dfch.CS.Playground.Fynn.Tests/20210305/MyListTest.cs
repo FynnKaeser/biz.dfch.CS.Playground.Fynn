@@ -898,5 +898,23 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             Assert.AreEqual(expectedIndex, resultIndex);
             Assert.AreEqual(expectedCount, resultCount);
         }
+
+        [TestMethod]
+        public void IteratingOverListWithStartEqualToNullSucceeds()
+        {
+            // Arrange
+            var sut = new MyList<string>(1);
+            var count = 0;
+            var expectedCount = 0;
+
+            // Act
+            foreach (var s in sut)
+            {
+                count++;
+            }
+
+            // Assert
+            Assert.AreEqual(expectedCount, count);
+        }
     }  
 }
