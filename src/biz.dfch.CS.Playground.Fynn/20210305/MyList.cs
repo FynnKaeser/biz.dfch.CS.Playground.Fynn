@@ -17,6 +17,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using Microsoft.Win32.SafeHandles;
 
 namespace biz.dfch.CS.Playground.Fynn._20210305
 {
@@ -428,17 +430,30 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
         {
             private MyListElement<TEnumeratorItem> start;
             private MyListElement<TEnumeratorItem> currentElement;
+            private bool isDisposed;
+            private readonly SafeHandle safeHandle = new SafeFileHandle(IntPtr.Zero, true);
 
             public MyListEnumerator(MyListElement<TEnumeratorItem> start)
             {
                 this.start = start;
             }
 
-            public void Dispose()
+            protected virtual void Dispose(bool disposing)
             {
-                start = null;
-                currentElement = null;
+                if (isDisposed)
+                {
+                    return;
+                }
+
+                if (disposing)
+                {
+                    safeHandle?.Dispose();
+                }
+
+                isDisposed = true;
             }
+
+            public void Dispose() => Dispose(true);
 
             public bool MoveNext()
             {
