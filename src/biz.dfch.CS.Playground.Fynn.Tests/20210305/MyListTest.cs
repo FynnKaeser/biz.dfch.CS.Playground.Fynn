@@ -943,5 +943,29 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             Assert.AreEqual(expectedResult, result);
             enumerator.Dispose();
         }
+
+        [TestMethod]
+        public void MoveNextOfEnumeratorSucceeds()
+        {
+            // Arrange
+            var sut = new MyList<string>(4);
+            sut.Add("A");
+            sut.Add("B");
+            sut.Add("C");
+            sut.Add("D");
+
+            var expectedResult = "B";
+
+            var enumerator = sut.GetEnumerator();
+
+            // Act
+            enumerator.MoveNext();
+            enumerator.MoveNext();
+            var result = enumerator.Current;
+
+            // Assert
+            Assert.AreEqual(expectedResult, result);
+            enumerator.Dispose();
+        }
     }  
 }
