@@ -810,7 +810,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
         [DataRow(-42)]
         [DataRow(5)]
         [DataRow(42)]
-        [ExpectedException(typeof(NullReferenceException))]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
         public void UsingIndexersOnListWithInvalidIndexThrowsNullReferenceException(int index)
         {
             // Arrange
@@ -857,7 +857,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
         [DataRow(-42)]
         [DataRow(5)]
         [DataRow(42)]
-        [ExpectedException(typeof(NullReferenceException))]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
         public void SettingElementUsingIndexersWithInValidIndexesThrowsNullReferenceException(int index)
         {
             // Arrange

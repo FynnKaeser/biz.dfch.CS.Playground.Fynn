@@ -29,8 +29,26 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
 
         public TItem this[int index]
         {
-            get => GetListElementByIndex(index).Value;
-            set => GetListElementByIndex(index).Value = value;
+            get
+            {
+                var element = GetListElementByIndex(index);
+                if (null == element)
+                {
+                    throw new IndexOutOfRangeException();
+                }
+
+                return element.Value;
+            }
+            set
+            {
+                var element = GetListElementByIndex(index);
+                if (null == element)
+                {
+                    throw new IndexOutOfRangeException();
+                }
+
+                element.Value = value;
+            }
         }
 
         public MyList(int capacity)
