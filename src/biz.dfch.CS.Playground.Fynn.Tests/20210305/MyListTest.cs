@@ -916,5 +916,32 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             // Assert
             Assert.AreEqual(expectedCount, count);
         }
+
+        [TestMethod]
+        public void ResetOfEnumeratorSucceeds()
+        {
+            // Arrange
+            var sut = new MyList<string>(4);
+            sut.Add("A");
+            sut.Add("B");
+            sut.Add("C");
+            sut.Add("D");
+
+            var expectedResult = "A";
+
+            var enumerator = sut.GetEnumerator();
+            enumerator.MoveNext();
+            enumerator.MoveNext();
+            enumerator.MoveNext();
+
+            // Act
+            enumerator.Reset();
+            enumerator.MoveNext();
+            var result = enumerator.Current;
+
+            // Assert
+            Assert.AreEqual(expectedResult, result);
+            enumerator.Dispose();
+        }
     }  
 }
