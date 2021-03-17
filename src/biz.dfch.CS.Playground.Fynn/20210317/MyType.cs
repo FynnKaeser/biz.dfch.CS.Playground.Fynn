@@ -38,7 +38,21 @@ namespace biz.dfch.CS.Playground.Fynn._20210317
 
         public int CompareTo(MyType other)
         {
-            throw new NotImplementedException();
+            if (null == other)
+            {
+                return -1;
+            }
+
+            if (this.MyBool && !other.MyBool)
+            {
+                return -1;
+            }
+            if(!this.MyBool && other.MyBool)
+            {
+                return 1;
+            }
+
+            return MyInt.CompareTo(other.MyInt) * -1;
         }
 
         public bool Equals(MyType other)

@@ -102,7 +102,13 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210317
                 var myTypeToBeAsserted = myTypesArray[i];
                 var expectedMyType = expectedMyTypesArray[i];
 
-                var result = myTypeToBeAsserted.Equals(expectedMyType);
+                if (null == expectedMyType)
+                {
+                    Assert.IsNull(myTypeToBeAsserted);
+                    continue;
+                }
+
+                var result = expectedMyType.Equals(myTypeToBeAsserted);
 
                 Assert.IsTrue(result);
             }
