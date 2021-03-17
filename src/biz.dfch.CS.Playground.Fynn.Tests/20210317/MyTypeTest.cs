@@ -110,17 +110,59 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210317
         }
 
         [TestMethod]
-        public void EqualsMethodSucceeds()
+        public void InstanceIsEqualToOtherReturnsTrue()
         {
             // Arrange
-            var sut = new MyType();
-            var equalsTo = new MyType();
+            var sut = new MyType
+            {
+                MyString = "Hello",
+                MyInt = 84,
+                MyBool = true,
+                MyLong = 112
+            };
+            var equalsTo = new MyType
+            {
+                MyString = "Hello",
+                MyInt = 84,
+                MyBool = true,
+                MyLong = 112
+            };
+
+            var expectedResult = true;
 
             // Act
             var result = sut.Equals(equalsTo);
 
             // Assert
+            Assert.AreEqual(expectedResult, result);
+        }
 
+        [TestMethod]
+        public void InstanceIsNotEqualToOtherReturnsFalse()
+        {
+            // Arrange
+            var sut = new MyType
+            {
+                MyString = "My String",
+                MyInt = 34,
+                MyBool = false,
+                MyLong = 162
+            };
+            var equalsTo = new MyType
+            {
+                MyString = "Hello",
+                MyInt = 84,
+                MyBool = true,
+                MyLong = 112
+            };
+
+            var expectedResult = false;
+
+            // Act
+            var result = sut.Equals(equalsTo);
+
+            // Assert
+            Assert.AreEqual(expectedResult, result);
         }
     }
 }
