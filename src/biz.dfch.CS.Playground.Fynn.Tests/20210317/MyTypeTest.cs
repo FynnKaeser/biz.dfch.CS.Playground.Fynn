@@ -48,7 +48,6 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210317
 
             // Assert
             Assert.AreEqual(expectedResult, result);
-
         }
         
         [TestMethod]
@@ -77,7 +76,6 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210317
 
             // Assert
             Assert.AreEqual(expectedResult, result);
-
         }
         
         [TestMethod]
@@ -106,7 +104,6 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210317
 
             // Assert
             Assert.AreEqual(expectedResult, result);
-
         }
 
         [TestMethod]
@@ -160,6 +157,181 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210317
 
             // Act
             var result = sut.Equals(equalsTo);
+
+            // Assert
+            Assert.AreEqual(expectedResult, result);
+        }
+
+        [TestMethod]
+        public void InstanceIsEqualToOtherUsingEqualityOperatorReturnsTrue()
+        {
+            // Arrange
+            var sut = new MyType
+            {
+                MyString = "Hello",
+                MyInt = 84,
+                MyBool = true,
+                MyLong = 112
+            };
+            var equalsTo = new MyType
+            {
+                MyString = "Hello",
+                MyInt = 84,
+                MyBool = true,
+                MyLong = 112
+            };
+
+            var expectedResult = true;
+
+            // Act
+            var result = sut == equalsTo;
+
+            // Assert
+            Assert.AreEqual(expectedResult, result);
+        }
+
+        [TestMethod]
+        public void InstanceIsNotEqualToOtherUsingEqualityOperatorReturnsFalse()
+        {
+            // Arrange
+            var sut = new MyType
+            {
+                MyString = "Moin",
+                MyInt = 214,
+                MyBool = false,
+                MyLong = 86
+            };
+            var equalsTo = new MyType
+            {
+                MyString = "Hello",
+                MyInt = 84,
+                MyBool = true,
+                MyLong = 112
+            };
+
+            var expectedResult = false;
+
+            // Act
+            var result = sut == equalsTo;
+
+            // Assert
+            Assert.AreEqual(expectedResult, result);
+        }
+
+        [TestMethod]
+        public void InstanceIsEqualToOtherUsingInequalityOperatorReturnsFalse()
+        {
+            // Arrange
+            var sut = new MyType
+            {
+                MyString = "Hello",
+                MyInt = 84,
+                MyBool = true,
+                MyLong = 112
+            };
+            var equalsTo = new MyType
+            {
+                MyString = "Hello",
+                MyInt = 84,
+                MyBool = true,
+                MyLong = 112
+            };
+
+            var expectedResult = false;
+
+            // Act
+            var result = sut != equalsTo;
+
+            // Assert
+            Assert.AreEqual(expectedResult, result);
+        }
+
+        [TestMethod]
+        public void InstanceIsNotEqualToOtherUsingInequalityOperatorReturnsTrue()
+        {
+            // Arrange
+            var sut = new MyType
+            {
+                MyString = "Moin",
+                MyInt = 214,
+                MyBool = false,
+                MyLong = 86
+            };
+            var equalsTo = new MyType
+            {
+                MyString = "Hello",
+                MyInt = 84,
+                MyBool = true,
+                MyLong = 112
+            };
+
+            var expectedResult = true;
+
+            // Act
+            var result = sut != equalsTo;
+
+            // Assert
+            Assert.AreEqual(expectedResult, result);
+        }
+
+        [TestMethod]
+        public void InstanceIsNullUsingInequalityOperatorReturnsTrue()
+        {
+            // Arrange
+            var sut = new MyType
+            {
+                MyString = "Moin",
+                MyInt = 214,
+                MyBool = false,
+                MyLong = 86
+            };
+
+            var expectedResult = true;
+
+            // Act
+            var result = sut != null;
+
+            // Assert
+            Assert.AreEqual(expectedResult, result);
+        }
+
+        [TestMethod]
+        public void InstanceIsNullUsingEqualityOperatorReturnsFalse()
+        {
+            // Arrange
+            var sut = new MyType
+            {
+                MyString = "Moin",
+                MyInt = 214,
+                MyBool = false,
+                MyLong = 86
+            };
+
+            var expectedResult = false;
+
+            // Act
+            var result = sut == null;
+
+            // Assert
+            Assert.AreEqual(expectedResult, result);
+        }
+
+        [TestMethod]
+        public void InstanceEqualsToNullReturnsFalse()
+        {
+            // Arrange
+            var sut = new MyType
+            {
+                MyString = "My String",
+                MyInt = 34,
+                MyBool = false,
+                MyLong = 162
+            };
+
+            var expectedResult = false;
+
+            // Act
+            var result = sut.Equals(null);
 
             // Assert
             Assert.AreEqual(expectedResult, result);

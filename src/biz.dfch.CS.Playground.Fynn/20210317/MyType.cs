@@ -32,7 +32,40 @@ namespace biz.dfch.CS.Playground.Fynn._20210317
 
         public bool Equals(MyType other)
         {
-            throw new NotImplementedException();
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
+            if (other.GetType() != GetType()) return false;
+
+            return MyString.Equals(other.MyString) && MyInt.Equals(other.MyInt) && MyBool.Equals(other.MyBool) &&
+                   MyLong.Equals(other.MyLong);
+        }
+
+        public override bool Equals(object obj)
+        {
+            return Equals((MyType)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            var hashString = MyString == null ? 0 : MyString.GetHashCode();
+            var hashInt = MyInt.GetHashCode();
+            var hashBool = MyBool.GetHashCode();
+            var hashLong = MyLong.GetHashCode();
+
+            return hashString ^ hashInt ^ hashLong ^ hashBool;
+        }
+
+        public static bool operator ==(MyType myType1, MyType myType2)
+        {
+            if ((object)myType1 == null || (object)myType2 == null)
+                return Equals(myType1, myType2);
+
+            return myType1.Equals(myType2);
+        }
+
+        public static bool operator !=(MyType myType1, MyType myType2)
+        {
+            return !(myType1 == myType2);
         }
     }
 }
