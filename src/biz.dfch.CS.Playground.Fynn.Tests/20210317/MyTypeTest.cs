@@ -23,6 +23,16 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210317
     [TestClass]
     public class MyTypeTest
     {
+        private readonly MyType[] expectedMyTypesArray =
+        {
+            new MyType("World", 174, true, 15312),
+            new MyType("Hello", 153, true, 5),
+            new MyType("Field", 43, true, 74),
+            new MyType("My String", 42, false, 235),
+            new MyType("Computer", 15, false, 43),
+            null
+        };
+
         [TestMethod]
         public void ComparingInstancesWhereInstanceIsInTheSamePositionAsOtherInSortOrderReturnsIntEqualZero()
         {
@@ -44,7 +54,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210317
         {
             // Arrange
             var sut = new MyType("My String", 42, true, 112);
-            var compareTo = new MyType("Hello", 84, true, 112);
+            var compareTo = new MyType("Hello", 12, true, 112);
 
             var expectedResult = -1;
 
@@ -72,9 +82,30 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210317
         }
 
         [TestMethod]
+        public void SortInstancesOfMyTypeSucceeds()
         {
             // Arrange
+            var instance1 = new MyType("My String", 42, false, 235);
+            var instance2 = new MyType("Hello", 153, true, 5);
+            var instance3 = new MyType("World", 174, true, 15312);
+            var instance4 = new MyType("Computer", 15, false, 43);
+            var instance5 = new MyType("Field", 43, true, 74);
+
+            MyType[] myTypesArray = {null, instance1, instance2, instance3, instance4, instance5};
+
+            // Act
+            Array.Sort(myTypesArray);
+
+            // Assert
+            for (int i = 0; i < expectedMyTypesArray.Length; i++)
             {
+                var myTypeToBeAsserted = myTypesArray[i];
+                var expectedMyType = expectedMyTypesArray[i];
+
+                var result = myTypeToBeAsserted.Equals(expectedMyType);
+
+                Assert.IsTrue(result);
+            }
         }
 
         [TestMethod]
