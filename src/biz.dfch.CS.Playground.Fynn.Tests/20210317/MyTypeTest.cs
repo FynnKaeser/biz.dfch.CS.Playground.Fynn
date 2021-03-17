@@ -23,16 +23,89 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210317
     public class MyTypeTest
     {
         [TestMethod]
-        public void CompareToMethodSucceeds()
+        public void ComparingInstancesWhereInstanceIsInTheSamePositionAsOtherInSortOrderReturnsIntEqualZero()
         {
             // Arrange
-            var sut = new MyType();
-            var compareTo = new MyType();
+            var sut = new MyType
+            {
+                MyString = "My String",
+                MyInt = 42,
+                MyBool = true,
+                MyLong = 112
+            };
+            var compareTo = new MyType
+            {
+                MyString = "Hello",
+                MyInt = 42,
+                MyBool = true,
+                MyLong = 163
+            };
+
+            var expectedResult = 0;
 
             // Act
             var result = sut.CompareTo(compareTo);
 
             // Assert
+            Assert.AreEqual(expectedResult, result);
+
+        }
+        
+        [TestMethod]
+        public void ComparingInstancesWhereInstancePrecedesOtherInstanceInSortOrderReturnsIntEqualToMinusOne()
+        {
+            // Arrange
+            var sut = new MyType
+            {
+                MyString = "My String",
+                MyInt = 42,
+                MyBool = true,
+                MyLong = 112
+            };
+            var compareTo = new MyType
+            {
+                MyString = "Hello",
+                MyInt = 84,
+                MyBool = true,
+                MyLong = 112
+            };
+
+            var expectedResult = -1;
+
+            // Act
+            var result = sut.CompareTo(compareTo);
+
+            // Assert
+            Assert.AreEqual(expectedResult, result);
+
+        }
+        
+        [TestMethod]
+        public void ComparingInstancesWhereInstanceFollowsOtherInstanceInSortOrderReturnsIntEqualToOne()
+        {
+            // Arrange
+            var sut = new MyType
+            {
+                MyString = "My String",
+                MyInt = 42,
+                MyBool = false,
+                MyLong = 112
+            };
+            var compareTo = new MyType
+            {
+                MyString = "Hello",
+                MyInt = 84,
+                MyBool = true,
+                MyLong = 112
+            };
+
+            var expectedResult = 1;
+
+            // Act
+            var result = sut.CompareTo(compareTo);
+
+            // Assert
+            Assert.AreEqual(expectedResult, result);
 
         }
 
