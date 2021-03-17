@@ -15,6 +15,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 
 namespace biz.dfch.CS.Playground.Fynn._20210317
 {
@@ -24,6 +25,16 @@ namespace biz.dfch.CS.Playground.Fynn._20210317
         public int MyInt { get; set; }
         public bool MyBool { get; set; }
         public long MyLong { get; set; }
+        
+        public MyType(string myString, int myInt, bool myBool, long myLong)
+        {
+            if (string.IsNullOrWhiteSpace(myString)) throw new ArgumentNullException();
+
+            MyString = myString;
+            MyInt = myInt;
+            MyBool = myBool;
+            MyLong = myLong;
+        }
 
         public int CompareTo(MyType other)
         {
