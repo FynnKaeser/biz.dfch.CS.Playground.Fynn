@@ -27,8 +27,8 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
         private readonly int capacity;
         private MyListElement<TItem> start;
         private MyListElement<TItem> end;
-        public int Count { private set; get; }
 
+        public int Count { private set; get; }
         public TItem this[int index]
         {
             get
@@ -426,19 +426,19 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
             return GetEnumerator();
         }
 
-        private class MyListEnumerator<TEnumeratorItem> : IEnumerator<TEnumeratorItem> where TEnumeratorItem : class
+        private sealed class MyListEnumerator<TEnumeratorItem> : IEnumerator<TEnumeratorItem> where TEnumeratorItem : class
         {
-            private MyListElement<TEnumeratorItem> start;
+            private readonly SafeHandle safeHandle = new SafeFileHandle(IntPtr.Zero, true);
+            private readonly MyListElement<TEnumeratorItem> start;
             private MyListElement<TEnumeratorItem> currentElement;
             private bool isDisposed;
-            private readonly SafeHandle safeHandle = new SafeFileHandle(IntPtr.Zero, true);
 
             public MyListEnumerator(MyListElement<TEnumeratorItem> start)
             {
                 this.start = start;
             }
-
-            protected virtual void Dispose(bool disposing)
+            
+            private void Dispose(bool disposing)
             {
                 if (isDisposed)
                 {
@@ -453,7 +453,11 @@ namespace biz.dfch.CS.Playground.Fynn._20210305
                 isDisposed = true;
             }
 
-            public void Dispose() => Dispose(true);
+            public void Dispose()
+            {
+                Dispose(true);
+                GC.SuppressFinalize(this);
+            }
 
             public bool MoveNext()
             {
