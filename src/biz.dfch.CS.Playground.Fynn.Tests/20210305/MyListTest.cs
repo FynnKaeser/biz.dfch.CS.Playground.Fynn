@@ -96,17 +96,17 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             sut.Add("My");
             sut.Add("World");
 
-            var expectedIndexAddAtElement = 2;
+            var expectedIndexInsertElement = 2;
             var expectedIndexWorldElement = 3;
 
             // Act
-            sut.AddAt(2, "AddAt");
+            sut.Insert(2, "Insert");
 
-            var resultIndexAddAtElement = sut.Search("AddAt");
+            var resultIndexInsertElement = sut.Search("Insert");
             var resultIndexWorldElement = sut.Search("World");
 
             // Assert
-            Assert.AreEqual(expectedIndexAddAtElement, resultIndexAddAtElement);
+            Assert.AreEqual(expectedIndexInsertElement, resultIndexInsertElement);
             Assert.AreEqual(expectedIndexWorldElement, resultIndexWorldElement);
         }
 
@@ -119,14 +119,14 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             sut.Add("My");
             sut.Add("World");
 
-            var expectedIndexAddAtElement = 3;
+            var expectedIndexInsertElement = 3;
 
             // Act
-            sut.AddAt(3, "AddAt");
-            var resultIndexAddAtElement = sut.Search("AddAt");
+            sut.Insert(3, "Insert");
+            var resultIndexInsertElement = sut.Search("Insert");
 
             // Assert
-            Assert.AreEqual(expectedIndexAddAtElement, resultIndexAddAtElement);
+            Assert.AreEqual(expectedIndexInsertElement, resultIndexInsertElement);
         }
 
         [TestMethod]
@@ -137,19 +137,19 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             sut.Add("Hello");
             sut.Add("My");
 
-            var expectedIndexAddAtElement = 0;
+            var expectedIndexInsertElement = 0;
             var expectedIndexHelloElement = 1;
             var expectedIndexMyElement = 2;
 
             // Act
-            sut.AddAt(0, "AddAt");
+            sut.Insert(0, "Insert");
 
-            var resultIndexAddAtElement = sut.Search("AddAt");
+            var resultIndexInsertElement = sut.Search("Insert");
             var resultIndexHelloElement = sut.Search("Hello");
             var resultIndexMyElement = sut.Search("My");
 
             // Assert
-            Assert.AreEqual(expectedIndexAddAtElement, resultIndexAddAtElement);
+            Assert.AreEqual(expectedIndexInsertElement, resultIndexInsertElement);
             Assert.AreEqual(expectedIndexHelloElement, resultIndexHelloElement);
             Assert.AreEqual(expectedIndexMyElement, resultIndexMyElement);
         }
@@ -169,7 +169,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
             sut.Add("World");
 
             // Act
-            sut.AddAt(index, "AddAt");
+            sut.Insert(index, "Insert");
 
             // Assert
         }
@@ -490,9 +490,9 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
         {
             // Arrange
             var sut = new MyList<string>(3);
-            sut.AddAt(0, "Hello");
-            sut.AddAt(0, "My");
-            sut.AddAt(0, "World");
+            sut.Insert(0, "Hello");
+            sut.Insert(0, "My");
+            sut.Insert(0, "World");
 
             var expectedCount = 3;
 
@@ -558,6 +558,414 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210305
 
             // Assert
             Assert.AreEqual(expectedCount, result);
+        }
+
+        [TestMethod]
+        public void SearchForMyClassElementReturnsExpectedIndex()
+        {
+            // Arrange
+            var myFirstTestClass = new MyTestClass();
+            var mySecondTestClass = new MyTestClass();
+
+            var sut = new MyList<MyTestClass>(2);
+            sut.Add(myFirstTestClass);
+            sut.Add(mySecondTestClass);
+
+            var expectedIndexSecondTestClassElement = 1;
+
+            // Act
+            var result = sut.Search(mySecondTestClass);
+            
+            // Assert
+            Assert.AreEqual(expectedIndexSecondTestClassElement, result);
+        }
+
+        [TestMethod]
+        public void SearchForMyEqualsClassElementReturnsExpectedIndex()
+        {
+            // Arrange
+            var myFirstEqualsTestClass = new MyEqualsTestClass
+            {
+                MyString = "Hallo",
+                MyInt = 10,
+                MyDouble = 2.11d,
+                MyChar = 'c',
+                MyBool = false
+            };
+            var mySecondEqualsTestClass = new MyEqualsTestClass
+            {
+                MyString = "Peter",
+                MyInt = 15,
+                MyDouble = 6.41d,
+                MyChar = 'm',
+                MyBool = true
+            };
+
+            var sut = new MyList<MyEqualsTestClass>(2);
+            sut.Add(myFirstEqualsTestClass);
+            sut.Add(mySecondEqualsTestClass);
+
+            var expectedIndexSecondEqualsTestClassElement = 1;
+
+            // Act
+            var result = sut.Search(mySecondEqualsTestClass);
+
+            // Assert
+            Assert.AreEqual(expectedIndexSecondEqualsTestClassElement, result);
+        }
+
+        [TestMethod]
+        [DataRow(-1)]
+        [DataRow(0)]
+        [DataRow(-42)]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void CreateListWithInvalidCapacityThrowsArgumentOutOfRangeException(int capacity)
+        {
+            // Arrange
+            // Act
+            var sut = new MyList<string>(capacity);
+
+            // Assert
+        }
+
+        [TestMethod]
+        public void InvokingSearchMethodWithNullReturnsNegativeOneIndex()
+        {
+            // Arrange
+            var sut = new MyList<string>(1);
+            var expectedIndex = -1;
+
+            // Act
+            var result = sut.Search(null);
+
+            // Assert
+            Assert.AreEqual(expectedIndex, result);
+        }
+
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void InvokingAddMethodWithNullThrowsArgumentNullException()
+        {
+            // Arrange
+            var sut = new MyList<string>(1);
+
+            // Act
+            sut.Add(null);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void InvokingInsertMethodWithNullThrowsArgumentNullException()
+        {
+            // Arrange
+            var sut = new MyList<string>(1);
+
+            // Act
+            sut.Insert(0, null);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [DataRow(-1)]
+        [DataRow(-42)]
+        [DataRow(2)]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        public void InvokingInsertAtWithInvalidIndexThrowsIndexOutOfRangeException(int index)
+        {
+            // Arrange
+            var sut = new MyList<string>(1);
+
+            // Act
+            sut.DeleteAt(index);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void InvokingDeleteMethodWithNullThrowsArgumentNullException()
+        {
+            // Arrange
+            var sut = new MyList<string>(1);
+
+            // Act
+            sut.Delete(null);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [DataRow(-1)]
+        [DataRow(-42)]
+        [DataRow(2)]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        public void InvokingDeleteAtWithInvalidIndexThrowsIndexOutOfRangeException(int index)
+        {
+            // Arrange
+            var sut = new MyList<string>(1);
+
+            // Act
+            sut.DeleteAt(index);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [DataRow(-1)]
+        [DataRow(-42)]
+        [DataRow(3)]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        public void InvokingMoveWithInvalidIndexThrowsIndexOutOfRangeException(int index)
+        {
+            // Arrange
+            var sut = new MyList<string>(3);
+            sut.Add("A");
+            sut.Add("B");
+            sut.Add("C");
+
+            // Act
+            sut.Move("A", index);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void InvokingMoveWithNullThrowsArgumentNullException()
+        {
+            // Arrange
+            var sut = new MyList<string>(3);
+            sut.Add("A");
+            sut.Add("B");
+            sut.Add("C");
+
+            // Act
+            sut.Move(null, 1);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void InvokingSwapWithNullThrowsArgumentNullException()
+        {
+            // Arrange
+            var sut = new MyList<string>(3);
+            sut.Add("A");
+            sut.Add("B");
+            sut.Add("C");
+
+            // Act
+            sut.Swap(null, "A");
+
+            // Assert
+        }
+
+        [TestMethod]
+        [DataRow(-1)]
+        [DataRow(-42)]
+        [DataRow(3)]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        public void InvokingSwapWithInvalidIndexThrowsIndexOutOfRangeException(int index)
+        {
+            // Arrange
+            var sut = new MyList<string>(3);
+            sut.Add("A");
+            sut.Add("B");
+            sut.Add("C");
+
+            // Act
+            sut.Swap(1, index);
+
+            // Assert
+        }
+
+        [TestMethod]
+        public void UsingIndexersOnListReturnsValueOfElement()
+        {
+            // Arrange
+            var sut = new MyList<string>(5);
+            sut.Add("A");
+            sut.Add("B");
+            sut.Add("C");
+            sut.Add("D");
+            sut.Add("E");
+
+            var expectedValue = "C";
+
+            // Act
+            var result = sut[2];
+
+            // Assert
+            Assert.AreEqual(expectedValue, result);
+        }
+
+
+        [TestMethod]
+        [DataRow(-1)]
+        [DataRow(-42)]
+        [DataRow(5)]
+        [DataRow(42)]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        public void UsingIndexersOnListWithInvalidIndexThrowsNullReferenceException(int index)
+        {
+            // Arrange
+            var sut = new MyList<string>(5);
+            sut.Add("A");
+            sut.Add("B");
+            sut.Add("C");
+            sut.Add("D");
+            sut.Add("E");
+
+            // Act
+            var result = sut[index];
+
+            // Assert
+        }
+
+        [TestMethod]
+        public void SettingElementUsingIndexersOnListSucceeds()
+        {
+            // Arrange
+            var sut = new MyList<string>(5);
+            sut.Add("A");
+            sut.Add("B");
+            sut.Add("C");
+            sut.Add("D");
+            sut.Add("E");
+
+            var expectedValue = 2;
+            var expectedCount = 5;
+
+            // Act
+            sut[2] = "Indexer";
+
+            var result = sut.Search("Indexer");
+            var resultCount = sut.Count;
+
+            // Assert
+            Assert.AreEqual(expectedValue, result);
+            Assert.AreEqual(expectedCount, resultCount);
+        }
+
+        [TestMethod]
+        [DataRow(-1)]
+        [DataRow(-42)]
+        [DataRow(5)]
+        [DataRow(42)]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        public void SettingElementUsingIndexersWithInValidIndexesThrowsNullReferenceException(int index)
+        {
+            // Arrange
+            var sut = new MyList<string>(5);
+            sut.Add("A");
+            sut.Add("B");
+            sut.Add("C");
+            sut.Add("D");
+            sut.Add("E");
+
+            // Act
+            sut[index] = "Indexer";
+
+            // Assert
+        }
+
+        [TestMethod]
+        public void DeleteElementAtMiddleIndexSucceeds()
+        {
+            // Arrange
+            var sut = new MyList<string>(5);
+            sut.Add("A");
+            sut.Add("B");
+            sut.Add("C");
+            sut.Add("D");
+            sut.Add("E");
+
+            var expectedIndex = 2;
+            var expectedCount = 4;
+
+            // Act
+            sut.DeleteAt(2);
+
+            var resultIndex = sut.Search("D");
+            var resultCount = sut.Count;
+
+            // Assert
+            Assert.AreEqual(expectedIndex, resultIndex);
+            Assert.AreEqual(expectedCount, resultCount);
+        }
+
+        [TestMethod]
+        public void IteratingOverListWithStartEqualToNullSucceeds()
+        {
+            // Arrange
+            var sut = new MyList<string>(1);
+            var count = 0;
+            var expectedCount = 0;
+
+            // Act
+            foreach (var s in sut)
+            {
+                count++;
+            }
+
+            // Assert
+            Assert.AreEqual(expectedCount, count);
+        }
+
+        [TestMethod]
+        public void ResetOfEnumeratorSucceeds()
+        {
+            // Arrange
+            var sut = new MyList<string>(4);
+            sut.Add("A");
+            sut.Add("B");
+            sut.Add("C");
+            sut.Add("D");
+
+            var expectedResult = "A";
+
+            var enumerator = sut.GetEnumerator();
+            enumerator.MoveNext();
+            enumerator.MoveNext();
+            enumerator.MoveNext();
+
+            // Act
+            enumerator.Reset();
+            enumerator.MoveNext();
+            var result = enumerator.Current;
+
+            // Assert
+            Assert.AreEqual(expectedResult, result);
+            enumerator.Dispose();
+        }
+
+        [TestMethod]
+        public void MoveNextOfEnumeratorSucceeds()
+        {
+            // Arrange
+            var sut = new MyList<string>(4);
+            sut.Add("A");
+            sut.Add("B");
+            sut.Add("C");
+            sut.Add("D");
+
+            var expectedResult = "B";
+
+            var enumerator = sut.GetEnumerator();
+
+            // Act
+            enumerator.MoveNext();
+            enumerator.MoveNext();
+            var result = enumerator.Current;
+
+            // Assert
+            Assert.AreEqual(expectedResult, result);
+            enumerator.Dispose();
         }
     }  
 }
