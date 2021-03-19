@@ -91,15 +91,15 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210317
             var instance4 = new MyType("Computer", 15, false, 43);
             var instance5 = new MyType("Field", 43, true, 74);
 
-            MyType[] myTypesArray = {null, instance1, instance2, instance3, instance4, instance5};
+            MyType[] sut = {null, instance1, instance2, instance3, instance4, instance5};
 
             // Act
-            Array.Sort(myTypesArray);
+            Array.Sort(sut);
 
             // Assert
             for (int i = 0; i < expectedMyTypesArray.Length; i++)
             {
-                var myTypeToBeAsserted = myTypesArray[i];
+                var myTypeToBeAsserted = sut[i];
                 var expectedMyType = expectedMyTypesArray[i];
 
                 if (null == expectedMyType)
@@ -108,9 +108,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210317
                     continue;
                 }
 
-                var result = expectedMyType.Equals(myTypeToBeAsserted);
-
-                Assert.IsTrue(result);
+                Assert.AreEqual(expectedMyType, myTypeToBeAsserted);
             }
         }
 
