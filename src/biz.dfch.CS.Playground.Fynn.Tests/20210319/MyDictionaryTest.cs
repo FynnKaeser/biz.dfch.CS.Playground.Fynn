@@ -103,7 +103,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         }
 
         [TestMethod]
-        public void DeleteKeyValuePairKeyNotFoundReturnsFalse()
+        public void DeleteKeyValuePairButKeyNotFoundReturnsFalse()
         {
             // Arrange 
             var sut = new MyDictionary<int, string>();
