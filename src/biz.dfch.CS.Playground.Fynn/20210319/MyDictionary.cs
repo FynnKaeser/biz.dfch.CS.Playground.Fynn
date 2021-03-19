@@ -13,9 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+using System.Collections.Generic;
+
 namespace biz.dfch.CS.Playground.Fynn._20210319
 {
-    public class MyDictionary
+    public class MyDictionary<TKey, TValue>
     {
+        public int Count { get; }
+        public List<TKey> Keys { get; }
+        public List<TValue> Values { get; }
+        
+        public void Insert(TKey key, TValue value)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool HasValue(TValue value)
+        {
+            throw new System.NotImplementedException();
+        }
+        
+        public bool HasKey(TKey key)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

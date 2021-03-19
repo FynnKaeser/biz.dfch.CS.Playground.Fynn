@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+using System;
+using biz.dfch.CS.Playground.Fynn._20210319;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
@@ -22,9 +24,62 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
     public class MyDictionaryTest
     {
         [TestMethod]
-        public void Test()
+        public void InsertKeyValuePairToDictionarySucceeds()
         {
+            // Arrange
+            var sut = new MyDictionary<int, string>();
+            var expectedCount = 1;
 
+            // Act
+            sut.Insert(1, "String");
+            var resultCount = sut.Count;
+            var resultKey = sut.HasKey(1);
+            var resultValue = sut.HasValue("String");
+
+            // Assert
+            Assert.AreEqual(expectedCount, resultCount);
+            Assert.IsTrue(resultKey);
+            Assert.IsTrue(resultValue);
+        }
+        
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void InsertNullKeyThrowsArgumentNullException()
+        {
+            // Arrange
+            var sut = new MyDictionary<string, string>();
+
+            // Act
+            sut.Insert(null, "String");
+
+            // Assert
+        }
+        
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void InsertNullValueThrowsArgumentNullException()
+        {
+            // Arrange
+            var sut = new MyDictionary<int, string>();
+
+            // Act
+            sut.Insert(1, null);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void InsertDuplicatedKeyThrowsArgumentException()
+        {
+            // Arrange
+            var sut = new MyDictionary<int, string>();
+            sut.Insert(1, "Hallo");
+
+            // Act
+            sut.Insert(1, "String");
+
+            // Assert
         }
     }
 }
