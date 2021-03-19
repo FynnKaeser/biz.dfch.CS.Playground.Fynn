@@ -38,5 +38,10 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
         {
             throw new System.NotImplementedException();
         }
+
+        public bool Delete(TKey key)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

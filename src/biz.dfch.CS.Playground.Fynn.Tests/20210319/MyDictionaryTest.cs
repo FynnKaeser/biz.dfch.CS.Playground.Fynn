@@ -81,5 +81,45 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
 
             // Assert
         }
+
+        [TestMethod]
+        public void DeleteKeyValuePairSucceeds()
+        {
+            // Arrange 
+            var sut = new MyDictionary<int, string>();
+            sut.Insert(1, "String");
+            sut.Insert(2, "Value");
+            sut.Insert(3, "Test");
+
+            var expectedCount = 2;
+
+            // Act
+            var result = sut.Delete(1);
+            var resultCount = sut.Count;
+
+            // Assert
+            Assert.AreEqual(expectedCount, resultCount);
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void DeleteKeyValuePairKeyNotFoundReturnsFalse()
+        {
+            // Arrange 
+            var sut = new MyDictionary<int, string>();
+            sut.Insert(1, "String");
+            sut.Insert(2, "Value");
+            sut.Insert(3, "Test");
+
+            var expectedCount = 3;
+
+            // Act
+            var result = sut.Delete(4);
+            var resultCount = sut.Count;
+
+            // Assert
+            Assert.AreEqual(expectedCount, resultCount);
+            Assert.IsFalse(result);
+        }
     }
 }
