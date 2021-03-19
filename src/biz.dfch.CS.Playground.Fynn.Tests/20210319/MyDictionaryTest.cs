@@ -121,5 +121,107 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
             Assert.AreEqual(expectedCount, resultCount);
             Assert.IsFalse(result);
         }
+
+        [TestMethod]
+        public void UpdateValueSucceeds()
+        {
+            // Arrange 
+            var sut = new MyDictionary<int, string>();
+            sut.Insert(1, "String");
+            sut.Insert(2, "Value");
+
+            // Act
+            var result = sut.UpdateValue(2, "Console");
+            var hasValue = sut.HasValue("Console");
+
+            // Assert
+            Assert.IsTrue(result);
+            Assert.IsTrue(hasValue);
+        }
+
+        [TestMethod]
+        [DataRow("4")]
+        [DataRow(null)]
+        public void UpdateValueButKeyIsInvalidReturnsFalse(string key)
+        {
+            // Arrange 
+            var sut = new MyDictionary<string, string>();
+            sut.Insert("1", "String");
+            sut.Insert("2", "Value");
+
+            // Act
+            var result = sut.UpdateValue(key, "Console");
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void UpdateValueButNewValueIsNullReturnsFalse()
+        {
+            // Arrange 
+            var sut = new MyDictionary<int, string>();
+            sut.Insert(1, "String");
+            sut.Insert(2, "Value");
+
+            // Act
+            var result = sut.UpdateValue(1, null);
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void UpdateKeySucceeds()
+        {
+            // Arrange 
+            var sut = new MyDictionary<int, string>();
+            sut.Insert(1, "String");
+            sut.Insert(2, "Value");
+
+            // Act
+            var result = sut.UpdateKey(2, 4);
+            var hasKey = sut.HasKey(4);
+            var hasPreviousKey = sut.HasKey(2);
+
+            // Assert
+            Assert.IsTrue(result);
+            Assert.IsTrue(hasKey);
+            Assert.IsFalse(hasPreviousKey);
+        }
+
+        [TestMethod]
+        [DataRow("4")]
+        [DataRow(null)]
+        public void UpdateKeyButKeyIsInvalidReturnsFalse(string key)
+        {
+            // Arrange 
+            var sut = new MyDictionary<string, string>();
+            sut.Insert("1", "String");
+            sut.Insert("2", "Value");
+
+            // Act
+            var result = sut.UpdateKey(key, "4");
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        [DataRow("1")]
+        [DataRow(null)]
+        public void UpdateKeyButNewKeyIsInvalidReturnsFalse(string newKey)
+        {
+            // Arrange 
+            var sut = new MyDictionary<string, string>();
+            sut.Insert("1", "String");
+            sut.Insert("2", "Value");
+
+            // Act
+            var result = sut.UpdateKey("2", newKey);
+
+            // Assert
+            Assert.IsFalse(result);
+        }
     }
 }

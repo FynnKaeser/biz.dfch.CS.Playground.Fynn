@@ -43,5 +43,15 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
         {
             throw new System.NotImplementedException();
         }
+
+        public bool UpdateValue(TKey key, TValue newValue)
+        {
+            throw new System.NotImplementedException();
+        }
+        
+        public bool UpdateKey(TKey key, TKey newKey)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
