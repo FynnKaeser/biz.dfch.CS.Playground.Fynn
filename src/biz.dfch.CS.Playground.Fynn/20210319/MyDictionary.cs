@@ -56,32 +56,81 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
 
         public bool HasValue(TValue value)
         {
-            throw new System.NotImplementedException();
+            if (null == value)
+            {
+                return false;
+            }
+
+            throw new NotImplementedException();
         }
         
         public bool HasKey(TKey key)
         {
-            throw new System.NotImplementedException();
+            if (null == key)
+            {
+                return false;
+            }
+
+            throw new NotImplementedException();
         }
 
         public bool Delete(TKey key)
         {
-            throw new System.NotImplementedException();
+            if (null == key)
+            {
+                return false;
+            }
+
+            var isKeyInDictionary = HasKey(key);
+            if (!isKeyInDictionary)
+            {
+                return false;
+            }
+
+            throw new NotImplementedException();
         }
 
         public bool UpdateValue(TKey key, TValue newValue)
         {
-            throw new System.NotImplementedException();
+            if (null == key || null == newValue)
+            {
+                return false;
+            }
+
+            var isKeyInDictionary = HasKey(key);
+            if (!isKeyInDictionary)
+            {
+                return false;
+            }
+
+            throw new NotImplementedException();
         }
         
         public bool UpdateKey(TKey key, TKey newKey)
         {
-            throw new System.NotImplementedException();
+            if (null == key || null == newKey)
+            {
+                return false;
+            }
+
+            var isKeyInDictionary = HasKey(key);
+            if (!isKeyInDictionary)
+            {
+                return false;
+            }
+            
+            var isNewKeyAlreadyInDictionary = HasKey(newKey);
+            if (isNewKeyAlreadyInDictionary)
+            {
+                return false;
+            }
+
+            throw new NotImplementedException();
         }
 
         public void Clear()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }
