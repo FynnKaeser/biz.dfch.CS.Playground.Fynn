@@ -42,7 +42,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
 
             if (HasKey(key))
             {
-                throw new ArgumentException($"Dictionary already contains key '{key}'");
+                throw new ArgumentException(string.Format(MyDictionaryMessage.DictionaryAlreadyContainsKey, key));
             }
 
             Keys.Add(key);
