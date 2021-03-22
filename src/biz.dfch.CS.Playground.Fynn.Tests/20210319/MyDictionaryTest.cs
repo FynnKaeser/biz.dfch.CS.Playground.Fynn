@@ -223,5 +223,215 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
             // Assert
             Assert.IsFalse(result);
         }
+
+        [TestMethod]
+        public void HasKeySucceeds()
+        {
+            // Arrange 
+            var sut = new MyDictionary<int, string>();
+            sut.Insert(1, "String");
+            sut.Insert(2, "Value");
+
+            // Act
+            var result = sut.HasKey(1);
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        [DataRow("-1")]
+        [DataRow("0")]
+        [DataRow("3")]
+        [DataRow(null)]
+        public void HasKeyButKeyNotFoundReturnsFalse(string key)
+        {
+            // Arrange 
+            var sut = new MyDictionary<string, string>();
+            sut.Insert("1", "String");
+            sut.Insert("2", "Value");
+
+            // Act
+            var result = sut.HasKey(key);
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+        
+        [TestMethod]
+        public void HasValueSucceeds()
+        {
+            // Arrange 
+            var sut = new MyDictionary<int, string>();
+            sut.Insert(1, "String");
+            sut.Insert(2, "Value");
+
+            // Act
+            var result = sut.HasValue("String");
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        [DataRow("Text")]
+        [DataRow("")]
+        [DataRow(" ")]
+        [DataRow("String.")]
+        [DataRow("String13")]
+        [DataRow(null)]
+        public void HasValueButValueNotFoundReturnsFalse(string value)
+        {
+            // Arrange 
+            var sut = new MyDictionary<string, string>();
+            sut.Insert("1", "String");
+            sut.Insert("2", "Value");
+
+            // Act
+            var result = sut.HasValue(value);
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void ClearDictionarySucceeds()
+        {
+            // Arrange 
+            var sut = new MyDictionary<int, string>();
+            sut.Insert(1, "String");
+            sut.Insert(2, "Value");
+            var expectedCount = 0;
+
+            // Act
+            sut.Clear();
+            var resultCount = sut.Count;
+            var hasFirstKey = sut.HasKey(1);
+            var hasSecondKey = sut.HasKey(2);
+
+            // Assert
+            Assert.AreEqual(expectedCount, resultCount);
+            Assert.IsFalse(hasFirstKey);
+            Assert.IsFalse(hasSecondKey);
+        }
+        
+        [TestMethod]
+        public void IteratingOverKeysSucceeds()
+        {
+            // Arrange 
+            var sut = new MyDictionary<int, string>();
+            sut.Insert(1, "String");
+            sut.Insert(2, "Value");
+            sut.Insert(3, "Text");
+
+            // Act & Assert
+            foreach (var key in sut.Keys)
+            {
+                
+            }
+        }
+        
+        [TestMethod]
+        public void IteratingOverValuesSucceeds()
+        {
+            // Arrange 
+            var sut = new MyDictionary<int, string>();
+            sut.Insert(1, "String");
+            sut.Insert(2, "Value");
+            sut.Insert(3, "Text");
+
+            // Act & Assert
+            foreach (var key in sut.Values)
+            {
+                
+            }
+        }
+        
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void IteratingOverNullKeysThrowsArgumentNullException()
+        {
+            // Arrange 
+            var sut = new MyDictionary<int, string>();
+            sut.Insert(1, "String");
+            sut.Insert(2, "Value");
+            sut.Insert(3, "Text");
+
+            // Act & Assert
+            foreach (var key in sut.Keys)
+            {
+                
+            }
+        }
+        
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void IteratingOverNullValuesThrowsArgumentNullException()
+        {
+            // Arrange 
+            var sut = new MyDictionary<int, string>();
+            sut.Insert(1, "String");
+            sut.Insert(2, "Value");
+            sut.Insert(3, "Text");
+
+            // Act & Assert
+            foreach (var key in sut.Values)
+            {
+                
+            }
+        }
+
+        [TestMethod]
+        public void CountGetsSetSuccessfullyAfterInsert()
+        {
+            // Arrange
+            var sut = new MyDictionary<int, string>();
+            var expectedCount = 1;
+
+            // Act
+            sut.Insert(1, "String");
+            var resultCount = sut.Count;
+
+            // Assert
+            Assert.AreEqual(expectedCount, resultCount);
+        }
+        
+        [TestMethod]
+        public void CountGetsSetSuccessfullyAfterDelete()
+        {
+            // Arrange
+            var sut = new MyDictionary<int, string>();
+            sut.Insert(1, "String");
+            sut.Insert(2, "Bing Bong");
+            sut.Insert(3, "Rest");
+
+            var expectedCount = 2;
+
+            // Act
+            sut.Delete(1);
+            var resultCount = sut.Count;
+
+            // Assert
+            Assert.AreEqual(expectedCount, resultCount);
+        }
+
+        [TestMethod]
+        public void CountGetsSetSuccessfullyAfterClear()
+        {
+            // Arrange
+            var sut = new MyDictionary<int, string>();
+            sut.Insert(1, "String");
+            sut.Insert(2, "Bing Bong");
+            sut.Insert(3, "Rest");
+
+            var expectedCount = 0;
+
+            // Act
+            sut.Clear();
+            var resultCount = sut.Count;
+
+            // Assert
+            Assert.AreEqual(expectedCount, resultCount);
+        }
     }
 }
