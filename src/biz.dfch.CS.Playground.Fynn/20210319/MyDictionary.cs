@@ -14,19 +14,32 @@
  * limitations under the License.
  */
 
+using System;
 using System.Collections.Generic;
 
 namespace biz.dfch.CS.Playground.Fynn._20210319
 {
     public class MyDictionary<TKey, TValue>
     {
-        public int Count { get; }
-        public List<TKey> Keys { get; }
-        public List<TValue> Values { get; }
+        public int Count { get; private set; }
+        public List<TKey> Keys { get; private set; }
+        public List<TValue> Values { get; private set; }
         
         public void Insert(TKey key, TValue value)
         {
-            throw new System.NotImplementedException();
+            if (null == key || null == value)
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (HasKey(key))
+            {
+                throw new ArgumentException($"Dictionary already contains key '{key}'");
+            }
+
+            var element = new MyDictionaryElement<TKey, TValue>(key, value);
+
+            Count++;
         }
 
         public bool HasValue(TValue value)
