@@ -22,9 +22,17 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
     public class MyDictionary<TKey, TValue>
     {
         public int Count { get; private set; }
-        public List<TKey> Keys { get; private set; }
-        public List<TValue> Values { get; private set; }
-        
+        public List<TKey> Keys { get; }
+        public List<TValue> Values { get; }
+        private List<MyDictionaryElement<TKey, TValue>> dictionary { get; }
+
+        public MyDictionary()
+        {
+            Keys = new List<TKey>();
+            Values = new List<TValue>();
+            dictionary = new List<MyDictionaryElement<TKey, TValue>>();
+        }
+
         public void Insert(TKey key, TValue value)
         {
             if (null == key || null == value)
@@ -37,7 +45,11 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
                 throw new ArgumentException($"Dictionary already contains key '{key}'");
             }
 
+            Keys.Add(key);
+            Values.Add(value);
+
             var element = new MyDictionaryElement<TKey, TValue>(key, value);
+            dictionary.Add(element);
 
             Count++;
         }
