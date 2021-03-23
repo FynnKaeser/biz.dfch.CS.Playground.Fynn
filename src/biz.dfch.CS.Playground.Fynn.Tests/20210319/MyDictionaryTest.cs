@@ -353,9 +353,6 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         {
             // Arrange 
             var sut = new MyDictionary<int, string>();
-            sut.Insert(1, "String");
-            sut.Insert(2, "Value");
-            sut.Insert(3, "Text");
 
             // Act & Assert
             foreach (var key in sut.Keys)

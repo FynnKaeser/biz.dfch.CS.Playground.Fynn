@@ -87,6 +87,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
                 return false;
             }
 
+            Count--;
             throw new NotImplementedException();
         }
 
@@ -130,6 +131,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
 
         public void Clear()
         {
+            Count = 0;
             throw new NotImplementedException();
         }
     }
