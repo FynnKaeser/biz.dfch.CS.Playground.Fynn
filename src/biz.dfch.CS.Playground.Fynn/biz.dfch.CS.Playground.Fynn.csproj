@@ -140,7 +140,7 @@
     <Compile Include="20210305\MyList.cs" />
     <Compile Include="20210305\MyListElement.cs" />
     <Compile Include="20210317\MyType.cs" />
-    <Compile Include="20210319\MyDictionaryElement.cs" />
+    <Compile Include="20210319\Entry.cs" />
     <Compile Include="20210319\MyDictionary.cs" />
     <Compile Include="20210319\MyDictionaryMessage.Designer.cs">
       <AutoGen>True</AutoGen>

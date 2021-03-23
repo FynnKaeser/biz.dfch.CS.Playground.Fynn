@@ -16,12 +16,14 @@
 
 namespace biz.dfch.CS.Playground.Fynn._20210319
 {
-    public class MyDictionaryElement<TKey, TValue>
+    public class Entry<TKey, TValue>
     {
+        public int HashCode { get; set; }
+        public int Next { get; set; }
         public TKey Key { get; set; }
         public TValue Value { get; set; }
 
-        public MyDictionaryElement(TKey key, TValue value)
+        public Entry(TKey key, TValue value)
         {
             Key = key;
             Value = value;

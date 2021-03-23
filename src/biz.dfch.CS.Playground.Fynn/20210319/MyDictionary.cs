@@ -24,13 +24,13 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
         public int Count { get; private set; }
         public List<TKey> Keys { get; }
         public List<TValue> Values { get; }
-        private List<MyDictionaryElement<TKey, TValue>> dictionary { get; }
+        private List<Entry<TKey, TValue>> dictionary { get; }
 
         public MyDictionary()
         {
             Keys = new List<TKey>();
             Values = new List<TValue>();
-            dictionary = new List<MyDictionaryElement<TKey, TValue>>();
+            dictionary = new List<Entry<TKey, TValue>>();
         }
 
         public void Insert(TKey key, TValue value)
@@ -48,7 +48,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
             Keys.Add(key);
             Values.Add(value);
 
-            var element = new MyDictionaryElement<TKey, TValue>(key, value);
+            var element = new Entry<TKey, TValue>(key, value);
             dictionary.Add(element);
 
             Count++;
