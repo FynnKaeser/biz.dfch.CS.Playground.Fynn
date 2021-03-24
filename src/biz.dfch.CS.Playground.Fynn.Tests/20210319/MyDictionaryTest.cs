@@ -41,6 +41,32 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
             Assert.IsTrue(resultKey);
             Assert.IsTrue(resultValue);
         }
+        
+        [TestMethod]
+        public void InsertKeyValuePairWithToDictionarySucceeds()
+        {
+            // Arrange
+            var sut = new MyDictionary<TestClassGetHasCode, string>(3);
+            var expectedCount = 3;
+            var myClassOne = new TestClassGetHasCode("Test", 15, false);
+            var myClassTwo = new TestClassGetHasCode("Tralala", 50, true);
+            var myClassThree = new TestClassGetHasCode("Text", 42, false);
+
+            // Act
+            sut.Insert(myClassOne, "String");
+            sut.Insert(myClassTwo, "String");
+            sut.Insert(myClassThree, "String");
+            var resultCount = sut.Count;
+            var resultKeyOne = sut.HasKey(myClassOne);
+            var resultKeyTwo = sut.HasKey(myClassTwo);
+            var resultKeyThree = sut.HasKey(myClassThree);
+
+            // Assert
+            Assert.AreEqual(expectedCount, resultCount);
+            Assert.IsTrue(resultKeyOne);
+            Assert.IsTrue(resultKeyTwo);
+            Assert.IsTrue(resultKeyThree);
+        }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]

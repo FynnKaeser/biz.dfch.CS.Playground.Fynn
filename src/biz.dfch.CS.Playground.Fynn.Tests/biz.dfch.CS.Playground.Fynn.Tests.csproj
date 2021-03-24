@@ -126,6 +126,7 @@
     <Compile Include="20210317\MyTypeTest.cs" />
     <Compile Include="20210305\MyTestClass.cs" />
     <Compile Include="20210319\MyDictionaryTest.cs" />
+    <Compile Include="20210319\TestClassGetHasCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
