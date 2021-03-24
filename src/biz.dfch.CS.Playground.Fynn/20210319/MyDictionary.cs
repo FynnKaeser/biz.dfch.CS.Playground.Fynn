@@ -55,6 +55,10 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
             }
 
             var index = Hash(key);
+            if (index == -1)
+            {
+                throw new ArgumentNullException(nameof(key));
+            }
 
             if (null == buckets[index])
             {
@@ -97,6 +101,11 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
             }
 
             var index = Hash(key);
+            if (index == -1)
+            {
+                return false;
+            }
+
             var bucket = buckets[index];
 
             var nextBucketInChain = bucket.Next;
@@ -182,6 +191,11 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
 
         private int Hash(TKey key)
         {
+            if (null == key)
+            {
+                return -1;
+            }
+
             var hash = key.GetHashCode() & 0x7FFFFFFF;
 
             return hash % capacity;
