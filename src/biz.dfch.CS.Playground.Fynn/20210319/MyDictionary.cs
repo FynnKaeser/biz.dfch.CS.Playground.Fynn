@@ -96,7 +96,27 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
                 return false;
             }
 
-            throw new NotImplementedException();
+            var index = Hash(key);
+            var bucket = buckets[index];
+
+            var nextBucketInChain = bucket.Next;
+
+            if (null == nextBucketInChain)
+            {
+                return key.Equals(bucket.Key);
+            }
+
+            while (null != nextBucketInChain)
+            {
+                if (key.Equals(nextBucketInChain.Key))
+                {
+                    return true;
+                }
+
+                nextBucketInChain = nextBucketInChain.Next;
+            }
+
+            return false;
         }
 
         public bool Delete(TKey key)
