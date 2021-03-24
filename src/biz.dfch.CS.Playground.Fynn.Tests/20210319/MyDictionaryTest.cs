@@ -15,7 +15,6 @@
  */
 
 using System;
-using System.Collections;
 using biz.dfch.CS.Playground.Fynn._20210319;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -42,7 +41,24 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
             Assert.IsTrue(resultKey);
             Assert.IsTrue(resultValue);
         }
-        
+
+        [TestMethod]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        public void InsertingFifthKeyValuePairWithCapacityOfFourThrowsIndexOutOfRangeException()
+        { 
+            // Arrange
+            var sut = new MyDictionary<int, string>(4);
+            sut.Insert(1, "String");
+            sut.Insert(2, "Hello");
+            sut.Insert(3, "Computer");
+            sut.Insert(4, "Ferrari");
+
+            // Act
+            sut.Insert(5, "Sad");
+
+            // Assert
+        }
+
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void InsertNullKeyThrowsArgumentNullException()
