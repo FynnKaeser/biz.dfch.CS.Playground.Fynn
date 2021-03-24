@@ -18,8 +18,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
 {
     public class Entry<TKey, TValue>
     {
-        public int HashCode { get; set; }
-        public int Next { get; set; }
+        public Entry<TKey, TValue> Next { get; set; }
         public TKey Key { get; set; }
         public TValue Value { get; set; }
 
@@ -27,6 +26,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
         {
             Key = key;
             Value = value;
+            Next = null;
         }
     }
 }

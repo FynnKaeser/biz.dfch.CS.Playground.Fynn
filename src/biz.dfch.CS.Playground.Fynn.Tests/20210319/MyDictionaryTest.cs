@@ -15,6 +15,7 @@
  */
 
 using System;
+using System.Collections;
 using biz.dfch.CS.Playground.Fynn._20210319;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -27,7 +28,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void InsertKeyValuePairToDictionarySucceeds()
         {
             // Arrange
-            var sut = new MyDictionary<int, string>();
+            var sut = new MyDictionary<int, string>(1);
             var expectedCount = 1;
 
             // Act
@@ -47,7 +48,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void InsertNullKeyThrowsArgumentNullException()
         {
             // Arrange
-            var sut = new MyDictionary<string, string>();
+            var sut = new MyDictionary<string, string>(1);
 
             // Act
             sut.Insert(null, "String");
@@ -60,7 +61,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void InsertNullValueThrowsArgumentNullException()
         {
             // Arrange
-            var sut = new MyDictionary<int, string>();
+            var sut = new MyDictionary<int, string>(1);
 
             // Act
             sut.Insert(1, null);
@@ -73,7 +74,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void InsertDuplicatedKeyThrowsArgumentException()
         {
             // Arrange
-            var sut = new MyDictionary<int, string>();
+            var sut = new MyDictionary<int, string>(2);
             sut.Insert(1, "Hallo");
 
             // Act
@@ -86,7 +87,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void DeleteKeyValuePairSucceeds()
         {
             // Arrange 
-            var sut = new MyDictionary<int, string>();
+            var sut = new MyDictionary<int, string>(3);
             sut.Insert(1, "String");
             sut.Insert(2, "Value");
             sut.Insert(3, "Test");
@@ -106,7 +107,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void DeleteKeyValuePairButKeyNotFoundReturnsFalse()
         {
             // Arrange 
-            var sut = new MyDictionary<int, string>();
+            var sut = new MyDictionary<int, string>(3);
             sut.Insert(1, "String");
             sut.Insert(2, "Value");
             sut.Insert(3, "Test");
@@ -126,7 +127,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void UpdateValueSucceeds()
         {
             // Arrange 
-            var sut = new MyDictionary<int, string>();
+            var sut = new MyDictionary<int, string>(2);
             sut.Insert(1, "String");
             sut.Insert(2, "Value");
 
@@ -145,7 +146,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void UpdateValueButKeyIsInvalidReturnsFalse(string key)
         {
             // Arrange 
-            var sut = new MyDictionary<string, string>();
+            var sut = new MyDictionary<string, string>(2);
             sut.Insert("1", "String");
             sut.Insert("2", "Value");
 
@@ -160,7 +161,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void UpdateValueButNewValueIsNullReturnsFalse()
         {
             // Arrange 
-            var sut = new MyDictionary<int, string>();
+            var sut = new MyDictionary<int, string>(2);
             sut.Insert(1, "String");
             sut.Insert(2, "Value");
 
@@ -175,7 +176,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void UpdateKeySucceeds()
         {
             // Arrange 
-            var sut = new MyDictionary<int, string>();
+            var sut = new MyDictionary<int, string>(2);
             sut.Insert(1, "String");
             sut.Insert(2, "Value");
 
@@ -196,7 +197,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void UpdateKeyButKeyIsInvalidReturnsFalse(string key)
         {
             // Arrange 
-            var sut = new MyDictionary<string, string>();
+            var sut = new MyDictionary<string, string>(2);
             sut.Insert("1", "String");
             sut.Insert("2", "Value");
 
@@ -213,7 +214,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void UpdateKeyButNewKeyIsInvalidReturnsFalse(string newKey)
         {
             // Arrange 
-            var sut = new MyDictionary<string, string>();
+            var sut = new MyDictionary<string, string>(2);
             sut.Insert("1", "String");
             sut.Insert("2", "Value");
 
@@ -228,7 +229,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void HasKeySucceeds()
         {
             // Arrange 
-            var sut = new MyDictionary<int, string>();
+            var sut = new MyDictionary<int, string>(2);
             sut.Insert(1, "String");
             sut.Insert(2, "Value");
 
@@ -247,7 +248,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void HasKeyButKeyNotFoundReturnsFalse(string key)
         {
             // Arrange 
-            var sut = new MyDictionary<string, string>();
+            var sut = new MyDictionary<string, string>(2);
             sut.Insert("1", "String");
             sut.Insert("2", "Value");
 
@@ -262,7 +263,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void HasValueSucceeds()
         {
             // Arrange 
-            var sut = new MyDictionary<int, string>();
+            var sut = new MyDictionary<int, string>(2);
             sut.Insert(1, "String");
             sut.Insert(2, "Value");
 
@@ -283,7 +284,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void HasValueButValueNotFoundReturnsFalse(string value)
         {
             // Arrange 
-            var sut = new MyDictionary<string, string>();
+            var sut = new MyDictionary<string, string>(2);
             sut.Insert("1", "String");
             sut.Insert("2", "Value");
 
@@ -298,7 +299,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void ClearDictionarySucceeds()
         {
             // Arrange 
-            var sut = new MyDictionary<int, string>();
+            var sut = new MyDictionary<int, string>(2);
             sut.Insert(1, "String");
             sut.Insert(2, "Value");
             var expectedCount = 0;
@@ -319,7 +320,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void IteratingOverKeysSucceeds()
         {
             // Arrange 
-            var sut = new MyDictionary<int, string>();
+            var sut = new MyDictionary<int, string>(3);
             sut.Insert(1, "String");
             sut.Insert(2, "Value");
             sut.Insert(3, "Text");
@@ -335,7 +336,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void IteratingOverValuesSucceeds()
         {
             // Arrange 
-            var sut = new MyDictionary<int, string>();
+            var sut = new MyDictionary<int, string>(3);
             sut.Insert(1, "String");
             sut.Insert(2, "Value");
             sut.Insert(3, "Text");
@@ -352,7 +353,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void IteratingOverNullKeysThrowsArgumentNullException()
         {
             // Arrange 
-            var sut = new MyDictionary<int, string>();
+            var sut = new MyDictionary<int, string>(1);
 
             // Act & Assert
             foreach (var key in sut.Keys)
@@ -366,10 +367,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void IteratingOverNullValuesThrowsArgumentNullException()
         {
             // Arrange 
-            var sut = new MyDictionary<int, string>();
-            sut.Insert(1, "String");
-            sut.Insert(2, "Value");
-            sut.Insert(3, "Text");
+            var sut = new MyDictionary<int, string>(3);
 
             // Act & Assert
             foreach (var key in sut.Values)
@@ -382,7 +380,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void CountGetsSetSuccessfullyAfterInsert()
         {
             // Arrange
-            var sut = new MyDictionary<int, string>();
+            var sut = new MyDictionary<int, string>(1);
             var expectedCount = 1;
 
             // Act
@@ -397,7 +395,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void CountGetsSetSuccessfullyAfterDelete()
         {
             // Arrange
-            var sut = new MyDictionary<int, string>();
+            var sut = new MyDictionary<int, string>(3);
             sut.Insert(1, "String");
             sut.Insert(2, "Bing Bong");
             sut.Insert(3, "Rest");
@@ -416,7 +414,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void CountGetsSetSuccessfullyAfterClear()
         {
             // Arrange
-            var sut = new MyDictionary<int, string>();
+            var sut = new MyDictionary<int, string>(3);
             sut.Insert(1, "String");
             sut.Insert(2, "Bing Bong");
             sut.Insert(3, "Rest");
