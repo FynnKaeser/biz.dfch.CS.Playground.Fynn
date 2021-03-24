@@ -21,12 +21,13 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
 {
     public class MyDictionary<TKey, TValue>
     {
-        public int Count { get; private set; }
-        public List<TKey> Keys { get; }
-        public List<TValue> Values { get; }
         private Entry<TKey, TValue>[] buckets;
         private int capacity;
 
+        public List<TKey> Keys { get; }
+        public List<TValue> Values { get; }
+        public int Count { get; private set; }
+        
         public MyDictionary(int capacity)
         {
             Keys = new List<TKey>();
@@ -45,13 +46,14 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
 
             if (capacity == Count)
             {
-                throw new ArgumentOutOfRangeException();
+                throw new ArgumentOutOfRangeException(string.Format(MyDictionaryMessage.DictionaryIsFull, capacity));
             }
 
             if (HasKey(key))
             {
                 throw new ArgumentException(string.Format(MyDictionaryMessage.DictionaryAlreadyContainsKey, key));
             }
+
             Count++;
         }
 

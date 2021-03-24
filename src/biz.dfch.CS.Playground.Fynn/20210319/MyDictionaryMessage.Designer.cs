@@ -68,5 +68,14 @@ namespace biz.dfch.CS.Playground.Fynn._20210319 {
                 return ResourceManager.GetString("DictionaryAlreadyContainsKey", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dictionary is full, capacity is set to &apos;{0}&apos;.
+        /// </summary>
+        internal static string DictionaryIsFull {
+            get {
+                return ResourceManager.GetString("DictionaryIsFull", resourceCulture);
+            }
+        }
     }
 }

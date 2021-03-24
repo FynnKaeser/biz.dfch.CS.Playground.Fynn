@@ -120,4 +120,7 @@
   <data name="DictionaryAlreadyContainsKey" xml:space="preserve">
     <value>Dictionary already contains key '{0}'</value>
   </data>
+  <data name="DictionaryIsFull" xml:space="preserve">
+    <value>Dictionary is full, capacity is set to '{0}'</value>
+  </data>
 </root>
