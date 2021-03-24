@@ -52,9 +52,10 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
             set
             {
                 var bucket = GetBucket(key);
+
                 if (null == bucket)
                 {
-                    UpdateValue(key, value);
+                    Insert(key, value);
                 }
                 else
                 {
@@ -125,7 +126,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
             {
                 return false;
             }
-
+            
             var bucket = GetBucket(key);
 
             return bucket != null;
@@ -215,7 +216,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
             var bucket = buckets[index];
             if (null == bucket)
             {
-                throw new KeyNotFoundException();
+                return null;
             }
 
             if (key.Equals(bucket.Key))

@@ -470,5 +470,69 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
             // Assert
             Assert.AreEqual(expectedCount, resultCount);
         }
+
+        [TestMethod]
+        public void GettingValueUsingIndexerSucceeds()
+        {
+            // Arrange
+            var sut = new MyDictionary<int, string>(3);
+            sut.Insert(1, "String");
+            sut.Insert(2, "Bing Bong");
+            sut.Insert(3, "Rest");
+
+            var expectedValue = "Bing Bong";
+
+            // Act
+            var resultValue = sut[2];
+
+            // Assert
+            Assert.AreEqual(expectedValue, resultValue);
+        }
+
+        [TestMethod]
+        public void SettingValueOfExistingPairUsingIndexerSucceeds()
+        {
+            // Arrange
+            var sut = new MyDictionary<int, string>(3);
+            sut.Insert(1, "String");
+            sut.Insert(2, "Bing Bong");
+            sut.Insert(3, "Rest");
+
+            var expectedCount = 3;
+            var expectedValue = "Rofl";
+
+            // Act
+            sut[2] = "Rofl";
+            var resultValue = sut[2];
+            var resultCount = sut.Count;
+
+            // Assert
+            Assert.AreEqual(expectedCount, resultCount);
+            Assert.AreEqual(expectedValue, resultValue);
+        }
+
+        [TestMethod]
+        public void SettingValueOfIndexWhichDoesNotExistInsertsNewEntry()
+        {
+            // Arrange
+            var sut = new MyDictionary<int, string>(4);
+            sut.Insert(1, "String");
+            sut.Insert(2, "Bing Bong");
+            sut.Insert(3, "Rest");
+
+            var expectedCount = 4;
+            var expectedValue = "Rofl";
+
+            // Act
+            sut[4] = "Rofl";
+            var resultValue = sut[4];
+            var resultCount = sut.Count;
+            var hasKey = sut.HasKey(4);
+
+            // Assert
+            Assert.AreEqual(expectedCount, resultCount);
+            Assert.AreEqual(expectedValue, resultValue);
+            Assert.IsTrue(hasKey);
+        }
     }
 }
