@@ -55,7 +55,26 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
             }
 
             var index = Hash(key);
-            buckets[index] = new Entry<TKey, TValue>(key, value);
+
+            if (null == buckets[index])
+            {
+                buckets[index] = new Entry<TKey, TValue>(key, value);
+            }
+            else
+            {
+                var bucket = buckets[index];
+
+                while (null != bucket)
+                {
+                    if (null == bucket.Next)
+                    {
+                        bucket.Next = new Entry<TKey, TValue>(key, value);
+                        break;
+                    }
+
+                    bucket = bucket.Next;
+                }
+            }
 
             Count++;
         }
