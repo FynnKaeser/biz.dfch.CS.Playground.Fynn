@@ -40,17 +40,15 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
                 throw new ArgumentNullException();
             }
 
+            if (capacity == Count)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
             if (HasKey(key))
             {
                 throw new ArgumentException(string.Format(MyDictionaryMessage.DictionaryAlreadyContainsKey, key));
             }
-
-            Keys.Add(key);
-            Values.Add(value);
-
-            var element = new Entry<TKey, TValue>(key, value);
-            dictionary.Add(element);
-
             Count++;
         }
 

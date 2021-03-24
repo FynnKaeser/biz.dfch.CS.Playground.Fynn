@@ -43,8 +43,8 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         }
 
         [TestMethod]
-        [ExpectedException(typeof(IndexOutOfRangeException))]
-        public void InsertingFifthKeyValuePairWithCapacityOfFourThrowsIndexOutOfRangeException()
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void InsertingFifthKeyValuePairWithCapacityOfFourThrowsArgumentOutOfRangeException()
         { 
             // Arrange
             var sut = new MyDictionary<int, string>(4);
