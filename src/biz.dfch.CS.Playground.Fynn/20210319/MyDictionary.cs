@@ -138,7 +138,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
         public void Clear()
         {
             Count = 0;
-            throw new NotImplementedException();
+            buckets = new Entry<TKey, TValue>[capacity];
         }
 
         private int Hash(TKey key)
