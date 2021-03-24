@@ -54,6 +54,9 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
                 throw new ArgumentException(string.Format(MyDictionaryMessage.DictionaryAlreadyContainsKey, key));
             }
 
+            var index = Hash(key);
+            buckets[index] = new Entry<TKey, TValue>(key, value);
+
             Count++;
         }
 
@@ -136,6 +139,13 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
         {
             Count = 0;
             throw new NotImplementedException();
+        }
+
+        private int Hash(TKey key)
+        {
+            var hash = key.GetHashCode() & 0x7FFFFFFF;
+
+            return hash % capacity;
         }
     }
 }
