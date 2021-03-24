@@ -27,7 +27,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
         public List<TKey> Keys { get; }
         public List<TValue> Values { get; }
         public int Count { get; private set; }
-        
+
         public MyDictionary(int capacity)
         {
             Keys = new List<TKey>();
@@ -35,6 +35,32 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
 
             buckets = new Entry<TKey, TValue>[capacity];
             this.capacity = capacity;
+        }
+
+        public TValue this[TKey key]
+        {
+            get
+            {
+                var bucket = GetBucket(key);
+                if (null == bucket)
+                {
+                    throw new KeyNotFoundException();
+                }
+
+                return bucket.Value;
+            }
+            set
+            {
+                var bucket = GetBucket(key);
+                if (null == bucket)
+                {
+                    UpdateValue(key, value);
+                }
+                else
+                {
+                    bucket.Value = value;
+                }
+            }
         }
 
         public void Insert(TKey key, TValue value)
@@ -100,32 +126,9 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
                 return false;
             }
 
-            var index = Hash(key);
-            if (index == -1)
-            {
-                return false;
-            }
+            var bucket = GetBucket(key);
 
-            var bucket = buckets[index];
-
-            var nextBucketInChain = bucket.Next;
-
-            if (null == nextBucketInChain)
-            {
-                return key.Equals(bucket.Key);
-            }
-
-            while (null != nextBucketInChain)
-            {
-                if (key.Equals(nextBucketInChain.Key))
-                {
-                    return true;
-                }
-
-                nextBucketInChain = nextBucketInChain.Next;
-            }
-
-            return false;
+            return bucket != null;
         }
 
         public bool Delete(TKey key)
@@ -199,6 +202,40 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
             var hash = key.GetHashCode() & 0x7FFFFFFF;
 
             return hash % capacity;
+        }
+
+        private Entry<TKey, TValue> GetBucket(TKey key)
+        {
+            var index = Hash(key);
+            if (index == -1)
+            {
+                throw new ArgumentNullException(nameof(key));
+            }
+
+            var bucket = buckets[index];
+            if (null == bucket)
+            {
+                throw new KeyNotFoundException();
+            }
+
+            if (key.Equals(bucket.Key))
+            {
+                return bucket;
+            }
+
+            var bucketInChain = bucket;
+
+            while (null != bucketInChain)
+            {
+                if (key.Equals(bucketInChain.Key))
+                {
+                    return bucketInChain;
+                }
+
+                bucketInChain = bucketInChain.Next;
+            }
+
+            return null;
         }
     }
 }
