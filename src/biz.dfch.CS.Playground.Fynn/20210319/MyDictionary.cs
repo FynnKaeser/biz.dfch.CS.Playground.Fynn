@@ -24,13 +24,16 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
         public int Count { get; private set; }
         public List<TKey> Keys { get; }
         public List<TValue> Values { get; }
-        private Entry<TKey, TValue>[] entries;
+        private Entry<TKey, TValue>[] buckets;
+        private int capacity;
 
         public MyDictionary(int capacity)
         {
             Keys = new List<TKey>();
             Values = new List<TValue>();
-            entries = new Entry<TKey, TValue>[capacity];
+
+            buckets = new Entry<TKey, TValue>[capacity];
+            this.capacity = capacity;
         }
 
         public void Insert(TKey key, TValue value)
