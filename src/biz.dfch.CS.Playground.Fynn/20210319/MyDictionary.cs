@@ -95,8 +95,6 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
             }
             else
             {
-                bucket = bucket.Next;
-
                 while (null != bucket)
                 {
                     if (null == bucket.Next)
@@ -109,6 +107,8 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
                 }
             }
 
+            Keys.Add(key);
+            Values.Add(value);
             Count++;
         }
 
@@ -119,7 +119,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
                 return false;
             }
 
-            throw new NotImplementedException();
+            return Values.Contains(value);
         }
         
         public bool HasKey(TKey key)
@@ -189,7 +189,9 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
                 return false;
             }
 
+            Values.Remove(bucket.Value);
             bucket.Value = newValue;
+            Values.Add(newValue);
             
             return true;
         }
@@ -215,15 +217,17 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
 
             var bucket = GetBucket(key);
             var value = bucket.Value;
-
+            
             var isDeleted = Delete(key);
 
             if (!isDeleted)
             {
                 return false;
             }
+            Keys.Remove(key);
 
             Insert(newKey, value);
+            Keys.Add(newKey);
 
             return true;
         }
@@ -232,6 +236,8 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
         {
             Count = 0;
             buckets = new Entry<TKey, TValue>[capacity];
+            Keys.Clear();
+            Values.Clear();
         }
 
         private int Hash(TKey key)

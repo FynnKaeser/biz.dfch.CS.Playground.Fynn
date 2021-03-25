@@ -336,7 +336,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
             var result = sut.HasValue(value);
 
             // Assert
-            Assert.IsTrue(result);
+            Assert.IsFalse(result);
         }
 
         [TestMethod]
