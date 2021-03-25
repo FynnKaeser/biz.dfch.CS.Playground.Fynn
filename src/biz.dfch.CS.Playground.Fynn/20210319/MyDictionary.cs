@@ -15,11 +15,16 @@
  */
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using biz.dfch.CS.Playground.Fynn._20210305;
+using Microsoft.Win32.SafeHandles;
 
 namespace biz.dfch.CS.Playground.Fynn._20210319
 {
-    public class MyDictionary<TKey, TValue>
+    public class MyDictionary<TKey, TValue> : IEnumerable<Entry<TKey, TValue>>
     {
         private Entry<TKey, TValue>[] buckets;
         private int capacity;
@@ -284,6 +289,86 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
             }
 
             return null;
+        }
+
+        public IEnumerator<Entry<TKey, TValue>> GetEnumerator()
+        {
+            return new MyDictionaryEnumerator<TKey, TValue>(buckets);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        private sealed class MyDictionaryEnumerator<TEnumeratorKey, TEnumeratorValue> : IEnumerator<Entry<TEnumeratorKey, TEnumeratorValue>>
+        {
+            private readonly SafeHandle safeHandle = new SafeFileHandle(IntPtr.Zero, true);
+            private readonly Entry<TEnumeratorKey, TEnumeratorValue>[] buckets;
+            private readonly int bucketsLength;
+            private int index = -1;
+            private Entry<TEnumeratorKey, TEnumeratorValue> currentEntry;
+            private bool isDisposed;
+
+            public MyDictionaryEnumerator(Entry<TEnumeratorKey, TEnumeratorValue>[] buckets)
+            {
+                this.buckets = buckets.Where(entry => entry != null).ToArray();
+                bucketsLength = this.buckets.Length;
+            }
+
+            private void Dispose(bool disposing)
+            {
+                if (isDisposed)
+                {
+                    return;
+                }
+
+                if (disposing)
+                {
+                    safeHandle?.Dispose();
+                }
+
+                isDisposed = true;
+            }
+
+            public void Dispose()
+            {
+                Dispose(true);
+                GC.SuppressFinalize(this);
+            }
+
+            public bool MoveNext()
+            {
+                if (null == currentEntry)
+                {
+                    index++;
+                    currentEntry = buckets[index];
+                }
+                else
+                {
+                    if (null == currentEntry.Next && bucketsLength -1 != index)
+                    {
+                        index++;
+                        currentEntry = buckets[index];
+                    }
+                    else
+                    {
+                        currentEntry = currentEntry.Next;
+                    }
+                }
+
+                return bucketsLength - 1 != index || null != currentEntry;
+            }
+
+            public void Reset()
+            {
+                index = -1;
+                currentEntry = null;
+            }
+
+            public Entry<TEnumeratorKey, TEnumeratorValue> Current => currentEntry;
+
+            object IEnumerator.Current => Current;
         }
     }
 }

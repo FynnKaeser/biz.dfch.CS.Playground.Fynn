@@ -361,63 +361,24 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         }
         
         [TestMethod]
-        public void IteratingOverKeysSucceeds()
+        public void IteratingOverDictionarySucceeds()
         {
             // Arrange 
             var sut = new MyDictionary<int, string>(3);
             sut.Insert(1, "String");
             sut.Insert(2, "Value");
-            sut.Insert(3, "Text");
+            sut.Insert(5, "abc");
+
+            var expectedCount = 3;
 
             // Act & Assert
-            foreach (var key in sut.Keys)
+            var count= 0;
+            foreach (var entry in sut)
             {
-                
+                count++;
             }
-        }
-        
-        [TestMethod]
-        public void IteratingOverValuesSucceeds()
-        {
-            // Arrange 
-            var sut = new MyDictionary<int, string>(3);
-            sut.Insert(1, "String");
-            sut.Insert(2, "Value");
-            sut.Insert(3, "Text");
 
-            // Act & Assert
-            foreach (var key in sut.Values)
-            {
-                
-            }
-        }
-        
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void IteratingOverNullKeysThrowsArgumentNullException()
-        {
-            // Arrange 
-            var sut = new MyDictionary<int, string>(1);
-
-            // Act & Assert
-            foreach (var key in sut.Keys)
-            {
-                
-            }
-        }
-        
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void IteratingOverNullValuesThrowsArgumentNullException()
-        {
-            // Arrange 
-            var sut = new MyDictionary<int, string>(3);
-
-            // Act & Assert
-            foreach (var key in sut.Values)
-            {
-                
-            }
+            Assert.AreEqual(expectedCount, count);
         }
 
         [TestMethod]
