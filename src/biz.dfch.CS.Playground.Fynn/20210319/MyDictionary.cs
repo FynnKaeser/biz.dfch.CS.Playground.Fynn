@@ -87,13 +87,15 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
                 throw new ArgumentNullException(nameof(key));
             }
 
-            if (null == buckets[index])
+            var bucket = buckets[index];
+
+            if (null == bucket)
             {
                 buckets[index] = new Entry<TKey, TValue>(key, value);
             }
             else
             {
-                var bucket = buckets[index];
+                bucket = bucket.Next;
 
                 while (null != bucket)
                 {
@@ -145,8 +147,27 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
                 return false;
             }
 
-            Count--;
-            throw new NotImplementedException();
+            var index = Hash(key);
+            var bucket = buckets[index];
+
+            if (key.Equals(bucket.Key))
+            {
+                buckets[index] = null;
+                Count--;
+                return true;
+            }
+
+            while (bucket != null)
+            {
+                if (key.Equals(bucket.Key))
+                {
+                    throw new NotImplementedException();
+                }
+
+                bucket = bucket.Next;
+            }
+
+            return false;
         }
 
         public bool UpdateValue(TKey key, TValue newValue)

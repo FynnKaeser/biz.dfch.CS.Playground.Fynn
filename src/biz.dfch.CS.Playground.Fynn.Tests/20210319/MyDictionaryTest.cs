@@ -139,10 +139,12 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
             // Act
             var result = sut.Delete(1);
             var resultCount = sut.Count;
+            var resultHasKey = sut.HasKey(1);
 
             // Assert
             Assert.AreEqual(expectedCount, resultCount);
             Assert.IsTrue(result);
+            Assert.IsFalse(resultHasKey);
         }
 
         [TestMethod]
