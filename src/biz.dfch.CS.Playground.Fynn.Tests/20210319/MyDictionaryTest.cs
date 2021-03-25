@@ -185,12 +185,12 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         }
 
         [TestMethod]
-        [DataRow("4")]
+        [DataRow("2")]
         [DataRow(null)]
         public void UpdateValueButKeyIsInvalidReturnsFalse(string key)
         {
             // Arrange 
-            var sut = new MyDictionary<string, string>(2);
+            var sut = new MyDictionary<string, string>(3);
             sut.Insert("1", "String");
             sut.Insert("2", "Value");
 

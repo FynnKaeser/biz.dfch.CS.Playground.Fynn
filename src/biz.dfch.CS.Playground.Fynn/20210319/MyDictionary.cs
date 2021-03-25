@@ -183,7 +183,15 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
                 return false;
             }
 
-            throw new NotImplementedException();
+            var bucket = GetBucket(key);
+            if (null == bucket)
+            {
+                return false;
+            }
+
+            bucket.Value = newValue;
+            
+            return true;
         }
         
         public bool UpdateKey(TKey key, TKey newKey)
@@ -205,7 +213,19 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
                 return false;
             }
 
-            throw new NotImplementedException();
+            var bucket = GetBucket(key);
+            var value = bucket.Value;
+
+            var isDeleted = Delete(key);
+
+            if (!isDeleted)
+            {
+                return false;
+            }
+
+            Insert(newKey, value);
+
+            return true;
         }
 
         public void Clear()
