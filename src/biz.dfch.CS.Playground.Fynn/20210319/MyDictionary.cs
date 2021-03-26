@@ -30,7 +30,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
 
         public List<TKey> Keys { get; }
         public List<TValue> Values { get; }
-        public int Count { get; private set; }
+        public int Count { get; private set; } 
 
         public MyDictionary(int capacity)
         {
@@ -67,7 +67,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
                 }
             }
         }
-
+        
         public void Insert(TKey key, TValue value)
         {
             if (null == key || null == value)
@@ -77,7 +77,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
 
             if (capacity == Count)
             {
-                throw new ArgumentOutOfRangeException(string.Format(MyDictionaryMessage.DictionaryIsFull, capacity));
+                throw new ArgumentOutOfRangeException(null,string.Format(MyDictionaryMessage.DictionaryIsFull, capacity));
             }
 
             if (HasKey(key))
