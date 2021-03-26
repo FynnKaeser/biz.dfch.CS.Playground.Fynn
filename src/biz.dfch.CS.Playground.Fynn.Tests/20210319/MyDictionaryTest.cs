@@ -185,7 +185,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         }
 
         [TestMethod]
-        [DataRow("2")]
+        [DataRow("3")]
         [DataRow(null)]
         public void UpdateValueButKeyIsInvalidReturnsFalse(string key)
         {

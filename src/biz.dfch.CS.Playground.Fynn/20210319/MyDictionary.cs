@@ -158,6 +158,8 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
             {
                 buckets[index] = bucket.Next;
                 Count--;
+                Values.Remove(bucket.Value);
+                Keys.Remove(bucket.Key);
                 return true;
             }
 
@@ -170,6 +172,8 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
                 {
                     previousBucket.Next = bucket.Next;
                     Count--;
+                    Values.Remove(bucket.Value);
+                    Keys.Remove(bucket.Key);
                     return true;
                 }
 
