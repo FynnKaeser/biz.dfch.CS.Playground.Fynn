@@ -26,7 +26,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
     public class MyDictionary<TKey, TValue> : IEnumerable<Entry<TKey, TValue>>
     {
         private Entry<TKey, TValue>[] buckets;
-        private int capacity;
+        private readonly int capacity;
 
         public List<TKey> Keys { get; }
         public List<TValue> Values { get; }
@@ -156,18 +156,24 @@ namespace biz.dfch.CS.Playground.Fynn._20210319
 
             if (key.Equals(bucket.Key))
             {
-                buckets[index] = null;
+                buckets[index] = bucket.Next;
                 Count--;
                 return true;
             }
+
+            var previousBucket = bucket;
+            bucket = bucket.Next;
 
             while (bucket != null)
             {
                 if (key.Equals(bucket.Key))
                 {
-                    throw new NotImplementedException();
+                    previousBucket.Next = bucket.Next;
+                    Count--;
+                    return true;
                 }
 
+                previousBucket = bucket;
                 bucket = bucket.Next;
             }
 
