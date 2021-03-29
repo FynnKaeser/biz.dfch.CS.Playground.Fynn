@@ -21,13 +21,17 @@ namespace biz.dfch.CS.Playground.Fynn._20210329
     public class MyStack<TValue>
     {
         private readonly int capacity;
-        private MyStackEntry<TValue> start;
-        private MyStackEntry<TValue> end;
+        private MyStackEntry<TValue> top;
 
         public int Count { get; set; }
 
         public MyStack(int capacity)
         {
+            if (capacity <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(capacity));
+            }
+
             this.capacity = capacity;
         }
 
@@ -38,20 +42,36 @@ namespace biz.dfch.CS.Playground.Fynn._20210329
 
         public void Push(TValue value)
         {
-            throw new NotImplementedException();
+            if (null == value)
+            {
+                throw new ArgumentNullException(nameof(value));
+            }
+
+            if (Count == capacity)
+            {
+                throw new ArgumentOutOfRangeException(nameof(capacity));
+            }
+
+            var previousTop = top;
+
+            top = new MyStackEntry<TValue>(value)
+            {
+                Next = previousTop
+            };
+            Count++;
         }
 
-        public MyStackEntry<TValue> Peek()
+        public TValue Peek()
         {
             throw new NotImplementedException();
         }
 
-        public MyStackEntry<TValue> Pop()
+        public TValue Pop()
         {
             throw new NotImplementedException();
         }
 
-        public bool Contains(MyStackEntry<TValue> value)
+        public bool Contains(TValue value)
         {
             throw new NotImplementedException();
         }

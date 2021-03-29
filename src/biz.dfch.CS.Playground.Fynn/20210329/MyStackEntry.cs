@@ -20,7 +20,6 @@ namespace biz.dfch.CS.Playground.Fynn._20210329
     {
         public TValue Value { get; set; }
         public MyStackEntry<TValue> Next { get; set; }
-        public MyStackEntry<TValue> Previous { get; set; }
 
         public MyStackEntry(TValue value)
         {
