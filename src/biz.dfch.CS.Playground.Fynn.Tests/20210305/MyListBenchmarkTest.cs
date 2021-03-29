@@ -15,23 +15,18 @@
  */
 
 using BenchmarkDotNet.Running;
+using biz.dfch.CS.Playground.Fynn.Tests._20210305;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
+namespace biz.dfch.CS.Playground.Fynn.Tests._20210317
 {
     [TestClass]
-    public class MyDictionaryBenchmarkTests
+    public class MyListBenchmarkTest
     {
         [TestMethod]
         public void BenchmarkInsertTest()
         {
-            var summary = BenchmarkRunner.Run<MyDictionaryInsertBenchmark>();
-        }
-        
-        [TestMethod]
-        public void BenchmarkGetTest()
-        {
-            var summary = BenchmarkRunner.Run<MyDictionaryGetBenchmark>();
+            var summary = BenchmarkRunner.Run<MyListBenchmark>();
         }
     }
 }

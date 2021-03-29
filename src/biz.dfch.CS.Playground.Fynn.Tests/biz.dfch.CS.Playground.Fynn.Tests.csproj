@@ -308,13 +308,15 @@
     <Compile Include="20200417\TestClass2.cs" />
     <Compile Include="20210304\CsvReaderTest.cs" />
     <Compile Include="20210304\FileCheckerTest.cs" />
+    <Compile Include="20210305\MyListBenchmark.cs" />
     <Compile Include="20210305\MyEqualsTestClass.cs" />
     <Compile Include="20210305\MyListTest.cs" />
+    <Compile Include="20210305\MyListBenchmarkTest.cs" />
     <Compile Include="20210317\MyTypeTest.cs" />
     <Compile Include="20210305\MyTestClass.cs" />
     <Compile Include="20210319\MyDictionaryGetBenchmark.cs" />
     <Compile Include="20210319\MyDictionaryInsertBenchmark.cs" />
-    <Compile Include="20210319\MyDictionaryBenchmarkTests.cs" />
+    <Compile Include="20210319\MyDictionaryBenchmarkTest.cs" />
     <Compile Include="20210319\MyDictionaryTest.cs" />
     <Compile Include="20210319\TestClassGetHasCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
