@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+using System;
 using biz.dfch.CS.Playground.Fynn._20210329;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -56,7 +57,20 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
             Assert.AreEqual(expectedResult, result);
             Assert.AreEqual(expectedCount, resultCount);
         }
-        
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void PeekEntryWhenStackIsEmptyThrowsInvalidOperationException()
+        {
+            // Arrange
+            var sut = new MyStack<int>(2);
+
+            // Act
+            var result = sut.Peek();
+
+            // Assert
+        }
+
         [TestMethod]
         public void PopEntrySucceeds()
         {
@@ -76,7 +90,20 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
             Assert.AreEqual(expectedResult, result);
             Assert.AreEqual(expectedCount, resultCount);
         }
-        
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void PopEntryWhenStackIsEmptyThrowsInvalidOperationException()
+        {
+            // Arrange
+            var sut = new MyStack<int>(2);
+
+            // Act
+            var result = sut.Pop();
+
+            // Assert
+        }
+
         [TestMethod]
         public void PushEntrySucceeds()
         {
@@ -94,6 +121,58 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
             // Assert
             Assert.AreEqual(expectedCount, resultCount);
             Assert.IsTrue(containsValue);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void PushNullEntryToStackThrowsArgumentNullException()
+        {
+            // Arrange
+            var sut = new MyStack<string>(2);
+            sut.Push("String");
+
+            // Act
+            sut.Push(null);
+
+            // Assert
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void PushEntryWhenStackIsFullThrowsArgumentOutOfRangeException()
+        {
+            // Arrange
+            var sut = new MyStack<int>(1);
+            sut.Push(42);
+
+            // Act
+            sut.Push(24);
+
+            // Assert
+        }
+        
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void CreatingStackWithNegativeCapacityThrowsArgumentOutOfRangeException()
+        {
+            // Arrange
+            var sut = new MyStack<int>(-1);
+
+            // Act
+
+            // Assert
+        }
+        
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void CreatingStackWithZeroCapacityThrowsArgumentOutOfRangeException()
+        {
+            // Arrange
+            var sut = new MyStack<int>(0);
+
+            // Act
+
+            // Assert
         }
     }
 }
