@@ -37,7 +37,8 @@ namespace biz.dfch.CS.Playground.Fynn._20210329
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            top = null;
+            Count = 0;
         }
 
         public void Push(TValue value)
@@ -63,17 +64,49 @@ namespace biz.dfch.CS.Playground.Fynn._20210329
 
         public TValue Peek()
         {
-            throw new NotImplementedException();
+            if (null == top)
+            {
+                throw new InvalidOperationException();
+            }
+
+            return top.Value;
         }
 
         public TValue Pop()
         {
-            throw new NotImplementedException();
+            if (null == top)
+            {
+                throw new InvalidOperationException();
+            }
+
+            var previousTop = top;
+            top = top.Next;
+
+            Count--;
+
+            return previousTop.Value;
         }
 
         public bool Contains(TValue value)
         {
-            throw new NotImplementedException();
+            if (null == value)
+            {
+                return false;
+            }
+
+            var currentEntry = top;
+
+            while (null != currentEntry)
+            {
+                if (value.Equals(currentEntry.Value))
+                {
+                    return true;
+                }
+
+                currentEntry = currentEntry.Next;
+            }
+
+            return false;
         }
     }
 }
