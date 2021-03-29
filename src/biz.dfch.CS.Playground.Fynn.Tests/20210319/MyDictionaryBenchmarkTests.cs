@@ -23,9 +23,15 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
     public class MyDictionaryBenchmarkTests
     {
         [TestMethod]
-        public void BenchmarkTest()
+        public void BenchmarkInsertTest()
         {
-            var summary = BenchmarkRunner.Run<MyDictionaryBenchmark>();
+            var summary = BenchmarkRunner.Run<MyDictionaryInsertBenchmark>();
+        }
+        
+        [TestMethod]
+        public void BenchmarkGetTest()
+        {
+            var summary = BenchmarkRunner.Run<MyDictionaryGetBenchmark>();
         }
     }
 }
