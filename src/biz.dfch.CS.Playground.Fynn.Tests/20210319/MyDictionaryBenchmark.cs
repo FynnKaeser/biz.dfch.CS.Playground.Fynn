@@ -19,6 +19,7 @@ using biz.dfch.CS.Playground.Fynn._20210319;
 
 namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
 {
+    [IterationTime(100)]
     public class MyDictionaryBenchmark
     {
         private MyDictionary<int, string> dictionary;
@@ -28,14 +29,14 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
             dictionary = new MyDictionary<int, string>(1);
         }
 
-        [IterationCleanup]
+        [IterationSetup]
         public void IterationCleanup()
         {
             dictionary.Clear();
         }
 
         [Benchmark]
-        public void InsertEntry()
+        public void InsertOneEntry()
         {
             dictionary.Insert(1, "23");
         }
