@@ -22,6 +22,8 @@ namespace biz.dfch.CS.Playground.Fynn._20210330
     {
         public int Count { get; private set; }
         private int capacity;
+        private MyQueueEntry<TValue> head;
+        private MyQueueEntry<TValue> tail;
 
         public MyQueue(int capacity)
         {
@@ -30,7 +32,29 @@ namespace biz.dfch.CS.Playground.Fynn._20210330
 
         public void Enqueue(TValue value)
         {
-            throw new NotImplementedException();
+            if (null == value)
+            {
+                throw new ArgumentNullException(nameof(value));
+            }
+
+            if (Count == capacity)
+            {
+                throw new ArgumentOutOfRangeException(nameof(value));
+            }
+
+            var entry = new MyQueueEntry<TValue>(value);
+
+            if (null == head)
+            {
+                head = entry;
+                tail = head;
+            }
+
+            var previousTail = tail;
+            tail = entry;
+            previousTail.Next = tail;
+            tail.Next = head;
+            Count++;
         }
 
         public void Clear()

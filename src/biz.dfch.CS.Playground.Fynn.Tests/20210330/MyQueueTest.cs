@@ -77,10 +77,13 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
         public void EnqueueEntryToQueueSucceeds()
         {
             // Arrange
-            var sut = new MyQueue<int>(1);
+            var sut = new MyQueue<int>(4);
             sut.Enqueue(42);
+            sut.Enqueue(142);
+            sut.Enqueue(242);
+            sut.Enqueue(342);
 
-            var expectedCount = 1;
+            var expectedCount = 4;
             var expectedResult = 42;
 
             // Act
