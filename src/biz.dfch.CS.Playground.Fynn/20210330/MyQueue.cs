@@ -59,12 +59,33 @@ namespace biz.dfch.CS.Playground.Fynn._20210330
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            head = null;
+            tail = null;
+            Count = 0;
         }
 
         public TValue Dequeue()
         {
-            throw new NotImplementedException();
+            if (Count < 1)
+            {
+                throw new InvalidOperationException();
+            }
+
+            if (Count == 1)
+            {
+                var value = head.Value;
+                tail = null;
+                head = null;
+                Count--;
+                return value;
+            }
+
+            var previousHead = head;
+            head = previousHead.Next;
+            tail.Next = head;
+            Count--;
+
+            return previousHead.Value;
         }
 
         public TValue Peek()
