@@ -319,6 +319,7 @@
     <Compile Include="20210319\MyDictionaryBenchmarkTest.cs" />
     <Compile Include="20210319\MyDictionaryTest.cs" />
     <Compile Include="20210319\TestClassGetHasCode.cs" />
+    <Compile Include="20210329\MyStackTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
