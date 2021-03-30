@@ -160,7 +160,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
         [TestMethod]
         [DataRow(0)]
         [DataRow(-42)]
-        [ExpectedException(typeof(InvalidOperationException))]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void SetInvalidCapacityForQueueThrowsArgumentOutOfRangeException(int capacity)
         {
             // Arrange

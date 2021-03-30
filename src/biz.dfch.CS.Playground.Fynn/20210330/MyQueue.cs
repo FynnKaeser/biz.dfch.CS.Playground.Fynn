@@ -21,12 +21,16 @@ namespace biz.dfch.CS.Playground.Fynn._20210330
     public class MyQueue<TValue>
     {
         public int Count { get; private set; }
-        private int capacity;
+        private readonly int capacity;
         private MyQueueEntry<TValue> head;
         private MyQueueEntry<TValue> tail;
 
         public MyQueue(int capacity)
         {
+            if (capacity < 1)
+            {
+                throw new ArgumentOutOfRangeException(nameof(capacity));
+            }
             this.capacity = capacity;
         }
 
@@ -90,12 +94,34 @@ namespace biz.dfch.CS.Playground.Fynn._20210330
 
         public TValue Peek()
         {
-            throw new NotImplementedException();
+            if (Count < 1)
+            {
+                throw new InvalidOperationException();
+            }
+
+            return head.Value;
         }
 
         public bool Contains(TValue value)
         {
-            throw new NotImplementedException();
+            if (null == value)
+            {
+                return false;
+            }
+
+            var tempEntry = head;
+
+            for (int i = 0; i < Count; i++)
+            {
+                if (value.Equals(tempEntry.Value))
+                {
+                    return true;
+                }
+
+                tempEntry = tempEntry.Next;
+            }
+
+            return false;
         }
     }
 }
