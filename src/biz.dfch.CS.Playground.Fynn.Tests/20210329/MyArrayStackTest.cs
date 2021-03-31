@@ -21,13 +21,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
 {
     [TestClass]
-    public class MyStackTest
+    public class MyArrayStackTest
     {
         [TestMethod]
         public void ClearStackSucceeds()
         {
             // Arrange
-            var sut = new MyStack<int>(1);
+            var sut = new MyArrayStack<int>(1);
             sut.Push(42);
 
             var expectedCount = 0;
@@ -38,13 +38,13 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
 
             // Assert
             Assert.AreEqual(expectedCount, resultCount);
-        } 
-        
+        }
+
         [TestMethod]
         public void PeekEntrySucceeds()
         {
             // Arrange
-            var sut = new MyStack<int>(2);
+            var sut = new MyArrayStack<int>(2);
             sut.Push(1);
             sut.Push(42);
 
@@ -65,7 +65,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
         public void PeekEntryWhenStackIsEmptyThrowsInvalidOperationException()
         {
             // Arrange
-            var sut = new MyStack<int>(2);
+            var sut = new MyArrayStack<int>(2);
 
             // Act
             var result = sut.Peek();
@@ -77,7 +77,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
         public void PopEntrySucceeds()
         {
             // Arrange
-            var sut = new MyStack<int>(2);
+            var sut = new MyArrayStack<int>(2);
             sut.Push(1);
             sut.Push(42);
 
@@ -98,7 +98,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
         public void PopEntryWhenStackIsEmptyThrowsInvalidOperationException()
         {
             // Arrange
-            var sut = new MyStack<int>(2);
+            var sut = new MyArrayStack<int>(2);
 
             // Act
             var result = sut.Pop();
@@ -110,13 +110,13 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
         public void PushEntrySucceeds()
         {
             // Arrange
-            var sut = new MyStack<int>(1);
+            var sut = new MyArrayStack<int>(1);
 
             var expectedCount = 1;
 
             // Act
-            sut.Push(42);
-
+            sut.Push(50);
+            
             var resultCount = sut.Count;
             var containsValue = sut.Contains(42);
 
@@ -130,7 +130,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
         public void PushNullEntryToStackThrowsArgumentNullException()
         {
             // Arrange
-            var sut = new MyStack<string>(1);
+            var sut = new MyArrayStack<string>(1);
 
             // Act
             sut.Push(null);
@@ -143,7 +143,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
         public void PushEntryWhenStackIsFullThrowsArgumentOutOfRangeException()
         {
             // Arrange
-            var sut = new MyStack<int>(1);
+            var sut = new MyArrayStack<int>(1);
             sut.Push(42);
 
             // Act
@@ -151,7 +151,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
 
             // Assert
         }
-        
+
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void CreatingStackWithNegativeCapacityThrowsArgumentOutOfRangeException()
@@ -159,11 +159,11 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
             // Arrange
 
             // Act
-            var sut = new MyStack<int>(-1);
+            var sut = new MyArrayStack<int>(-1);
 
             // Assert
         }
-        
+
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void CreatingStackWithZeroCapacityThrowsArgumentOutOfRangeException()
@@ -171,7 +171,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
             // Arrange
 
             // Act
-            var sut = new MyStack<int>(0);
+            var sut = new MyArrayStack<int>(0);
 
             // Assert
         }

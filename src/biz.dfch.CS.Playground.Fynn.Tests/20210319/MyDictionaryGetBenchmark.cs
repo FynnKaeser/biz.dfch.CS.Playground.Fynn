@@ -28,6 +28,13 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         private MyDictionary<int, string> thousandEntriesDictionary = new MyDictionary<int, string>(1000);
         private MyDictionary<int, string> millionEntriesDictionary = new MyDictionary<int, string>(1000000);
 
+        private readonly Random random = new Random();
+
+        private readonly int randomKeyTen;
+        private readonly int randomKeyHundred;
+        private readonly int randomKeyThousand;
+        private readonly int randomKeyMillion;
+
         public MyDictionaryGetBenchmark()
         {
             for (int i = 0; i < 1000000; i++)
@@ -54,12 +61,16 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
 
                 millionEntriesDictionary.Insert(i, "String");
             }
+
+            randomKeyTen = random.Next(0, 9);
+            randomKeyHundred = random.Next(0, 99);
+            randomKeyThousand = random.Next(0, 999);
+            randomKeyMillion = random.Next(0, 999999);
         }
 
         [Benchmark]
         public void GetEntryFromOneEntryDictionary()
         {
-            // Arrange
             // Act
             var myEntry = oneEntryDictionary[0];
         }
@@ -67,45 +78,29 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         [Benchmark]
         public void GetEntryFromTenEntriesDictionary()
         {
-            // Arrange
-            var random = new Random();
-            var key = random.Next(0, 9);
-
             // Act
-            var myEntry = tenEntriesDictionary[key];
+            var myEntry = tenEntriesDictionary[randomKeyTen];
         }
 
         [Benchmark]
         public void GetEntryFromHundredEntriesDictionary()
         {
-            // Arrange
-            var random = new Random();
-            var key = random.Next(0, 99);
-
             // Act
-            var myEntry = hundredEntriesDictionary[key];
+            var myEntry = hundredEntriesDictionary[randomKeyHundred];
         }
 
         [Benchmark]
         public void GetEntryFromThousandEntriesDictionary()
         {
-            // Arrange
-            var random = new Random();
-            var key = random.Next(0, 999);
-
             // Act
-            var myEntry = hundredEntriesDictionary[key];
+            var myEntry = thousandEntriesDictionary[randomKeyThousand];
         }
 
         [Benchmark]
         public void GetEntryFromMillionEntriesDictionary()
         {
-            // Arrange
-            var random = new Random();
-            var key = random.Next(0, 999999);
-
             // Act
-            var myEntry = millionEntriesDictionary[key];
+            var myEntry = millionEntriesDictionary[randomKeyMillion];
         }
     }
 }
