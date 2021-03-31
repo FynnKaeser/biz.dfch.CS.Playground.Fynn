@@ -28,7 +28,8 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
         {
             // Arrange
             var sut = new MyQueue<int>(1);
-            sut.Enqueue(1);
+            var arbitraryElement = 42;
+            sut.Enqueue(arbitraryElement);
 
             var expectedCount = 0;
 
@@ -45,13 +46,18 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
         {
             // Arrange
             var sut = new MyQueue<int>(4);
-            sut.Enqueue(42);
-            sut.Enqueue(142);
-            sut.Enqueue(242);
-            sut.Enqueue(342);
+            var arbitraryElement = 42;
+            var secondArbitraryElement = 52;
+            var thirdArbitraryElement = 13;
+            var fourthArbitraryElement = 100;
+
+            sut.Enqueue(arbitraryElement);
+            sut.Enqueue(secondArbitraryElement);
+            sut.Enqueue(thirdArbitraryElement);
+            sut.Enqueue(fourthArbitraryElement);
 
             var expectedCount = 3;
-            var expectedResult = 42;
+            var expectedResult = arbitraryElement;
 
             // Act
             var result = sut.Dequeue();
@@ -79,21 +85,19 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
         public void EnqueueEntryToQueueSucceeds()
         {
             // Arrange
-            var sut = new MyQueue<int>(4);
-            sut.Enqueue(42);
-            sut.Enqueue(142);
-            sut.Enqueue(242);
-            sut.Enqueue(342);
+            var sut = new MyQueue<int>(1);
+            var arbitraryElement = 42;
 
-            var expectedCount = 4;
-            var expectedResult = 42;
+            var expectedCount = 1;
 
             // Act
-            var result = sut.Peek();
+            sut.Enqueue(arbitraryElement);
+
             var resultCount = sut.Count;
+            var result = sut.Contains(arbitraryElement);
 
             // Assert
-            Assert.AreEqual(expectedResult, result);
+            Assert.IsTrue(result);
             Assert.AreEqual(expectedCount, resultCount);
         }
         
@@ -116,10 +120,12 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
         {
             // Arrange
             var sut = new MyQueue<int>(1);
-            sut.Enqueue(42);
+            var arbitraryElement = 42;
+
+            sut.Enqueue(arbitraryElement);
 
             // Act
-            sut.Enqueue(10);
+            sut.Enqueue(arbitraryElement);
 
             // Assert
         }
@@ -129,11 +135,14 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
         {
             // Arrange
             var sut = new MyQueue<int>(2);
-            sut.Enqueue(42);
-            sut.Enqueue(128);
+            var arbitraryElement = 42;
+            var secondArbitraryElement = 142;
+
+            sut.Enqueue(arbitraryElement);
+            sut.Enqueue(secondArbitraryElement);
 
             var expectedCount = 2;
-            var expectedResult = 42;
+            var expectedResult = arbitraryElement;
 
             // Act
             var result = sut.Peek();
@@ -176,11 +185,14 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
         {
             // Arrange
             var sut = new MyQueue<int>(2);
-            sut.Enqueue(42);
-            sut.Enqueue(128);
+            var arbitraryElement = 42;
+            var secondArbitraryElement = 142;
+
+            sut.Enqueue(arbitraryElement);
+            sut.Enqueue(secondArbitraryElement);
 
             // Act
-            var result = sut.Contains(42);
+            var result = sut.Contains(arbitraryElement);
 
             // Assert
             Assert.IsTrue(result);
@@ -191,11 +203,15 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
         {
             // Arrange
             var sut = new MyQueue<int>(2);
-            sut.Enqueue(42);
-            sut.Enqueue(128);
+            var arbitraryElement = 42;
+            var secondArbitraryElement = 142;
+            var elementNotInQueue = 100;
+
+            sut.Enqueue(arbitraryElement);
+            sut.Enqueue(secondArbitraryElement);
 
             // Act
-            var result = sut.Contains(100);
+            var result = sut.Contains(elementNotInQueue);
 
             // Assert
             Assert.IsFalse(result);

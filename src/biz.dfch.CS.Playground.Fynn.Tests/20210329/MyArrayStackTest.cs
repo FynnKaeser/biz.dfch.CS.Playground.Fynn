@@ -52,7 +52,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
             sut.Push(arbitraryElementTwo);
 
             var expectedCount = 2;
-            var expectedResult = 42;
+            var expectedResult = arbitraryElementTwo;
 
             // Act
             var result = sut.Peek();
@@ -87,7 +87,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
             sut.Push(arbitraryElementTwo);
 
             var expectedCount = 1;
-            var expectedResult = 42;
+            var expectedResult = arbitraryElement;
 
             // Act
             var result = sut.Pop();

@@ -47,12 +47,12 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
             // Arrange
             var sut = new MyStack<int>(2);
             var arbitraryElement = 4;
-            var arbitraryElementTwo = 42;
+            var secondArbitraryElement = 42;
             sut.Push(arbitraryElement);
-            sut.Push(arbitraryElementTwo);
+            sut.Push(secondArbitraryElement);
 
             var expectedCount = 2;
-            var expectedResult = 42;
+            var expectedResult = arbitraryElement;
 
             // Act
             var result = sut.Peek();
@@ -82,12 +82,12 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
             // Arrange
             var sut = new MyStack<int>(2);
             var arbitraryElement = 4;
-            var arbitraryElementTwo = 42;
+            var secondArbitraryElement = 42;
             sut.Push(arbitraryElement);
-            sut.Push(arbitraryElementTwo);
+            sut.Push(secondArbitraryElement);
 
             var expectedCount = 1;
-            var expectedResult = 42;
+            var expectedResult = arbitraryElement;
 
             // Act
             var result = sut.Pop();
