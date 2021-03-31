@@ -28,7 +28,8 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
         {
             // Arrange
             var sut = new MyArrayStack<int>(1);
-            sut.Push(42);
+            var arbitraryElement = 42;
+            sut.Push(arbitraryElement);
 
             var expectedCount = 0;
 
@@ -45,8 +46,10 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
         {
             // Arrange
             var sut = new MyArrayStack<int>(2);
-            sut.Push(1);
-            sut.Push(42);
+            var arbitraryElement = 4;
+            var arbitraryElementTwo = 42;
+            sut.Push(arbitraryElement);
+            sut.Push(arbitraryElementTwo);
 
             var expectedCount = 2;
             var expectedResult = 42;
@@ -78,8 +81,10 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
         {
             // Arrange
             var sut = new MyArrayStack<int>(2);
-            sut.Push(1);
-            sut.Push(42);
+            var arbitraryElement = 4;
+            var arbitraryElementTwo = 42;
+            sut.Push(arbitraryElement);
+            sut.Push(arbitraryElementTwo);
 
             var expectedCount = 1;
             var expectedResult = 42;
@@ -111,14 +116,14 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
         {
             // Arrange
             var sut = new MyArrayStack<int>(1);
-
+            var arbitraryElement = 42;
             var expectedCount = 1;
 
             // Act
-            sut.Push(50);
-            
+            sut.Push(arbitraryElement);
+
             var resultCount = sut.Count;
-            var containsValue = sut.Contains(42);
+            var containsValue = sut.Contains(arbitraryElement);
 
             // Assert
             Assert.AreEqual(expectedCount, resultCount);
@@ -144,10 +149,12 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
         {
             // Arrange
             var sut = new MyArrayStack<int>(1);
-            sut.Push(42);
+            var arbitraryElement = 42;
+            var arbitraryElementWhenStackIsFull = 4;
+            sut.Push(arbitraryElement);
 
             // Act
-            sut.Push(24);
+            sut.Push(arbitraryElementWhenStackIsFull);
 
             // Assert
         }

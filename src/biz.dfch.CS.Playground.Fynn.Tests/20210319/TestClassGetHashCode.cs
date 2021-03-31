@@ -16,13 +16,13 @@
 
 namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
 {
-    public class TestClassGetHasCode
+    public class TestClassGetHashCode
     {
         public string MyString { get; set; }
         public int MyInt { get; set; }
         public bool MyBool { get; set; }
 
-        public TestClassGetHasCode(string myString, int myInt, bool myBool)
+        public TestClassGetHashCode(string myString, int myInt, bool myBool)
         {
             MyString = myString;
             MyInt = myInt;

@@ -318,7 +318,7 @@
     <Compile Include="20210319\MyDictionaryInsertBenchmark.cs" />
     <Compile Include="20210319\MyDictionaryBenchmarkTest.cs" />
     <Compile Include="20210319\MyDictionaryTest.cs" />
-    <Compile Include="20210319\TestClassGetHasCode.cs" />
+    <Compile Include="20210319\TestClassGetHashCode.cs" />
     <Compile Include="20210329\MyArrayStackTest.cs" />
     <Compile Include="20210329\MyStackTest.cs" />
     <Compile Include="20210330\MyQueueTest.cs" />

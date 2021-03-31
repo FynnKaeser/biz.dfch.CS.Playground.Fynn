@@ -46,11 +46,11 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
         public void InsertKeyValuePairWithToDictionarySucceeds()
         {
             // Arrange
-            var sut = new MyDictionary<TestClassGetHasCode, string>(3);
+            var sut = new MyDictionary<TestClassGetHashCode, string>(3);
             var expectedCount = 3;
-            var myClassOne = new TestClassGetHasCode("Test", 15, false);
-            var myClassTwo = new TestClassGetHasCode("Tralala", 50, true);
-            var myClassThree = new TestClassGetHasCode("Text", 42, false);
+            var myClassOne = new TestClassGetHashCode("Test", 15, false);
+            var myClassTwo = new TestClassGetHashCode("Tralala", 50, true);
+            var myClassThree = new TestClassGetHashCode("Text", 42, false);
 
             // Act
             sut.Insert(myClassOne, "String");
