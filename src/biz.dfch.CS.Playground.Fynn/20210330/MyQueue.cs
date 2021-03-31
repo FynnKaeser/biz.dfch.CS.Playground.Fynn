@@ -52,6 +52,8 @@ namespace biz.dfch.CS.Playground.Fynn._20210330
             {
                 head = entry;
                 tail = head;
+                Count++;
+                return;
             }
 
             var previousTail = tail;
