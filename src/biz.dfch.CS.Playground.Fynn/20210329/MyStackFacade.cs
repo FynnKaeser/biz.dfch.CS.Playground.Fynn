@@ -19,12 +19,13 @@ namespace biz.dfch.CS.Playground.Fynn._20210329
     public class MyStackFacade<TValue>
     {
         private readonly IMyStackInterface<TValue> myStack;
+        private readonly int threshold = 100;
 
         public int Count => myStack.Count;
 
         public MyStackFacade(int capacity)
         {
-            if (capacity > 100)
+            if (capacity > threshold)
             {
                 myStack = new MyStack<TValue>(capacity);
             }
