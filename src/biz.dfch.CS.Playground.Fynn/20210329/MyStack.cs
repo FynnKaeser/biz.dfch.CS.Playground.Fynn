@@ -18,7 +18,7 @@ using System;
 */
 namespace biz.dfch.CS.Playground.Fynn._20210329
 {
-    public class MyStack<TValue>
+    public class MyStack<TValue> : IMyStackInterface<TValue>
     {
         private readonly int capacity;
         private MyStackEntry<TValue> top;
