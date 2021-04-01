@@ -320,6 +320,7 @@
     <Compile Include="20210319\MyDictionaryTest.cs" />
     <Compile Include="20210319\TestClassGetHashCode.cs" />
     <Compile Include="20210329\MyArrayStackTest.cs" />
+    <Compile Include="20210329\MyStackFacadeTest.cs" />
     <Compile Include="20210329\MyStackTest.cs" />
     <Compile Include="20210330\MyQueueTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

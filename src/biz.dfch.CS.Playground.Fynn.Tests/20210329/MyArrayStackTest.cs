@@ -82,12 +82,12 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210329
             // Arrange
             var sut = new MyArrayStack<int>(2);
             var arbitraryElement = 4;
-            var arbitraryElementTwo = 42;
+            var secondArbitraryElement = 42;
             sut.Push(arbitraryElement);
-            sut.Push(arbitraryElementTwo);
+            sut.Push(secondArbitraryElement);
 
             var expectedCount = 1;
-            var expectedResult = arbitraryElement;
+            var expectedResult = secondArbitraryElement;
 
             // Act
             var result = sut.Pop();
