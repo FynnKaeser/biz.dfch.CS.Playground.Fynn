@@ -35,6 +35,11 @@ namespace biz.dfch.CS.Playground.Fynn._20210329
             }
         }
 
+        public void Clear()
+        {
+            myStack.Clear();
+        }
+
         public void Push(TValue value)
         {
             myStack.Push(value);

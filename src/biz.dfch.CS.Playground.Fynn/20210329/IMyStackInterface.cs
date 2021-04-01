@@ -24,5 +24,6 @@ namespace biz.dfch.CS.Playground.Fynn._20210329
         TValue Peek();
         TValue Pop();
         bool Contains(TValue value);
+        void Clear();
     }
 }
