@@ -16,6 +16,7 @@
 
 using System;
 using System.Threading;
+using System.Threading.Tasks;
 using biz.dfch.CS.Playground.Fynn._20210401;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -78,12 +79,12 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210401
             thread1.Start();
             thread2.Start();
 
-            while (thread2.IsAlive)
-            {
-                // Wait For Threads to finish
-            }
-
             // Assert
+
+            while (thread1.IsAlive || thread2.IsAlive)
+            {
+                // Wait for Threads to finish
+            }
         }
     }
 }

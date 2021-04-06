@@ -67,6 +67,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210401
             for (int i = 0; i < 10; i++)
             {
                 Trace.WriteLine($"{nameof(Function1)}: {i}");
+                Thread.Sleep(1);
             }
         }
         
@@ -75,6 +76,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210401
             for (int i = 0; i < 10; i++)
             {
                 Trace.WriteLine($"{nameof(Function2)}: {i}");
+                Thread.Sleep(1);
             }
         }
     }
