@@ -323,6 +323,7 @@
     <Compile Include="20210329\MyStackFacadeTest.cs" />
     <Compile Include="20210329\MyStackTest.cs" />
     <Compile Include="20210330\MyQueueTest.cs" />
+    <Compile Include="20210330\MyQueueThreadTest.cs" />
     <Compile Include="20210401\MultiThreadingTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
