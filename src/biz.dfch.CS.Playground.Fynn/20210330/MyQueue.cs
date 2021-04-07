@@ -36,94 +36,109 @@ namespace biz.dfch.CS.Playground.Fynn._20210330
 
         public void Enqueue(TValue value)
         {
-            if (null == value)
+            lock (this)
             {
-                throw new ArgumentNullException(nameof(value));
-            }
+                if (null == value)
+                {
+                    throw new ArgumentNullException(nameof(value));
+                }
 
-            if (Count == capacity)
-            {
-                throw new ArgumentOutOfRangeException(nameof(value));
-            }
+                if (Count == capacity)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(value));
+                }
 
-            var entry = new MyQueueEntry<TValue>(value);
+                var entry = new MyQueueEntry<TValue>(value);
 
-            if (null == head)
-            {
-                head = entry;
-                tail = head;
+                if (null == head)
+                {
+                    head = entry;
+                    tail = head;
+                    Count++;
+                    return;
+                }
+
+                var previousTail = tail;
+                tail = entry;
+                previousTail.Next = tail;
+                tail.Next = head;
                 Count++;
-                return;
             }
-
-            var previousTail = tail;
-            tail = entry;
-            previousTail.Next = tail;
-            tail.Next = head;
-            Count++;
         }
 
         public void Clear()
         {
-            head = null;
-            tail = null;
-            Count = 0;
+            lock (this)
+            {
+                head = null;
+                tail = null;
+                Count = 0;
+            }
         }
 
         public TValue Dequeue()
         {
-            if (Count < 1)
+            lock (this)
             {
-                throw new InvalidOperationException();
-            }
+                if (Count < 1)
+                {
+                    throw new InvalidOperationException();
+                }
 
-            if (Count == 1)
-            {
-                var value = head.Value;
-                tail = null;
-                head = null;
+                if (Count == 1)
+                {
+                    var value = head.Value;
+                    tail = null;
+                    head = null;
+                    Count--;
+                    return value;
+                }
+
+                var previousHead = head;
+                head = previousHead.Next;
+                tail.Next = head;
                 Count--;
-                return value;
+
+                return previousHead.Value;
             }
-
-            var previousHead = head;
-            head = previousHead.Next;
-            tail.Next = head;
-            Count--;
-
-            return previousHead.Value;
         }
 
         public TValue Peek()
         {
-            if (Count < 1)
+            lock (this)
             {
-                throw new InvalidOperationException();
-            }
+                if (Count < 1)
+                {
+                    throw new InvalidOperationException();
+                }
 
-            return head.Value;
+                return head.Value;
+            }
         }
 
         public bool Contains(TValue value)
         {
-            if (null == value)
+            lock (this)
             {
-                return false;
-            }
-
-            var tempEntry = head;
-
-            for (int i = 0; i < Count; i++)
-            {
-                if (value.Equals(tempEntry.Value))
+                if (null == value)
                 {
-                    return true;
+                    return false;
                 }
 
-                tempEntry = tempEntry.Next;
-            }
+                var tempEntry = head;
 
-            return false;
+                for (int i = 0; i < Count; i++)
+                {
+                    if (value.Equals(tempEntry.Value))
+                    {
+                        return true;
+                    }
+
+                    tempEntry = tempEntry.Next;
+                }
+
+                return false;
+            }
         }
     }
 }

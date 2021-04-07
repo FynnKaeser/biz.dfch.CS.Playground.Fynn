@@ -15,7 +15,6 @@
  */
 
 using System.Threading;
-using System.Threading.Tasks;
 using biz.dfch.CS.Playground.Fynn._20210330;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -25,13 +24,14 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
     public class MyQueueThreadTest
     {
         [TestMethod]
-        public void LookingForEntryWhileClearingQueueReturnsTrue()
+        public void CallingClearOnNewThreadWhileLookingForEntryLooksClearMethod()
         {
             // Arrange
             var capacity = 1000000;
+            var result = false;
             var sut = new MyQueue<int>(capacity);
 
-            for (int i = 0; i < capacity; i++)
+            for (var i = 0; i < capacity; i++)
             {
                 sut.Enqueue(i);
             }
@@ -39,19 +39,19 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
             var lastEntry = capacity - 1;
 
             // Act 
-            var task = Task<bool>.Factory.StartNew(() => sut.Contains(lastEntry));
-            sut.Clear();
-
-            while (!task.IsCompleted)
+            var containsThread = new Thread(() => result = sut.Contains(lastEntry));
+            containsThread.Start();
+                     
+            var clearThread = new Thread(sut.Clear);
+            clearThread.Start();
+            
+            while (containsThread.IsAlive || clearThread.IsAlive)
             {
-                // Wait for task
+                // Wait for threads to complete
             }
-
-            var result = task.Result;
 
             // Assert
             Assert.IsTrue(result);
-
         }
     }
 }
