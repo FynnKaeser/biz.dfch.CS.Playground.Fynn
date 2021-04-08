@@ -41,14 +41,13 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
             // Act 
             var containsThread = new Thread(() => result = sut.Contains(lastEntry));
             containsThread.Start();
-                     
+
+            Thread.Sleep(1);
+
             var clearThread = new Thread(sut.Clear);
             clearThread.Start();
             
-            while (containsThread.IsAlive || clearThread.IsAlive)
-            {
-                // Wait for threads to complete
-            }
+            clearThread.Join();
 
             // Assert
             Assert.IsTrue(result);
@@ -68,13 +67,12 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
             var peekThread = new Thread(() => result = sut.Peek());
             peekThread.Start();
 
+            Thread.Sleep(1);
+
             var clearThread = new Thread(sut.Clear);
             clearThread.Start();
 
-            while (peekThread.IsAlive || clearThread.IsAlive)
-            {
-                // Wait for threads to complete
-            }
+            clearThread.Join();
 
             // Assert
             Assert.AreEqual(arbitraryElement, result);
@@ -98,13 +96,12 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
             var peekThread = new Thread(() => resultPeek = sut.Peek());
             peekThread.Start();
 
+            Thread.Sleep(1);
+
             var dequeueThread = new Thread(() => resultDequeue = sut.Dequeue());
             dequeueThread.Start();
 
-            while (peekThread.IsAlive || dequeueThread.IsAlive)
-            {
-                // Wait for threads to complete
-            }
+            dequeueThread.Join();
 
             // Assert
             Assert.AreEqual(arbitraryElement, resultPeek);
@@ -129,13 +126,12 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
             var dequeueThread = new Thread(() => resultDequeue = sut.Dequeue());
             dequeueThread.Start();
 
+            Thread.Sleep(1);
+
             var peekThread = new Thread(() => resultPeek = sut.Peek());
             peekThread.Start();
 
-            while (peekThread.IsAlive || dequeueThread.IsAlive)
-            {
-                // Wait for threads to complete
-            }
+            peekThread.Join();
 
             // Assert
             Assert.AreEqual(arbitraryElement, resultDequeue);
@@ -162,13 +158,12 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
             var containsThread = new Thread(() => result = sut.Contains(firstEntry));
             containsThread.Start();
 
+            Thread.Sleep(1);
+
             var clearThread = new Thread(() => resultDequeue = sut.Dequeue());
             clearThread.Start();
 
-            while (containsThread.IsAlive || clearThread.IsAlive)
-            {
-                // Wait for threads to complete
-            }
+            clearThread.Join();
 
             // Assert
             Assert.IsTrue(result);

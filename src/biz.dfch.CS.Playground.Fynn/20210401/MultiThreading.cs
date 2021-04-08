@@ -25,6 +25,7 @@ namespace biz.dfch.CS.Playground.Fynn._20210401
         private readonly Random random;
         private int number1;
         private int number2;
+        private object myObject;
 
         public MultiThreading()
         {
@@ -78,6 +79,21 @@ namespace biz.dfch.CS.Playground.Fynn._20210401
                 Trace.WriteLine($"{nameof(Function2)}: {i}");
                 Thread.Sleep(1);
             }
+        }
+
+        public object GetObject()
+        {
+            if (null == myObject)
+            {
+                lock (this)
+                {
+                    if (null == myObject)
+                    {
+                        myObject = new object();
+                    }
+                }
+            }
+            return myObject;
         }
     }
 }

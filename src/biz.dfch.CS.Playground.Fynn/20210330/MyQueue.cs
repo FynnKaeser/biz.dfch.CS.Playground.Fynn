@@ -36,28 +36,39 @@ namespace biz.dfch.CS.Playground.Fynn._20210330
 
         public void Enqueue(TValue value)
         {
+            if (null == value)
+            {
+                throw new ArgumentNullException(nameof(value));
+            }
+
+            if (Count == capacity)
+            {
+                throw new ArgumentOutOfRangeException(nameof(value));
+            }
+
+            var entry = new MyQueueEntry<TValue>(value);
+
+            if (null == head)
+            {
+                lock (this)
+                {
+                    if (null == head)
+                    {
+                        head = entry;
+                        tail = head;
+                        Count++;
+                        return;
+                    }
+
+                    if (Count == capacity)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(value));
+                    }
+                }
+            }
+
             lock (this)
             {
-                if (null == value)
-                {
-                    throw new ArgumentNullException(nameof(value));
-                }
-
-                if (Count == capacity)
-                {
-                    throw new ArgumentOutOfRangeException(nameof(value));
-                }
-
-                var entry = new MyQueueEntry<TValue>(value);
-
-                if (null == head)
-                {
-                    head = entry;
-                    tail = head;
-                    Count++;
-                    return;
-                }
-
                 var previousTail = tail;
                 tail = entry;
                 previousTail.Next = tail;
@@ -78,56 +89,62 @@ namespace biz.dfch.CS.Playground.Fynn._20210330
 
         public TValue Dequeue()
         {
-            lock (this)
+            if (Count < 1)
             {
-                if (Count < 1)
+                throw new InvalidOperationException();
+            }
+
+            if (Count == 1)
+            {
+                lock (this)
                 {
+                    var value = head.Value;
+
+                    if (Count == 1)
+                    {
+                        tail = null;
+                        head = null;
+                        Count--;
+                        return value;
+                    }
                     throw new InvalidOperationException();
                 }
 
-                if (Count == 1)
-                {
-                    var value = head.Value;
-                    tail = null;
-                    head = null;
-                    Count--;
-                    return value;
-                }
+            }
 
+            lock (this)
+            {
                 var previousHead = head;
                 head = previousHead.Next;
                 tail.Next = head;
                 Count--;
-
                 return previousHead.Value;
             }
         }
 
         public TValue Peek()
         {
-            lock (this)
+            if (Count < 1)
             {
-                if (Count < 1)
-                {
-                    throw new InvalidOperationException();
-                }
-
-                return head.Value;
+                throw new InvalidOperationException();
             }
+            
+            return head.Value;
         }
 
         public bool Contains(TValue value)
         {
+
+            if (null == value)
+            {
+                return false;
+            }
+
+            var tempEntry = head;
+
             lock (this)
             {
-                if (null == value)
-                {
-                    return false;
-                }
-
-                var tempEntry = head;
-
-                for (int i = 0; i < Count; i++)
+                for (var i = 0; i < Count; i++)
                 {
                     if (value.Equals(tempEntry.Value))
                     {
@@ -136,9 +153,9 @@ namespace biz.dfch.CS.Playground.Fynn._20210330
 
                     tempEntry = tempEntry.Next;
                 }
-
-                return false;
             }
+
+            return false;
         }
     }
 }

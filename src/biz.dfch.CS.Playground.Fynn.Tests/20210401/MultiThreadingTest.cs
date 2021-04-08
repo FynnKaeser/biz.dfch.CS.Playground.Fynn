@@ -16,7 +16,6 @@
 
 using System;
 using System.Threading;
-using System.Threading.Tasks;
 using biz.dfch.CS.Playground.Fynn._20210401;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
