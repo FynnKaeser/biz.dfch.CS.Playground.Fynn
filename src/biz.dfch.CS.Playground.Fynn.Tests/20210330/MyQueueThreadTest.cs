@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+using System.Collections.Generic;
 using System.Threading;
 using biz.dfch.CS.Playground.Fynn._20210330;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -38,16 +39,15 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
 
             var lastEntry = capacity - 1;
 
-            // Act 
-            var containsThread = new Thread(() => result = sut.Contains(lastEntry));
-            containsThread.Start();
+            var threads = new List<Thread>
+            {
+                new Thread(() => result = sut.Contains(lastEntry)),
+                new Thread(sut.Clear)
+            };
 
-            Thread.Sleep(1);
-
-            var clearThread = new Thread(sut.Clear);
-            clearThread.Start();
-            
-            clearThread.Join();
+            // Act
+            StartThreads(threads);
+            threads[1].Join();
 
             // Assert
             Assert.IsTrue(result);
@@ -63,16 +63,15 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
 
             sut.Enqueue(arbitraryElement);
 
-            // Act 
-            var peekThread = new Thread(() => result = sut.Peek());
-            peekThread.Start();
+            var threads = new List<Thread>
+            {
+                new Thread(() => result = sut.Peek()),
+                new Thread(sut.Clear)
+            };
 
-            Thread.Sleep(1);
-
-            var clearThread = new Thread(sut.Clear);
-            clearThread.Start();
-
-            clearThread.Join();
+            // Act
+            StartThreads(threads);
+            threads[1].Join();
 
             // Assert
             Assert.AreEqual(arbitraryElement, result);
@@ -92,16 +91,15 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
             sut.Enqueue(secondArbitraryElement);
             sut.Enqueue(secondArbitraryElement);
 
-            // Act 
-            var peekThread = new Thread(() => resultPeek = sut.Peek());
-            peekThread.Start();
+            var threads = new List<Thread>
+            {
+                new Thread(() => resultPeek = sut.Peek()),
+                new Thread(() => resultDequeue = sut.Dequeue())
+            };
 
-            Thread.Sleep(1);
-
-            var dequeueThread = new Thread(() => resultDequeue = sut.Dequeue());
-            dequeueThread.Start();
-
-            dequeueThread.Join();
+            // Act
+            StartThreads(threads);
+            threads[1].Join();
 
             // Assert
             Assert.AreEqual(arbitraryElement, resultPeek);
@@ -122,16 +120,15 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
             sut.Enqueue(secondArbitraryElement);
             sut.Enqueue(secondArbitraryElement);
 
+            var threads = new List<Thread>
+            {
+                new Thread(() => resultDequeue = sut.Dequeue()),
+                new Thread(() => resultPeek = sut.Peek())
+            };
+
             // Act
-            var dequeueThread = new Thread(() => resultDequeue = sut.Dequeue());
-            dequeueThread.Start();
-
-            Thread.Sleep(1);
-
-            var peekThread = new Thread(() => resultPeek = sut.Peek());
-            peekThread.Start();
-
-            peekThread.Join();
+            StartThreads(threads);
+            threads[1].Join();
 
             // Assert
             Assert.AreEqual(arbitraryElement, resultDequeue);
@@ -154,20 +151,27 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
 
             var firstEntry = 0;
 
-            // Act 
-            var containsThread = new Thread(() => result = sut.Contains(firstEntry));
-            containsThread.Start();
+            var threads = new List<Thread>
+            {
+                new Thread(() => result = sut.Contains(firstEntry)),
+                new Thread(() => resultDequeue = sut.Dequeue())
+            };
 
-            Thread.Sleep(1);
-
-            var clearThread = new Thread(() => resultDequeue = sut.Dequeue());
-            clearThread.Start();
-
-            clearThread.Join();
+            // Act
+            StartThreads(threads);
+            threads[1].Join();
 
             // Assert
             Assert.IsTrue(result);
             Assert.AreEqual(firstEntry, resultDequeue);
+        }
+
+        private void StartThreads(List<Thread> threads)
+        {
+            foreach (var thread in threads)
+            {
+                thread.Start();
+            }
         }
     }
 }
