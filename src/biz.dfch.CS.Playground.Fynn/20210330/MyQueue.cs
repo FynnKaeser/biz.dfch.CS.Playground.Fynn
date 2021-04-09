@@ -94,11 +94,13 @@ namespace biz.dfch.CS.Playground.Fynn._20210330
                 throw new InvalidOperationException();
             }
 
+            TValue value;
+
             if (Count == 1)
             {
                 lock (this)
                 {
-                    var value = head.Value;
+                    value = head.Value;
 
                     if (Count == 1)
                     {
@@ -107,19 +109,22 @@ namespace biz.dfch.CS.Playground.Fynn._20210330
                         Count--;
                         return value;
                     }
+
                     throw new InvalidOperationException();
                 }
 
             }
-
+            
             lock (this)
             {
                 var previousHead = head;
                 head = previousHead.Next;
                 tail.Next = head;
                 Count--;
-                return previousHead.Value;
+                value = previousHead.Value;
             }
+
+            return value;
         }
 
         public TValue Peek()
@@ -128,8 +133,15 @@ namespace biz.dfch.CS.Playground.Fynn._20210330
             {
                 throw new InvalidOperationException();
             }
-            
-            return head.Value;
+
+
+            TValue value;
+            lock (this)
+            {
+                value = head.Value;
+            }
+
+            return value;
         }
 
         public bool Contains(TValue value)
