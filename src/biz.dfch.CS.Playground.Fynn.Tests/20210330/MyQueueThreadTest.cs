@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using biz.dfch.CS.Playground.Fynn._20210330;
+using biz.dfch.CS.Playground.Fynn.Tests._20210401;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
@@ -24,6 +26,23 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
     [TestClass]
     public class MyQueueThreadTest
     {
+        private ManualResetEventSlim manualResetEventSlim;
+
+        private bool Contains<TValue>(MyQueue<TValue> queue, TValue value)
+        {
+            manualResetEventSlim.Wait();
+
+            var result = queue.Contains(value);
+            return result;
+        }
+
+        private void Clear<TValue>(MyQueue<TValue> queue)
+        {
+            manualResetEventSlim.Wait();
+            
+            queue.Clear();
+        }
+
         [TestMethod]
         public void ClearOnNewThreadWhileLookingForEntryLooksContainsMethod()
         {
@@ -36,17 +55,20 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
             {
                 sut.Enqueue(i);
             }
-
             var lastEntry = capacity - 1;
 
             var threads = new List<Thread>
             {
-                new Thread(() => result = sut.Contains(lastEntry)),
-                new Thread(sut.Clear)
+                new Thread(() => result = Contains(sut, lastEntry)),
+                new Thread(() => Clear(sut))
             };
+            var handler = new ThreadEventHandler(threads);
+            manualResetEventSlim = handler.ManualResetEventSlim;
 
             // Act
-            StartThreads(threads);
+            handler.StartThreads();
+            handler.OnThreadsReady(new EventArgs());
+
             threads[1].Join();
 
             // Assert
@@ -68,9 +90,10 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
                 new Thread(() => result = sut.Peek()),
                 new Thread(sut.Clear)
             };
+            var handler = new ThreadEventHandler(threads);
 
             // Act
-            StartThreads(threads);
+            handler.StartThreads();
             threads[1].Join();
 
             // Assert
@@ -96,9 +119,10 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
                 new Thread(() => resultPeek = sut.Peek()),
                 new Thread(() => resultDequeue = sut.Dequeue())
             };
+            var handler = new ThreadEventHandler(threads);
 
             // Act
-            StartThreads(threads);
+            handler.StartThreads();
             threads[1].Join();
 
             // Assert
@@ -125,9 +149,10 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
                 new Thread(() => resultDequeue = sut.Dequeue()),
                 new Thread(() => resultPeek = sut.Peek())
             };
+            var handler = new ThreadEventHandler(threads);
 
             // Act
-            StartThreads(threads);
+            handler.StartThreads();
             threads[1].Join();
 
             // Assert
@@ -156,22 +181,15 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
                 new Thread(() => result = sut.Contains(firstEntry)),
                 new Thread(() => resultDequeue = sut.Dequeue())
             };
+            var handler = new ThreadEventHandler(threads);
 
             // Act
-            StartThreads(threads);
+            handler.StartThreads();
             threads[1].Join();
 
             // Assert
             Assert.IsTrue(result);
             Assert.AreEqual(firstEntry, resultDequeue);
-        }
-
-        private void StartThreads(List<Thread> threads)
-        {
-            foreach (var thread in threads)
-            {
-                thread.Start();
-            }
         }
     }
 }
