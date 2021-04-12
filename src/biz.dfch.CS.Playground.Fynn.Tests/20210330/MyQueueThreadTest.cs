@@ -27,21 +27,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
     public class MyQueueThreadTest
     {
         private ManualResetEventSlim manualResetEventSlim;
-
-        private bool Contains<TValue>(MyQueue<TValue> queue, TValue value)
-        {
-            manualResetEventSlim.Wait();
-
-            var result = queue.Contains(value);
-            return result;
-        }
-
-        private void Clear<TValue>(MyQueue<TValue> queue)
-        {
-            manualResetEventSlim.Wait();
-            
-            queue.Clear();
-        }
+        private readonly EventArgs eventArgs = new EventArgs();
 
         [TestMethod]
         public void ClearOnNewThreadWhileLookingForEntryLooksContainsMethod()
@@ -67,7 +53,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
 
             // Act
             handler.StartThreads();
-            handler.OnThreadsReady(new EventArgs());
+            handler.OnThreadsReady(eventArgs);
 
             threads[1].Join();
 
@@ -87,13 +73,15 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
 
             var threads = new List<Thread>
             {
-                new Thread(() => result = sut.Peek()),
-                new Thread(sut.Clear)
+                new Thread(() => result = Peek(sut)),
+                new Thread(() => Clear(sut))
             };
             var handler = new ThreadEventHandler(threads);
 
             // Act
             handler.StartThreads();
+            handler.OnThreadsReady(eventArgs);
+
             threads[1].Join();
 
             // Assert
@@ -116,13 +104,15 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
 
             var threads = new List<Thread>
             {
-                new Thread(() => resultPeek = sut.Peek()),
-                new Thread(() => resultDequeue = sut.Dequeue())
+                new Thread(() => resultPeek = Peek(sut)),
+                new Thread(() => resultDequeue = Dequeue(sut))
             };
             var handler = new ThreadEventHandler(threads);
 
             // Act
             handler.StartThreads();
+            handler.OnThreadsReady(eventArgs);
+
             threads[1].Join();
 
             // Assert
@@ -146,13 +136,15 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
 
             var threads = new List<Thread>
             {
-                new Thread(() => resultDequeue = sut.Dequeue()),
-                new Thread(() => resultPeek = sut.Peek())
+                new Thread(() => resultDequeue = Dequeue(sut)),
+                new Thread(() => resultPeek = Peek(sut))
             };
             var handler = new ThreadEventHandler(threads);
 
             // Act
             handler.StartThreads();
+            handler.OnThreadsReady(eventArgs);
+
             threads[1].Join();
 
             // Assert
@@ -178,18 +170,51 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
 
             var threads = new List<Thread>
             {
-                new Thread(() => result = sut.Contains(firstEntry)),
-                new Thread(() => resultDequeue = sut.Dequeue())
+                new Thread(() => result = Contains(sut, firstEntry)),
+                new Thread(() => resultDequeue = Dequeue(sut))
             };
             var handler = new ThreadEventHandler(threads);
 
             // Act
             handler.StartThreads();
+            handler.OnThreadsReady(eventArgs);
+
             threads[1].Join();
 
             // Assert
             Assert.IsTrue(result);
             Assert.AreEqual(firstEntry, resultDequeue);
+        }
+
+        private bool Contains<TValue>(MyQueue<TValue> queue, TValue value)
+        {
+            manualResetEventSlim.Wait();
+
+            var result = queue.Contains(value);
+            return result;
+        }
+
+        private void Clear<TValue>(MyQueue<TValue> queue)
+        {
+            manualResetEventSlim.Wait();
+
+            queue.Clear();
+        }
+
+        private TValue Peek<TValue>(MyQueue<TValue> queue)
+        {
+            manualResetEventSlim.Wait();
+
+            var result = queue.Peek();
+            return result;
+        }
+
+        private TValue Dequeue<TValue>(MyQueue<TValue> queue)
+        {
+            manualResetEventSlim.Wait();
+
+            var result = queue.Dequeue();
+            return result;
         }
     }
 }
