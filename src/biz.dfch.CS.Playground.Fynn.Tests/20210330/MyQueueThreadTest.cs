@@ -48,12 +48,12 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
                 new Thread(() => result = Contains(sut, lastEntry)),
                 new Thread(() => Clear(sut))
             };
-            var handler = new ThreadEventHandler(threads);
+            var handler = new ThreadHandler(threads);
             manualResetEventSlim = handler.ManualResetEventSlim;
 
             // Act
             handler.StartThreads();
-            handler.OnThreadsReady();
+            handler.SetEventStateToSignaled();
 
             threads[1].Join();
 
@@ -76,12 +76,12 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
                 new Thread(() => result = Peek(sut)),
                 new Thread(() => Clear(sut))
             };
-            var handler = new ThreadEventHandler(threads);
+            var handler = new ThreadHandler(threads);
             manualResetEventSlim = handler.ManualResetEventSlim;
 
             // Act
             handler.StartThreads();
-            handler.OnThreadsReady();
+            handler.SetEventStateToSignaled();
 
             threads[1].Join();
 
@@ -108,12 +108,12 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
                 new Thread(() => resultPeek = Peek(sut)),
                 new Thread(() => resultDequeue = Dequeue(sut))
             };
-            var handler = new ThreadEventHandler(threads);
+            var handler = new ThreadHandler(threads);
             manualResetEventSlim = handler.ManualResetEventSlim;
 
             // Act
             handler.StartThreads();
-            handler.OnThreadsReady();
+            handler.SetEventStateToSignaled();
 
             threads[1].Join();
 
@@ -141,12 +141,12 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
                 new Thread(() => resultDequeue = Dequeue(sut)),
                 new Thread(() => resultPeek = Peek(sut))
             };
-            var handler = new ThreadEventHandler(threads);
+            var handler = new ThreadHandler(threads);
             manualResetEventSlim = handler.ManualResetEventSlim;
 
             // Act
             handler.StartThreads();
-            handler.OnThreadsReady();
+            handler.SetEventStateToSignaled();
 
             threads[1].Join();
 
@@ -176,12 +176,12 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
                 new Thread(() => result = Contains(sut, firstEntry)),
                 new Thread(() => resultDequeue = Dequeue(sut))
             };
-            var handler = new ThreadEventHandler(threads);
+            var handler = new ThreadHandler(threads);
             manualResetEventSlim = handler.ManualResetEventSlim;
 
             // Act
             handler.StartThreads();
-            handler.OnThreadsReady();
+            handler.SetEventStateToSignaled();
 
             threads[1].Join();
 

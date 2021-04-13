@@ -19,18 +19,18 @@ using System.Threading;
 
 namespace biz.dfch.CS.Playground.Fynn.Tests._20210401
 {
-    public class ThreadEventHandler
+    public class ThreadHandler
     {
         private readonly List<Thread> threads;
         public ManualResetEventSlim ManualResetEventSlim;
 
-        public ThreadEventHandler(List<Thread> threads)
+        public ThreadHandler(List<Thread> threads)
         {
             this.threads = threads;
             ManualResetEventSlim = new ManualResetEventSlim(false);
         }
 
-        public void OnThreadsReady() => ManualResetEventSlim.Set(); 
+        public void SetEventStateToSignaled() => ManualResetEventSlim.Set(); 
 
         public void StartThreads()
         {
