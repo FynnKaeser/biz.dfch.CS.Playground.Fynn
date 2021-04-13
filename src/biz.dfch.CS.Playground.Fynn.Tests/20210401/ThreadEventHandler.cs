@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-using System;
 using System.Collections.Generic;
-using System.Runtime.Remoting.Channels;
 using System.Threading;
 
 namespace biz.dfch.CS.Playground.Fynn.Tests._20210401
@@ -32,10 +30,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210401
             ManualResetEventSlim = new ManualResetEventSlim(false);
         }
 
-        public virtual void OnThreadsReady(EventArgs e)
-        {
-            ManualResetEventSlim.Set();
-        }
+        public void OnThreadsReady() => ManualResetEventSlim.Set(); 
 
         public void StartThreads()
         {

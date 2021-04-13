@@ -27,7 +27,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
     public class MyQueueThreadTest
     {
         private ManualResetEventSlim manualResetEventSlim;
-        private readonly EventArgs eventArgs = new EventArgs();
+        private int millisecondsTimeout = 5000;
 
         [TestMethod]
         public void ClearOnNewThreadWhileLookingForEntryLooksContainsMethod()
@@ -53,7 +53,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
 
             // Act
             handler.StartThreads();
-            handler.OnThreadsReady(eventArgs);
+            handler.OnThreadsReady();
 
             threads[1].Join();
 
@@ -77,10 +77,11 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
                 new Thread(() => Clear(sut))
             };
             var handler = new ThreadEventHandler(threads);
+            manualResetEventSlim = handler.ManualResetEventSlim;
 
             // Act
             handler.StartThreads();
-            handler.OnThreadsReady(eventArgs);
+            handler.OnThreadsReady();
 
             threads[1].Join();
 
@@ -108,10 +109,11 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
                 new Thread(() => resultDequeue = Dequeue(sut))
             };
             var handler = new ThreadEventHandler(threads);
+            manualResetEventSlim = handler.ManualResetEventSlim;
 
             // Act
             handler.StartThreads();
-            handler.OnThreadsReady(eventArgs);
+            handler.OnThreadsReady();
 
             threads[1].Join();
 
@@ -140,10 +142,11 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
                 new Thread(() => resultPeek = Peek(sut))
             };
             var handler = new ThreadEventHandler(threads);
+            manualResetEventSlim = handler.ManualResetEventSlim;
 
             // Act
             handler.StartThreads();
-            handler.OnThreadsReady(eventArgs);
+            handler.OnThreadsReady();
 
             threads[1].Join();
 
@@ -174,10 +177,11 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
                 new Thread(() => resultDequeue = Dequeue(sut))
             };
             var handler = new ThreadEventHandler(threads);
+            manualResetEventSlim = handler.ManualResetEventSlim;
 
             // Act
             handler.StartThreads();
-            handler.OnThreadsReady(eventArgs);
+            handler.OnThreadsReady();
 
             threads[1].Join();
 
@@ -188,7 +192,12 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
 
         private bool Contains<TValue>(MyQueue<TValue> queue, TValue value)
         {
-            manualResetEventSlim.Wait();
+            var isSetToSignaled = manualResetEventSlim.Wait(millisecondsTimeout);
+
+            if (!isSetToSignaled)
+            {
+                throw new TimeoutException();
+            }
 
             var result = queue.Contains(value);
             return result;
@@ -196,14 +205,24 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
 
         private void Clear<TValue>(MyQueue<TValue> queue)
         {
-            manualResetEventSlim.Wait();
+            var isSetToSignaled = manualResetEventSlim.Wait(millisecondsTimeout);
+
+            if (!isSetToSignaled)
+            {
+                throw new TimeoutException();
+            }
 
             queue.Clear();
         }
 
         private TValue Peek<TValue>(MyQueue<TValue> queue)
         {
-            manualResetEventSlim.Wait();
+            var isSetToSignaled = manualResetEventSlim.Wait(millisecondsTimeout);
+
+            if (!isSetToSignaled)
+            {
+                throw new TimeoutException();
+            }
 
             var result = queue.Peek();
             return result;
@@ -211,7 +230,12 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
 
         private TValue Dequeue<TValue>(MyQueue<TValue> queue)
         {
-            manualResetEventSlim.Wait();
+            var isSetToSignaled = manualResetEventSlim.Wait(millisecondsTimeout);
+
+            if (!isSetToSignaled)
+            {
+                throw new TimeoutException();
+            }
 
             var result = queue.Dequeue();
             return result;
