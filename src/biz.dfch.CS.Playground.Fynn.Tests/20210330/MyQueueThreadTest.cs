@@ -53,7 +53,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
 
             // Act
             handler.StartThreads();
-            handler.SetEventStateToSignaled();
+            handler.SetStateToSignaled();
 
             threads[1].Join();
 
@@ -81,7 +81,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
 
             // Act
             handler.StartThreads();
-            handler.SetEventStateToSignaled();
+            handler.SetStateToSignaled();
 
             threads[1].Join();
 
@@ -113,7 +113,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
 
             // Act
             handler.StartThreads();
-            handler.SetEventStateToSignaled();
+            handler.SetStateToSignaled();
 
             threads[1].Join();
 
@@ -146,7 +146,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
 
             // Act
             handler.StartThreads();
-            handler.SetEventStateToSignaled();
+            handler.SetStateToSignaled();
 
             threads[1].Join();
 
@@ -181,7 +181,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
 
             // Act
             handler.StartThreads();
-            handler.SetEventStateToSignaled();
+            handler.SetStateToSignaled();
 
             threads[1].Join();
 
@@ -238,6 +238,19 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
             }
 
             var result = queue.Dequeue();
+            return result;
+        }
+
+        private TValue Func<TValue>(Func<TValue> func)        
+        {
+            var isSetToSignaled = manualResetEventSlim.Wait(millisecondsTimeout);
+
+            if (!isSetToSignaled)
+            {
+                throw new TimeoutException();
+            }
+
+            var result = func.Invoke();
             return result;
         }
     }

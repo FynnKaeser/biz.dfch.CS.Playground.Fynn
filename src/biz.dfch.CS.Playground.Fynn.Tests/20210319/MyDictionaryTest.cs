@@ -497,5 +497,21 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210319
             Assert.AreEqual(expectedValue, resultValue);
             Assert.IsTrue(hasKey);
         }
+
+        [TestMethod]
+        public void TestForCollision()
+        {
+            // Arrange
+            var sut = new MyDictionary<int, string>(1000000);
+
+            // Act
+            for (int i = 0; i < 1000000; i++)
+            {
+                sut.Insert(i, "String");
+            }
+
+            // Assert
+
+        }
     }
 }
