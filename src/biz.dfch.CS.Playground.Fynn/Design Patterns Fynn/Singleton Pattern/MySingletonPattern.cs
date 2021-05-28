@@ -20,6 +20,26 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Fynn.Singleton_Pattern
     {
         private object myObject;
 
+        private object mySecondObjectField;
+        public object MySecondObject
+        {
+            get
+            {
+                if (null == mySecondObjectField)
+                {
+                    lock (this)
+                    {
+                        if (null == mySecondObjectField)
+                        {
+                            mySecondObjectField = new object();
+                        }
+                    }
+                }
+
+                return mySecondObjectField;
+            }
+        }
+
         public object GetInstance()
         {
             if (null == myObject)
