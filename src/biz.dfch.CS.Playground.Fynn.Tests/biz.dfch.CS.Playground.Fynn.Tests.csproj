@@ -326,6 +326,7 @@
     <Compile Include="20210330\MyQueueThreadTest.cs" />
     <Compile Include="20210401\ThreadHandler.cs" />
     <Compile Include="20210401\MultiThreadingTest.cs" />
+    <Compile Include="Design Patterns Fynn\Facade Pattern\MyFacadePatternTest.cs" />
     <Compile Include="Design Patterns Fynn\Singleton Pattern\MySingletonPatternTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
