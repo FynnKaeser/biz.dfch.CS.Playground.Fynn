@@ -14,25 +14,15 @@
  * limitations under the License.
  */
 
-using biz.dfch.CS.Playground.Fynn.Design_Patterns_Fynn.Facade_Pattern;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Fynn.Facade_Pattern
+namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Fynn.Facade_Pattern
 {
-    [TestClass]
-    public class MyFacadePatternTest
+    public class MySecondFacadeClass : MyFacadePattern
     {
-        [TestMethod]
-        public void MyFacadePatternTestMethod()
-        {
-            // Arrange
-            var sut = new MyFacadePattern(10);
-            var expectedResult = 10;
-            // Act
-            var result = sut.DoTask();
+        public MySecondFacadeClass(int capacity) : base(capacity) { }
 
-            // Assert
-            Assert.AreEqual(expectedResult, result);
+        public override int DoTask()
+        {
+            return 20;
         }
     }
 }

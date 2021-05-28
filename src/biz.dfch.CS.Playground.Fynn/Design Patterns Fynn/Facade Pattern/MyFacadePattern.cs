@@ -19,5 +19,24 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Fynn.Facade_Pattern
 {
     public class MyFacadePattern
     {
+        private int threshold = 1000;
+        private readonly MyFacadePattern myFacadePattern;
+
+        public MyFacadePattern(int capacity)
+        {
+            if (capacity < threshold)
+            {
+                myFacadePattern = new MyFirstFacadeClass(capacity);
+            }
+            else
+            {
+                myFacadePattern = new MySecondFacadeClass(capacity);
+            }
+        }
+
+        public virtual int DoTask()
+        {
+            return myFacadePattern.DoTask();
+        }
     }
 }
