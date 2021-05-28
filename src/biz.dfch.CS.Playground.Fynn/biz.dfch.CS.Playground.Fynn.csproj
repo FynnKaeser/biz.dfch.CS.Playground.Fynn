@@ -359,6 +359,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="20191023\Assets\" />
+    <Folder Include="Design Patterns Fynn\" />
+    <Folder Include="Design Patterns Guru\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="20210114\FileNamingConventionExample\MyClass.IMySecondInterface.cs" />
