@@ -18,5 +18,22 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Fynn.Singleton_Pattern
 {
     public class MySingletonPattern
     {
+        private object myObject;
+
+        public object GetInstance()
+        {
+            if (null == myObject)
+            {
+                lock (this)
+                {
+                    if (null == myObject)
+                    {
+                        myObject = new object();
+                    }
+                }
+            }
+
+            return myObject;
+        }
     }
 }
