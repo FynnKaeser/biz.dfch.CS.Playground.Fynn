@@ -1,5 +1,4 @@
-﻿
-/**
+﻿/**
  * Copyright 2021 d-fens GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,26 +16,8 @@
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Fynn.Facade_Pattern
 {
-    public class MyFacadePattern
+    interface IMyFacadePattern
     {
-        private int threshold = 1000;
-        private readonly IMyFacadePattern myFacadePattern;
-
-        public MyFacadePattern(int capacity)
-        {
-            if (capacity < threshold)
-            {
-                myFacadePattern = new MyFirstFacadeClass();
-            }
-            else
-            {
-                myFacadePattern = new MySecondFacadeClass();
-            }
-        }
-
-        public virtual int DoTask()
-        {
-            return myFacadePattern.DoTask();
-        }
+        int DoTask();
     }
 }

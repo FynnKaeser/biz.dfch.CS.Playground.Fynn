@@ -16,13 +16,9 @@
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Fynn.Facade_Pattern
 {
-    public class MyFirstFacadeClass : MyFacadePattern
+    public class MyFirstFacadeClass : IMyFacadePattern
     {
-        public MyFirstFacadeClass(int capacity) : base(capacity)
-        {
-        }
-
-        public override int DoTask()
+        public int DoTask()
         {
             return 10;
         }

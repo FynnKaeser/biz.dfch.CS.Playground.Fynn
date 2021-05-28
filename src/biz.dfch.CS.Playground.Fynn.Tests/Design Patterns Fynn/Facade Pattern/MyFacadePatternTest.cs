@@ -22,12 +22,18 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Fynn.Facade_Pattern
     [TestClass]
     public class MyFacadePatternTest
     {
-        [TestMethod]
-        public void MyFacadePatternTestMethod()
+        [DataTestMethod]
+        [DataRow(2000, 20)]
+        [DataRow(10, 10)]
+        [DataRow(999, 10)]
+        [DataRow(1001, 20)]
+        [DataRow(0, 10)]
+        [DataRow(-1, 10)]
+        public void DoTaskReturnsExpectedResultBasedOnCapacity(int capacity, int expectedResult)
         {
             // Arrange
-            var sut = new MyFacadePattern(10);
-            var expectedResult = 10;
+            var sut = new MyFacadePattern(capacity);
+
             // Act
             var result = sut.DoTask();
 
