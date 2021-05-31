@@ -21,7 +21,7 @@ using biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Singleton_Pattern;
 using biz.dfch.CS.Playground.Fynn.Tests._20210401;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace biz.dfch.CS.Playground.Fynn.Tests.Desing_Patterns_Guru.Singleton_Pattern
+namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Singleton_Pattern
 {
     [TestClass]
     public class GuruSingletonPatternTest

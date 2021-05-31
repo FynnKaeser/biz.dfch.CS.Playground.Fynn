@@ -18,9 +18,9 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Singleton_Pattern
 {
     public class GuruSingletonPattern
     {
+        private static readonly object tempObject = new object();
         private static GuruSingletonPattern _guruSingletonPattern;
         private static GuruSingletonPattern guruSingletonPattern;
-        private static readonly object tempObject = new object();
 
         public static GuruSingletonPattern GuruSingletonPatternObject
         {

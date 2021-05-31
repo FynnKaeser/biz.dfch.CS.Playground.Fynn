@@ -329,7 +329,7 @@
     <Compile Include="Design Patterns Fynn\Dispose Pattern\MyDisposePatternTest.cs" />
     <Compile Include="Design Patterns Fynn\Facade Pattern\MyFacadePatternTest.cs" />
     <Compile Include="Design Patterns Fynn\Singleton Pattern\MySingletonPatternTest.cs" />
-    <Compile Include="Desing Patterns Guru\Singleton Pattern\GuruSingletonPatternTest.cs" />
+    <Compile Include="Design Patterns Guru\Singleton Pattern\GuruSingletonPatternTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
