@@ -14,10 +14,27 @@
  * limitations under the License.
  */
 
+using System;
+
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Fynn.Dispose_Pattern
 {
-    public class MyDisposePattern
+    public class MyDisposePattern : IDisposable
     {
+        private bool isDisposed;
 
+        public void Dispose()
+        {
+            if (!isDisposed)
+            {
+                GC.SuppressFinalize(this);
+                // Dispose it
+                isDisposed = true;
+            }
+        }
+
+        public bool MyDispose()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
