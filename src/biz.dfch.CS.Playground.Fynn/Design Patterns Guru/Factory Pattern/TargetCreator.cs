@@ -16,7 +16,7 @@
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Factory_Pattern
 {
-    public class TargetCreator : Creator
+    public class TargetCreator : DeviceCreator
     {
         public override IDevice CreateDevice()
         {

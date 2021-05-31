@@ -16,7 +16,7 @@
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Factory_Pattern
 {
-    public abstract class Creator
+    public abstract class DeviceCreator
     {
         private IDevice device;
 
@@ -24,7 +24,10 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Factory_Pattern
 
         public bool Start()
         {
-            device = CreateDevice();
+            if (null == device)
+            {
+                device = CreateDevice();
+            }
 
             return device.Start();
         }

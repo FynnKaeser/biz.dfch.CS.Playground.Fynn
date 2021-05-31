@@ -362,7 +362,7 @@
     <Compile Include="Design Patterns Fynn\Facade Pattern\MySecondFacadeClass.cs" />
     <Compile Include="Design Patterns Fynn\Singleton Pattern\MySingletonPattern.cs" />
     <Compile Include="Design Patterns Guru\Factory Pattern\TargetDevice.cs" />
-    <Compile Include="Design Patterns Guru\Factory Pattern\Creator.cs" />
+    <Compile Include="Design Patterns Guru\Factory Pattern\DeviceCreator.cs" />
     <Compile Include="Design Patterns Guru\Factory Pattern\TargetCreator.cs" />
     <Compile Include="Design Patterns Guru\Factory Pattern\IDevice.cs" />
     <Compile Include="Design Patterns Guru\Factory Pattern\SourceCreator.cs" />

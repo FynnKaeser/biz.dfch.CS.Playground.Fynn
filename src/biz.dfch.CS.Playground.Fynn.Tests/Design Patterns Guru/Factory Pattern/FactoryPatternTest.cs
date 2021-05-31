@@ -26,7 +26,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Factory_Pattern
         public void StartingSourceDeviceReturnsFalse()
         {
             // Arrange
-            Creator sut = new SourceCreator();
+            DeviceCreator sut = new SourceCreator();
             var expectedResult = false;
 
             // Act
@@ -40,7 +40,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Factory_Pattern
         public void StartingTargetDeviceReturnsFalse()
         {
             // Arrange
-            Creator sut = new TargetCreator();
+            DeviceCreator sut = new TargetCreator();
             var expectedResult = true;
 
             // Act
