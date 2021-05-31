@@ -18,5 +18,9 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Factory_Pattern
 {
     public class SourceDevice : IDevice
     {
+        public bool Start()
+        {
+            return false;
+        }
     }
 }

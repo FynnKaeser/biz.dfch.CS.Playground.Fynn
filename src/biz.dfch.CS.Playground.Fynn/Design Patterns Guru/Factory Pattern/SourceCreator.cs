@@ -16,7 +16,11 @@
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Factory_Pattern
 {
-    public class FirstSubCreator : Creator
+    public class SourceCreator : Creator
     {
+        public override IDevice CreateDevice()
+        {
+            return new SourceDevice();
+        }
     }
 }

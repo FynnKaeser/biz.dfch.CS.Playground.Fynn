@@ -16,8 +16,8 @@
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Factory_Pattern
 {
-    interface IDevice
+    public interface IDevice
     {
-
+        bool Start();
     }
 }
