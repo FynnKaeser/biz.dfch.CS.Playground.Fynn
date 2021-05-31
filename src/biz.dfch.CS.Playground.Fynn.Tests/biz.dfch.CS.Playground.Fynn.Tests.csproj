@@ -329,6 +329,7 @@
     <Compile Include="Design Patterns Fynn\Dispose Pattern\MyDisposePatternTest.cs" />
     <Compile Include="Design Patterns Fynn\Facade Pattern\MyFacadePatternTest.cs" />
     <Compile Include="Design Patterns Fynn\Singleton Pattern\MySingletonPatternTest.cs" />
+    <Compile Include="Desing Patterns Guru\Singleton Pattern\GuruSingletonPatternTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -344,7 +345,6 @@
   <ItemGroup>
     <Folder Include="20191025\" />
     <Folder Include="20191028\" />
-    <Folder Include="Desing Patterns Guru\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
