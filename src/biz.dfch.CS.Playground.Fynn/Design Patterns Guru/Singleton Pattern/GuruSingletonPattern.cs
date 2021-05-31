@@ -18,22 +18,43 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Singleton_Pattern
 {
     public class GuruSingletonPattern
     {
-        public static int CreationCounter { get; private set; }
         private static GuruSingletonPattern _guruSingletonPattern;
+        private static GuruSingletonPattern guruSingletonPattern;
+        private static readonly object tempObject = new object();
+
+        public static GuruSingletonPattern GuruSingletonPatternObject
+        {
+            get
+            {
+                if (null == guruSingletonPattern)
+                {
+                    lock (tempObject)
+                    {
+                        if (null == guruSingletonPattern)
+                        {
+                            GetterCreationCounter++;
+                            guruSingletonPattern = new GuruSingletonPattern();
+                        }
+                    }
+                }
+
+                return guruSingletonPattern;
+            }
+        }
+        public static int MethodCreationCounter { get; private set; }
+        public static int GetterCreationCounter { get; private set; }
 
         private GuruSingletonPattern() { }
 
         public static GuruSingletonPattern GetInstance()
         {
-            var tempObject = new object();
-
             if (null == _guruSingletonPattern)
             {
                 lock (tempObject)
                 {
                     if (null == _guruSingletonPattern)
                     {
-                        CreationCounter++;
+                        MethodCreationCounter++;
                         _guruSingletonPattern = new GuruSingletonPattern();
                     }
                 }
