@@ -355,6 +355,7 @@
     <Compile Include="Archive\ClassWithSealedMethodParent.cs" />
     <Compile Include="Archive\MyObjectClass.cs" />
     <Compile Include="Archive\SealedClass.cs" />
+    <Compile Include="Design Patterns Fynn\Dispose Pattern\MyDisposePattern.cs" />
     <Compile Include="Design Patterns Fynn\Facade Pattern\IMyFacadePattern.cs" />
     <Compile Include="Design Patterns Fynn\Facade Pattern\MyFacadePattern.cs" />
     <Compile Include="Design Patterns Fynn\Facade Pattern\MyFirstFacadeClass.cs" />
