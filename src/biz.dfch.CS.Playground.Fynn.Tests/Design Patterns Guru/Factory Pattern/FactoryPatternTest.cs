@@ -30,7 +30,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Factory_Pattern
             var expectedResult = false;
 
             // Act
-            var result = sut.Start();
+            var result = TestStart(sut);
 
             // Assert
             Assert.AreEqual(expectedResult, result);
@@ -44,10 +44,15 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Factory_Pattern
             var expectedResult = true;
 
             // Act
-            var result = sut.Start();
+            var result = TestStart(sut);
 
             // Assert
             Assert.AreEqual(expectedResult, result);
+        }
+
+        public bool TestStart(DeviceCreator device)
+        {
+            return device.Start();
         }
     }
 }
