@@ -21,6 +21,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
         bool SetMaterial(string material);
         bool SetDimensions(string height, string width, string length);
         bool SetColor(string material);
+        bool SetLegs(int legCount);
         Furniture GetFurniture();
         void Reset();
     }

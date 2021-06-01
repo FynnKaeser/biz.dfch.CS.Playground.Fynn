@@ -48,6 +48,13 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
             return true;
         }
 
+        public bool SetLegs(int legCount)
+        {
+            furniture.LegCount = legCount;
+            
+            return true;
+        }
+
         public Furniture GetFurniture()
         {
             return furniture;

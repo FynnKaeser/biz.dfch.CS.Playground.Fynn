@@ -45,6 +45,12 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
                 furnitureBuilder.Reset();
                 return false;
             }
+            var isLegSet = furnitureBuilder.SetLegs(1);
+            if (!isLegSet)
+            {
+                furnitureBuilder.Reset();
+                return false;
+            }
 
             return true;
         }
@@ -70,6 +76,12 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
             }
             var isColorSet = furnitureBuilder.SetColor("Black");
             if (!isColorSet)
+            {
+                furnitureBuilder.Reset();
+                return false;
+            }
+            var isLegSet = furnitureBuilder.SetLegs(4);
+            if (!isLegSet)
             {
                 furnitureBuilder.Reset();
                 return false;

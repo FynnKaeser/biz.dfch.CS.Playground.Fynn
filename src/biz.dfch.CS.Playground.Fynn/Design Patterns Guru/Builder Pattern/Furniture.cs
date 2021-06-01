@@ -25,6 +25,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
         public string Length { get; set; }
         public string Width { get; set; }
         public string Color { get; set; }
+        public int LegCount { get; set; }
 
         private bool Equals(Furniture other)
         {
@@ -32,7 +33,8 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
                 && Height == null ? Height == other.Height : Height.Equals(other.Height)
                 && Length == null ? Length == other.Length : Length.Equals(other.Length)
                 && Width == null ? Width == other.Width : Width.Equals(other.Width)
-                && Color == null ? Color == other.Color : Color.Equals(other.Color);
+                && Color == null ? Color == other.Color : Color.Equals(other.Color)
+                && LegCount.Equals(other.LegCount);
         }
 
         public override bool Equals(object obj)
@@ -51,8 +53,9 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
             var hashLength = Length == null ? 0 : Length.GetHashCode();
             var hashWidth = Width == null ? 0 : Width.GetHashCode();
             var hashColor = Color == null ? 0 : Color.GetHashCode();
+            var hashLegCount = LegCount.GetHashCode();
 
-            return hashMaterial ^ hashHeight ^ hashLength ^ hashWidth ^ hashColor;
+            return hashMaterial ^ hashHeight ^ hashLength ^ hashWidth ^ hashColor ^ hashLegCount;
         }
     }
 }
