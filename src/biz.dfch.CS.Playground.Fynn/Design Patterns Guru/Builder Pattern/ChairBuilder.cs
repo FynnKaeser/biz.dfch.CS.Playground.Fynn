@@ -16,7 +16,11 @@
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
 {
-    public class SourceBuilder : IBuilder
+    public class ChairBuilder : IBuilder
     {
+        public Furniture GetFurniture()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

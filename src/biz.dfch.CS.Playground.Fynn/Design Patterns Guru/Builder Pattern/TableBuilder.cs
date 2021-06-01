@@ -16,8 +16,11 @@
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
 {
-    public interface IBuilder
+    public class TableBuilder : IBuilder
     {
-        Furniture GetFurniture();
+        public Furniture GetFurniture()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

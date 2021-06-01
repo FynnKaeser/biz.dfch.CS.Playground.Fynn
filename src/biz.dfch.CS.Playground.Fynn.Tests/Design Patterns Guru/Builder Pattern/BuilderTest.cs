@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+using biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Builder_Pattern
@@ -22,11 +23,26 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Builder_Pattern
     public class BuilderTest
     {
         [TestMethod]
-        public void TestMethod()
+        public void DirectorBuildBarChairAndReturnsExpectedFurniture()
         {
             // Arrange
+            var director = new Director();
+            var chairBuilder = new ChairBuilder();
+            var expectedFurniture = new Furniture
+            {
+                Color = "Brown",
+                Height = "120 cm",
+                Length = "40 cm",
+                Material = "Wood",
+                Width = "40 cm"
+            };
+
             // Act
+            director.ConstructBarChair(chairBuilder);
+            var result = chairBuilder.GetFurniture();
+
             // Assert
+            Assert.AreEqual(expectedFurniture, result);
         }
     }
 }

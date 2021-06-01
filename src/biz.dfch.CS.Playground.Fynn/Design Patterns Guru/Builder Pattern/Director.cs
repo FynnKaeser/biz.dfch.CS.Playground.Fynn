@@ -18,5 +18,9 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
 {
     public class Director
     {
+        public void ConstructBarChair(ChairBuilder chairBuilder)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

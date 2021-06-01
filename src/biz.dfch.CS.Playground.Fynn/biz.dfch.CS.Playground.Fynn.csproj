@@ -362,9 +362,10 @@
     <Compile Include="Design Patterns Fynn\Facade Pattern\MySecondFacadeClass.cs" />
     <Compile Include="Design Patterns Fynn\Singleton Pattern\MySingletonPattern.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\Director.cs" />
+    <Compile Include="Design Patterns Guru\Builder Pattern\Furniture.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\IBuilder.cs" />
-    <Compile Include="Design Patterns Guru\Builder Pattern\SourceBuilder.cs" />
-    <Compile Include="Design Patterns Guru\Builder Pattern\TargetBuilder.cs" />
+    <Compile Include="Design Patterns Guru\Builder Pattern\ChairBuilder.cs" />
+    <Compile Include="Design Patterns Guru\Builder Pattern\TableBuilder.cs" />
     <Compile Include="Design Patterns Guru\Factory Pattern\TargetDevice.cs" />
     <Compile Include="Design Patterns Guru\Factory Pattern\DeviceCreator.cs" />
     <Compile Include="Design Patterns Guru\Factory Pattern\TargetCreator.cs" />
