@@ -346,6 +346,7 @@
   <ItemGroup>
     <Folder Include="20191025\" />
     <Folder Include="20191028\" />
+    <Folder Include="Design Patterns Guru\Builder Pattern\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
