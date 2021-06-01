@@ -23,7 +23,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Builder_Pattern
     public class BuilderTest
     {
         [TestMethod]
-        public void DirectorBuildBarChairAndReturnsExpectedFurniture()
+        public void DirectorConstructsBarChairAndBuilderReturnsExpectedFurniture()
         {
             // Arrange
             var director = new Director();
@@ -43,6 +43,82 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Builder_Pattern
 
             // Assert
             Assert.AreEqual(expectedFurniture, result);
+        }
+
+        [TestMethod]
+        public void DirectorConstructsTableAndBuilderReturnsExpectedFurniture()
+        {
+            // Arrange
+            var director = new Director();
+            var furnitureBuilder = new FurnitureBuilder();
+            var expectedFurniture = new Furniture
+            {
+                Color = "Black",
+                Height = "100 cm",
+                Length = "180 cm",
+                Material = "Wood",
+                Width = "80 cm"
+            };
+
+            // Act
+            director.ConstructTable(furnitureBuilder);
+            var result = furnitureBuilder.GetFurniture();
+
+            // Assert
+            Assert.AreEqual(expectedFurniture, result);
+        }
+
+        [TestMethod]
+        public void DirectorConstructsDresserAndBuilderReturnsExpectedFurniture()
+        {
+            // Arrange
+            var director = new Director();
+            var furnitureBuilder = new FurnitureBuilder();
+            var expectedFurniture = new Furniture
+            {
+                Color = "Grey",
+                Height = "150 cm",
+                Length = "100 cm",
+                Material = "Metal",
+                Width = "70 cm"
+            };
+
+            // Act
+            director.ConstructDresser(furnitureBuilder);
+            var result = furnitureBuilder.GetFurniture();
+
+            // Assert
+            Assert.AreEqual(expectedFurniture, result);
+        }
+
+        [TestMethod]
+        public void ResettingBuilderSucceeds()
+        {
+            // Arrange
+            var director = new Director();
+            var furnitureBuilder = new FurnitureBuilder();
+            var expectedFurniture = new Furniture();
+            director.ConstructBarChair(furnitureBuilder);
+            
+            // Act
+            furnitureBuilder.Reset();
+            var result = furnitureBuilder.GetFurniture();
+
+            // Assert
+            Assert.AreEqual(expectedFurniture, result);
+        }
+        
+        [TestMethod]
+        public void ConstructionFurnitureWithNullBuilderReturnsFalse()
+        {
+            // Arrange
+            var director = new Director();
+
+            // Act
+            var result = director.ConstructBarChair(null);
+            
+            // Assert
+            Assert.IsFalse(result);
         }
     }
 }

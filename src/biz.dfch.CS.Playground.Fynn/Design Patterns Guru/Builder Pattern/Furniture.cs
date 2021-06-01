@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+using CsvHelper;
+
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
 {
     public class Furniture
@@ -26,8 +28,11 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
 
         private bool Equals(Furniture other)
         {
-            return Material.Equals(other.Material) && Height.Equals(other.Height) && Length.Equals(other.Length) &&
-                   Width.Equals(other.Width) && Color.Equals(other.Color);
+            return Material == null ? Material == other.Material : Material.Equals(other.Material)
+                && Height == null ? Height == other.Height : Height.Equals(other.Height)
+                && Length == null ? Length == other.Length : Length.Equals(other.Length)
+                && Width == null ? Width == other.Width : Width.Equals(other.Width)
+                && Color == null ? Color == other.Color : Color.Equals(other.Color);
         }
 
         public override bool Equals(object obj)
