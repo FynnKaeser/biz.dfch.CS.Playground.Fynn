@@ -18,7 +18,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Singleton_Pattern
 {
     public class GuruSingletonPattern
     {
-        private static readonly object tempObject = new object();
+        private static readonly object _lock = new object();
         private static GuruSingletonPattern _guruSingletonPattern;
         private static GuruSingletonPattern guruSingletonPattern;
 
@@ -28,7 +28,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Singleton_Pattern
             {
                 if (null == guruSingletonPattern)
                 {
-                    lock (tempObject)
+                    lock (_lock)
                     {
                         if (null == guruSingletonPattern)
                         {
@@ -50,7 +50,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Singleton_Pattern
         {
             if (null == _guruSingletonPattern)
             {
-                lock (tempObject)
+                lock (_lock)
                 {
                     if (null == _guruSingletonPattern)
                     {
