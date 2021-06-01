@@ -18,6 +18,10 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
 {
     public interface IBuilder
     {
+        bool SetMaterial(string material);
+        bool SetDimensions(string height, string width, string length);
+        bool SetColor(string material);
         Furniture GetFurniture();
+        void Reset();
     }
 }

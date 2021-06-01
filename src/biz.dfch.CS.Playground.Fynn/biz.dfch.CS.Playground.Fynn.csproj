@@ -364,8 +364,7 @@
     <Compile Include="Design Patterns Guru\Builder Pattern\Director.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\Furniture.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\IBuilder.cs" />
-    <Compile Include="Design Patterns Guru\Builder Pattern\ChairBuilder.cs" />
-    <Compile Include="Design Patterns Guru\Builder Pattern\TableBuilder.cs" />
+    <Compile Include="Design Patterns Guru\Builder Pattern\FurnitureBuilder.cs" />
     <Compile Include="Design Patterns Guru\Factory Pattern\TargetDevice.cs" />
     <Compile Include="Design Patterns Guru\Factory Pattern\DeviceCreator.cs" />
     <Compile Include="Design Patterns Guru\Factory Pattern\TargetCreator.cs" />

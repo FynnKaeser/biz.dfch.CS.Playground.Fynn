@@ -23,5 +23,31 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
         public string Length { get; set; }
         public string Width { get; set; }
         public string Color { get; set; }
+
+        private bool Equals(Furniture other)
+        {
+            return Material.Equals(other.Material) && Height.Equals(other.Height) && Length.Equals(other.Length) &&
+                   Width.Equals(other.Width) && Color.Equals(other.Color);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != GetType()) return false;
+
+            return Equals((Furniture)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            var hashMaterial = Material == null ? 0 : Material.GetHashCode();
+            var hashHeight = Height == null ? 0 : Height.GetHashCode();
+            var hashLength = Length == null ? 0 : Length.GetHashCode();
+            var hashWidth = Width == null ? 0 : Width.GetHashCode();
+            var hashColor = Color == null ? 0 : Color.GetHashCode();
+
+            return hashMaterial ^ hashHeight ^ hashLength ^ hashWidth ^ hashColor;
+        }
     }
 }

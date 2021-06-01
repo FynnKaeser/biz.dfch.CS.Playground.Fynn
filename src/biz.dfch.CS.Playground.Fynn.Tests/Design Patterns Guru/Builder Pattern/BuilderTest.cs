@@ -27,7 +27,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Builder_Pattern
         {
             // Arrange
             var director = new Director();
-            var chairBuilder = new ChairBuilder();
+            var furnitureBuilder = new FurnitureBuilder();
             var expectedFurniture = new Furniture
             {
                 Color = "Brown",
@@ -38,8 +38,8 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Builder_Pattern
             };
 
             // Act
-            director.ConstructBarChair(chairBuilder);
-            var result = chairBuilder.GetFurniture();
+            director.ConstructBarChair(furnitureBuilder);
+            var result = furnitureBuilder.GetFurniture();
 
             // Assert
             Assert.AreEqual(expectedFurniture, result);
