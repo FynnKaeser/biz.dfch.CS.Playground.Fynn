@@ -61,7 +61,12 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
 
         public void Reset()
         {
-            throw new NotImplementedException();
+            Material = null;
+            Height = null;
+            Length = null;
+            Width = null;
+            Color = null;
+            LegCount = 0;
         }
     }
 }

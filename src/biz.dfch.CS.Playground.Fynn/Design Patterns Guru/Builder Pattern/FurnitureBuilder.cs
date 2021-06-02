@@ -27,6 +27,11 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
 
         public bool SetMaterial(string material)
         {
+            if (string.IsNullOrWhiteSpace(material) || string.Empty == material)
+            {
+                return false;
+            }
+
             furniture.Material = material;
 
             return true;
@@ -34,6 +39,19 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
 
         public bool SetDimensions(string height, string width, string length)
         {
+            if (string.IsNullOrWhiteSpace(height) || string.Empty == height)
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(width) || string.Empty == width)
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(length) || string.Empty == length)
+            {
+                return false;
+            }
+
             furniture.Height = height;
             furniture.Width = width;
             furniture.Length = length;
@@ -43,6 +61,11 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
 
         public bool SetColor(string color)
         {
+            if (string.IsNullOrWhiteSpace(color) || string.Empty == color)
+            {
+                return false;
+            }
+
             furniture.Color = color;
 
             return true;
@@ -50,6 +73,11 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
 
         public bool SetLegs(int legCount)
         {
+            if (0 > legCount)
+            {
+                return false;
+            }
+
             furniture.LegCount = legCount;
             
             return true;
@@ -62,7 +90,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
 
         public void ResetFurniture()
         {
-            furniture = new Furniture();
+            furniture.Reset();
         }
     }
 }
