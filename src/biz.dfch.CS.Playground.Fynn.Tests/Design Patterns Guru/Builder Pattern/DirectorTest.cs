@@ -39,9 +39,9 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Builder_Pattern
 
             // Act
             director.ConstructBarChair(furnitureBuilder);
-            var result = furnitureBuilder.GetFurniture();
 
             // Assert
+            var result = furnitureBuilder.GetFurniture();
             Assert.AreEqual(expectedFurniture, result);
         }
 
@@ -62,9 +62,9 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Builder_Pattern
 
             // Act
             director.ConstructTable(furnitureBuilder);
-            var result = furnitureBuilder.GetFurniture();
 
             // Assert
+            var result = furnitureBuilder.GetFurniture();
             Assert.AreEqual(expectedFurniture, result);
         }
 
@@ -85,9 +85,9 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Builder_Pattern
 
             // Act
             director.ConstructDresser(furnitureBuilder);
-            var result = furnitureBuilder.GetFurniture();
 
             // Assert
+            var result = furnitureBuilder.GetFurniture();
             Assert.AreEqual(expectedFurniture, result);
         }
 
@@ -102,9 +102,9 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Builder_Pattern
             
             // Act
             furnitureBuilder.ResetFurniture();
-            var result = furnitureBuilder.GetFurniture();
 
             // Assert
+            var result = furnitureBuilder.GetFurniture();
             Assert.AreEqual(expectedFurniture, result);
         }
         
