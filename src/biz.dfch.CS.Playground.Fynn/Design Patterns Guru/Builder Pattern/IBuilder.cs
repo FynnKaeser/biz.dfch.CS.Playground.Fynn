@@ -23,6 +23,6 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
         bool SetColor(string material);
         bool SetLegs(int legCount);
         Furniture GetFurniture();
-        void Reset();
+        void ResetFurniture();
     }
 }

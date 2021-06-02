@@ -20,7 +20,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Builder_Pattern
 {
     [TestClass]
-    public class BuilderTest
+    public class DirectorTest
     {
         [TestMethod]
         public void DirectorConstructsBarChairAndBuilderReturnsExpectedFurniture()
@@ -101,7 +101,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Builder_Pattern
             director.ConstructBarChair(furnitureBuilder);
             
             // Act
-            furnitureBuilder.Reset();
+            furnitureBuilder.ResetFurniture();
             var result = furnitureBuilder.GetFurniture();
 
             // Assert
@@ -109,7 +109,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Builder_Pattern
         }
         
         [TestMethod]
-        public void ConstructionFurnitureWithNullBuilderReturnsFalse()
+        public void ConstructBarChairWithNullBuilderReturnsFalse()
         {
             // Arrange
             var director = new Director();

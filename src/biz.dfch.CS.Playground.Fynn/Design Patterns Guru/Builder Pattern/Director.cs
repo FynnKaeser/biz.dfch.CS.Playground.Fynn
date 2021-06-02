@@ -30,25 +30,25 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
             var isMaterialSet = furnitureBuilder.SetMaterial("Wood");
             if (!isMaterialSet)
             {
-                furnitureBuilder.Reset();
+                furnitureBuilder.ResetFurniture();
                 return false;
             }
             var areDimensionsSet = furnitureBuilder.SetDimensions("120 cm", "40 cm", "40 cm");
             if (!areDimensionsSet)
             {
-                furnitureBuilder.Reset();
+                furnitureBuilder.ResetFurniture();
                 return false;
             }
             var isColorSet = furnitureBuilder.SetColor("Brown");
             if (!isColorSet)
             {
-                furnitureBuilder.Reset();
+                furnitureBuilder.ResetFurniture();
                 return false;
             }
             var isLegSet = furnitureBuilder.SetLegs(1);
             if (!isLegSet)
             {
-                furnitureBuilder.Reset();
+                furnitureBuilder.ResetFurniture();
                 return false;
             }
 
@@ -65,25 +65,25 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
             var isMaterialSet = furnitureBuilder.SetMaterial("Wood");
             if (!isMaterialSet)
             {
-                furnitureBuilder.Reset();
+                furnitureBuilder.ResetFurniture();
                 return false;
             }
             var areDimensionsSet = furnitureBuilder.SetDimensions("100 cm", "80 cm", "180 cm");
             if (!areDimensionsSet)
             {
-                furnitureBuilder.Reset();
+                furnitureBuilder.ResetFurniture();
                 return false;
             }
             var isColorSet = furnitureBuilder.SetColor("Black");
             if (!isColorSet)
             {
-                furnitureBuilder.Reset();
+                furnitureBuilder.ResetFurniture();
                 return false;
             }
             var isLegSet = furnitureBuilder.SetLegs(4);
             if (!isLegSet)
             {
-                furnitureBuilder.Reset();
+                furnitureBuilder.ResetFurniture();
                 return false;
             }
 
@@ -100,19 +100,19 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
             var isMaterialSet = furnitureBuilder.SetMaterial("Metal");
             if (!isMaterialSet)
             {
-                furnitureBuilder.Reset();
+                furnitureBuilder.ResetFurniture();
                 return false;
             }
             var areDimensionsSet = furnitureBuilder.SetDimensions("150 cm", "70 cm", "100 cm");
             if (!areDimensionsSet)
             {
-                furnitureBuilder.Reset();
+                furnitureBuilder.ResetFurniture();
                 return false;
             }
             var isColorSet = furnitureBuilder.SetColor("Grey");
             if (!isColorSet)
             {
-                furnitureBuilder.Reset();
+                furnitureBuilder.ResetFurniture();
                 return false;
             }
 

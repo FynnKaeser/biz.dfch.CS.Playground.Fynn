@@ -60,7 +60,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
             return furniture;
         }
 
-        public void Reset()
+        public void ResetFurniture()
         {
             furniture = new Furniture();
         }

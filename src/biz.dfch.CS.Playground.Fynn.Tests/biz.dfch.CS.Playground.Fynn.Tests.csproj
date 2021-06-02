@@ -329,7 +329,9 @@
     <Compile Include="Design Patterns Fynn\Dispose Pattern\MyDisposePatternTest.cs" />
     <Compile Include="Design Patterns Fynn\Facade Pattern\MyFacadePatternTest.cs" />
     <Compile Include="Design Patterns Fynn\Singleton Pattern\MySingletonPatternTest.cs" />
-    <Compile Include="Design Patterns Guru\Builder Pattern\BuilderTest.cs" />
+    <Compile Include="Design Patterns Guru\Builder Pattern\DirectorTest.cs" />
+    <Compile Include="Design Patterns Guru\Builder Pattern\FurnitureBuilderTest.cs" />
+    <Compile Include="Design Patterns Guru\Builder Pattern\FurnitureTest.cs" />
     <Compile Include="Design Patterns Guru\Factory Pattern\FactoryPatternTest.cs" />
     <Compile Include="Design Patterns Guru\Singleton Pattern\GuruSingletonPatternTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

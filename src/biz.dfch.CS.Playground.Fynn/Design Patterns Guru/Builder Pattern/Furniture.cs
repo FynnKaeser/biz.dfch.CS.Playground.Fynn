@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+using System;
 using CsvHelper;
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
@@ -56,6 +57,11 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern
             var hashLegCount = LegCount.GetHashCode();
 
             return hashMaterial ^ hashHeight ^ hashLength ^ hashWidth ^ hashColor ^ hashLegCount;
+        }
+
+        public void Reset()
+        {
+            throw new NotImplementedException();
         }
     }
 }
