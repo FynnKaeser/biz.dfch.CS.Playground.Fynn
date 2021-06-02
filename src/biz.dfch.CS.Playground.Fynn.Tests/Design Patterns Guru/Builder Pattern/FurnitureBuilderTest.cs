@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-using System;
 using biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
