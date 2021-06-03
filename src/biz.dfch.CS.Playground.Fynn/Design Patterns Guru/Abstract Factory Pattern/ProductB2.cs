@@ -21,6 +21,12 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Patt
         public string Name { get; set; }
         public string IpAddress { get; set; }
 
+        public ProductB2(string name, string ipAddress)
+        {
+            Name = name;
+            IpAddress = ipAddress;
+        }
+
         public void DoSomething()
         {
             throw new System.NotImplementedException();

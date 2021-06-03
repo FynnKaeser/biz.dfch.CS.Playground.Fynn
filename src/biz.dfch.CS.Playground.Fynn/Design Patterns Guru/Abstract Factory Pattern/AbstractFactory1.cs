@@ -18,12 +18,12 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Patt
 {
     public class AbstractFactory1 : IAbstractFactory
     {
-        public void CreateProductA()
+        public IProductA CreateProductA()
         {
             throw new System.NotImplementedException();
         }
 
-        public void CreateProductB()
+        public IProductB CreateProductB()
         {
             throw new System.NotImplementedException();
         }

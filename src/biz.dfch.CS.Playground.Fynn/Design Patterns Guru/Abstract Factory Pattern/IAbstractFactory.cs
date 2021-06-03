@@ -18,7 +18,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Patt
 {
     interface IAbstractFactory
     {
-        void CreateProductA();
-        void CreateProductB();
+        IProductA CreateProductA();
+        IProductB CreateProductB();
     }
 }
