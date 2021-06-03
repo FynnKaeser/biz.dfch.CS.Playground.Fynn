@@ -18,6 +18,9 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Patt
 {
     public class ProductB1 : IProductB
     {
+        public string Name { get; set; }
+        public string IpAddress { get; set; }
+
         public void DoSomething()
         {
             throw new System.NotImplementedException();

@@ -16,7 +16,7 @@
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Pattern
 {
-    public interface IProductA
+    public interface IProductA : IProduct
     {
         void SomeFunction();
     }

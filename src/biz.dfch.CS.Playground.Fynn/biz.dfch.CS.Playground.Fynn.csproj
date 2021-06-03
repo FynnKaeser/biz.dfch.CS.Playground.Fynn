@@ -361,7 +361,9 @@
     <Compile Include="Design Patterns Fynn\Facade Pattern\MyFirstFacadeClass.cs" />
     <Compile Include="Design Patterns Fynn\Facade Pattern\MySecondFacadeClass.cs" />
     <Compile Include="Design Patterns Fynn\Singleton Pattern\MySingletonPattern.cs" />
-    <Compile Include="Design Patterns Guru\Abstract Factory Pattern\AbstractFactory.cs" />
+    <Compile Include="Design Patterns Guru\Abstract Factory Pattern\AbstractFactory1.cs" />
+    <Compile Include="Design Patterns Guru\Abstract Factory Pattern\AbstractFactory2.cs" />
+    <Compile Include="Design Patterns Guru\Abstract Factory Pattern\IProduct.cs" />
     <Compile Include="Design Patterns Guru\Abstract Factory Pattern\IProductA.cs" />
     <Compile Include="Design Patterns Guru\Abstract Factory Pattern\IProductB.cs" />
     <Compile Include="Design Patterns Guru\Abstract Factory Pattern\ProductA1.cs" />

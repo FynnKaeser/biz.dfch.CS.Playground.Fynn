@@ -16,14 +16,14 @@
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Pattern
 {
-    public class AbstractFactory : IAbstractFactory
+    public class AbstractFactory1 : IAbstractFactory
     {
-        public void CreateDestinationDevice()
+        public void CreateProductA()
         {
             throw new System.NotImplementedException();
         }
 
-        public void CreateSourceDevice()
+        public void CreateProductB()
         {
             throw new System.NotImplementedException();
         }

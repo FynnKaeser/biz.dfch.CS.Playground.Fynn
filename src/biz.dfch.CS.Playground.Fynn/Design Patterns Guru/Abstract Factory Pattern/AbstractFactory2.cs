@@ -14,11 +14,20 @@
  * limitations under the License.
  */
 
+using System;
+
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Pattern
 {
-    interface IAbstractFactory
+    public class AbstractFactory2 : IAbstractFactory
     {
-        void CreateProductA();
-        void CreateProductB();
+        public void CreateProductA()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CreateProductB()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

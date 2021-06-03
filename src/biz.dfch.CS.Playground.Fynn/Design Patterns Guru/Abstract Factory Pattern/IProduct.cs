@@ -16,9 +16,9 @@
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Pattern
 {
-    interface IAbstractFactory
+    public interface IProduct
     {
-        void CreateProductA();
-        void CreateProductB();
+        string Name { get; set; }
+        string IpAddress { get; set; }
     }
 }
