@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+using System;
 using biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Pattern;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -52,6 +53,44 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Abstract_Factor
 
             // Assert
             Assert.AreEqual(expectedResult, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(null, DisplayName = "Initialize Name with null")]
+        [DataRow("", DisplayName = "Initialize Name with empty string")]
+        [DataRow(" ", DisplayName = "Initialize Name with whitespace string")]
+        public void CreateProductB1WithInvalidNameSetsDefaultName(string invalidName)
+        {
+            // Arrange
+            var expectedName = "Default Name";
+            var arbitraryIpAddress = "1.2.3.4";
+
+            // Act
+            var result = new ProductB1(invalidName, arbitraryIpAddress);
+            
+            // Assert
+            var resultName = result.Name;
+
+            Assert.AreEqual(expectedName, resultName);
+        }
+
+        [DataTestMethod]
+        [DataRow(null, DisplayName = "Initialize IpAddress with null")]
+        [DataRow("", DisplayName = "Initialize IpAddress with empty string")]
+        [DataRow(" ", DisplayName = "Initialize IpAddress with whitespace string")]
+        public void CreateProductB1WithInvalidIpAddressSetsDefaultIpAddress(string invalidIpAddress)
+        {
+            // Arrange
+            var expectedIpAddress = "1.1.1.1";
+            var arbitraryName = "Product Name";
+
+            // Act
+            var result = new ProductB1(arbitraryName, invalidIpAddress);
+
+            // Assert
+            var resultIpAddress = result.IpAddress;
+
+            Assert.AreEqual(expectedIpAddress, resultIpAddress);
         }
     }
 }

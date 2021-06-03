@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+using System;
+
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Pattern
 {
     public class ProductB2 : IProductB
@@ -23,13 +25,13 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Patt
 
         public ProductB2(string name, string ipAddress)
         {
-            Name = name;
-            IpAddress = ipAddress;
+            Name = string.IsNullOrWhiteSpace(name) ? "Default Name" : name;
+            IpAddress = string.IsNullOrWhiteSpace(ipAddress) ? "1.1.1.1" : ipAddress;
         }
 
         public void DoSomething()
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine("This Method does something!");
         }
 
         private bool Equals(ProductB2 other)
