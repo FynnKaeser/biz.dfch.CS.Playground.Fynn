@@ -20,12 +20,12 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Patt
     {
         public IProductA CreateProductA()
         {
-            throw new System.NotImplementedException();
+            return new ProductA1("The A1 Name", "1.2.3.4");
         }
 
         public IProductB CreateProductB()
         {
-            throw new System.NotImplementedException();
+            return new ProductB1("The B1 Name", "1.2.3.4");
         }
     }
 }
