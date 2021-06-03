@@ -331,6 +331,10 @@
     <Compile Include="Design Patterns Fynn\Singleton Pattern\MySingletonPatternTest.cs" />
     <Compile Include="Design Patterns Guru\Abstract Factory Pattern\AbstractFactory1Test.cs" />
     <Compile Include="Design Patterns Guru\Abstract Factory Pattern\AbstractFactory2Test.cs" />
+    <Compile Include="Design Patterns Guru\Abstract Factory Pattern\ProductA1Test.cs" />
+    <Compile Include="Design Patterns Guru\Abstract Factory Pattern\ProductA2Test.cs" />
+    <Compile Include="Design Patterns Guru\Abstract Factory Pattern\ProductB1Test.cs" />
+    <Compile Include="Design Patterns Guru\Abstract Factory Pattern\ProductB2Test.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\DirectorTest.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\FurnitureBuilderTest.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\FurnitureTest.cs" />
