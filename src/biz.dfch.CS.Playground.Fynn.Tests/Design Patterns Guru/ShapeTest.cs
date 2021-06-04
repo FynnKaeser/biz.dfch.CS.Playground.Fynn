@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+using System.Collections.Generic;
+using biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern;
 using biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Prototype_Pattern;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -22,53 +24,60 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru
     [TestClass]
     public class ShapeTest
     {
+        private Dictionary<Shape, Shape> shapes  = new Dictionary<Shape, Shape>
+        {
+            {
+                new Shape
+                {
+                    Color = "Brown", Height = 22, Length = 44, Width = 55, LengthUnit = LengthUnit.Centimeter
+                },
+                new Shape
+                {
+                    Color = "Brown", Height = 22, Length = 44, Width = 55, LengthUnit = LengthUnit.Centimeter
+                }
+            },
+            {
+                new Shape(),
+                new Shape()
+            },
+            {
+                new Shape
+                {
+                    Color = " ", Height = -20, Length = -44, Width = -55, LengthUnit = LengthUnit.Centimeter
+                },
+                new Shape
+                {
+                    Color = " ", Height = -20, Length = -44, Width = -55, LengthUnit = LengthUnit.Centimeter
+                }
+            }
+        };
+
         [TestMethod]
         public void CloneShapeSucceeds()
         {
             // Arrange
-            var sut = new Shape
-            {
-                Color = "Brown",
-                Height = 120,
-                Length = 42,
-                Width = 60,
-                LengthUnit = LengthUnit.Centimeter
-            };
-
             // Act
-            var clone = sut.Clone();
-
             // Assert
-            Assert.AreEqual(sut, clone);
+            foreach (var sut in shapes.Keys)
+            {
+                var clonedShape = sut.Clone();
+                Assert.AreEqual(sut, clonedShape);
+            }
         }
 
         [TestMethod]
         public void EqualsSucceeds()
         {
             // Arrange
-            var sut = new Shape
-            {
-                Color = "Brown",
-                Height = 120,
-                Length = 42,
-                Width = 60,
-                LengthUnit = LengthUnit.Centimeter
-            };
-
-            var referenceShape = new Shape
-            {
-                Color = "Brown",
-                Height = 120,
-                Length = 42,
-                Width = 60,
-                LengthUnit = LengthUnit.Centimeter
-            };
-            
             // Act
-            var result = sut.Equals(referenceShape);
-
             // Assert
-            Assert.IsTrue(result);
+            foreach (var equalShapes in shapes)
+            {
+                var sut = equalShapes.Key;
+                var otherSut = equalShapes.Value;
+                var result = sut.Equals(otherSut);
+                Assert.IsTrue(result);
+            }
         }
         
         [TestMethod]
