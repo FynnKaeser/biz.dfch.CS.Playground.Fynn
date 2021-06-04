@@ -382,6 +382,9 @@
     <Compile Include="Design Patterns Guru\Factory Pattern\SourceCreator.cs" />
     <Compile Include="Design Patterns Guru\Factory Pattern\SourceDevice.cs" />
     <Compile Include="Design Patterns Guru\Abstract Factory Pattern\IAbstractFactory.cs" />
+    <Compile Include="Design Patterns Guru\Prototype Pattern\ICloneable.cs" />
+    <Compile Include="Design Patterns Guru\Prototype Pattern\LengthUnit.cs" />
+    <Compile Include="Design Patterns Guru\Prototype Pattern\Shape.cs" />
     <Compile Include="Design Patterns Guru\Singleton Pattern\GuruSingletonPattern.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
