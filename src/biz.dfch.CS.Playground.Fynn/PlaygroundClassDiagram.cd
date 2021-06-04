@@ -1,0 +1,940 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="biz.dfch.CS.Playground.Fynn._20190830.Calculator" Collapsed="true">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>20190830\Calculator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20190830.ClassWithMiddleManNoRegistrationAttribute" Collapsed="true">
+    <Position X="21.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20190830\ClassWithMiddleManNoRegistrationAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20190830.MiddleManNoRegistrationAttribute" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20190830\MiddleManNoRegistrationAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20190902.Animal" Collapsed="true">
+    <Position X="0.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20190902\CovarianceAndContravariance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20190902.Dog" Collapsed="true">
+    <Position X="0.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20190902\CovarianceAndContravariance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20190905.StaticCtor" Collapsed="true">
+    <Position X="18" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>20190905\StaticCtor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20190905.StaticEmptyCtor" Collapsed="true">
+    <Position X="19.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>20190905\StaticCtor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20190916.ConstAndReadonly" Collapsed="true">
+    <Position X="25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAgAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>20190916\ConstAndReadonly.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20190916.WhatIsTheType" Collapsed="true">
+    <Position X="19.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20190916\WhatIsTheType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20190918.DelegatesAndExpressCallbacks" Collapsed="true">
+    <Position X="16.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20190918\DelegatesAndExpressCallbacks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20190918.EventInvocation" Collapsed="true">
+    <Position X="23.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAEAQAAAAAAAAAA=</HashCode>
+      <FileName>20190918\EventInvocation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20190918.MyStringClass" Collapsed="true">
+    <Position X="11" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20190918\MyStringClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20190918.NameOfClass" Collapsed="true">
+    <Position X="16.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAoAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>20190918\NameOfClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20190920.NewModifierBase" Collapsed="true">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20190920\NewModifierBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20190920.NewModifierSub" Collapsed="true">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20190920\NewModifierSub.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20190925.HashSetOperation" Collapsed="true">
+    <Position X="21.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>20190925\HashSetOperation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20190925.MinimizeConstructorInitialization" Collapsed="true">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20190925\MinimizeConstructorInitialization.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20190926.MySingleton" Collapsed="true">
+    <Position X="19.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>20190926\MySingleton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20190927.UnnecessaryObjectCreating" Collapsed="true">
+    <Position X="16.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIBAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20190927\UnnecessaryObjectCreating.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20190930.MyConstraintClass" Collapsed="true">
+    <Position X="25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20190930\MyConstraintClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191002.CelestialBody" Collapsed="true">
+    <Position X="6.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAQAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>20191002\ClassHierarchyFromBook.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191002.Planet" Collapsed="true">
+    <Position X="5.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAEAAAAAAAAAAAAAAAAAU=</HashCode>
+      <FileName>20191002\ClassHierarchyFromBook.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191002.Moon" Collapsed="true">
+    <Position X="7.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191002\ClassHierarchyFromBook.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191002.GenericCovarianceAndContravariance" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>20191002\GenericCovarianceAndContravariance.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191002.HelperGenericCovarianceAndContravariance" Collapsed="true">
+    <Position X="25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>20191002\GenericCovarianceAndContravariance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191002.StringExtensions" Collapsed="true">
+    <Position X="12.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191002\StringExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191002.UsageExtensionMethod" Collapsed="true">
+    <Position X="18" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAJAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191002\UsageExtensionMethod.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191004.CallComparableExtensionMethods" Collapsed="true">
+    <Position X="18" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>20191004\CallComparableExtensionMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191004.MyComparableClass" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191004\CallComparableExtensionMethods.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191004.ComparableExtension" Collapsed="true">
+    <Position X="23.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAgAAAAAAAAIAAAAAAAAAAAAAAAAAAABAAACA=</HashCode>
+      <FileName>20191004\ComparableExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191007.IDrawableExtensions" Collapsed="true">
+    <Position X="26.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191007\InterfaceVsExtensionMethod.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191007.RectangleExtension" Collapsed="true">
+    <Position X="11" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191007\InterfaceVsExtensionMethod.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191007.CircleExtension" Collapsed="true">
+    <Position X="19.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191007\InterfaceVsExtensionMethod.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191007.InterfaceVsExtensionMethod" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191007\InterfaceVsExtensionMethod.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191007.ReverseEnumerable&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAABAAAAAAAAAAAAAAAAAEAAgAAAAAAAA=</HashCode>
+      <FileName>20191007\ReverseEnumerable.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191008.MyBase" Collapsed="true">
+    <Position X="6.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191008\MyProgram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191008.MySub" Collapsed="true">
+    <Position X="6.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191008\MyProgram.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191008.AnotherType" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191008\MyProgram.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191008.MyProgram" Collapsed="true">
+    <Position X="11" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>20191008\MyProgram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191009.Helper" Collapsed="true">
+    <Position X="23.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191009\Helper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191009.StaticUsing" Collapsed="true">
+    <Position X="21.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191009\StaticUsing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191009.MyType" Collapsed="true">
+    <Position X="14.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191009\StaticUsing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191010.Iterator" Collapsed="true">
+    <Position X="23.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191010\BookIterator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191010.EmbeddedIterator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAACAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>20191010\BookIterator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191010.IteratorMethod" Collapsed="true">
+    <Position X="25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191010\IteratorMethod.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191011.Item30" Collapsed="true">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAECAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>20191011\Item30.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191014.Item31" Collapsed="true">
+    <Position X="14.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191014\Item31.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191014.Item33" Collapsed="true">
+    <Position X="16.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>20191014\Item33.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191016.ListItem&lt;T&gt;" Collapsed="true">
+    <Position X="26.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>20191016\Item34.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191016.MyPredicate" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191016\Item34.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191016.Item34" Collapsed="true">
+    <Position X="18" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191016\Item34.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191018.Item40" Collapsed="true">
+    <Position X="19.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAABAAAAAAAAAAAgAAAAAAIA=</HashCode>
+      <FileName>20191018\Item40.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191021.PlayerManager" Collapsed="true">
+    <Position X="19.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAADEAAAgAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAIA=</HashCode>
+      <FileName>20191021\PlayerManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191021.Player" Collapsed="true">
+    <Position X="18" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAg=</HashCode>
+      <FileName>20191021\PlayerManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191022.Item44" Collapsed="true">
+    <Position X="21.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAEAE=</HashCode>
+      <FileName>20191022\Item44.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191022.ModFilter" Collapsed="true">
+    <Position X="14.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAQAAAIgAAAAAAAAAAg=</HashCode>
+      <FileName>20191022\Item44.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191022.ModFilter2" Collapsed="true">
+    <Position X="16.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAQAAAIgAAAAAAAAAAg=</HashCode>
+      <FileName>20191022\Item44.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191023.Customer" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191023\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191023.CustomerManager" Collapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>20191023\CustomerManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191023.ExceptionFilter" Collapsed="true">
+    <Position X="25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAACAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>20191023\ExceptionFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191023.FileReader" Collapsed="true">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAQAA=</HashCode>
+      <FileName>20191023\FileReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191025.DatabaseManager" Collapsed="true">
+    <Position X="14.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACCAAAA=</HashCode>
+      <FileName>20191025\DatabaseManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191028.MyAssemblyException" Collapsed="true">
+    <Position X="21.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191028\Foo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20191029.ExceptionManager" Collapsed="true">
+    <Position X="26.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAABAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>20191029\ExceptionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20200309.StringExtensions" Collapsed="true">
+    <Position X="11" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20200309\StringExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210114.Example.MyClass" Collapsed="true">
+    <Position X="3.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAQAAAAAACBAAAgCBEJgAAAAAEQAAAAAAAAAAAA=</HashCode>
+      <FileName>20210114\Example.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210114.Example.MyAbstractClass" Collapsed="true">
+    <Position X="3.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>20210114\Example.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210114.MyAbstractClass" Collapsed="true">
+    <Position X="0.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20210114\FileNamingConventionExample\MyAbstractClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210114.MyClass" Collapsed="true">
+    <Position X="0.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAgIAAAAAAQAAgAEAAAQgEBAERAAIAAAAAAAoIgECAA=</HashCode>
+      <FileName>20210114\FileNamingConventionExample\MyClass.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210114.MyExampleClass" Collapsed="true">
+    <Position X="14.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAIAAAAEAAACAAAAAACAAAAAAAAAAAoAAABIEAA=</HashCode>
+      <FileName>20210114\FileNamingConventionExample\MyClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210202.MyFirstClass" Collapsed="true">
+    <Position X="18" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAJAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20210202\MyFirstClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210202.MySecondClass" Collapsed="true">
+    <Position X="16.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20210202\MySecondClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210304.CsvReader&lt;TCsvData&gt;" Collapsed="true">
+    <Position X="26.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAIAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>20210304\CsvReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210304.FileChecker" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20210304\FileChecker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210304.StatisticalOfficeZurichCsvData" Collapsed="true">
+    <Position X="23.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAsAAAAgggAAUABAAAAAAIAAAAAAQAAACAA=</HashCode>
+      <FileName>20210304\StatisticalOfficeZurichCsvData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210304.StatisticalOfficeZurichCsvDataMap" Collapsed="true">
+    <Position X="25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20210304\StatisticalOfficeZurichCsvDataMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210304.StatisticalOfficeZurichCsvFieldName" Collapsed="true">
+    <Position X="26.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQQgAAAAAQAQAAQYAAAAAAAAEAAAAAAAAAACAQ=</HashCode>
+      <FileName>20210304\StatisticalOfficeZurichCsvFieldName.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210305.MyList&lt;TItem&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIACEACAIAgABAwCAoIAAQAAAEBAIAEAAAAAAAgAAA=</HashCode>
+      <FileName>20210305\MyList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210305.MyListElement&lt;TItem&gt;" Collapsed="true">
+    <Position X="23.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>20210305\MyListElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210317.MyType" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAQAgAAAAAIAAABAAICAAAAAAAAAAiA=</HashCode>
+      <FileName>20210317\MyType.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210319.Entry&lt;TKey, TValue&gt;" Collapsed="true">
+    <Position X="21.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>20210319\Entry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210319.MyDictionary&lt;TKey, TValue&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAEAAIAIACBABCAIAAAQABAEAAAAEAEAgAABAAAA=</HashCode>
+      <FileName>20210319\MyDictionary.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210319.MyDictionaryMessage" Collapsed="true">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAQABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210329.MyArrayStack&lt;TValue&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEABAAAAIAAAwAAACAAAAAAAAAAABQCAA=</HashCode>
+      <FileName>20210329\MyArrayStack.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210329.MyStack&lt;TValue&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAIAAAwAAACAAAAAAAAAAABQCAA=</HashCode>
+      <FileName>20210329\MyStack.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210329.MyStackEntry&lt;TValue&gt;" Collapsed="true">
+    <Position X="25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>20210329\MyStackEntry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210329.MyStackFacade&lt;TValue&gt;" Collapsed="true">
+    <Position X="26.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAQAAAGAACAAAAAAAABQCAA=</HashCode>
+      <FileName>20210329\MyStackFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210330.MyQueue&lt;TValue&gt;" Collapsed="true">
+    <Position X="12.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAgAAEAAAAAAIAAAQAAAAABAAAAAAAAABQAgA=</HashCode>
+      <FileName>20210330\MyQueue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210330.MyQueueEntry&lt;TValue&gt;" Collapsed="true">
+    <Position X="14.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>20210330\MyQueueEntry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn._20210401.MultiThreading" Collapsed="true">
+    <Position X="18" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIABAgAJAAIAAAAAAAAAIAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>20210401\MultiThreading.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FynnBlog.ClassWithSealedMethodChild" Collapsed="true">
+    <Position X="5.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Archive\ClassWithSealedMethodChild.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FynnBlog.ClassWithSealedMethodGrandParent" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Archive\ClassWithSealedMethodGrandParent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FynnBlog.ClassWithSealedMethodParent" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Archive\ClassWithSealedMethodParent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FynnBlog.MyObjectClass" Collapsed="true">
+    <Position X="25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAFgGAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Archive\MyObjectClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FynnBlog.SealedClass" Collapsed="true">
+    <Position X="14.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Archive\SealedClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Fynn.Dispose_Pattern.MyDisposePattern" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAEAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Design Patterns Fynn\Dispose Pattern\MyDisposePattern.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Fynn.Facade_Pattern.MyFacadePattern" Collapsed="true">
+    <Position X="16.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAACAAAAAAAAgAAAA=</HashCode>
+      <FileName>Design Patterns Fynn\Facade Pattern\MyFacadePattern.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Fynn.Facade_Pattern.MyFirstFacadeClass" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Design Patterns Fynn\Facade Pattern\MyFirstFacadeClass.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Fynn.Facade_Pattern.MySecondFacadeClass" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Design Patterns Fynn\Facade Pattern\MySecondFacadeClass.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Fynn.Singleton_Pattern.MySingletonPattern" Collapsed="true">
+    <Position X="21.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAgAAAAAAAAAAAAAAAABAgAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Design Patterns Fynn\Singleton Pattern\MySingletonPattern.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Pattern.AbstractFactory1" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Design Patterns Guru\Abstract Factory Pattern\AbstractFactory1.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Pattern.AbstractFactory2" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Design Patterns Guru\Abstract Factory Pattern\AbstractFactory2.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Pattern.ProductA1" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Design Patterns Guru\Abstract Factory Pattern\ProductA1.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Pattern.ProductA2" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Design Patterns Guru\Abstract Factory Pattern\ProductA2.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Pattern.ProductB1" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Design Patterns Guru\Abstract Factory Pattern\ProductB1.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Pattern.ProductB2" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="26.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Design Patterns Guru\Abstract Factory Pattern\ProductB2.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern.Director" Collapsed="true">
+    <Position X="18" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAQAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Design Patterns Guru\Builder Pattern\Director.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern.Furniture" Collapsed="true">
+    <Position X="14.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAgAAAABAAABAAAgAAAAEBAAAAAAIAAAAAAgAAAAAA=</HashCode>
+      <FileName>Design Patterns Guru\Builder Pattern\Furniture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern.FurnitureBuilder" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAABAACAAAAAAAAAAAEAAgAAAAAAgg=</HashCode>
+      <FileName>Design Patterns Guru\Builder Pattern\FurnitureBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Factory_Pattern.DeviceCreator" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAACACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Design Patterns Guru\Factory Pattern\DeviceCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Factory_Pattern.SourceCreator" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Design Patterns Guru\Factory Pattern\SourceCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Factory_Pattern.SourceDevice" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Design Patterns Guru\Factory Pattern\SourceDevice.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Factory_Pattern.TargetCreator" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Design Patterns Guru\Factory Pattern\TargetCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Factory_Pattern.TargetDevice" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Design Patterns Guru\Factory Pattern\TargetDevice.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Singleton_Pattern.GuruSingletonPattern" Collapsed="true">
+    <Position X="19.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABEAgAAIAAAAABAAAAAAAAACAAAAAAgA=</HashCode>
+      <FileName>Design Patterns Guru\Singleton Pattern\GuruSingletonPattern.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="biz.dfch.CS.Playground.Fynn._20191007.IDrawable" Collapsed="true">
+    <Position X="16.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191007\InterfaceVsExtensionMethod.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="biz.dfch.CS.Playground.Fynn._20191008.IMessageWriter" Collapsed="true">
+    <Position X="18" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191008\MyProgram.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="biz.dfch.CS.Playground.Fynn._20191016.IPredicate&lt;T&gt;" Collapsed="true">
+    <Position X="12.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20191016\Item34.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="biz.dfch.CS.Playground.Fynn._20210114.Example.IMyInterface" Collapsed="true">
+    <Position X="23.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20210114\Example.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="biz.dfch.CS.Playground.Fynn._20210114.Example.IMySecondInterface&lt;TSecond&gt;" Collapsed="true">
+    <Position X="25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20210114\Example.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="biz.dfch.CS.Playground.Fynn._20210114.IMyFirstInterface" Collapsed="true">
+    <Position X="21.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20210114\FileNamingConventionExample\IMyFirstInterface.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="biz.dfch.CS.Playground.Fynn._20210114.IMySecondInterface" Collapsed="true">
+    <Position X="26.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>20210114\FileNamingConventionExample\IMySecondInterface.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="biz.dfch.CS.Playground.Fynn._20210329.IMyStackInterface&lt;TValue&gt;" Collapsed="true">
+    <Position X="11" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAQAAACAAAAAAAAAAABQCAA=</HashCode>
+      <FileName>20210329\IMyStackInterface.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Fynn.Facade_Pattern.IMyFacadePattern" Collapsed="true">
+    <Position X="19.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Design Patterns Fynn\Facade Pattern\IMyFacadePattern.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Pattern.IAbstractFactory" Collapsed="true">
+    <Position X="11" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Design Patterns Guru\Abstract Factory Pattern\IAbstractFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Pattern.IProduct">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Design Patterns Guru\Abstract Factory Pattern\IProduct.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Pattern.IProductA">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Design Patterns Guru\Abstract Factory Pattern\IProductA.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Pattern.IProductB">
+    <Position X="3" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Design Patterns Guru\Abstract Factory Pattern\IProductB.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Builder_Pattern.IBuilder" Collapsed="true">
+    <Position X="12.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAABAACAAAAAAAAAAAEAAgAAAAAAAg=</HashCode>
+      <FileName>Design Patterns Guru\Builder Pattern\IBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Factory_Pattern.IDevice" Collapsed="true">
+    <Position X="14.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Design Patterns Guru\Factory Pattern\IDevice.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -370,6 +370,7 @@
     <Compile Include="Design Patterns Guru\Abstract Factory Pattern\ProductA2.cs" />
     <Compile Include="Design Patterns Guru\Abstract Factory Pattern\ProductB1.cs" />
     <Compile Include="Design Patterns Guru\Abstract Factory Pattern\ProductB2.cs" />
+    <Compile Include="Design Patterns Guru\Abstract Factory Pattern\ProductBase.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\Director.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\Furniture.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\IBuilder.cs" />
@@ -392,6 +393,7 @@
     <Compile Include="20210114\FileNamingConventionExample\MyClass.MyAbstractClass.cs" />
     <None Include="20210304\KANTON_ZUERICH_43.csv" />
     <None Include="app.config" />
+    <None Include="PlaygroundClassDiagram.cd" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

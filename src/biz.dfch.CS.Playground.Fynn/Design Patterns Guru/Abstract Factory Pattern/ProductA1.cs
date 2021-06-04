@@ -18,42 +18,13 @@ using System;
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Abstract_Factory_Pattern
 {
-    public class ProductA1 : IProductA
+    public class ProductA1 : ProductBase, IProductA
     {
-        public string Name { get; set; }
-        public string IpAddress { get; set; }
-
-        public ProductA1(string name, string ipAddress)
-        {
-            Name = string.IsNullOrWhiteSpace(name) ? "Default Name" : name;
-            IpAddress = string.IsNullOrWhiteSpace(ipAddress) ? "1.1.1.1" : ipAddress;
-        }
+        public ProductA1(string name, string ipAddress) : base(name, ipAddress) { }
 
         public void SomeFunction()
         {
             Console.WriteLine("This Method does something!");
-        }
-
-        private bool Equals(ProductA1 other)
-        {
-            return Name == null ? Name == other.Name : Name.Equals(other.Name) && IpAddress == null ? IpAddress == other.IpAddress : IpAddress.Equals(other.IpAddress);
-        }
-
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != GetType()) return false;
-
-            return Equals((ProductA1)obj);
-        }
-
-        public override int GetHashCode()
-        {
-            var hashName = Name == null ? 0 : Name.GetHashCode();
-            var hashIpAddress = IpAddress == null ? 0 : IpAddress.GetHashCode();
-
-            return hashName ^ hashIpAddress;
         }
     }
 }
