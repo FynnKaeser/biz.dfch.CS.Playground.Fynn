@@ -341,6 +341,7 @@
     <Compile Include="Design Patterns Guru\Factory Pattern\FactoryPatternTest.cs" />
     <Compile Include="Design Patterns Guru\ShapeTest.cs" />
     <Compile Include="Design Patterns Guru\Singleton Pattern\GuruSingletonPatternTest.cs" />
+    <Compile Include="Effective C-Sharp Third Edition\Working with LINQ\Prefer Query Syntax to Loops\QuerySyntaxTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -356,7 +357,6 @@
   <ItemGroup>
     <Folder Include="20191025\" />
     <Folder Include="20191028\" />
-    <Folder Include="Effective C-Sharp Third Edition\Working with LINQ\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
