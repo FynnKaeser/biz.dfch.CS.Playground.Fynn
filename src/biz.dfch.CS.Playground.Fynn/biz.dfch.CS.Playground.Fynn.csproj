@@ -390,6 +390,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="20191023\Assets\" />
+    <Folder Include="Effective C-Sharp Third Edition\Working with LINQ\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="20210114\FileNamingConventionExample\MyClass.IMySecondInterface.cs" />
