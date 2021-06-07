@@ -386,12 +386,12 @@
     <Compile Include="Design Patterns Guru\Prototype Pattern\LengthUnit.cs" />
     <Compile Include="Design Patterns Guru\Prototype Pattern\Shape.cs" />
     <Compile Include="Design Patterns Guru\Singleton Pattern\GuruSingletonPattern.cs" />
+    <Compile Include="Effective C-Sharp Third Edition\Working with LINQ\Decouple Iterations from Actions, Predicates and Functions\MySampleClass.cs" />
     <Compile Include="Effective C-Sharp Third Edition\Working with LINQ\Prefer Query Syntax to Loops\QuerySyntax.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="20191023\Assets\" />
-    <Folder Include="Effective C-Sharp Third Edition\Working with LINQ\Decouple Iterations from Actions, Predicates and Functions\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="20210114\FileNamingConventionExample\MyClass.IMySecondInterface.cs" />
