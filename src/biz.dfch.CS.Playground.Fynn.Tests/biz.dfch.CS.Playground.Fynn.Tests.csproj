@@ -357,6 +357,7 @@
   <ItemGroup>
     <Folder Include="20191025\" />
     <Folder Include="20191028\" />
+    <Folder Include="Effective C-Sharp Third Edition\Working with LINQ\Decouple Iterations from Actions, Predicates and Functions\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
