@@ -376,6 +376,14 @@
     <Compile Include="Design Patterns Guru\Adapter Pattern\Json.cs" />
     <Compile Include="Design Patterns Guru\Adapter Pattern\Service.cs" />
     <Compile Include="Design Patterns Guru\Adapter Pattern\Xml.cs" />
+    <Compile Include="Design Patterns Guru\Bridge Pattern\BClassNetworkConfiguration.cs" />
+    <Compile Include="Design Patterns Guru\Bridge Pattern\CClassNetworkConfiguration .cs" />
+    <Compile Include="Design Patterns Guru\Bridge Pattern\AClassNetworkConfiguration.cs" />
+    <Compile Include="Design Patterns Guru\Bridge Pattern\DClassNetworkConfiguration.cs" />
+    <Compile Include="Design Patterns Guru\Bridge Pattern\DestinationDevice.cs" />
+    <Compile Include="Design Patterns Guru\Bridge Pattern\IDevice.cs" />
+    <Compile Include="Design Patterns Guru\Bridge Pattern\NetworkConfiguration.cs" />
+    <Compile Include="Design Patterns Guru\Bridge Pattern\SourceDevice.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\Director.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\Furniture.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\IBuilder.cs" />

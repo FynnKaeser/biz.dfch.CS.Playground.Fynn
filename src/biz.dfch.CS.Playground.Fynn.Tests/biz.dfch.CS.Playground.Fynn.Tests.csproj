@@ -339,6 +339,12 @@
     <Compile Include="Design Patterns Guru\Adapter Pattern\JsonTest.cs" />
     <Compile Include="Design Patterns Guru\Adapter Pattern\ServiceTest.cs" />
     <Compile Include="Design Patterns Guru\Adapter Pattern\XmlTest.cs" />
+    <Compile Include="Design Patterns Guru\Bridge Pattern\DestinationDeviceTest.cs" />
+    <Compile Include="Design Patterns Guru\Bridge Pattern\BClassNetworkConfigurationTest.cs" />
+    <Compile Include="Design Patterns Guru\Bridge Pattern\CClassNetworkConfigurationTest.cs" />
+    <Compile Include="Design Patterns Guru\Bridge Pattern\DClassNetworkConfigurationTest.cs" />
+    <Compile Include="Design Patterns Guru\Bridge Pattern\AClassNetworkConfigurationTest.cs" />
+    <Compile Include="Design Patterns Guru\Bridge Pattern\SourceDeviceTest.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\DirectorTest.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\FurnitureBuilderTest.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\FurnitureTest.cs" />
