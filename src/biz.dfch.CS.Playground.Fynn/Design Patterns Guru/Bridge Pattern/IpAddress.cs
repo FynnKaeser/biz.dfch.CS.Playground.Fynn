@@ -14,11 +14,15 @@
  * limitations under the License.
  */
 
+using System;
+
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Bridge_Pattern
 {
     public class IpAddress
     {
         private readonly char dot = '.';
+        private readonly int maxValue = 255;
+        private readonly int minValue = 0;
 
         public int Section1 { get; set; }
         public int Section2 { get; set; }
@@ -27,6 +31,23 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Bridge_Pattern
 
         public IpAddress(int section1, int section2, int section3, int section4)
         {
+            if (section1 > maxValue || section1 < minValue)
+            {
+                throw new ArgumentOutOfRangeException(nameof(section1));
+            }
+            if (section2 > maxValue || section2 < minValue)
+            {
+                throw new ArgumentOutOfRangeException(nameof(section1));
+            }
+            if (section3 > maxValue || section3 < minValue)
+            {
+                throw new ArgumentOutOfRangeException(nameof(section1));
+            }
+            if (section4 > maxValue || section4 < minValue)
+            {
+                throw new ArgumentOutOfRangeException(nameof(section1));
+            }
+
             Section1 = section1;
             Section2 = section2;
             Section3 = section3;
@@ -35,7 +56,6 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Bridge_Pattern
 
         public override string ToString()
         {
-
             return Section1.ToString() + dot + Section2 + dot + Section3 + dot + Section4;
         }
     }

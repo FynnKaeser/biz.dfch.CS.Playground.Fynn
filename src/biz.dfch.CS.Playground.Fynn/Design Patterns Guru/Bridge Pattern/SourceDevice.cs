@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+using System;
+
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Bridge_Pattern
 {
     public class SourceDevice : IDevice
@@ -23,7 +25,12 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Bridge_Pattern
 
         public void SetIpAddress(IpAddress ipAddress)
         {
-            throw new System.NotImplementedException();
+            if (null == IpAddress)
+            {
+                throw new ArgumentNullException(nameof(ipAddress));
+            }
+
+            IpAddress = ipAddress;
         }
     }
 }

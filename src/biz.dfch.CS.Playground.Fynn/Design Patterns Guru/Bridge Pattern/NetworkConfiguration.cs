@@ -25,17 +25,32 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Bridge_Pattern
 
         public NetworkConfiguration(IDevice device)
         {
-            this.device = device;
+            this.device = device ?? throw new ArgumentNullException(nameof(device));
             random = new Random();
         }
 
         public void SetIpAddress(IpAddress ipAddress)
         {
+            if (null == ipAddress)
+            {
+                throw new ArgumentNullException();
+            }
+
             device.SetIpAddress(ipAddress);
         }
 
         protected IpAddress GetIpAddress(IpAddress startIpAddress, IpAddress endIpAddress)
         {
+            if (null == startIpAddress)
+            {
+                throw new ArgumentNullException(nameof(startIpAddress));
+            }
+            
+            if (null == endIpAddress)
+            {
+                throw new ArgumentNullException(nameof(endIpAddress));
+            }
+
             var valueSection1 = random.Next(startIpAddress.Section1, endIpAddress.Section1);
             var valueSection2 = random.Next(startIpAddress.Section2, endIpAddress.Section2);
             var valueSection3 = random.Next(startIpAddress.Section3, endIpAddress.Section3);
