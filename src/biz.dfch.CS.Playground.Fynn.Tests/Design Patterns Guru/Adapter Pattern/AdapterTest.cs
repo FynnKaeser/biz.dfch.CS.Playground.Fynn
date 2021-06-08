@@ -70,5 +70,33 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Adapter_Pattern
 
             // Assert
         }
+
+        [TestMethod]
+        [DataTestMethod]
+        [DataRow(0)]
+        [DataRow(-1)]
+        [DataRow(-10)]
+        [DataRow(-100)]
+        public void GetJsonValueWithInvalidValueReturnsDefaultValue(int invalidValue)
+        {
+            // Arrange
+            var service = new Service();
+            var sut = new Adapter(service);
+
+            var arbitraryVersion = "1.1";
+            var arbitraryType = "Test Type";
+            var arbitraryValue = 12345;
+            var xml = new Xml(arbitraryVersion, arbitraryType, arbitraryValue);
+
+            var expectedResult = "Json - <<None>>";
+
+            xml.Value = invalidValue;
+            
+            // Act
+            var result = sut.GetJsonValue(xml);
+
+            // Assert
+            Assert.AreEqual(expectedResult, result);
+        }
     }
 }

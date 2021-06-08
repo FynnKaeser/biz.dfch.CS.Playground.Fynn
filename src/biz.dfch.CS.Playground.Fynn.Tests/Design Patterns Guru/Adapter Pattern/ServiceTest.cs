@@ -27,10 +27,12 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Adapter_Pattern
         {
             // Arrange
             var sut = new Service();
+
             var arbitraryVersion = "1.3";
             var arbitraryType =  "Test";
             var arbitraryValue = "Test Value";
             var json = new Json(arbitraryVersion, arbitraryType, arbitraryValue);
+
             var expectedResult = "Json - Test Value";
 
             // Act
@@ -45,10 +47,33 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Adapter_Pattern
         {
             // Arrange
             var sut = new Service();
+
             var expectedResult = "Json - <<None>>";
 
             // Act
             var result = sut.GetValue(null);
+
+            // Assert
+            Assert.AreEqual(expectedResult, result);
+        }
+
+        [TestMethod]
+        public void GetValueWithNullOrWhitespaceValueReturnsDefaultValue()
+        {
+            // Arrange
+            var sut = new Service();
+
+            var arbitraryVersion = "1.3";
+            var arbitraryType = "Test";
+            var arbitraryValue = "Test Value";
+            var json = new Json(arbitraryVersion, arbitraryType, arbitraryValue);
+
+            var expectedResult = "Json - <<None>>";
+            
+            json.Value = null;
+            
+            // Act
+            var result = sut.GetValue(json);
 
             // Assert
             Assert.AreEqual(expectedResult, result);

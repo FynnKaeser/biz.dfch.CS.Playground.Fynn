@@ -20,9 +20,23 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Adapter_Pattern
 {
     public class Service
     {
+        private readonly string defaultValue = "<<None>>";
+        private readonly string valuePrefix = "Json - ";
+
         public string GetValue(Json json)
         {
-            throw new NotImplementedException();
+            if (null == json)
+            {
+                return valuePrefix + defaultValue;
+            }
+
+            var value = json.Value;
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return valuePrefix + defaultValue;
+            }
+
+            return valuePrefix + value;
         }
     }
 }
