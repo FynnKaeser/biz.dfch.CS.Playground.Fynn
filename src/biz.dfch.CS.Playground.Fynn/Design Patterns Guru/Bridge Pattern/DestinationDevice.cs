@@ -20,7 +20,6 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Bridge_Pattern
 {
     public class DestinationDevice : IDevice
     {
-        public string Name { get; set; }
         public IpAddress IpAddress { get; private set; }
 
         public void SetIpAddress(IpAddress ipAddress)
