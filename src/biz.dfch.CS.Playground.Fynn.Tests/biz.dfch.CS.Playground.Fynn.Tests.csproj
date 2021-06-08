@@ -335,6 +335,10 @@
     <Compile Include="Design Patterns Guru\Abstract Factory Pattern\ProductA2Test.cs" />
     <Compile Include="Design Patterns Guru\Abstract Factory Pattern\ProductB1Test.cs" />
     <Compile Include="Design Patterns Guru\Abstract Factory Pattern\ProductB2Test.cs" />
+    <Compile Include="Design Patterns Guru\Adapter Pattern\AdapterTest.cs" />
+    <Compile Include="Design Patterns Guru\Adapter Pattern\JsonTest.cs" />
+    <Compile Include="Design Patterns Guru\Adapter Pattern\ServiceTest.cs" />
+    <Compile Include="Design Patterns Guru\Adapter Pattern\XmlTest.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\DirectorTest.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\FurnitureBuilderTest.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\FurnitureTest.cs" />
