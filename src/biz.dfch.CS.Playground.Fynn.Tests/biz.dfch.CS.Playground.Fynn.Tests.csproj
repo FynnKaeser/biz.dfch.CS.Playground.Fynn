@@ -345,6 +345,7 @@
     <Compile Include="Design Patterns Guru\Bridge Pattern\DClassNetworkConfigurationTest.cs" />
     <Compile Include="Design Patterns Guru\Bridge Pattern\AClassNetworkConfigurationTest.cs" />
     <Compile Include="Design Patterns Guru\Bridge Pattern\EClassNetworkConfigurationTest.cs" />
+    <Compile Include="Design Patterns Guru\Bridge Pattern\IpAddressTest.cs" />
     <Compile Include="Design Patterns Guru\Bridge Pattern\SourceDeviceTest.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\DirectorTest.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\FurnitureBuilderTest.cs" />
