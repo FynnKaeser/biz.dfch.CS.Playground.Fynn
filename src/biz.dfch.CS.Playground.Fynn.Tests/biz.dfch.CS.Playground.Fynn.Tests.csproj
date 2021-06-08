@@ -343,7 +343,7 @@
     <Compile Include="Design Patterns Guru\Builder Pattern\FurnitureBuilderTest.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\FurnitureTest.cs" />
     <Compile Include="Design Patterns Guru\Factory Pattern\FactoryPatternTest.cs" />
-    <Compile Include="Design Patterns Guru\ShapeTest.cs" />
+    <Compile Include="Design Patterns Guru\Prototype Pattern\ShapeTest.cs" />
     <Compile Include="Design Patterns Guru\Singleton Pattern\GuruSingletonPatternTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
