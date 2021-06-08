@@ -30,14 +30,31 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Bridge_Pattern
             var device = new SourceDevice();
             var sut = new DClassNetworkConfiguration(device);
 
-            var expectedIpAddress = "";
+            var sectionMin = 0;
+            var sectionMax = 255;
+            var section1Min = 224;
+            var section1Max = 239;
 
             // Act
             sut.SetIpAddress();
 
             // Assert
-            var result = device.IpAddress;
-            Assert.AreEqual(expectedIpAddress, result);
+            var resultIpAddress = device.IpAddress;
+
+            var section1 = resultIpAddress.Section1;
+            var section2 = resultIpAddress.Section2;
+            var section3 = resultIpAddress.Section3;
+            var section4 = resultIpAddress.Section4;
+
+            var resultSection1 = section1 >= section1Min && section1 <= section1Max;
+            var resultSection2 = section2 >= sectionMin && section2 <= sectionMax;
+            var resultSection3 = section3 >= sectionMin && section3 <= sectionMax;
+            var resultSection4 = section4 >= sectionMin && section4 <= sectionMax;
+
+            Assert.IsTrue(resultSection1);
+            Assert.IsTrue(resultSection2);
+            Assert.IsTrue(resultSection3);
+            Assert.IsTrue(resultSection4);
         }
 
         [TestMethod]

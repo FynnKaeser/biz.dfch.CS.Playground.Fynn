@@ -25,12 +25,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Bridge_Pattern
 
         public void SetIpAddress(IpAddress ipAddress)
         {
-            if (null == IpAddress)
-            {
-                throw new ArgumentNullException(nameof(ipAddress));
-            }
-
-            IpAddress = ipAddress;
+            IpAddress = ipAddress ?? throw new ArgumentNullException(nameof(ipAddress));
         }
     }
 }
