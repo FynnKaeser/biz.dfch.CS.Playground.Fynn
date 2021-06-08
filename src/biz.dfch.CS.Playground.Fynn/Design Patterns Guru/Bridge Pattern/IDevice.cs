@@ -19,7 +19,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Bridge_Pattern
     public interface IDevice
     {
         string Name { get; set; }
-        string IpAddress { get; }
+        IpAddress IpAddress { get; }
         void SetIpAddress(string ipAddress);
     }
 }

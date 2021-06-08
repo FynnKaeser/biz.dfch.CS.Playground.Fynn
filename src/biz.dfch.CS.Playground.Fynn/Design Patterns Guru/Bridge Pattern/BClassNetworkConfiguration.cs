@@ -19,6 +19,8 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Bridge_Pattern
     public class BClassNetworkConfiguration : NetworkConfiguration
     {
         private readonly IDevice device;
+        private readonly IpAddress StartIpAddress = new IpAddress(128, 0, 0, 0);
+        private readonly IpAddress EndIpAddress = new IpAddress(191, 255, 255, 255);
 
         public BClassNetworkConfiguration(IDevice device) : base(device)
         {

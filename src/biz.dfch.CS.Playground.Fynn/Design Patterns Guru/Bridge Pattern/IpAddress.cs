@@ -16,21 +16,27 @@
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Bridge_Pattern
 {
-    public class DClassNetworkConfiguration : NetworkConfiguration
+    public class IpAddress
     {
-        private readonly IDevice device;
-        private readonly IpAddress StartIpAddress = new IpAddress(224, 0, 0, 0);
-        private readonly IpAddress EndIpAddress = new IpAddress(239, 255, 255, 255);
+        private readonly char dot = '.';
 
-        public DClassNetworkConfiguration(IDevice device) : base(device)
+        public int Section1 { get; set; }
+        public int Section2 { get; set; }
+        public int Section3 { get; set; }
+        public int Section4 { get; set; }
+
+        public IpAddress(int section1, int section2, int section3, int section4)
         {
-            this.device = device;
+            Section1 = section1;
+            Section2 = section2;
+            Section3 = section3;
+            Section4 = section4;
         }
 
-        public void SetIpAddress()
+        public override string ToString()
         {
-            var ipAddress = "";
-            base.SetIpAddress(ipAddress);
+
+            return Section1.ToString() + dot + Section2 + dot + Section3 + dot + Section4;
         }
     }
 }
