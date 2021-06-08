@@ -46,7 +46,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Bridge_Pattern
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void InitializeIpAddressWithSection1OutOfRangeThrowsArgumentOutOfRangeException(int invalidValue)
         {
-            // Assert
+            // Arrange
             var arbitrarySection2Value = 2;
             var arbitrarySection3Value = 3;
             var arbitrarySection4Value = 4;
@@ -65,7 +65,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Bridge_Pattern
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void InitializeIpAddressWithSection2OutOfRangeThrowsArgumentOutOfRangeException(int invalidValue)
         {
-            // Assert
+            // Arrange
             var arbitrarySection1Value = 1;
             var arbitrarySection3Value = 3;
             var arbitrarySection4Value = 4;
@@ -84,7 +84,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Bridge_Pattern
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void InitializeIpAddressWithSection3OutOfRangeThrowsArgumentOutOfRangeException(int invalidValue)
         {
-            // Assert
+            // Arrange
             var arbitrarySection1Value = 1;
             var arbitrarySection2Value = 2;
             var arbitrarySection4Value = 4;
@@ -103,7 +103,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Bridge_Pattern
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void InitializeIpAddressWithSection4OutOfRangeThrowsArgumentOutOfRangeException(int invalidValue)
         {
-            // Assert
+            // Arrange
             var arbitrarySection1Value = 1;
             var arbitrarySection2Value = 2;
             var arbitrarySection3Value = 3;

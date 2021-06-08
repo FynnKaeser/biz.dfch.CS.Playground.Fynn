@@ -25,7 +25,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Bridge_Pattern
 
         public void SetIpAddress()
         {
-            var ipAddress = GetIpAddress(startIpAddress, endIpAddress);
+            var ipAddress = GetNewIpAddress(startIpAddress, endIpAddress);
             SetIpAddress(ipAddress);
         }
     }

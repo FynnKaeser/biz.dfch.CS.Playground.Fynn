@@ -39,7 +39,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Bridge_Pattern
             device.SetIpAddress(ipAddress);
         }
 
-        protected IpAddress GetIpAddress(IpAddress startIpAddress, IpAddress endIpAddress)
+        protected IpAddress GetNewIpAddress(IpAddress startIpAddress, IpAddress endIpAddress)
         {
             if (null == startIpAddress)
             {
