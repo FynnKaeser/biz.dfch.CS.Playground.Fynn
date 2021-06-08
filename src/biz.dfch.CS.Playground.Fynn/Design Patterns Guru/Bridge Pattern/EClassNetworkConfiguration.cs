@@ -18,18 +18,14 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Bridge_Pattern
 {
     public class EClassNetworkConfiguration : NetworkConfiguration
     {
-        private readonly IDevice device;
         private readonly IpAddress startIpAddress = new IpAddress(240, 0, 0, 0);
         private readonly IpAddress endIpAddress = new IpAddress(255, 255, 255, 255);
 
-        public EClassNetworkConfiguration(IDevice device) : base(device)
-        {
-            this.device = device;
-        }
+        public EClassNetworkConfiguration(IDevice device) : base(device) { }
 
         public void SetIpAddress()
         {
-            var ipAddress = "";
+            var ipAddress = GetIpAddress(startIpAddress, endIpAddress);
             SetIpAddress(ipAddress);
         }
     }

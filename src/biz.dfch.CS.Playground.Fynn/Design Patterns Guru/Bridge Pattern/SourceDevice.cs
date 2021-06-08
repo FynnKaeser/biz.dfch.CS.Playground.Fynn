@@ -21,7 +21,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Bridge_Pattern
         public string Name { get; set; }
         public IpAddress IpAddress { get; private set; }
 
-        public void SetIpAddress(string ipAddress)
+        public void SetIpAddress(IpAddress ipAddress)
         {
             throw new System.NotImplementedException();
         }

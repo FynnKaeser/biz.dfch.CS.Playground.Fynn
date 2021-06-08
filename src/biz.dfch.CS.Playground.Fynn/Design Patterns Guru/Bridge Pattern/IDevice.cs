@@ -20,6 +20,6 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Bridge_Pattern
     {
         string Name { get; set; }
         IpAddress IpAddress { get; }
-        void SetIpAddress(string ipAddress);
+        void SetIpAddress(IpAddress ipAddress);
     }
 }
