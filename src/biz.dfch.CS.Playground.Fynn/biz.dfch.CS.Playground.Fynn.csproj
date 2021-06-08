@@ -381,6 +381,7 @@
     <Compile Include="Design Patterns Guru\Bridge Pattern\AClassNetworkConfiguration.cs" />
     <Compile Include="Design Patterns Guru\Bridge Pattern\DClassNetworkConfiguration.cs" />
     <Compile Include="Design Patterns Guru\Bridge Pattern\DestinationDevice.cs" />
+    <Compile Include="Design Patterns Guru\Bridge Pattern\EClassNetworkConfiguration.cs" />
     <Compile Include="Design Patterns Guru\Bridge Pattern\IDevice.cs" />
     <Compile Include="Design Patterns Guru\Bridge Pattern\IpAddress.cs" />
     <Compile Include="Design Patterns Guru\Bridge Pattern\NetworkConfiguration.cs" />
