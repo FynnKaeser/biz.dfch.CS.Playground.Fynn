@@ -14,20 +14,33 @@
  * limitations under the License.
  */
 
+using System;
+
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Adapter_Pattern
 {
     public class Adapter : IJsonAdapter
     {
-        private Service service;
+        private readonly Service service;
 
         public Adapter(Service service)
         {
-            this.service = service;
+            this.service = service ?? throw new ArgumentNullException(nameof(service));
         }
 
         public string GetJsonValue(Xml xml)
         {
-            throw new System.NotImplementedException();
+            if (null == xml)
+            {
+                return service.GetValue(null);
+            }
+
+            var version = xml.Version;
+            var type = xml.Type;
+            var value = xml.Value > 0 ? xml.Value.ToString() : null;
+
+            var json = new Json(version, type, value);
+
+            return service.GetValue(json);
         }
     }
 }
