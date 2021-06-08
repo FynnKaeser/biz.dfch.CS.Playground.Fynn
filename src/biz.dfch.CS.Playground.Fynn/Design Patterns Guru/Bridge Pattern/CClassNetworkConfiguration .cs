@@ -24,5 +24,11 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Bridge_Pattern
         {
             this.device = device;
         }
+
+        public void SetIpAddress()
+        {
+            var ipAddress = "";
+            base.SetIpAddress(ipAddress);
+        }
     }
 }

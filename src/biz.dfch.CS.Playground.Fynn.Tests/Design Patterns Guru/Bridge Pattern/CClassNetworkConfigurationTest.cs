@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+using System;
+using biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Bridge_Pattern;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Bridge_Pattern
@@ -21,5 +23,32 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Bridge_Pattern
     [TestClass]
     public class CClassNetworkConfigurationTest
     {
+        [TestMethod]
+        public void SetIpAddressSucceeds()
+        {
+            // Arrange
+            var device = new SourceDevice();
+            var sut = new CClassNetworkConfiguration(device);
+
+            var expectedIpAddress = "";
+
+            // Act
+            sut.SetIpAddress();
+
+            // Assert
+            var result = device.IpAddress;
+            Assert.AreEqual(expectedIpAddress, result);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void InitializeCClassNetworkConfigurationWithNullDeviceObjectThrowsArgumentNullException()
+        {
+            // Arrange
+            // Act
+            var sut = new CClassNetworkConfiguration(null);
+
+            // Assert
+        }
     }
 }
