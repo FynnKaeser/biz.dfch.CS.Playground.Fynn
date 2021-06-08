@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+using System;
+
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Adapter_Pattern
 {
     public class Xml
@@ -24,9 +26,9 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Adapter_Pattern
 
         public Xml(string version, string type, int value)
         {
-            Version = version;
-            Type = type;
-            Value = value;
+            Version = version ?? throw new ArgumentNullException(nameof(version));
+            Type = type ?? throw new ArgumentNullException(nameof(type));
+            Value = value > 0 ? value : throw new ArgumentOutOfRangeException(nameof(value));
         }
     }
 }

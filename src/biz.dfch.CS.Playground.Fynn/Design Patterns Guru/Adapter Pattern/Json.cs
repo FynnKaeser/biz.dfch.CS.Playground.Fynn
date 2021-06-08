@@ -15,6 +15,8 @@
  */
 
 
+using System;
+
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Adapter_Pattern
 {
     public class Json
@@ -25,9 +27,9 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Adapter_Pattern
 
         public Json(string version, string type, string value)
         {
-            Version = version;
-            Type = type;
-            Value = value;
+            Version = version ?? throw new ArgumentNullException(nameof(version));
+            Type = type ?? throw new ArgumentNullException(nameof(type));
+            Value = value ?? throw new ArgumentNullException(nameof(type));
         }
     }
 }

@@ -24,6 +24,24 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Adapter_Pattern
     public class JsonTest
     {
         [TestMethod]
+        public void InitializeJsonObjectSucceeds()
+        {
+            // Arrange 
+            var arbitraryVersion = "1.2.3";
+            var arbitraryType = "Test Type";
+            var arbitraryValue = "123";
+            
+            // Act
+            var sut = new Json(arbitraryVersion, arbitraryType, arbitraryValue);
+
+            // Assert
+            Assert.AreEqual(arbitraryVersion, sut.Version);
+            Assert.AreEqual(arbitraryType, sut.Type);
+            Assert.AreEqual(arbitraryValue, sut.Value);
+
+        }
+
+        [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void SetNullVersionThrowsArgumentNullException()
         {
