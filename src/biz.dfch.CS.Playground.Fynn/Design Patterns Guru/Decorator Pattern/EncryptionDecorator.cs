@@ -39,9 +39,9 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Decorator_Pattern
             var data = base.Read();
             if (data.Contains(encryptedSymbol))
             {
-                var encryptedData = data.Remove(data.Length - 3);
+                var decryptedData = data.Remove(data.Length - 3);
 
-                return encryptedData;
+                return decryptedData;
             }
             return data;
         }
