@@ -19,6 +19,6 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Decorator_Pattern
     public interface IDataSource
     {
         void Write(string data);
-        void Read();
+        string Read();
     }
 }

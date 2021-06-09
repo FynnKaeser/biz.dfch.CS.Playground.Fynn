@@ -14,9 +14,36 @@
  * limitations under the License.
  */
 
+using System;
+
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Decorator_Pattern
 {
     public class EncryptionDecorator : DataSourceDecorator
     {
+        private readonly string encryptedSymbol = "$$$";
+        public EncryptionDecorator(IDataSource decorator) : base(decorator) { }
+
+        public override void Write(string data)
+        {
+            if (string.IsNullOrWhiteSpace(data))
+            {
+                throw new ArgumentNullException(nameof(data));
+            }
+
+            var encryptedData = data + encryptedSymbol;
+            base.Write(encryptedData);
+        }
+
+        public override string Read()
+        {
+            var data = base.Read();
+            if (data.Contains(encryptedSymbol))
+            {
+                var encryptedData = data.Remove(data.Length - 3);
+
+                return encryptedData;
+            }
+            return data;
+        }
     }
 }

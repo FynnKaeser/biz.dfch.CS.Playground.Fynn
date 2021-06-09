@@ -14,25 +14,27 @@
  * limitations under the License.
  */
 
+using System;
+
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Decorator_Pattern
 {
     public class FileDataSource : IDataSource
     {
-        private string fileName;
-
-        public FileDataSource(string fileName)
-        {
-            this.fileName = fileName;
-        }
+        private string data;
 
         public void Write(string data)
         {
-            throw new System.NotImplementedException();
+            if (string.IsNullOrWhiteSpace(data))
+            {
+                throw new ArgumentNullException(data);
+            }
+
+            this.data = data;
         }
 
-        public void Read()
+        public string Read()
         {
-            throw new System.NotImplementedException();
+            return data;
         }
     }
 }

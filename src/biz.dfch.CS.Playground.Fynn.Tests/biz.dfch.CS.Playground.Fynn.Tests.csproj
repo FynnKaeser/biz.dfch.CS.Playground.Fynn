@@ -351,6 +351,9 @@
     <Compile Include="Design Patterns Guru\Builder Pattern\DirectorTest.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\FurnitureBuilderTest.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\FurnitureTest.cs" />
+    <Compile Include="Design Patterns Guru\Decorator Pattern\DataSourceDecoratorTest.cs" />
+    <Compile Include="Design Patterns Guru\Decorator Pattern\EncryptionDecoratorTest.cs" />
+    <Compile Include="Design Patterns Guru\Decorator Pattern\FileDataSourceTest.cs" />
     <Compile Include="Design Patterns Guru\Factory Pattern\FactoryPatternTest.cs" />
     <Compile Include="Design Patterns Guru\Prototype Pattern\ShapeTest.cs" />
     <Compile Include="Design Patterns Guru\Singleton Pattern\GuruSingletonPatternTest.cs" />

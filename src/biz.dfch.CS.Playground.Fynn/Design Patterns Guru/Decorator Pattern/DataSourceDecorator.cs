@@ -14,25 +14,32 @@
  * limitations under the License.
  */
 
+using System;
+
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Decorator_Pattern
 {
     public class DataSourceDecorator : IDataSource
     {
-        private IDataSource decorator;
+        private readonly IDataSource decorator;
 
         public DataSourceDecorator(IDataSource decorator)
         {
-            this.decorator = decorator;
+            this.decorator = decorator ?? throw new ArgumentNullException(nameof(decorator));
         }
 
-        public void Write(string data)
+        public virtual void Write(string data)
         {
-            throw new System.NotImplementedException();
+            if (string.IsNullOrWhiteSpace(data))
+            {
+                throw new ArgumentNullException(nameof(data));
+            }
+
+            decorator.Write(data);
         }
 
-        public void Read()
+        public virtual string Read()
         {
-            throw new System.NotImplementedException();
+            return decorator.Read();
         }
     }
 }
