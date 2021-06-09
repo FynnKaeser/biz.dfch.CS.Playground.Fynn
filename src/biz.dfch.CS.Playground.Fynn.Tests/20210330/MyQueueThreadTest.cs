@@ -53,7 +53,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
 
             // Act
             handler.StartThreads();
-            handler.SetStateToSignaled();
+            handler.SetStateToSignalled();
 
             threads[1].Join();
 
@@ -81,7 +81,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
 
             // Act
             handler.StartThreads();
-            handler.SetStateToSignaled();
+            handler.SetStateToSignalled();
 
             threads[1].Join();
 
@@ -113,7 +113,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
 
             // Act
             handler.StartThreads();
-            handler.SetStateToSignaled();
+            handler.SetStateToSignalled();
 
             threads[1].Join();
 
@@ -146,7 +146,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
 
             // Act
             handler.StartThreads();
-            handler.SetStateToSignaled();
+            handler.SetStateToSignalled();
 
             threads[1].Join();
 
@@ -181,7 +181,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210330
 
             // Act
             handler.StartThreads();
-            handler.SetStateToSignaled();
+            handler.SetStateToSignalled();
 
             threads[1].Join();
 

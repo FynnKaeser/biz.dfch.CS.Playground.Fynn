@@ -30,7 +30,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests._20210401
             ManualResetEventSlim = new ManualResetEventSlim(false);
         }
 
-        public void SetStateToSignaled() => ManualResetEventSlim.Set(); 
+        public void SetStateToSignalled() => ManualResetEventSlim.Set(); 
 
         public void StartThreads()
         {

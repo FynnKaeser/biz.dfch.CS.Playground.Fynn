@@ -87,7 +87,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Singleton_Patte
 
             // Act
             handler.StartThreads();
-            handler.SetStateToSignaled();
+            handler.SetStateToSignalled();
             threads[1].Join();
 
             var result = GuruSingletonPattern.MethodCreationCounter;
@@ -116,7 +116,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Singleton_Patte
 
             // Act
             handler.StartThreads();
-            handler.SetStateToSignaled();
+            handler.SetStateToSignalled();
             threads[1].Join();
 
             var result = GuruSingletonPattern.GetterCreationCounter;

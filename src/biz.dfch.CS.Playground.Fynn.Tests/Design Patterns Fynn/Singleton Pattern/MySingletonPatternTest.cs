@@ -90,7 +90,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Fynn.Singleton_Patte
 
             // Act
             handler.StartThreads();
-            handler.SetStateToSignaled();
+            handler.SetStateToSignalled();
             threads[1].Join();
 
             var result = sut.MyObjectCreationCounter;
@@ -120,7 +120,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Fynn.Singleton_Patte
 
             // Act
             handler.StartThreads();
-            handler.SetStateToSignaled();
+            handler.SetStateToSignalled();
             threads[1].Join();
 
             var result = sut.MySecondObjectCreationCounter;

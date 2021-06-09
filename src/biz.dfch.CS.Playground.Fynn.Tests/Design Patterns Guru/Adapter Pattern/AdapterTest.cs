@@ -78,7 +78,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Adapter_Pattern
         [DataRow(-10)]
         [DataRow(-100)]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void GetJsonValueWithInvalidValueReturnsDefaultValue(int invalidValue)
+        public void GetJsonValueWithInvalidValueThrowsArgumentNullException(int invalidValue)
         {
             // Arrange
             var service = new Service();
