@@ -34,18 +34,25 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Singleton_Patte
         {
             // Arrange
             var enumerationAmount = 100;
-            var expectedObjectCreationCounter = 1;
+            var singletonInstances = new List<GuruSingletonPattern>();
 
             // Act
             for (int i = 0; i < enumerationAmount; i++)
             {
-                GuruSingletonPattern.GetInstance();
+                singletonInstances.Add(GuruSingletonPattern.GetInstance());
             }
 
-            var result = GuruSingletonPattern.MethodCreationCounter;
-
             // Assert
-            Assert.AreEqual(expectedObjectCreationCounter, result);
+            for (int i = 0; i < singletonInstances.Count; i++)
+            {
+                if (i == 0) continue;
+
+                var currentInstance = singletonInstances[i];
+                var previousInstance = singletonInstances[i - 1];
+
+                var areEqual = object.ReferenceEquals(currentInstance, previousInstance);
+                Assert.IsTrue(areEqual);
+            }
         }
 
         [TestMethod]
@@ -53,18 +60,25 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Singleton_Patte
         {
             // Arrange
             var enumerationAmount = 100;
-            var expectedObjectCreationCounter = 1;
+            var singletonInstances = new List<GuruSingletonPattern>();
 
             // Act
             for (int i = 0; i < enumerationAmount; i++)
             {
-                var temp = GuruSingletonPattern.GuruSingletonPatternObject;
+                singletonInstances.Add(GuruSingletonPattern.GuruSingletonPatternObject);
             }
 
-            var result = GuruSingletonPattern.GetterCreationCounter;
-
             // Assert
-            Assert.AreEqual(expectedObjectCreationCounter, result);
+            for (int i = 0; i < singletonInstances.Count; i++)
+            {
+                if (i == 0) continue;
+
+                var currentInstance = singletonInstances[i];
+                var previousInstance = singletonInstances[i - 1];
+
+                var areEqual = object.ReferenceEquals(currentInstance, previousInstance);
+                Assert.IsTrue(areEqual);
+            }
         }
 
         [TestMethod]
