@@ -390,6 +390,11 @@
     <Compile Include="Design Patterns Guru\Builder Pattern\Furniture.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\IBuilder.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\FurnitureBuilder.cs" />
+    <Compile Include="Design Patterns Guru\Decorator Pattern\CompressionDecorator.cs" />
+    <Compile Include="Design Patterns Guru\Decorator Pattern\FileDataSource.cs" />
+    <Compile Include="Design Patterns Guru\Decorator Pattern\DataSourceDecorator.cs" />
+    <Compile Include="Design Patterns Guru\Decorator Pattern\EncryptionDecorator.cs" />
+    <Compile Include="Design Patterns Guru\Decorator Pattern\IDataSource.cs" />
     <Compile Include="Design Patterns Guru\Factory Pattern\TargetDevice.cs" />
     <Compile Include="Design Patterns Guru\Factory Pattern\DeviceCreator.cs" />
     <Compile Include="Design Patterns Guru\Factory Pattern\TargetCreator.cs" />
