@@ -20,9 +20,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Fynn.Singleton_Pattern
     {
         private object myObject;
         private object mySecondObjectField;
-
-        public int MyObjectCreationCounter { get; private set; }
-        public int MySecondObjectCreationCounter { get; private set; }
+        
         public object MySecondObject
         {
             get
@@ -33,7 +31,6 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Fynn.Singleton_Pattern
                     {
                         if (null == mySecondObjectField)
                         {
-                            MySecondObjectCreationCounter++;
                             mySecondObjectField = new object();
                         }
                     }
@@ -51,7 +48,6 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Fynn.Singleton_Pattern
                 {
                     if (null == myObject)
                     {
-                        MyObjectCreationCounter++;
                         myObject = new object();
                     }
                 }

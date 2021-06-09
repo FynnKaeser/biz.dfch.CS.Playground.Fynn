@@ -86,15 +86,15 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Singleton_Patte
         {
             // Arrange
             var enumerationAmount = 100;
-            var expectedCreationCounter = 1;
-
+            var singletonInstances = new List<GuruSingletonPattern>();
+            
             var threads = new List<Thread>
             {
-                new Thread(() => RunGetInstanceMethodImplementation(enumerationAmount)),
-                new Thread(() => RunGetInstanceMethodImplementation(enumerationAmount)),
-                new Thread(() => RunGetInstanceMethodImplementation(enumerationAmount)),
-                new Thread(() => RunGetInstanceMethodImplementation(enumerationAmount)),
-                new Thread(() => RunGetInstanceMethodImplementation(enumerationAmount))
+                new Thread(() => singletonInstances = RunGetInstanceMethodImplementation(enumerationAmount)),
+                new Thread(() => singletonInstances.AddRange(RunGetInstanceMethodImplementation(enumerationAmount))),
+                new Thread(() => singletonInstances.AddRange(RunGetInstanceMethodImplementation(enumerationAmount))),
+                new Thread(() => singletonInstances.AddRange(RunGetInstanceMethodImplementation(enumerationAmount))),
+                new Thread(() => singletonInstances.AddRange(RunGetInstanceMethodImplementation(enumerationAmount)))
             };
             var handler = new ThreadHandler(threads);
             manualResetEventSlim = handler.ManualResetEventSlim;
@@ -103,11 +103,18 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Singleton_Patte
             handler.StartThreads();
             handler.SetStateToSignalled();
             threads[1].Join();
-
-            var result = GuruSingletonPattern.MethodCreationCounter;
-
+            
             // Assert
-            Assert.AreEqual(expectedCreationCounter, result);
+            for (int i = 0; i < singletonInstances.Count; i++)
+            {
+                if (i == 0) continue;
+
+                var currentInstance = singletonInstances[i];
+                var previousInstance = singletonInstances[i - 1];
+
+                var areEqual = object.ReferenceEquals(currentInstance, previousInstance);
+                Assert.IsTrue(areEqual);
+            }
         }
 
         [TestMethod]
@@ -115,15 +122,16 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Singleton_Patte
         {
             // Arrange
             var enumerationAmount = 100;
-            var expectedCreationCounter = 1;
+
+            var singletonInstances = new List<GuruSingletonPattern>();
 
             var threads = new List<Thread>
             {
-                new Thread(() => RunGetterImplementation(enumerationAmount)),
-                new Thread(() => RunGetterImplementation(enumerationAmount)),
-                new Thread(() => RunGetterImplementation(enumerationAmount)),
-                new Thread(() => RunGetterImplementation(enumerationAmount)),
-                new Thread(() => RunGetterImplementation(enumerationAmount))
+                new Thread(() => singletonInstances = RunGetterImplementation(enumerationAmount)),
+                new Thread(() => singletonInstances.AddRange(RunGetterImplementation(enumerationAmount))),
+                new Thread(() => singletonInstances.AddRange(RunGetterImplementation(enumerationAmount))),
+                new Thread(() => singletonInstances.AddRange(RunGetterImplementation(enumerationAmount))),
+                new Thread(() => singletonInstances.AddRange(RunGetterImplementation(enumerationAmount)))
             };
             var handler = new ThreadHandler(threads);
             manualResetEventSlim = handler.ManualResetEventSlim;
@@ -133,13 +141,20 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Singleton_Patte
             handler.SetStateToSignalled();
             threads[1].Join();
 
-            var result = GuruSingletonPattern.GetterCreationCounter;
-
             // Assert
-            Assert.AreEqual(expectedCreationCounter, result);
+            for (int i = 0; i < singletonInstances.Count; i++)
+            {
+                if (i == 0) continue;
+
+                var currentInstance = singletonInstances[i];
+                var previousInstance = singletonInstances[i - 1];
+
+                var areEqual = object.ReferenceEquals(currentInstance, previousInstance);
+                Assert.IsTrue(areEqual);
+            }
         }
 
-        public void RunGetInstanceMethodImplementation(int enumerationAmount)
+        public List<GuruSingletonPattern> RunGetInstanceMethodImplementation(int enumerationAmount)
         {
             var isSetToSignaled = manualResetEventSlim.Wait(millisecondsTimeout);
 
@@ -148,13 +163,17 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Singleton_Patte
                 throw new TimeoutException();
             }
 
+            var singletonInstances = new List<GuruSingletonPattern>();
+
             for (int i = 0; i < enumerationAmount; i++)
             {
-                GuruSingletonPattern.GetInstance();
+                singletonInstances.Add(GuruSingletonPattern.GetInstance());
             }
+
+            return singletonInstances;
         }
 
-        public void RunGetterImplementation(int enumerationAmount)
+        public List<GuruSingletonPattern> RunGetterImplementation(int enumerationAmount)
         {
             var isSetToSignaled = manualResetEventSlim.Wait(millisecondsTimeout);
 
@@ -163,10 +182,14 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Singleton_Patte
                 throw new TimeoutException();
             }
 
+            var singletonInstances = new List<GuruSingletonPattern>();
+            
             for (int i = 0; i < enumerationAmount; i++)
             {
-                var temp = GuruSingletonPattern.GuruSingletonPatternObject;
+                singletonInstances.Add(GuruSingletonPattern.GuruSingletonPatternObject);
             }
+
+            return singletonInstances;
         }
     }
 }

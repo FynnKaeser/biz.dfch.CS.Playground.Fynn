@@ -91,15 +91,16 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Fynn.Singleton_Patte
             // Arrange
             var sut = new MySingletonPattern();
             var enumerationAmount = 100;
-            var expectedObjectCreationCounter = 1;
+
+            var singletonInstances = new List<object>();
 
             var threads = new List<Thread>
             {
-                new Thread(() => RunGetInstanceMethodImplementation(enumerationAmount, sut)),
-                new Thread(() => RunGetInstanceMethodImplementation(enumerationAmount, sut)),
-                new Thread(() => RunGetInstanceMethodImplementation(enumerationAmount, sut)),
-                new Thread(() => RunGetInstanceMethodImplementation(enumerationAmount, sut)),
-                new Thread(() => RunGetInstanceMethodImplementation(enumerationAmount, sut))
+                new Thread(() => singletonInstances = RunGetInstanceMethodImplementation(enumerationAmount, sut)),
+                new Thread(() => singletonInstances.AddRange(RunGetInstanceMethodImplementation(enumerationAmount, sut))),
+                new Thread(() => singletonInstances.AddRange(RunGetInstanceMethodImplementation(enumerationAmount, sut))),
+                new Thread(() => singletonInstances.AddRange(RunGetInstanceMethodImplementation(enumerationAmount, sut))),
+                new Thread(() => singletonInstances.AddRange(RunGetInstanceMethodImplementation(enumerationAmount, sut)))
             };
             var handler = new ThreadHandler(threads);
             manualResetEventSlim = handler.ManualResetEventSlim;
@@ -109,10 +110,17 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Fynn.Singleton_Patte
             handler.SetStateToSignalled();
             threads[1].Join();
 
-            var result = sut.MyObjectCreationCounter;
-
             // Assert
-            Assert.AreEqual(expectedObjectCreationCounter, result);
+            for (int i = 0; i < singletonInstances.Count; i++)
+            {
+                if (i == 0) continue;
+
+                var currentInstance = singletonInstances[i];
+                var previousInstance = singletonInstances[i - 1];
+
+                var areEqual = object.ReferenceEquals(currentInstance, previousInstance);
+                Assert.IsTrue(areEqual);
+            }
         }
 
         [TestMethod]
@@ -121,15 +129,16 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Fynn.Singleton_Patte
             // Arrange
             var sut = new MySingletonPattern();
             var enumerationAmount = 100;
-            var expectedSecondObjectCreationCounter = 1;
 
+            var singletonInstances = new List<object>();
+            
             var threads = new List<Thread>
             {
-                new Thread(() => RunGetterImplementation(enumerationAmount, sut)),
-                new Thread(() => RunGetterImplementation(enumerationAmount, sut)),
-                new Thread(() => RunGetterImplementation(enumerationAmount, sut)),
-                new Thread(() => RunGetterImplementation(enumerationAmount, sut)),
-                new Thread(() => RunGetterImplementation(enumerationAmount, sut))
+                new Thread(() => singletonInstances = RunGetterImplementation(enumerationAmount, sut)),
+                new Thread(() => singletonInstances.AddRange(RunGetterImplementation(enumerationAmount, sut))),
+                new Thread(() => singletonInstances.AddRange(RunGetterImplementation(enumerationAmount, sut))),
+                new Thread(() => singletonInstances.AddRange(RunGetterImplementation(enumerationAmount, sut))),
+                new Thread(() => singletonInstances.AddRange(RunGetterImplementation(enumerationAmount, sut)))
             };
             var handler = new ThreadHandler(threads);
             manualResetEventSlim = handler.ManualResetEventSlim;
@@ -139,13 +148,20 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Fynn.Singleton_Patte
             handler.SetStateToSignalled();
             threads[1].Join();
 
-            var result = sut.MySecondObjectCreationCounter;
-
             // Assert
-            Assert.AreEqual(expectedSecondObjectCreationCounter, result);
+            for (int i = 0; i < singletonInstances.Count; i++)
+            {
+                if (i == 0) continue;
+
+                var currentInstance = singletonInstances[i];
+                var previousInstance = singletonInstances[i - 1];
+
+                var areEqual = object.ReferenceEquals(currentInstance, previousInstance);
+                Assert.IsTrue(areEqual);
+            }
         }
 
-        public void RunGetInstanceMethodImplementation(int enumerationAmount, MySingletonPattern sut)
+        public List<object> RunGetInstanceMethodImplementation(int enumerationAmount, MySingletonPattern sut)
         {
             var isSetToSignaled = manualResetEventSlim.Wait(millisecondsTimeout);
 
@@ -154,13 +170,17 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Fynn.Singleton_Patte
                 throw new TimeoutException();
             }
 
+            var singletonInstances = new List<object>();
+
             for (int i = 0; i < enumerationAmount; i++)
             {
-                sut.GetInstance();
+                singletonInstances.Add(sut.GetInstance());
             }
+
+            return singletonInstances;
         }
         
-        public void RunGetterImplementation(int enumerationAmount, MySingletonPattern sut)
+        public List<object> RunGetterImplementation(int enumerationAmount, MySingletonPattern sut)
         {
             var isSetToSignaled = manualResetEventSlim.Wait(millisecondsTimeout);
 
@@ -169,10 +189,14 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Fynn.Singleton_Patte
                 throw new TimeoutException();
             }
 
+            var singletonInstances = new List<object>();
+
             for (int i = 0; i < enumerationAmount; i++)
-            {
-                var temp = sut.MySecondObject;
+            { 
+                singletonInstances.Add(sut.MySecondObject);
             }
+
+            return singletonInstances;
         }
     }
 }

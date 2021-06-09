@@ -32,7 +32,6 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Singleton_Pattern
                     {
                         if (null == guruSingletonPattern)
                         {
-                            GetterCreationCounter++;
                             guruSingletonPattern = new GuruSingletonPattern();
                         }
                     }
@@ -41,8 +40,6 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Singleton_Pattern
                 return guruSingletonPattern;
             }
         }
-        public static int MethodCreationCounter { get; private set; }
-        public static int GetterCreationCounter { get; private set; }
 
         private GuruSingletonPattern() { }
 
@@ -54,7 +51,6 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Singleton_Pattern
                 {
                     if (null == _guruSingletonPattern)
                     {
-                        MethodCreationCounter++;
                         _guruSingletonPattern = new GuruSingletonPattern();
                     }
                 }
