@@ -390,6 +390,9 @@
     <Compile Include="Design Patterns Guru\Builder Pattern\Furniture.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\IBuilder.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\FurnitureBuilder.cs" />
+    <Compile Include="Design Patterns Guru\Composite Pattern\Box.cs" />
+    <Compile Include="Design Patterns Guru\Composite Pattern\IOrder.cs" />
+    <Compile Include="Design Patterns Guru\Composite Pattern\Product.cs" />
     <Compile Include="Design Patterns Guru\Decorator Pattern\FileDataSource.cs" />
     <Compile Include="Design Patterns Guru\Decorator Pattern\DataSourceDecorator.cs" />
     <Compile Include="Design Patterns Guru\Decorator Pattern\EncryptionDecorator.cs" />
