@@ -408,6 +408,11 @@
     <Compile Include="Design Patterns Guru\Prototype Pattern\LengthUnit.cs" />
     <Compile Include="Design Patterns Guru\Prototype Pattern\Shape.cs" />
     <Compile Include="Design Patterns Guru\Singleton Pattern\GuruSingletonPattern.cs" />
+    <Compile Include="ErrorMessage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErrorMessage.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -427,6 +432,10 @@
     <EmbeddedResource Include="20210319\MyDictionaryMessage.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MyDictionaryMessage.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorMessage.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorMessage.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

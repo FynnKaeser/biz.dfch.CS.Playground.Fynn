@@ -14,24 +14,31 @@
  * limitations under the License.
  */
 
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Composite_Pattern
 {
     public class Box : IOrder
     {
-        private IList<Product> products;
-        private IList<Box> innerBoxes;
+        private readonly IList<Product> products;
+        private readonly IList<Box> innerBoxes;
+        private readonly int minProductCount = 1;
 
         public Box(IList<Product> products, IList<Box> innerBoxes)
         {
-            this.products = products;
-            this.innerBoxes = innerBoxes;
+            this.products = products ?? throw new ArgumentNullException(nameof(products));
+            if (products.Count < minProductCount)
+            {
+                throw new ArgumentException(ErrorMessage.BoxNeedsToContainAtLeastOneProduct, nameof(products));
+            }
+            this.innerBoxes = innerBoxes ?? new List<Box>();
         }
 
         public int GetPrice()
         {
-            throw new System.NotImplementedException();
+            return products.Sum(product => product.GetPrice()) + innerBoxes.Sum(innerBox => innerBox.GetPrice());
         }
     }
 }
