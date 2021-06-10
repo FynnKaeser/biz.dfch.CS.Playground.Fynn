@@ -20,16 +20,16 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Composite_Pattern
 {
     public class Product : IOrder
     {
-        private readonly int price;
+        private readonly int priceOfOneProduct;
         private readonly int amount;
         private readonly int priceThreshold = 0;
         private readonly int amountThreshold = 1;
 
-        public Product(int price, int amount)
+        public Product(int priceOfOneProduct, int amount)
         {
-            if (price < priceThreshold)
+            if (priceOfOneProduct < priceThreshold)
             {
-                throw new ArgumentOutOfRangeException(nameof(price));
+                throw new ArgumentOutOfRangeException(nameof(priceOfOneProduct));
             }
 
             if (amount < amountThreshold)
@@ -37,13 +37,13 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Composite_Pattern
                 throw new ArgumentOutOfRangeException(nameof(amount));
             }
 
-            this.price = price;
+            this.priceOfOneProduct = priceOfOneProduct;
             this.amount = amount;
         }
 
         public int GetPrice()
         {
-            return price * amount;
+            return priceOfOneProduct * amount;
         }
     }
 }

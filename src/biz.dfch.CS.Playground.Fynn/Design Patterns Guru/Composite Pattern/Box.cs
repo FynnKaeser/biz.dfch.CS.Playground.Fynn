@@ -28,7 +28,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Composite_Pattern
 
         public Box(IList<Product> products, IList<Box> innerBoxes)
         {
-            this.products = products ?? throw new ArgumentNullException(nameof(products));
+            this.products = products ?? throw new ArgumentNullException(nameof(products)); 
             if (products.Count < minProductCount)
             {
                 throw new ArgumentException(ErrorMessage.BoxNeedsToContainAtLeastOneProduct, nameof(products));
