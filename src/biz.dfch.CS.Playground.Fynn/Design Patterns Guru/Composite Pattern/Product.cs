@@ -14,9 +14,36 @@
  * limitations under the License.
  */
 
+using System;
+
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Composite_Pattern
 {
     public class Product : IOrder
     {
+        private readonly int price;
+        private readonly int amount;
+        private readonly int priceThreshold = 0;
+        private readonly int amountThreshold = 1;
+
+        public Product(int price, int amount)
+        {
+            if (price < priceThreshold)
+            {
+                throw new ArgumentOutOfRangeException(nameof(price));
+            }
+
+            if (amount < amountThreshold)
+            {
+                throw new ArgumentOutOfRangeException(nameof(amount));
+            }
+
+            this.price = price;
+            this.amount = amount;
+        }
+
+        public int GetPrice()
+        {
+            return price * amount;
+        }
     }
 }

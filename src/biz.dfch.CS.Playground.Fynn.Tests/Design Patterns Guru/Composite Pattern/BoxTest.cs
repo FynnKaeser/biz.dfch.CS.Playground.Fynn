@@ -21,5 +21,12 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Composite_Patte
     [TestClass]
     public class BoxTest
     {
+        [TestMethod]
+        public void Test()
+        {
+            // Arrange
+            // Act
+            // Assert
+        }
     }
 }

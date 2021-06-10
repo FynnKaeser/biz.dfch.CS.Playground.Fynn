@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+using System;
+using biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Composite_Pattern;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Composite_Pattern
@@ -22,10 +24,50 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Composite_Patte
     public class ProductTest
     {
         [TestMethod]
-        public void Test()
+        public void GetPriceFromProductReturnsExpectedResult()
         {
             // Arrange
+            var arbitraryPrice = 50;
+            var arbitraryAmount = 2;
+            var sut = new Product(arbitraryPrice, arbitraryAmount);
+
+            var expectedResult = 100;
+
             // Act
+            var result = sut.GetPrice();
+
+            // Assert
+            Assert.AreEqual(expectedResult, result);
+        }
+
+        [DataTestMethod]
+        [DataRow(-1)]
+        [DataRow(int.MinValue)]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void InitializeProductWithInvalidPriceThrowsArgumentOutOfRangeException(int invalidPrice)
+        {
+            // Arrange
+            var arbitraryAmount = 2;
+
+            // Act
+            var sut = new Product(invalidPrice, arbitraryAmount);
+            
+            // Assert
+        }
+        
+        [DataTestMethod]
+        [DataRow(-1)]
+        [DataRow(0)]
+        [DataRow(int.MinValue)]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void InitializeProductWithInvalidAmountThrowsArgumentOutOfRangeException(int invalidAmount)
+        {
+            // Arrange
+            var arbitraryPrice = 30;
+
+            // Act
+            var sut = new Product(arbitraryPrice, invalidAmount);
+            
             // Assert
         }
     }

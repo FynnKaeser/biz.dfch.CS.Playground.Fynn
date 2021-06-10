@@ -18,5 +18,6 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Composite_Pattern
 {
     public interface IOrder
     {
+        int GetPrice();
     }
 }

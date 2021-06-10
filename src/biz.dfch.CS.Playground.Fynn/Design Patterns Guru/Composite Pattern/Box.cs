@@ -14,9 +14,24 @@
  * limitations under the License.
  */
 
+using System.Collections.Generic;
+
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Composite_Pattern
 {
     public class Box : IOrder
     {
+        private IList<Product> products;
+        private IList<Box> innerBoxes;
+
+        public Box(IList<Product> products, IList<Box> innerBoxes)
+        {
+            this.products = products;
+            this.innerBoxes = innerBoxes;
+        }
+
+        public int GetPrice()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
