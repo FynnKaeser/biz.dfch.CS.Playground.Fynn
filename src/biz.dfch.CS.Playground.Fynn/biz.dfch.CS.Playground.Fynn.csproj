@@ -407,6 +407,9 @@
     <Compile Include="Design Patterns Guru\Prototype Pattern\ICloneable.cs" />
     <Compile Include="Design Patterns Guru\Prototype Pattern\LengthUnit.cs" />
     <Compile Include="Design Patterns Guru\Prototype Pattern\Shape.cs" />
+    <Compile Include="Design Patterns Guru\Proxy Pattern\DatabaseService.cs" />
+    <Compile Include="Design Patterns Guru\Proxy Pattern\DatabaseServiceProxy.cs" />
+    <Compile Include="Design Patterns Guru\Proxy Pattern\IDatabaseService.cs" />
     <Compile Include="Design Patterns Guru\Singleton Pattern\GuruSingletonPattern.cs" />
     <Compile Include="ErrorMessage.Designer.cs">
       <AutoGen>True</AutoGen>
