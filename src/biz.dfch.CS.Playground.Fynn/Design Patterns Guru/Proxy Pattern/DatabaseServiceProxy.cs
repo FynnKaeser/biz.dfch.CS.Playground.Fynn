@@ -14,9 +14,59 @@
  * limitations under the License.
  */
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Proxy_Pattern
 {
-    public class DatabaseServiceProxy
+    public class DatabaseServiceProxy : IDatabaseService
     {
+        private readonly int idThreshold = 0;
+        private readonly DatabaseService databaseService;
+        private readonly List<DatabaseEntry> cachedDatabaseEntries;
+
+        public DatabaseServiceProxy()
+        {
+            databaseService = new DatabaseService();
+            cachedDatabaseEntries = new List<DatabaseEntry>();
+        }
+
+        public DatabaseEntry Read(int id)
+        {
+            if (id < idThreshold)
+            {
+                throw new ArgumentOutOfRangeException(nameof(id));
+            }
+
+            var cachedEntry = cachedDatabaseEntries.FirstOrDefault(e => e.Id == id);
+            if (null != cachedEntry)
+            {
+                return cachedEntry;
+            }
+
+            var entry = databaseService.Read(id);
+            if (null != entry)
+            {
+                cachedDatabaseEntries.Add(entry);
+            }
+
+            return entry;
+        }
+
+        public bool Write(int id, string value)
+        {
+            if (id < idThreshold)
+            {
+                throw new ArgumentOutOfRangeException(nameof(id));
+            }
+
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                throw new ArgumentNullException(nameof(value));
+            }
+
+            return databaseService.Write(id, value);
+        }
     }
 }

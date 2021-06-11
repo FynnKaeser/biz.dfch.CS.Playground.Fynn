@@ -14,11 +14,31 @@
  * limitations under the License.
  */
 
+using System;
+
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Proxy_Pattern
 {
-    public interface IDatabaseService
+    public class DatabaseEntry
     {
-        DatabaseEntry Read(int id);
-        bool Write(int id, string value);
+        private readonly int idThreshold = 0;
+
+        public int Id { get; set; }
+        public string Value { get; set; }
+
+        public DatabaseEntry(int id, string value)
+        {
+            if (id < idThreshold)
+            {
+                throw new ArgumentOutOfRangeException(nameof(id));
+            }
+
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                throw new ArgumentNullException(nameof(value));
+            }
+
+            Id = id;
+            Value = value;
+        }
     }
 }

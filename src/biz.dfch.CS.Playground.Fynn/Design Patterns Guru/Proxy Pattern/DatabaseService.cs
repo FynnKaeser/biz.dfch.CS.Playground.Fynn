@@ -17,12 +17,51 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Proxy_Pattern
 {
-    class DatabaseService
+    public class DatabaseService : IDatabaseService
     {
+        private readonly int idThreshold = 0;
+
+        public List<DatabaseEntry> DatabaseEntries { get; }
+
+        public DatabaseService()
+        {
+            DatabaseEntries = new List<DatabaseEntry>();
+        }
+
+        public DatabaseEntry Read(int id)
+        {
+            if (id < idThreshold)
+            {
+                throw new ArgumentOutOfRangeException(nameof(id));
+            }
+
+            var entry = DatabaseEntries.FirstOrDefault(e => e.Id == id);
+            return entry;
+        }
+
+        public bool Write(int id, string value)
+        {
+            if (id < idThreshold)
+            {
+                throw new ArgumentOutOfRangeException(nameof(id));
+            }
+
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                throw new ArgumentNullException(nameof(value));
+            }
+
+            if (DatabaseEntries.Any(entry => entry.Id == id))
+            {
+                return false;
+            }
+
+            var newEntry = new DatabaseEntry(id, value);
+            DatabaseEntries.Add(newEntry);
+            return true;
+        }
     }
 }
