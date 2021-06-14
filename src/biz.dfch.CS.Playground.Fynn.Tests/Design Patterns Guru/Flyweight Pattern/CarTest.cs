@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+using System;
+using biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Flyweight_Pattern;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Flyweight_Pattern
@@ -21,5 +23,98 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Flyweight_Patte
     [TestClass]
     public class CarTest
     {
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void InitializeCarWithNullCarEngineThrowsArgumentNullException()
+        {
+            // Arrange
+            // Act
+            var sut = new Car(null);
+            // Assert
+        }
+
+        [TestMethod]
+        public void DriveForwardsSucceeds()
+        {
+            // Arrange
+            var arbitraryHorsePower = 250;
+            var arbitraryThrust = 5000;
+            var carEngine = new CarEngine(arbitraryHorsePower, arbitraryThrust);
+
+            var sut = new Car(carEngine);
+
+            var expectedPosition = Tuple.Create(1, 0);
+
+            // Act
+            sut.DriveForwards();
+
+            // Assert
+            var resultPosition = sut.Position;
+            Assert.AreEqual(expectedPosition, resultPosition);
+            Assert.AreEqual(expectedPosition, resultPosition);
+        }
+        
+        [TestMethod]
+        public void DriveBackwardsSucceeds()
+        {
+            // Arrange
+            var arbitraryHorsePower = 250;
+            var arbitraryThrust = 5000;
+            var carEngine = new CarEngine(arbitraryHorsePower, arbitraryThrust);
+
+            var sut = new Car(carEngine);
+
+            var expectedPosition = Tuple.Create(-1, 0);
+
+            // Act
+            sut.DriveBackwards();
+
+            // Assert
+            var resultPosition = sut.Position;
+            Assert.AreEqual(expectedPosition, resultPosition);
+            Assert.AreEqual(expectedPosition, resultPosition);
+        }
+        
+        [TestMethod]
+        public void DriveLeftSucceeds()
+        {
+            // Arrange
+            var arbitraryHorsePower = 250;
+            var arbitraryThrust = 5000;
+            var carEngine = new CarEngine(arbitraryHorsePower, arbitraryThrust);
+
+            var sut = new Car(carEngine);
+
+            var expectedPosition = Tuple.Create(0, -1);
+
+            // Act
+            sut.DriveLeft();
+
+            // Assert
+            var resultPosition = sut.Position;
+            Assert.AreEqual(expectedPosition, resultPosition);
+            Assert.AreEqual(expectedPosition, resultPosition);
+        }
+        
+        [TestMethod]
+        public void DriveRightSucceeds()
+        {
+            // Arrange
+            var arbitraryHorsePower = 250;
+            var arbitraryThrust = 5000;
+            var carEngine = new CarEngine(arbitraryHorsePower, arbitraryThrust);
+
+            var sut = new Car(carEngine);
+
+            var expectedPosition = Tuple.Create(0, 1);
+
+            // Act
+            sut.DriveRight();
+
+            // Assert
+            var resultPosition = sut.Position;
+            Assert.AreEqual(expectedPosition, resultPosition);
+            Assert.AreEqual(expectedPosition, resultPosition);
+        }
     }
 }

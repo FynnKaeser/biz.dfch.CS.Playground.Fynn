@@ -14,9 +14,62 @@
  * limitations under the License.
  */
 
+using System;
+
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Flyweight_Pattern
 {
     public class Car
     {
+        private readonly CarEngine carEngine;
+
+        public int Speed { get; }
+        public Tuple<int, int> Position { get; private set; }
+
+        public Car(in CarEngine carEngine)
+        {
+            if (null == carEngine)
+            {
+                throw new ArgumentNullException(nameof(carEngine));
+            }
+
+            Speed = 0;
+            Position = new Tuple<int, int>(0, 0);
+        }
+
+        public void DriveForwards()
+        {
+            // Involve CarEngine
+
+            var oldPosition = Position;
+
+            Position = new Tuple<int, int>(oldPosition.Item1 + 1, oldPosition.Item2);
+        }
+        
+        public void DriveBackwards()
+        {
+            // Involve CarEngine
+
+            var oldPosition = Position;
+
+            Position = new Tuple<int, int>(oldPosition.Item1 - 1, oldPosition.Item2);
+        }
+        
+        public void DriveLeft()
+        {
+            // Involve CarEngine
+
+            var oldPosition = Position;
+
+            Position = new Tuple<int, int>(oldPosition.Item1, oldPosition.Item2 - 1);
+        }
+        
+        public void DriveRight()
+        {
+            // Involve CarEngine
+
+            var oldPosition = Position;
+
+            Position = new Tuple<int, int>(oldPosition.Item1, oldPosition.Item2 + 1);
+        }
     }
 }
