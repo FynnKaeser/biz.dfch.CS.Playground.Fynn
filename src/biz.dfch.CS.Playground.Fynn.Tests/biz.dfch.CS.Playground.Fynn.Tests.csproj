@@ -358,6 +358,7 @@
     <Compile Include="Design Patterns Guru\Decorator Pattern\FileDataSourceTest.cs" />
     <Compile Include="Design Patterns Guru\Factory Pattern\FactoryPatternTest.cs" />
     <Compile Include="Design Patterns Guru\Prototype Pattern\ShapeTest.cs" />
+    <Compile Include="Design Patterns Guru\Proxy Pattern\DatabaseEntryTest.cs" />
     <Compile Include="Design Patterns Guru\Proxy Pattern\DatabaseServiceProxyTest.cs" />
     <Compile Include="Design Patterns Guru\Proxy Pattern\DatabaseServiceTest.cs" />
     <Compile Include="Design Patterns Guru\Singleton Pattern\GuruSingletonPatternTest.cs" />
