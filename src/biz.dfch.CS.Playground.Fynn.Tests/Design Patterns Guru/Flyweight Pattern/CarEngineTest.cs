@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Flyweight_Pattern
+namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Flyweight_Pattern
 {
-    public class Context
+    [TestClass]
+    public class CarEngineTest
     {
     }
 }

@@ -14,9 +14,31 @@
  * limitations under the License.
  */
 
+using System;
+
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Flyweight_Pattern
 {
-    public class IntrinsicState
+    public class CarEngine
     {
+        private readonly int threshold = 1;
+
+        public int HorsePower { get; }
+        public int Thrust { get; }
+
+        public CarEngine(int horsePower, int thrust)
+        {
+            if (horsePower < threshold)
+            {
+                throw new ArgumentOutOfRangeException(nameof(horsePower));
+            }
+            
+            if (thrust < threshold)
+            {
+                throw new ArgumentOutOfRangeException(nameof(thrust));
+            }
+
+            HorsePower = horsePower;
+            Thrust = thrust;
+        }
     }
 }

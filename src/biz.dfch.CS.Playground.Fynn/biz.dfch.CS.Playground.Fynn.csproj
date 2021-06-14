@@ -404,10 +404,9 @@
     <Compile Include="Design Patterns Guru\Factory Pattern\SourceCreator.cs" />
     <Compile Include="Design Patterns Guru\Factory Pattern\SourceDevice.cs" />
     <Compile Include="Design Patterns Guru\Abstract Factory Pattern\IAbstractFactory.cs" />
-    <Compile Include="Design Patterns Guru\Flyweight Pattern\Context.cs" />
-    <Compile Include="Design Patterns Guru\Flyweight Pattern\ExtrinsicState.cs" />
-    <Compile Include="Design Patterns Guru\Flyweight Pattern\IntrinsicState.cs" />
-    <Compile Include="Design Patterns Guru\Flyweight Pattern\IntrinsicStateFactory.cs" />
+    <Compile Include="Design Patterns Guru\Flyweight Pattern\Car.cs" />
+    <Compile Include="Design Patterns Guru\Flyweight Pattern\CarEngine.cs" />
+    <Compile Include="Design Patterns Guru\Flyweight Pattern\CarEngineFactory.cs" />
     <Compile Include="Design Patterns Guru\Prototype Pattern\ICloneable.cs" />
     <Compile Include="Design Patterns Guru\Prototype Pattern\LengthUnit.cs" />
     <Compile Include="Design Patterns Guru\Prototype Pattern\Shape.cs" />

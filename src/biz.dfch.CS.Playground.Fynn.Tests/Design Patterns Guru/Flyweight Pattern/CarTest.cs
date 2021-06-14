@@ -19,7 +19,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Flyweight_Pattern
 {
     [TestClass]
-    public class IntrinsicStateFactoryTest
+    public class CarTest
     {
     }
 }

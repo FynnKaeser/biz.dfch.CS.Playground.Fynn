@@ -16,7 +16,7 @@
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Flyweight_Pattern
 {
-    public class ExtrinsicState
+    public class Car
     {
     }
 }
