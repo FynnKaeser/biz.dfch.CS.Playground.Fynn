@@ -390,6 +390,11 @@
     <Compile Include="Design Patterns Guru\Builder Pattern\Furniture.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\IBuilder.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\FurnitureBuilder.cs" />
+    <Compile Include="Design Patterns Guru\Chain of Responsibility Pattern\Data.cs" />
+    <Compile Include="Design Patterns Guru\Chain of Responsibility Pattern\HandlerBase.cs" />
+    <Compile Include="Design Patterns Guru\Chain of Responsibility Pattern\IHandler.cs" />
+    <Compile Include="Design Patterns Guru\Chain of Responsibility Pattern\TokenHandler.cs" />
+    <Compile Include="Design Patterns Guru\Chain of Responsibility Pattern\ValueHandler.cs" />
     <Compile Include="Design Patterns Guru\Composite Pattern\Box.cs" />
     <Compile Include="Design Patterns Guru\Composite Pattern\IOrder.cs" />
     <Compile Include="Design Patterns Guru\Composite Pattern\Product.cs" />
