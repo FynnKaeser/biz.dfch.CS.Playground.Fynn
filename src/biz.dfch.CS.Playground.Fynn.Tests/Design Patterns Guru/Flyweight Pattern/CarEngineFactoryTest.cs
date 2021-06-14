@@ -72,6 +72,8 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Flyweight_Patte
 
             // Act
             sut.GetCarEngine(invalidHorsePower, arbitraryThrust);
+
+            // Assert
         }
 
         [DataTestMethod]
@@ -88,6 +90,8 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Flyweight_Patte
 
             // Act
             sut.GetCarEngine(arbitraryHorsePower, invalidThrust);
+
+            // Assert
         }
     }
 }
