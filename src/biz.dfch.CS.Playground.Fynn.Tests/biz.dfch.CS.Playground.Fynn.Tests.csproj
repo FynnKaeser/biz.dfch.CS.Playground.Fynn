@@ -353,6 +353,7 @@
     <Compile Include="Design Patterns Guru\Builder Pattern\FurnitureTest.cs" />
     <Compile Include="Design Patterns Guru\Chain of Responsibility Pattern\DataTest.cs" />
     <Compile Include="Design Patterns Guru\Chain of Responsibility Pattern\HandlerBaseTest.cs" />
+    <Compile Include="Design Patterns Guru\Chain of Responsibility Pattern\PatternTest.cs" />
     <Compile Include="Design Patterns Guru\Chain of Responsibility Pattern\TokenHandlerTest.cs" />
     <Compile Include="Design Patterns Guru\Chain of Responsibility Pattern\ValueHandlerTest.cs" />
     <Compile Include="Design Patterns Guru\Composite Pattern\BoxTest.cs" />

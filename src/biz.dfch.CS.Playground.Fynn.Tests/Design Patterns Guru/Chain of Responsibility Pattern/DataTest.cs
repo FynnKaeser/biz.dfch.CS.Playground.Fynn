@@ -15,7 +15,6 @@
  */
 
 using System;
-using System.Xml.Serialization;
 using biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Chain_of_Responsibility_Pattern;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
