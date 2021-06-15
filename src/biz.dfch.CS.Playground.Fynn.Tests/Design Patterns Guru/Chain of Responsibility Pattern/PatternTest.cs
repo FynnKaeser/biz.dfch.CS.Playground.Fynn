@@ -23,7 +23,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Chain_of_Respon
     public class PatternTest
     {
         [TestMethod]
-        public void ChainSetNetSucceeds()
+        public void ChainSetNextSucceeds()
         {
             // Arrange
             var valueHandler = new ValueHandler();
