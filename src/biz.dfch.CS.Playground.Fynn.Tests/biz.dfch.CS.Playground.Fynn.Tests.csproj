@@ -351,11 +351,14 @@
     <Compile Include="Design Patterns Guru\Builder Pattern\DirectorTest.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\FurnitureBuilderTest.cs" />
     <Compile Include="Design Patterns Guru\Builder Pattern\FurnitureTest.cs" />
+    <Compile Include="Design Patterns Guru\Command Pattern\ButtonTest.cs" />
     <Compile Include="Design Patterns Guru\Chain of Responsibility Pattern\DataTest.cs" />
     <Compile Include="Design Patterns Guru\Chain of Responsibility Pattern\HandlerBaseTest.cs" />
     <Compile Include="Design Patterns Guru\Chain of Responsibility Pattern\PatternTest.cs" />
     <Compile Include="Design Patterns Guru\Chain of Responsibility Pattern\TokenHandlerTest.cs" />
     <Compile Include="Design Patterns Guru\Chain of Responsibility Pattern\ValueHandlerTest.cs" />
+    <Compile Include="Design Patterns Guru\Command Pattern\CopyCommandTest.cs" />
+    <Compile Include="Design Patterns Guru\Command Pattern\SaveCommandTest.cs" />
     <Compile Include="Design Patterns Guru\Composite Pattern\BoxTest.cs" />
     <Compile Include="Design Patterns Guru\Composite Pattern\ProductTest.cs" />
     <Compile Include="Design Patterns Guru\Decorator Pattern\DataSourceDecoratorTest.cs" />
@@ -369,6 +372,7 @@
     <Compile Include="Design Patterns Guru\Proxy Pattern\DatabaseEntryTest.cs" />
     <Compile Include="Design Patterns Guru\Proxy Pattern\DatabaseServiceProxyTest.cs" />
     <Compile Include="Design Patterns Guru\Proxy Pattern\DatabaseServiceTest.cs" />
+    <Compile Include="Design Patterns Guru\Command Pattern\ShortcutTest.cs" />
     <Compile Include="Design Patterns Guru\Singleton Pattern\GuruSingletonPatternTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

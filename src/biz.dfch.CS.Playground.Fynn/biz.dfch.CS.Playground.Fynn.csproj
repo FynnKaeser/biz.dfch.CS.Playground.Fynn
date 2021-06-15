@@ -395,6 +395,11 @@
     <Compile Include="Design Patterns Guru\Chain of Responsibility Pattern\IHandler.cs" />
     <Compile Include="Design Patterns Guru\Chain of Responsibility Pattern\TokenHandler.cs" />
     <Compile Include="Design Patterns Guru\Chain of Responsibility Pattern\ValueHandler.cs" />
+    <Compile Include="Design Patterns Guru\Command Pattern\Button.cs" />
+    <Compile Include="Design Patterns Guru\Command Pattern\CopyCommand.cs" />
+    <Compile Include="Design Patterns Guru\Command Pattern\ICommand.cs" />
+    <Compile Include="Design Patterns Guru\Command Pattern\SaveCommand.cs" />
+    <Compile Include="Design Patterns Guru\Command Pattern\Shortcut.cs" />
     <Compile Include="Design Patterns Guru\Composite Pattern\Box.cs" />
     <Compile Include="Design Patterns Guru\Composite Pattern\IOrder.cs" />
     <Compile Include="Design Patterns Guru\Composite Pattern\Product.cs" />
