@@ -41,7 +41,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Chain_of_Respon
         }
 
         [TestMethod]
-        public void HandleRequestWithInvalidTokenReturnsFalse()
+        public void HandleRequestWithInvalidValueReturnsFalse()
         {
             // Arrange
             var sut = new ValueHandler();

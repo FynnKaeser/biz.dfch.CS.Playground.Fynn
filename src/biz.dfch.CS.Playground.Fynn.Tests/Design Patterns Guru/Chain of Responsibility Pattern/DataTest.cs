@@ -67,8 +67,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Chain_of_Respon
         {
             // Arrange
             var arbitraryToken = "$TestToken$";
-
-
+            
             // Act
             var sut = new Data(arbitraryToken, invalidValue);
 

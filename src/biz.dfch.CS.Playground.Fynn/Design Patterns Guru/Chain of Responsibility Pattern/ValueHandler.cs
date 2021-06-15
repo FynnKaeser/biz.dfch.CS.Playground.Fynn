@@ -22,7 +22,24 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Chain_of_Responsibili
     {
         public override bool HandleRequest(Data data)
         {
-            throw new NotImplementedException();
+            if (null == data)
+            {
+                throw new ArgumentNullException(nameof(data));
+            }
+
+            var value = data.Value;
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                throw new ArgumentNullException(nameof(value));
+            }
+
+            if (int.TryParse(value, out var result))
+            {
+                return true;
+            }
+
+            return base.HandleRequest(data);
+
         }
     }
 }

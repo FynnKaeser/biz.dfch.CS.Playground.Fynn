@@ -25,7 +25,18 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Chain_of_Responsibili
 
         public Data(string token, string value)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrWhiteSpace(token))
+            {
+                throw new ArgumentNullException(nameof(token));
+            }
+            
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                throw new ArgumentNullException(nameof(value));
+            }
+
+            Token = token;
+            Value = value;
         }
     }
 }

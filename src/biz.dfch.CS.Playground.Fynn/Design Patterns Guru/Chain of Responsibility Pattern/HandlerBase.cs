@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+using System;
+
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Chain_of_Responsibility_Pattern
 {
     public abstract class HandlerBase : IHandler
@@ -22,12 +24,24 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Chain_of_Responsibili
 
         public IHandler SetNext(IHandler handler)
         {
-            throw new System.NotImplementedException();
+            nextHandler = handler ?? throw new ArgumentNullException(nameof(handler));
+
+            return nextHandler;
         }
 
         public virtual bool HandleRequest(Data data)
         {
-            throw new System.NotImplementedException();
+            if (null == data)
+            {
+                throw new ArgumentNullException(nameof(data));
+            }
+
+            if (null == nextHandler)
+            {
+                return false;
+            }
+
+            return nextHandler.HandleRequest(data);
         }
     }
 }

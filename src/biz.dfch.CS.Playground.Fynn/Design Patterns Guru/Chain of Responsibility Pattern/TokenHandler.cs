@@ -15,14 +15,33 @@
  */
 
 using System;
+using System.Linq;
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Chain_of_Responsibility_Pattern
 {
     public class TokenHandler : HandlerBase
     {
+        private readonly char tokenSymbol = '$';
+
         public override bool HandleRequest(Data data)
         {
-            throw new NotImplementedException();
+            if (null == data)
+            {
+                throw new ArgumentNullException(nameof(data));
+            }
+
+            var token = data.Token;
+            if (string.IsNullOrWhiteSpace(token))
+            {
+                throw new ArgumentNullException(nameof(token));
+            }
+
+            if (token.FirstOrDefault() == tokenSymbol && token.LastOrDefault() == tokenSymbol)
+            {
+                return true;
+            }
+            
+            return base.HandleRequest(data);
         }
     }
 }
