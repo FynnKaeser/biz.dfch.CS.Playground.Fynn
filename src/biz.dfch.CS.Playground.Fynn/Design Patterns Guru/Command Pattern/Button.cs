@@ -19,5 +19,10 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Command_Pattern
     public class Button
     {
         private readonly ICommand command;
+
+        public string OnPress()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

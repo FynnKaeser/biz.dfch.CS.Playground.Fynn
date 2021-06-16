@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+using biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Command_Pattern;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Command_Pattern
@@ -21,5 +22,18 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Command_Pattern
     [TestClass]
     public class ButtonTest
     {
+        [TestMethod]
+        public void OnClickSucceeds()
+        {
+            // Arrange
+            var sut = new Button();
+            var expectedResult = "Has Been Saved!";
+
+            // Act
+            var result = sut.OnPress();
+
+            // Assert
+            Assert.AreEqual(expectedResult, result);
+        }
     }
 }
