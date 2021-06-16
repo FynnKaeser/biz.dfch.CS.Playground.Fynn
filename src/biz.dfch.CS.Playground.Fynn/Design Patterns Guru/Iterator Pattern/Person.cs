@@ -24,7 +24,14 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Iterator_Pattern
         public string Name { get; set; }
         public Class Class { get; set; }
         public List<Person> Friends { get; set; }
-        
+
+        public Person(string name, Class @class, List<Person> friends)
+        {
+            Name = name;
+            Class = @class;
+            Friends = friends;
+        }
+
         public IIterator<Person> GetIterator<TIterator>() where TIterator : IIterator<Person>
         {
             throw new System.NotImplementedException();

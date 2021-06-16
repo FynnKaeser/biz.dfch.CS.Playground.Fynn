@@ -368,6 +368,8 @@
     <Compile Include="Design Patterns Guru\Flyweight Pattern\CarTest.cs" />
     <Compile Include="Design Patterns Guru\Flyweight Pattern\CarEngineTest.cs" />
     <Compile Include="Design Patterns Guru\Flyweight Pattern\CarEngineFactoryTest.cs" />
+    <Compile Include="Design Patterns Guru\Iterator Pattern\PersonClassmatesIteratorTest.cs" />
+    <Compile Include="Design Patterns Guru\Iterator Pattern\PersonFriendsIteratorTest.cs" />
     <Compile Include="Design Patterns Guru\Prototype Pattern\ShapeTest.cs" />
     <Compile Include="Design Patterns Guru\Proxy Pattern\DatabaseEntryTest.cs" />
     <Compile Include="Design Patterns Guru\Proxy Pattern\DatabaseServiceProxyTest.cs" />
@@ -389,7 +391,6 @@
   <ItemGroup>
     <Folder Include="20191025\" />
     <Folder Include="20191028\" />
-    <Folder Include="Design Patterns Guru\Iterator Pattern\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

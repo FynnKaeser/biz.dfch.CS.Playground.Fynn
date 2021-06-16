@@ -14,13 +14,15 @@
  * limitations under the License.
  */
 
-using System.Collections.Generic;
-
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Iterator_Pattern
 {
     public class Class
     {
         public string ClassName { get; set; }
-        public List<Person> Students { get; set; }
+
+        public Class(string className)
+        {
+            ClassName = className;
+        }
     }
 }
