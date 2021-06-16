@@ -49,5 +49,21 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Command_Pattern
             // Assert
             Assert.AreEqual(expectedResult, result);
         }
+
+
+        [TestMethod]
+        public void CommandsGetSwitchedSuccessfully()
+        {
+            // Arrange
+            var sut = new Shortcut();
+            var expectedCopyResult = "Has Been Copied!";
+            var expectedSaveResult = "Has Been Saved!";
+
+            // Act & Assert
+            Assert.AreEqual(expectedSaveResult, sut.OnSave());
+            Assert.AreEqual(expectedCopyResult, sut.OnCopy());
+            Assert.AreEqual(expectedSaveResult, sut.OnSave());
+            Assert.AreEqual(expectedCopyResult, sut.OnCopy());
+        }
     }
 }
