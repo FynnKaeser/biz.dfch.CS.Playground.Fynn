@@ -20,16 +20,38 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Command_Pattern
 {
     public class Shortcut
     {
-        private readonly ICommand command;
+        private ICommand command;
 
         public string OnSave()
         {
-            throw new NotImplementedException();
+            if (null == command)
+            {
+                command = new SaveCommand();
+            }
+
+            if (command is SaveCommand)
+            {
+                return command.Execute();
+            }
+
+            command = new SaveCommand();
+            return command.Execute();
         }
 
         public string OnCopy()
         {
-            throw new NotImplementedException();
+            if (null == command)
+            {
+                command = new CopyCommand();
+            }
+
+            if (command is CopyCommand)
+            {
+                return command.Execute();
+            }
+
+            command = new CopyCommand();
+            return command.Execute();
         }
     }
 }

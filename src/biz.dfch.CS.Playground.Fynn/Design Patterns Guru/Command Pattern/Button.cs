@@ -20,9 +20,14 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Command_Pattern
     {
         private readonly ICommand command;
 
+        public Button()
+        {
+            command = new SaveCommand();
+        }
+
         public string OnPress()
         {
-            throw new System.NotImplementedException();
+            return command.Execute();
         }
     }
 }

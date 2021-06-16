@@ -14,15 +14,13 @@
  * limitations under the License.
  */
 
-using System;
-
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Command_Pattern
 {
     public class SaveCommand : ICommand
     {
         public string Execute()
         {
-            throw new NotImplementedException();
+            return "Has Been Saved!";
         }
     }
 }
