@@ -18,6 +18,6 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Command_Pattern
 {
     public interface ICommand
     {
-        void Execute();
+        string Execute();
     }
 }

@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+using biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Command_Pattern;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Command_Pattern
@@ -21,5 +22,18 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Command_Pattern
     [TestClass]
     public class CopyCommandTest
     {
+        [TestMethod]
+        public void ExecuteCommandSucceeds()
+        {
+            // Arrange
+            var sut = new CopyCommand();
+            var expectedResult = "Has Been Copied!";
+
+            // Act
+            var result = sut.Execute();
+
+            // Assert
+            Assert.AreEqual(expectedResult, result);
+        }
     }
 }

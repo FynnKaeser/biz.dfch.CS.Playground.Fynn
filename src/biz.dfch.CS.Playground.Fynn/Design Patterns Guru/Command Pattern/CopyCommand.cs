@@ -20,7 +20,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Command_Pattern
 {
     public class CopyCommand : ICommand
     {
-        public void Execute()
+        public string Execute()
         {
             throw new NotImplementedException();
         }

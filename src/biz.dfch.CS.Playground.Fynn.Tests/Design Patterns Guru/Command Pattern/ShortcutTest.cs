@@ -41,7 +41,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Command_Pattern
         {
             // Arrange
             var sut = new Shortcut();
-            var expectedResult = "Has Been Saved!";
+            var expectedResult = "Has Been Copied!";
 
             // Act
             var result = sut.OnCopy();
