@@ -368,6 +368,7 @@
     <Compile Include="Design Patterns Guru\Flyweight Pattern\CarTest.cs" />
     <Compile Include="Design Patterns Guru\Flyweight Pattern\CarEngineTest.cs" />
     <Compile Include="Design Patterns Guru\Flyweight Pattern\CarEngineFactoryTest.cs" />
+    <Compile Include="Design Patterns Guru\Iterator Pattern\ClassTest.cs" />
     <Compile Include="Design Patterns Guru\Iterator Pattern\PersonClassmatesIteratorTest.cs" />
     <Compile Include="Design Patterns Guru\Iterator Pattern\PersonFriendsIteratorTest.cs" />
     <Compile Include="Design Patterns Guru\Prototype Pattern\ShapeTest.cs" />
