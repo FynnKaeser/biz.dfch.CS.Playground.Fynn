@@ -15,25 +15,64 @@
  */
 
 using System;
+using System.Collections.Generic;
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Iterator_Pattern
 {
     public class PersonClassmatesIterator : IIterator<Person>
     {
+        private readonly List<Person> friends;
+        private readonly Class personClass;
+        private readonly int friendsCount;
+        private int counter;
+
         public Person Current { get; }
+
+        public PersonClassmatesIterator(Person person)
+        {
+            Current = person ?? throw new ArgumentNullException(nameof(person));
+            friends = person.Friends ?? new List<Person>();
+            personClass = person.Class ?? throw new ArgumentNullException(nameof(person.Class));
+            friendsCount = friends.Count;
+        }
+
         public Person GetNext()
         {
-            throw new NotImplementedException();
+            return HasMore() ? friends[counter++] : null;
         }
 
         public bool HasMore()
         {
-            throw new NotImplementedException();
+            if (counter == friendsCount)
+            {
+                return false;
+            }
+
+            var friend = friends[counter];
+            if (null == friend)
+            {
+                return false;
+            }
+
+            var friendClass = friend.Class;
+            if (null == friendClass)
+            {
+                counter++;
+                return HasMore();
+            }
+
+            if (personClass.Equals(friendClass))
+            {
+                return true;
+            }
+
+            counter++;
+            return HasMore();
         }
 
         public void Reset()
         {
-            throw new NotImplementedException();
+            counter = 0;
         }
     }
 }

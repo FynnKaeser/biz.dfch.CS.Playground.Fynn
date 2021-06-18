@@ -49,7 +49,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Iterator_Pattern
             switch (typeName)
             {
                 case nameof(PersonClassmatesIterator):
-                    return new PersonClassmatesIterator();
+                    return new PersonClassmatesIterator(this);
                 case nameof(PersonFriendsIterator):
                     return new PersonFriendsIterator();
                 default:
