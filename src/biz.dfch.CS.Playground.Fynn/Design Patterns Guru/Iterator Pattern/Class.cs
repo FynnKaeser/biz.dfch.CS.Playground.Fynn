@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+using System;
+
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Iterator_Pattern
 {
     public class Class
@@ -22,7 +24,35 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Iterator_Pattern
 
         public Class(string className)
         {
+            if (string.IsNullOrWhiteSpace(className))
+            {
+                throw new ArgumentNullException(nameof(className));
+            }
+
             ClassName = className;
+        }
+
+        private bool Equals(Class other)
+        {
+            if (null == other) return false;
+
+            return ClassName?.Equals(other.ClassName) ?? ClassName == other.ClassName;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != GetType()) return false;
+
+            return Equals((Class)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            var hashClassName = string.IsNullOrWhiteSpace(ClassName) ? 0 : ClassName.GetHashCode();
+
+            return hashClassName;
         }
     }
 }

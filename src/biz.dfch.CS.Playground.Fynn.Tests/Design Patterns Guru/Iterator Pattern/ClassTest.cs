@@ -87,7 +87,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Iterator_Patter
             // Arrange
             var arbitraryClassName = "A-Class";
             var sut = new Class(arbitraryClassName);
-            var expectedHashCode = 42;
+            var expectedHashCode = 1506580840;
 
             // Act
             var result = sut.GetHashCode();

@@ -140,7 +140,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Iterator_Patter
             var arbitraryClass = new Class(arbitraryClassName);
             var sut = new Person(arbitraryName, arbitraryClass, arbitraryFriends);
 
-            var expectedHashCode = 42;
+            var expectedHashCode = 953674107;
 
             // Act
             var result = sut.GetHashCode();

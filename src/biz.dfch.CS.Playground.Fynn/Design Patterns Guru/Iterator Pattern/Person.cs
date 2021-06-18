@@ -15,7 +15,9 @@
  */
 
 
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Iterator_Pattern
 {
@@ -27,14 +29,59 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Iterator_Pattern
 
         public Person(string name, Class @class, List<Person> friends)
         {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new ArgumentNullException(nameof(name));
+            }
+
             Name = name;
-            Class = @class;
-            Friends = friends;
+            Class = @class ?? throw new ArgumentNullException(nameof(@class));
+            Friends = friends ?? throw new ArgumentNullException(nameof(friends));
         }
 
-        public IIterator<Person> GetIterator<TIterator>() where TIterator : IIterator<Person>
+        public IIterator<Person> GetIterator<TIterator>(string typeName) where TIterator : IIterator<Person>
         {
-            throw new System.NotImplementedException();
+            if (string.IsNullOrWhiteSpace(typeName))
+            {
+                throw new ArgumentNullException(nameof(typeName));
+            }
+
+            switch (typeName)
+            {
+                case nameof(PersonClassmatesIterator):
+                    return new PersonClassmatesIterator();
+                case nameof(PersonFriendsIterator):
+                    return new PersonFriendsIterator();
+                default:
+                    return null;
+            }
+        }
+
+        private bool Equals(Person other)
+        {
+            if (null == other) return false;
+
+            return Name == null ? Name == other.Name : Name.Equals(other.Name)
+                                                       && Class.Equals(other.Class)
+                                                       && Friends.SequenceEqual(other.Friends);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != GetType()) return false;
+
+            return Equals((Person)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            var hashName = string.IsNullOrWhiteSpace(Name) ? 0 : Name.GetHashCode();
+            var hashClass = Class.GetHashCode();
+            var hashFriends = Friends.GetHashCode();
+
+            return hashName ^ hashClass ^ hashFriends;
         }
     }
 }
