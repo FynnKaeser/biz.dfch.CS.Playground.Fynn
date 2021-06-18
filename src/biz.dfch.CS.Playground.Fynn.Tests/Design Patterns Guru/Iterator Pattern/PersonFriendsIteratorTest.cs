@@ -39,7 +39,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Iterator_Patter
             // Arrange
             var person = new Person("Fynn", new Class("A-Class"), listOfPersons);
 
-            var sut = person.GetIterator<PersonFriendsIterator>();
+            var sut = person.GetIterator<PersonFriendsIterator>(nameof(PersonFriendsIteratorSucceeds));
 
             // Act & Assert
             var counter = 0;

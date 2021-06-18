@@ -18,6 +18,6 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Iterator_Pattern
 {
     public interface IIterable<TElement>
     {
-        IIterator<TElement> GetIterator<TIterator>() where TIterator : IIterator<TElement>;
+        IIterator<TElement> GetIterator<TIterator>(string typeName) where TIterator : IIterator<TElement>;
     }
 }
