@@ -40,8 +40,19 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Iterator_Patter
         public void PersonClassmateIteratorSucceeds()
         {
             // Arrange
+
+            // Setting Class Property of Person to Null, as not possible due Class Constructor
+            listOfPersons[2].Class = null;
+            listOfPersons[3].Class = null;
+
             var person = new Person("Fynn", new Class("A-Class"), listOfPersons);
-            var expectedPersons = listOfPersons.Where(p => p != null && p.Class.ClassName == person.Class.ClassName).ToList();
+            var expectedPersons = new List<Person>
+            {
+                new Person("Alex", new Class("A-Class") , new List<Person>()),
+                new Person("Müller", new Class("A-Class"), new List<Person>()),
+                new Person("Lucas", new Class("A-Class"), new List<Person>())
+
+            };
             var expectedCount = expectedPersons.Count;
 
             var sut = person.GetIterator<PersonClassmatesIterator>(nameof(PersonClassmatesIterator));

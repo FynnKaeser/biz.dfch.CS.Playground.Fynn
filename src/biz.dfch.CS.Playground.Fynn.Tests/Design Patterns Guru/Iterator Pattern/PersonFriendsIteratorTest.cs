@@ -43,7 +43,15 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Iterator_Patter
             var person = new Person("Fynn", new Class("A-Class"), listOfPersons);
 
             var sut = person.GetIterator<PersonFriendsIterator>(nameof(PersonFriendsIterator));
-            var expectedPersons = listOfPersons.Where(p => p != null).ToList();
+            var expectedPersons = new List<Person>
+            {
+                new Person("Alex", new Class("A-Class") , new List<Person>()),
+                new Person("Meier", new Class("B-Class"), new List<Person>()),
+                new Person("Laura", new Class("B-Class"), new List<Person>()),
+                new Person("Müller", new Class("A-Class"), new List<Person>()),
+                new Person("Lucas", new Class("A-Class"), new List<Person>()),
+                new Person("Peter", new Class("B-Class"), new List<Person>())
+            };
 
             // Act & Assert
             var counter = 0;
