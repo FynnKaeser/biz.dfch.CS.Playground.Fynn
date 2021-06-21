@@ -16,6 +16,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Iterator_Pattern
 {
@@ -31,6 +32,8 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Iterator_Pattern
             Current = person ?? throw new ArgumentNullException(nameof(person));
             friends = person.Friends ?? new List<Person>();
             personClass = person.Class ?? throw new ArgumentNullException(nameof(person.Class));
+
+            friends = friends.Where(p => p != null).ToList();
             friendsCount = friends.Count;
         }
 
@@ -43,19 +46,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Iterator_Pattern
 
         public bool HasMore()
         {
-            if (counter == friendsCount)
-            {
-                return false;
-            }
-
-            var friend = friends[counter];
-            if (null == friend)
-            {
-                counter++;
-                return HasMore();
-            }
-
-            return true;
+            return counter != friendsCount;
         }
 
         public void Reset()
