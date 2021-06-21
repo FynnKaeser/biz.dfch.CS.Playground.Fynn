@@ -51,7 +51,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Iterator_Pattern
                 case nameof(PersonClassmatesIterator):
                     return new PersonClassmatesIterator(this);
                 case nameof(PersonFriendsIterator):
-                    return new PersonFriendsIterator();
+                    return new PersonFriendsIterator(this);
                 default:
                     return null;
             }
