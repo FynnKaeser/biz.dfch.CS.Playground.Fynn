@@ -15,6 +15,7 @@
  */
 
 using System.Collections.Generic;
+using System.Linq;
 using biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Iterator_Pattern;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -26,11 +27,13 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Iterator_Patter
         private readonly List<Person> listOfPersons = new List<Person>
         {
             new Person("Alex", new Class("A-Class") , new List<Person>()),
+            null,
             new Person("Meier", new Class("B-Class"), new List<Person>()),
             new Person("Laura", new Class("B-Class"), new List<Person>()),
             new Person("Müller", new Class("A-Class"), new List<Person>()),
+            null,
             new Person("Lucas", new Class("A-Class"), new List<Person>()),
-            new Person("Peter", new Class("B-Class"), new List<Person>()),
+            new Person("Peter", new Class("B-Class"), new List<Person>())
         };
 
         [TestMethod]
@@ -40,13 +43,14 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Iterator_Patter
             var person = new Person("Fynn", new Class("A-Class"), listOfPersons);
 
             var sut = person.GetIterator<PersonFriendsIterator>(nameof(PersonFriendsIterator));
+            var expectedPersons = listOfPersons.Where(p => p != null).ToList();
 
             // Act & Assert
             var counter = 0;
             while (sut.HasMore())
             {
                 var personToAssert = sut.GetNext();
-                var expectedPerson = listOfPersons[counter];
+                var expectedPerson = expectedPersons[counter];
 
                 Assert.AreEqual(expectedPerson, personToAssert);
 

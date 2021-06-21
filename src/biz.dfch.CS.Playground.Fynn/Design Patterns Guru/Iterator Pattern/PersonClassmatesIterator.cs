@@ -51,7 +51,8 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Iterator_Pattern
             var friend = friends[counter];
             if (null == friend)
             {
-                return false;
+                counter++;
+                return HasMore();
             }
 
             var friendClass = friend.Class;
