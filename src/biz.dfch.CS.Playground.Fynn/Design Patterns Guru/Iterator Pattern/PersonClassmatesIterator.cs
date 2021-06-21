@@ -35,7 +35,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Iterator_Pattern
 
             var personClass = person.Class ?? throw new ArgumentNullException(nameof(person.Class));
 
-            friends = friends.Where(p => p?.Class != null && p.Class.ClassName == personClass.ClassName).ToList();
+            friends = friends.Where(p => p?.Class != null && p.Class.Equals(personClass)).ToList();
             friendsCount = friends.Count;
         }
 
