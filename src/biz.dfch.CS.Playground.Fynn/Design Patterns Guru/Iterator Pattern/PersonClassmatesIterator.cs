@@ -23,7 +23,6 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Iterator_Pattern
     public class PersonClassmatesIterator : IIterator<Person>
     {
         private readonly List<Person> friends;
-        private readonly Class personClass;
         private readonly int friendsCount;
         private int counter;
 
@@ -33,7 +32,8 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Iterator_Pattern
         {
             Current = person ?? throw new ArgumentNullException(nameof(person));
             friends = person.Friends ?? new List<Person>();
-            personClass = person.Class ?? throw new ArgumentNullException(nameof(person.Class));
+
+            var personClass = person.Class ?? throw new ArgumentNullException(nameof(person.Class));
 
             friends = friends.Where(p => p?.Class != null && p.Class.ClassName == personClass.ClassName).ToList();
             friendsCount = friends.Count;
