@@ -16,42 +16,54 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Iterator_Pattern
 {
     public class PersonClassmatesIterator : IIterator<Person>
     {
-        private readonly List<Person> friends;
-        private readonly int friendsCount;
-        private int counter;
+        private readonly IEnumerator<Person> friendEnumerator;
 
-        public Person Current { get; }
+        private bool hasMore;
+
+        public Person Current { get; private set; } = null;
 
         public PersonClassmatesIterator(Person person)
         {
-            Current = person ?? throw new ArgumentNullException(nameof(person));
-            friends = person.Friends ?? new List<Person>();
+            Contract.Assert(null != person);
+
+            var friends = person.Friends ?? new List<Person>();
 
             var personClass = person.Class ?? throw new ArgumentNullException(nameof(person.Class));
 
-            friends = friends.Where(p => p?.Class != null && p.Class.Equals(personClass)).ToList();
-            friendsCount = friends.Count;
+            friendEnumerator = friends
+                .Where(p => p?.Class != null && p.Class.Equals(personClass))
+                .GetEnumerator();
+
+            Reset();
         }
 
         public Person GetNext()
         {
-            return HasMore() ? friends[counter++] : null;
+            hasMore = friendEnumerator.MoveNext();
+
+            var current = Current;
+            Current = hasMore 
+                ? friendEnumerator.Current
+                : default;
+            return current;
         }
 
         public bool HasMore()
         {
-            return counter != friendsCount;
+            return hasMore;
         }
 
         public void Reset()
         {
-            counter = 0;
+            friendEnumerator.Reset();
+            GetNext();
         }
     }
 }
