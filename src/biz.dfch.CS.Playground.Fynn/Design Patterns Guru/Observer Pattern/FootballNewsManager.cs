@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+using System;
 using System.Collections.Generic;
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Observer_Pattern
@@ -29,17 +30,35 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Observer_Pattern
 
         public void Subscribe(INewsApp newsApp)
         {
-            throw new System.NotImplementedException();
+            if (null == newsApp)
+            {
+                throw new ArgumentNullException(nameof(newsApp));
+            }
+
+            Listeners.Add(newsApp);
         }
 
         public void Unsubscribe(INewsApp newsApp)
         {
-            throw new System.NotImplementedException();
+            if (null == newsApp)
+            {
+                throw new ArgumentNullException(nameof(newsApp));
+            }
+
+            Listeners.Remove(newsApp);
         }
 
         public void Notify(string message)
         {
-            throw new System.NotImplementedException();
+            if (string.IsNullOrWhiteSpace(message))
+            {
+                throw new ArgumentException(nameof(message));
+            }
+
+            foreach (var listener in Listeners)
+            {
+                listener.Update(message);
+            }
         }
     }
 }

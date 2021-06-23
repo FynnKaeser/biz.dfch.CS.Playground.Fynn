@@ -24,7 +24,12 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Observer_Pattern
 
         public void Update(string message)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrWhiteSpace(message))
+            {
+                throw new ArgumentException(nameof(message));    
+            }
+
+            Message = message;
         }
     }
 }
