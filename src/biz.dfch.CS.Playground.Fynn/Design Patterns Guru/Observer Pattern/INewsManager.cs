@@ -20,7 +20,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Observer_Pattern
 {
     public interface INewsManager
     {
-        HashSet<INewsApp> Listeners { get; }
+        HashSet<INewsApp> Subscribers { get; }
         void Subscribe(INewsApp newsApp);
         void Unsubscribe(INewsApp newsApp);
         void Notify(string message);

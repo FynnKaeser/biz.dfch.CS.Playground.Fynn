@@ -21,11 +21,11 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Observer_Pattern
 {
     public class FootballNewsManager : INewsManager
     {
-        public HashSet<INewsApp> Listeners { get; }
+        public HashSet<INewsApp> Subscribers { get; }
 
         public FootballNewsManager()
         {
-            Listeners = new HashSet<INewsApp>();
+            Subscribers = new HashSet<INewsApp>();
         }
 
         public void Subscribe(INewsApp newsApp)
@@ -35,7 +35,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Observer_Pattern
                 throw new ArgumentNullException(nameof(newsApp));
             }
 
-            Listeners.Add(newsApp);
+            Subscribers.Add(newsApp);
         }
 
         public void Unsubscribe(INewsApp newsApp)
@@ -45,7 +45,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Observer_Pattern
                 throw new ArgumentNullException(nameof(newsApp));
             }
 
-            Listeners.Remove(newsApp);
+            Subscribers.Remove(newsApp);
         }
 
         public void Notify(string message)
@@ -55,7 +55,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Observer_Pattern
                 throw new ArgumentException(nameof(message));
             }
 
-            foreach (var listener in Listeners)
+            foreach (var listener in Subscribers)
             {
                 listener.Update(message);
             }

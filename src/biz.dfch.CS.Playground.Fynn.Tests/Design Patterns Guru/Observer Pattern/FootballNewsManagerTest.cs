@@ -24,7 +24,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Observer_Patter
     public class FootballNewsManagerTest
     {
         [TestMethod]
-        public void SubscribeListenerSucceeds()
+        public void SubscribeSubscriberSucceeds()
         {
             // Arrange
             var sut = new FootballNewsManager();
@@ -34,7 +34,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Observer_Patter
             sut.Subscribe(arbitraryListener);
 
             // Assert
-            var result = sut.Listeners.Contains(arbitraryListener);
+            var result = sut.Subscribers.Contains(arbitraryListener);
             Assert.IsTrue(result);
         }
         
@@ -52,7 +52,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Observer_Patter
         }
 
         [TestMethod]
-        public void UnsubscribeListenerSucceeds()
+        public void UnsubscribeSubscriberSucceeds()
         {
             // Arrange
             var sut = new FootballNewsManager();
@@ -63,7 +63,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Observer_Patter
             sut.Unsubscribe(arbitraryListener);
 
             // Assert
-            var result = sut.Listeners.Contains(arbitraryListener);
+            var result = sut.Subscribers.Contains(arbitraryListener);
             Assert.IsFalse(result);
         }
 
@@ -81,7 +81,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Observer_Patter
         }
 
         [TestMethod]
-        public void NotifyListenersSucceeds()
+        public void NotifySubscribersSucceeds()
         {
             // Arrange
             var sut = new FootballNewsManager();
@@ -105,7 +105,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Observer_Patter
         [DataRow("")]
         [DataRow(" ")]
         [ExpectedException(typeof(ArgumentException))]
-        public void NotifyListenersWithInvalidMessageThrowsArgumentException(string invalidMessage)
+        public void NotifySubscribersWithInvalidMessageThrowsArgumentException(string invalidMessage)
         {
             // Arrange
             var sut = new FootballNewsManager();
