@@ -15,7 +15,6 @@
  */
 
 using System.Collections.Generic;
-using System.Linq;
 using biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Iterator_Pattern;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -70,6 +69,132 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Iterator_Patter
             }
 
             Assert.AreEqual(expectedCount, counter);
+        }
+
+        [TestMethod]
+        public void GetNextSucceeds()
+        {
+            // Arrange
+            // Setting Class Property of Person to Null, as not possible due Class Constructor
+            listOfPersons[2].Class = null;
+            listOfPersons[3].Class = null;
+
+            var person = new Person("Fynn", new Class("A-Class"), listOfPersons);
+            var sut = person.GetIterator<PersonClassmatesIterator>(nameof(PersonClassmatesIterator));
+
+            var expectedPerson = new Person("Alex", new Class("A-Class"), new List<Person>());
+
+            // Act
+            var result = sut.GetNext();
+
+            // Assert
+            Assert.AreEqual(expectedPerson, result);
+        }
+        
+        [TestMethod]
+        public void GetNextOnLastEntryReturnsNull()
+        {
+            // Arrange
+            // Setting Class Property of Person to Null, as not possible due Class Constructor
+            listOfPersons[2].Class = null;
+            listOfPersons[3].Class = null;
+
+            var person = new Person("Fynn", new Class("A-Class"), listOfPersons);
+            var sut = person.GetIterator<PersonClassmatesIterator>(nameof(PersonClassmatesIterator));
+            
+            var numberOfIterations = 3;
+
+            for (int i = 0; i < numberOfIterations; i++)
+            {
+                sut.GetNext();
+            }
+
+            // Act
+            var result = sut.GetNext();
+
+            // Assert
+            Assert.IsNull(result);
+        }
+
+        [TestMethod]
+        public void HasMoreSucceeds()
+        {
+            // Arrange
+            // Setting Class Property of Person to Null, as not possible due Class Constructor
+            listOfPersons[2].Class = null;
+            listOfPersons[3].Class = null;
+
+            var person = new Person("Fynn", new Class("A-Class"), listOfPersons);
+            var sut = person.GetIterator<PersonClassmatesIterator>(nameof(PersonClassmatesIterator));
+            
+            // Act
+            var result = sut.HasMore();
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void HasMoreOnLastEntryReturnsFalse()
+        {
+            // Arrange
+            // Setting Class Property of Person to Null, as not possible due Class Constructor
+            listOfPersons[2].Class = null;
+            listOfPersons[3].Class = null;
+
+            var person = new Person("Fynn", new Class("A-Class"), listOfPersons);
+            var sut = person.GetIterator<PersonClassmatesIterator>(nameof(PersonClassmatesIterator));
+
+            var numberOfIterations = 3;
+
+            for (int i = 0; i < numberOfIterations; i++)
+            {
+                sut.GetNext();
+            }
+
+            // Act
+            var result = sut.HasMore();
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void GetCurrentBeforeIterationReturnsNull()
+        {
+            // Arrange
+            // Setting Class Property of Person to Null, as not possible due Class Constructor
+            listOfPersons[2].Class = null;
+            listOfPersons[3].Class = null;
+
+            var person = new Person("Fynn", new Class("A-Class"), listOfPersons);
+            var sut = person.GetIterator<PersonClassmatesIterator>(nameof(PersonClassmatesIterator));
+
+            // Act
+            var result = sut.Current;
+
+            // Assert
+            Assert.IsNull(result);
+        }
+
+        [TestMethod]
+        public void GetCurrentPersonSucceeds()
+        {
+            // Arrange
+            // Setting Class Property of Person to Null, as not possible due Class Constructor
+            listOfPersons[2].Class = null;
+            listOfPersons[3].Class = null;
+
+            var person = new Person("Fynn", new Class("A-Class"), listOfPersons);
+            var sut = person.GetIterator<PersonClassmatesIterator>(nameof(PersonClassmatesIterator));
+
+            var expectedResult = new Person("Alex", new Class("A-Class"), new List<Person>());
+
+            // Act
+            var result = sut.Current;
+
+            // Assert
+            Assert.AreEqual(expectedResult, result);
         }
     }
 }
