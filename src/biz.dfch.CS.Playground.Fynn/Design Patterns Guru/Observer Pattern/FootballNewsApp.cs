@@ -20,6 +20,8 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Observer_Pattern
 {
     public class FootballNewsApp : INewsApp
     {
+        public string Message { get; private set; }
+
         public void Update(string message)
         {
             throw new NotImplementedException();

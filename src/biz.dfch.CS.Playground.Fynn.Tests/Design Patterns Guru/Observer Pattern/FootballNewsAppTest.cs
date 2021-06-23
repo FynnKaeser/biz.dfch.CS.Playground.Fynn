@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+using System;
+using biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Observer_Pattern;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Observer_Pattern
@@ -21,5 +23,35 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Observer_Patter
     [TestClass]
     public class FootballNewsAppTest
     {
+        [TestMethod]
+        public void UpdateSucceeds()
+        {
+            // Arrange
+            var sut = new FootballNewsApp();
+            var arbitraryMessage = "Toooor für die Schweiz - 1:0";
+
+            // Act
+            sut.Update(arbitraryMessage);
+
+            // Assert
+            var result = sut.Message;
+            Assert.AreEqual(arbitraryMessage, result);
+        }
+
+        [DataTestMethod]
+        [DataRow("")]
+        [DataRow(null)]
+        [DataRow(" ")]
+        [ExpectedException(typeof(ArgumentException))]
+        public void UpdateWithInvalidMessageThrowsArgumentException(string invalidMessage)
+        {
+            // Arrange
+            var sut = new FootballNewsApp();
+
+            // Act
+            sut.Update(invalidMessage);
+
+            // Assert
+        }
     }
 }

@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+using System;
+using biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Observer_Pattern;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Observer_Pattern
@@ -21,5 +23,101 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Observer_Patter
     [TestClass]
     public class FootballNewsManagerTest
     {
+        [TestMethod]
+        public void SubscribeListenerSucceeds()
+        {
+            // Arrange
+            var sut = new FootballNewsManager();
+            var arbitraryListener = new FootballNewsApp();
+
+            // Act
+            sut.Subscribe(arbitraryListener);
+
+            // Assert
+            var result = sut.Listeners.Contains(arbitraryListener);
+            Assert.IsTrue(result);
+        }
+        
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void SubscribeNullThrowsArgumentNullException()
+        {
+            // Arrange
+            var sut = new FootballNewsManager();
+
+            // Act
+            sut.Subscribe(null);
+
+            // Assert
+        }
+
+        [TestMethod]
+        public void UnsubscribeListenerSucceeds()
+        {
+            // Arrange
+            var sut = new FootballNewsManager();
+            var arbitraryListener = new FootballNewsApp();
+            sut.Subscribe(arbitraryListener);
+
+            // Act
+            sut.Unsubscribe(arbitraryListener);
+
+            // Assert
+            var result = sut.Listeners.Contains(arbitraryListener);
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void UnsubscribeNullThrowsArgumentNullException()
+        {
+            // Arrange
+            var sut = new FootballNewsManager();
+
+            // Act
+            sut.Unsubscribe(null);
+
+            // Assert
+        }
+
+        [TestMethod]
+        public void NotifyListenersSucceeds()
+        {
+            // Arrange
+            var sut = new FootballNewsManager();
+            var arbitraryListener1 = new FootballNewsApp();
+            var arbitraryListener2 = new FootballNewsApp();
+            sut.Subscribe(arbitraryListener1);
+            sut.Subscribe(arbitraryListener2);
+
+            var arbitraryMessage = "Test Message!";
+
+            // Act
+            sut.Notify(arbitraryMessage);
+
+            // Assert
+            Assert.AreEqual(arbitraryMessage, arbitraryListener1.Message);
+            Assert.AreEqual(arbitraryMessage, arbitraryListener2.Message);
+        }
+
+        [DataTestMethod]
+        [DataRow(null)]
+        [DataRow("")]
+        [DataRow(" ")]
+        [ExpectedException(typeof(ArgumentException))]
+        public void NotifyListenersWithInvalidMessageThrowsArgumentException(string invalidMessage)
+        {
+            // Arrange
+            var sut = new FootballNewsManager();
+            var arbitraryListener1 = new FootballNewsApp();
+            var arbitraryListener2 = new FootballNewsApp();
+            sut.Subscribe(arbitraryListener1);
+            sut.Subscribe(arbitraryListener2);
+
+            // Act
+            sut.Notify(invalidMessage);
+
+            // Assert
+        }
     }
 }
