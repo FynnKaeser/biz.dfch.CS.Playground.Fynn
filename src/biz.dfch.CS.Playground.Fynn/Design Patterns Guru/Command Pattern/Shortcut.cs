@@ -1,6 +1,10 @@
 ﻿
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Diagnostics.Tracing.Parsers;
+
 /**
 * Copyright 2021 d-fens GmbH
 *
@@ -20,38 +24,21 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Command_Pattern
 {
     public class Shortcut
     {
-        private ICommand command;
+        private readonly Dictionary<string, Lazy<ICommand>> methodCommandMap = new Dictionary<string, Lazy<ICommand>>()
+        {
+            { nameof(OnSave), new Lazy<ICommand>(() => new SaveCommand()) },
+            { nameof(OnCopy), new Lazy<ICommand>(() => new CopyCommand()) },
+        };
 
         public string OnSave()
         {
-            if (null == command)
-            {
-                command = new SaveCommand();
-            }
-
-            if (command is SaveCommand)
-            {
-                return command.Execute();
-            }
-
-            command = new SaveCommand();
-            return command.Execute();
+            return methodCommandMap[nameof(OnSave)].Value.Execute();
         }
 
         public string OnCopy()
         {
-            if (null == command)
-            {
-                command = new CopyCommand();
-            }
+            return methodCommandMap[nameof(OnCopy)].Value.Execute();
 
-            if (command is CopyCommand)
-            {
-                return command.Execute();
-            }
-
-            command = new CopyCommand();
-            return command.Execute();
         }
     }
 }

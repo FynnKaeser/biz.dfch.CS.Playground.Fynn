@@ -14,20 +14,22 @@
  * limitations under the License.
  */
 
+using System;
+using System.Collections.Generic;
+
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Command_Pattern
 {
     public class Button
     {
-        private readonly ICommand command;
-
-        public Button()
+        private readonly Dictionary<string, Lazy<ICommand>> methodCommandMap = new Dictionary<string, Lazy<ICommand>>()
         {
-            command = new SaveCommand();
-        }
+            { nameof(OnPress), new Lazy<ICommand>(() => new SaveCommand()) }
+        };
 
         public string OnPress()
         {
-            return command.Execute();
+            return methodCommandMap[nameof(OnPress)].Value.Execute();
+
         }
     }
 }
