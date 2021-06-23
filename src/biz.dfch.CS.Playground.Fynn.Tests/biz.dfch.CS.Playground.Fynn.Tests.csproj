@@ -372,6 +372,8 @@
     <Compile Include="Design Patterns Guru\Iterator Pattern\PersonClassmatesIteratorTest.cs" />
     <Compile Include="Design Patterns Guru\Iterator Pattern\PersonFriendsIteratorTest.cs" />
     <Compile Include="Design Patterns Guru\Iterator Pattern\PersonTest.cs" />
+    <Compile Include="Design Patterns Guru\Observer Pattern\FootballNewsAppTest.cs" />
+    <Compile Include="Design Patterns Guru\Observer Pattern\FootballNewsManagerTest.cs" />
     <Compile Include="Design Patterns Guru\Prototype Pattern\ShapeTest.cs" />
     <Compile Include="Design Patterns Guru\Proxy Pattern\DatabaseEntryTest.cs" />
     <Compile Include="Design Patterns Guru\Proxy Pattern\DatabaseServiceProxyTest.cs" />
