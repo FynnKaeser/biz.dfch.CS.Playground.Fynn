@@ -380,6 +380,7 @@
     <Compile Include="Design Patterns Guru\Proxy Pattern\DatabaseServiceTest.cs" />
     <Compile Include="Design Patterns Guru\Command Pattern\ShortcutTest.cs" />
     <Compile Include="Design Patterns Guru\Singleton Pattern\GuruSingletonPatternTest.cs" />
+    <Compile Include="Design Patterns Guru\Strategy Pattern\NavigatorTest.cs" />
     <Compile Include="Design Patterns Guru\Strategy Pattern\PlaceTest.cs" />
     <Compile Include="Design Patterns Guru\Strategy Pattern\PublicTransportPlanerTest.cs" />
     <Compile Include="Design Patterns Guru\Strategy Pattern\RoadPlanerTest.cs" />

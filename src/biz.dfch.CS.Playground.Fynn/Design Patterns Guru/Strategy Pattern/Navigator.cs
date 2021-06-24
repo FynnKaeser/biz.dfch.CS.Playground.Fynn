@@ -21,11 +21,11 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Strategy_Pattern
 {
     public class Navigator
     {
-        private IRoutePlaner routePlaner;
+        public IRoutePlaner RoutePlaner { get; }
 
         public Navigator(IRoutePlaner routePlaner)
         {
-            this.routePlaner = routePlaner ?? throw new ArgumentNullException(nameof(routePlaner));
+            RoutePlaner = routePlaner ?? throw new ArgumentNullException(nameof(routePlaner));
         }
 
         public void SetRoutePlaner(IRoutePlaner routePlaner)
