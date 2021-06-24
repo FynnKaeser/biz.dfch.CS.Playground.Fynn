@@ -23,7 +23,22 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Strategy_Pattern
     {
         public List<Route> BuildRoute(Place from, Place to)
         {
-            throw new NotImplementedException();
+            if (null == from)
+            {
+                throw new ArgumentNullException(nameof(from));
+            }
+
+            if (null == to)
+            {
+                throw new ArgumentNullException(nameof(from));
+            }
+
+            return new List<Route>
+            {
+                new Route("1h 30min"),
+                new Route("1h 48min"),
+                new Route("2h 06min")
+            };
         }
     }
 }

@@ -21,7 +21,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Strategy_Pattern
 {
     public class Navigator
     {
-        public IRoutePlaner RoutePlaner { get; }
+        public IRoutePlaner RoutePlaner { get; private set; }
 
         public Navigator(IRoutePlaner routePlaner)
         {
@@ -30,12 +30,22 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Strategy_Pattern
 
         public void SetRoutePlaner(IRoutePlaner routePlaner)
         {
-            throw new NotImplementedException();
+            RoutePlaner = routePlaner ?? throw new ArgumentNullException(nameof(routePlaner));
         }
         
         public List<Route> BuildRoute(Place from, Place to)
         {
-            throw new NotImplementedException();
+            if (null == from)
+            {
+                throw new ArgumentNullException(nameof(from));
+            }
+            
+            if (null == to)
+            {
+                throw new ArgumentNullException(nameof(from));
+            }
+
+            return RoutePlaner.BuildRoute(from, to);
         }
     }
 }
