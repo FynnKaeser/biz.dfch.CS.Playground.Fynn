@@ -446,6 +446,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ErrorMessage.resx</DependentUpon>
     </Compile>
+    <Compile Include="Fluent Interface\Client.cs" />
+    <Compile Include="Fluent Interface\SqlDatabaseManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
