@@ -381,6 +381,8 @@
     <Compile Include="Design Patterns Guru\Command Pattern\ShortcutTest.cs" />
     <Compile Include="Design Patterns Guru\Singleton Pattern\GuruSingletonPatternTest.cs" />
     <Compile Include="Design Patterns Guru\Strategy Pattern\PlaceTest.cs" />
+    <Compile Include="Design Patterns Guru\Strategy Pattern\PublicTransportPlanerTest.cs" />
+    <Compile Include="Design Patterns Guru\Strategy Pattern\RoadPlanerTest.cs" />
     <Compile Include="Design Patterns Guru\Strategy Pattern\RouteTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
