@@ -435,6 +435,9 @@
     <Compile Include="Design Patterns Guru\Proxy Pattern\DatabaseServiceProxy.cs" />
     <Compile Include="Design Patterns Guru\Proxy Pattern\IDatabaseService.cs" />
     <Compile Include="Design Patterns Guru\Singleton Pattern\GuruSingletonPattern.cs" />
+    <Compile Include="Design Patterns Guru\Strategy Pattern\IRoutePlaner.cs" />
+    <Compile Include="Design Patterns Guru\Strategy Pattern\Place.cs" />
+    <Compile Include="Design Patterns Guru\Strategy Pattern\Route.cs" />
     <Compile Include="ErrorMessage.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
