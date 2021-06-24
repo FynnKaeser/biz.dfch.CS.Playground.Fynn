@@ -59,7 +59,6 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Strategy_Patter
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void BuildRouteSucceeds()
         {
             // Arrange
