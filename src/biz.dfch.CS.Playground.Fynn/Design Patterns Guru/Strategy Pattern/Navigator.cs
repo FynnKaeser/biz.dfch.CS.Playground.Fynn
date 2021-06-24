@@ -15,6 +15,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Strategy_Pattern
 {
@@ -32,7 +33,7 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Strategy_Pattern
             throw new NotImplementedException();
         }
         
-        public void BuildRoute(Place from, Place to)
+        public List<Route> BuildRoute(Place from, Place to)
         {
             throw new NotImplementedException();
         }
