@@ -44,7 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Bar.cs" />
+    <Compile Include="DiContainer.cs" />
+    <Compile Include="DefaultRegistry.cs" />
+    <Compile Include="Foo.cs" />
+    <Compile Include="IBar.cs" />
+    <Compile Include="IFoo.cs" />
+    <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
