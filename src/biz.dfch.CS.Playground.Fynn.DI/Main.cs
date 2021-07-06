@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-using StructureMap;
-
 namespace biz.dfch.CS.Playground.Fynn.DI
 {
     public class Main
@@ -23,9 +21,9 @@ namespace biz.dfch.CS.Playground.Fynn.DI
         public int GetFooCount()
         {
             var container = DiContainer.GetInstance().Container;
-            var myFoo = container.GetInstance<IFoo>();
+            var myFoo = container.GetInstance<Foo>();
 
-            return myFoo.GetHashCode();
+            return myFoo.Count;
         }
     }
 }

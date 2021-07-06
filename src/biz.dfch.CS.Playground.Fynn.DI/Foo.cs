@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-using System.Threading;
-
 namespace biz.dfch.CS.Playground.Fynn.DI
 {
     public class Foo : IFoo
@@ -26,6 +24,7 @@ namespace biz.dfch.CS.Playground.Fynn.DI
         public Foo(IBar bar)
         {
             Bar = bar;
+            Count = 10;
         }
     }
 }
