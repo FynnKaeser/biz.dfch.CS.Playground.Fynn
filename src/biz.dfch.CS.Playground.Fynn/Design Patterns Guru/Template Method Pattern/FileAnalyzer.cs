@@ -20,27 +20,49 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Template_Method_Patte
 {
     public abstract class FileAnalyzer
     {
-        public FileData FileData { get; private set; }
+        public FileData FileData { get; set; }
         public abstract void OpenFile(string fileName);
         public abstract FileData GetFileData();
 
         public void CloseFile()
         {
-            throw new NotImplementedException();
+            FileData = null;
         }
 
         public string Analyze(FileData fileData)
         {
-            throw new NotImplementedException();
+            if (null == fileData)
+            {
+                throw new ArgumentNullException(nameof(fileData));
+            }
+
+            var data = fileData.Data;
+            if (string.IsNullOrWhiteSpace(data))
+            {
+                throw new ArgumentException(nameof(data));
+            }
+
+            // Analyze Data ...
+
+            return data;
         }
 
         public string Read(string fileName)
         {
+            if (string.IsNullOrWhiteSpace(fileName))
+            {
+                throw new ArgumentException();
+            }
+
             OpenFile(fileName);
 
             var fileData = GetFileData();
+            if (null == fileData)
+            {
+                throw new ArgumentNullException(nameof(fileData));
+            }
+
             var result = Analyze(fileData);
-            
             CloseFile();
 
             return result;

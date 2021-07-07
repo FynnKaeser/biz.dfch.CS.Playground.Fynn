@@ -27,7 +27,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Template_Method
         public void GetFileDataReturnsExpectedFileData()
         {
             // Arrange
-            var expectedFileData = new FileData("CsvFile", FileEnding.Csv, "Data");
+            var expectedFileData = new FileData("CsvFile", FileEnding.Csv, "Csv Data");
             var sut = new CsvAnalyzer();
 
             sut.OpenFile("CsvFile.csv");

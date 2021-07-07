@@ -27,7 +27,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Template_Method
         public void GetFileDataReturnsExpectedFileData()
         {
             // Arrange
-            var expectedFileData = new FileData("PdfFile", FileEnding.Pdf, "Data");
+            var expectedFileData = new FileData("PdfFile", FileEnding.Pdf, "Pdf Data");
             var sut = new PdfAnalyzer();
 
             sut.OpenFile("PdfFile.pdf");

@@ -14,18 +14,30 @@
  * limitations under the License.
  */
 
+using System;
+
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Template_Method_Pattern
 {
     public class PdfAnalyzer : FileAnalyzer
     {
         public override void OpenFile(string fileName)
         {
-            throw new System.NotImplementedException();
+            if (string.IsNullOrWhiteSpace(fileName))
+            {
+                throw new ArgumentException(nameof(fileName));
+            }
+
+            // Open File ...
+
+            FileData = new FileData(fileName, FileEnding.Pdf);
         }
 
         public override FileData GetFileData()
         {
-            throw new System.NotImplementedException();
+            // Get Data from File
+
+            FileData.Data = "PdF Data";
+            return FileData;
         } 
     }
 }

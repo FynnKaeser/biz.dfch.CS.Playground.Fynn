@@ -22,9 +22,24 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Template_Method_Patte
     {
         public string Name { get; set; }
         public FileEnding FileEnding { get; set; }
-
         public string Data { get; set; }
 
+
+        public FileData(string name, FileEnding fileEnding)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new ArgumentException(nameof(name));
+            }
+
+            if (FileEnding.None == fileEnding)
+            {
+                throw new ArgumentException(nameof(fileEnding));
+            }
+
+            Name = name;
+            FileEnding = fileEnding;
+        }
         public FileData(string name, FileEnding fileEnding, string data)
         {
             if (string.IsNullOrWhiteSpace(name))
