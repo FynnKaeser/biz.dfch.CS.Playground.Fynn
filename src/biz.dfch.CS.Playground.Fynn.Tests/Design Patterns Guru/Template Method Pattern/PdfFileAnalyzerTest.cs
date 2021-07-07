@@ -27,7 +27,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Template_Method
         public void GetFileDataReturnsExpectedFileData()
         {
             // Arrange
-            var expectedFileData = new FileData("PdfFile", FileEnding.Pdf, "Pdf Data");
+            var expectedFileData = new FileData("PdfFile.pdf", FileEnding.Pdf, "Pdf Data");
             var sut = new PdfAnalyzer();
 
             sut.OpenFile("PdfFile.pdf");
@@ -45,7 +45,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Template_Method
         public void GetFileDataBeforeFileHasBeenOpenedReturnsNull()
         {
             // Arrange
-            var sut = new CsvAnalyzer();
+            var sut = new PdfAnalyzer();
 
             // Act
             var result = sut.GetFileData();
@@ -59,14 +59,14 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Template_Method
         {
             // Arrange
             var arbitraryFileName = "PdfFile.pdf";
-            var sut = new CsvAnalyzer();
+            var sut = new PdfAnalyzer();
 
             // Act
             sut.OpenFile(arbitraryFileName);
 
             // Assert
             Assert.AreEqual(FileEnding.Pdf, sut.FileData.FileEnding);
-            Assert.AreEqual("PdfFile", sut.FileData.Name);
+            Assert.AreEqual("PdfFile.pdf", sut.FileData.Name);
         }
 
         [DataTestMethod]
@@ -77,7 +77,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Template_Method
         public void OpenFileWithInvalidFileNameThrowsArgumentException(string invalidFileName)
         {
             // Arrange
-            var sut = new CsvAnalyzer();
+            var sut = new PdfAnalyzer();
 
             // Act
             sut.OpenFile(invalidFileName);
