@@ -441,8 +441,11 @@
     <Compile Include="Design Patterns Guru\Strategy Pattern\PublicTransportPlaner.cs" />
     <Compile Include="Design Patterns Guru\Strategy Pattern\RoadPlaner.cs" />
     <Compile Include="Design Patterns Guru\Strategy Pattern\Route.cs" />
+    <Compile Include="Design Patterns Guru\Template Method Pattern\CsvAnalyzer.cs" />
+    <Compile Include="Design Patterns Guru\Template Method Pattern\FileAnalyzer.cs" />
     <Compile Include="Design Patterns Guru\Template Method Pattern\FileData.cs" />
     <Compile Include="Design Patterns Guru\Template Method Pattern\FileEnding.cs" />
+    <Compile Include="Design Patterns Guru\Template Method Pattern\PdfAnalyzer.cs" />
     <Compile Include="ErrorMessage.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

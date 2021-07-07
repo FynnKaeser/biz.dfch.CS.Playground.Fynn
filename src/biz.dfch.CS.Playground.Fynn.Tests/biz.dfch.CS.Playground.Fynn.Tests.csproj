@@ -385,7 +385,9 @@
     <Compile Include="Design Patterns Guru\Strategy Pattern\PublicTransportPlanerTest.cs" />
     <Compile Include="Design Patterns Guru\Strategy Pattern\RoadPlanerTest.cs" />
     <Compile Include="Design Patterns Guru\Strategy Pattern\RouteTest.cs" />
+    <Compile Include="Design Patterns Guru\Template Method Pattern\CsvAnalyzerTest.cs" />
     <Compile Include="Design Patterns Guru\Template Method Pattern\FileDataTest.cs" />
+    <Compile Include="Design Patterns Guru\Template Method Pattern\PdfFileAnalyzerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
