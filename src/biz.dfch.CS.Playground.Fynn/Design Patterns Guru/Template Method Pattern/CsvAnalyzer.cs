@@ -34,8 +34,13 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Template_Method_Patte
 
         public override FileData GetFileData()
         {
-            // Get Data from File
+            if (null == FileData)
+            {
+                return null;
+            }
 
+            // Get Data from File ...
+            
             FileData.Data = "Csv Data";
             return FileData;
         }

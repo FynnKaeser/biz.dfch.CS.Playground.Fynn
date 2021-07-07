@@ -34,9 +34,14 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Template_Method_Patte
 
         public override FileData GetFileData()
         {
-            // Get Data from File
+            if (null == FileData)
+            {
+                return null;
+            }
 
-            FileData.Data = "PdF Data";
+            // Get Data from File ...
+
+            FileData.Data = "Pdf Data";
             return FileData;
         } 
     }
