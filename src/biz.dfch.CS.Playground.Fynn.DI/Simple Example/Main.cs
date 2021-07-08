@@ -14,9 +14,18 @@
  * limitations under the License.
  */
 
-namespace biz.dfch.CS.Playground.Fynn.DI
+using biz.dfch.CS.Playground.Fynn.DI.Containers;
+
+namespace biz.dfch.CS.Playground.Fynn.DI.Simple_Example
 {
-    public class Bar : IBar
+    public class Main
     {
+        public int GetFooCount()
+        {
+            var container = DiContainer.GetInstance().Container;
+            var myFoo = container.GetInstance<Foo>();
+
+            return myFoo.Count;
+        }
     }
 }

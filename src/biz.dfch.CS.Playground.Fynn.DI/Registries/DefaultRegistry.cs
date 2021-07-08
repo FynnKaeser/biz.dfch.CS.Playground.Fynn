@@ -14,16 +14,17 @@
  * limitations under the License.
  */
 
-namespace biz.dfch.CS.Playground.Fynn.DI
-{
-    public class Main
-    {
-        public int GetFooCount()
-        {
-            var container = DiContainer.GetInstance().Container;
-            var myFoo = container.GetInstance<Foo>();
+using biz.dfch.CS.Playground.Fynn.DI.Simple_Example;
+using StructureMap;
 
-            return myFoo.Count;
+namespace biz.dfch.CS.Playground.Fynn.DI.Registries
+{
+    public class DefaultRegistry : Registry
+    {
+        public DefaultRegistry()
+        {
+            For<IBar>().Use<Bar>();
+            For<IFoo>().Use<Foo>();
         }
     }
 }

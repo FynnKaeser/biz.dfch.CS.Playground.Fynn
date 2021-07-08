@@ -14,17 +14,9 @@
  * limitations under the License.
  */
 
-namespace biz.dfch.CS.Playground.Fynn.DI
+namespace biz.dfch.CS.Playground.Fynn.DI.Simple_Example
 {
-    public class Foo : IFoo
+    public class Bar : IBar
     {
-        public int Count { get; }
-        public IBar Bar { get; }
-
-        public Foo(IBar bar)
-        {
-            Bar = bar;
-            Count = 10;
-        }
     }
 }

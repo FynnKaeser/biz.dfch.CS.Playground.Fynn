@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
+using biz.dfch.CS.Playground.Fynn.DI.Registries;
 using StructureMap;
 
-namespace biz.dfch.CS.Playground.Fynn.DI
+namespace biz.dfch.CS.Playground.Fynn.DI.Containers
 {
     public class DiContainer
     {

@@ -44,17 +44,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bar.cs" />
-    <Compile Include="DiContainer.cs" />
-    <Compile Include="DefaultRegistry.cs" />
-    <Compile Include="Foo.cs" />
-    <Compile Include="IBar.cs" />
-    <Compile Include="IFoo.cs" />
-    <Compile Include="Main.cs" />
+    <Compile Include="Simple Example\Bar.cs" />
+    <Compile Include="Containers\DiContainer.cs" />
+    <Compile Include="Registries\DefaultRegistry.cs" />
+    <Compile Include="Simple Example\Foo.cs" />
+    <Compile Include="Simple Example\IBar.cs" />
+    <Compile Include="Simple Example\IFoo.cs" />
+    <Compile Include="Simple Example\Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database Example\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

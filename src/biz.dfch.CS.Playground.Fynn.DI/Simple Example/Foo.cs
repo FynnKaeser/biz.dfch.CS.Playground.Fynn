@@ -14,16 +14,17 @@
  * limitations under the License.
  */
 
-using StructureMap;
-
-namespace biz.dfch.CS.Playground.Fynn.DI
+namespace biz.dfch.CS.Playground.Fynn.DI.Simple_Example
 {
-    public class DefaultRegistry : Registry
+    public class Foo : IFoo
     {
-        public DefaultRegistry()
+        public int Count { get; }
+        public IBar Bar { get; }
+
+        public Foo(IBar bar)
         {
-            For<IBar>().Use<Bar>();
-            For<IFoo>().Use<Foo>();
+            Bar = bar;
+            Count = 10;
         }
     }
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-namespace biz.dfch.CS.Playground.Fynn.DI
+namespace biz.dfch.CS.Playground.Fynn.DI.Simple_Example
 {
     public interface IBar
     {
