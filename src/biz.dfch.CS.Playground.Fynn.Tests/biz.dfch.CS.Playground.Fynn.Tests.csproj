@@ -390,6 +390,7 @@
     <Compile Include="Design Patterns Guru\Template Method Pattern\PdfFileAnalyzerTest.cs" />
     <Compile Include="Design Patterns Guru\Visitor Pattern\ACustomerTest.cs" />
     <Compile Include="Design Patterns Guru\Visitor Pattern\BCustomerTest.cs" />
+    <Compile Include="Design Patterns Guru\Visitor Pattern\PayVisitorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
