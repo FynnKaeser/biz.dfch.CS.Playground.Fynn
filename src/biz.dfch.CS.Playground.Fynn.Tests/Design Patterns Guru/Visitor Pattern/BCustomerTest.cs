@@ -15,10 +15,6 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Visitor_Pattern;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

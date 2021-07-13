@@ -14,13 +14,7 @@
  * limitations under the License.
  */
 
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting.Logging;
 
 namespace biz.dfch.CS.Playground.Fynn.Visitor_and_Double_Dispatch
 {

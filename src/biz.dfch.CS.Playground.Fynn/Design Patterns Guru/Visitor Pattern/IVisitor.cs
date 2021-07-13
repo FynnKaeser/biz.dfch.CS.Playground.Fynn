@@ -14,12 +14,6 @@
  * limitations under the License.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Visitor_Pattern
 {
     public interface IVisitor
