@@ -22,12 +22,22 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Visitor_Pattern
     {
         public void PayACustomer(ACustomer aCustomer)
         {
-            throw new NotImplementedException();
+            if (null == aCustomer)
+            {
+                throw new ArgumentNullException(nameof(aCustomer));
+            }
+
+            aCustomer.Money += 5;
         }
 
         public void PayBCustomer(BCustomer bCustomer)
         {
-            throw new NotImplementedException();
+            if (null == bCustomer)
+            {
+                throw new ArgumentNullException(nameof(bCustomer));
+            }
+
+            bCustomer.Money += 10;
         }
     }
 }

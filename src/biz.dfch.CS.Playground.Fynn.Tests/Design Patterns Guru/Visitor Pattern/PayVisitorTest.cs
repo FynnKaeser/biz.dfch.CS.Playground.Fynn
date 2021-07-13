@@ -93,7 +93,7 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Design_Patterns_Guru.Visitor_Pattern
             // Arrange
             var sut = new PayVisitor();
             var arbitraryBCustomer = new BCustomer();
-            var expectedMoney = 25;
+            var expectedMoney = 50;
 
             // Act
             for (int i = 0; i < 5; i++)

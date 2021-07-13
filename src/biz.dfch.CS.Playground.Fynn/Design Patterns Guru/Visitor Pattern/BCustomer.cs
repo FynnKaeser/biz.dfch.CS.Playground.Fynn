@@ -24,7 +24,12 @@ namespace biz.dfch.CS.Playground.Fynn.Design_Patterns_Guru.Visitor_Pattern
 
         public void Accept(IVisitor visitor)
         {
-            throw new NotImplementedException();
+            if (null == visitor)
+            {
+                throw new ArgumentNullException(nameof(visitor));
+            }
+
+            visitor.PayBCustomer(this);
         }
     }
 }
