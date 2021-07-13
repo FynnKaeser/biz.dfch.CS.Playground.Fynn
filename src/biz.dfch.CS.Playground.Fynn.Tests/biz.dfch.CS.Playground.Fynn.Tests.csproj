@@ -392,6 +392,7 @@
     <Compile Include="Design Patterns Guru\Visitor Pattern\BCustomerTest.cs" />
     <Compile Include="Design Patterns Guru\Visitor Pattern\PayVisitorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Visitor and Double Dispatch\MainTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

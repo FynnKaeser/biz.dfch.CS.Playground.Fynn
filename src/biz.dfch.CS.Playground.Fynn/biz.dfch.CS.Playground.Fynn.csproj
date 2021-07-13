@@ -459,6 +459,12 @@
     <Compile Include="Fluent Interface\Client.cs" />
     <Compile Include="Fluent Interface\SqlDatabaseManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Visitor and Double Dispatch\Circle.cs" />
+    <Compile Include="Visitor and Double Dispatch\Main.cs" />
+    <Compile Include="Visitor and Double Dispatch\Rectangle.cs" />
+    <Compile Include="Visitor and Double Dispatch\Shape.cs" />
+    <Compile Include="Visitor and Double Dispatch\Triangle.cs" />
+    <Compile Include="Visitor and Double Dispatch\Worker.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="20191023\Assets\" />
