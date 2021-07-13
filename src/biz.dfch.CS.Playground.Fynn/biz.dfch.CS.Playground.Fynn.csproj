@@ -446,6 +446,11 @@
     <Compile Include="Design Patterns Guru\Template Method Pattern\FileData.cs" />
     <Compile Include="Design Patterns Guru\Template Method Pattern\FileEnding.cs" />
     <Compile Include="Design Patterns Guru\Template Method Pattern\PdfAnalyzer.cs" />
+    <Compile Include="Design Patterns Guru\Visitor Pattern\ACustomer.cs" />
+    <Compile Include="Design Patterns Guru\Visitor Pattern\BCustomer.cs" />
+    <Compile Include="Design Patterns Guru\Visitor Pattern\ICustomer.cs" />
+    <Compile Include="Design Patterns Guru\Visitor Pattern\IVisitor.cs" />
+    <Compile Include="Design Patterns Guru\Visitor Pattern\PayVisitor.cs" />
     <Compile Include="ErrorMessage.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
