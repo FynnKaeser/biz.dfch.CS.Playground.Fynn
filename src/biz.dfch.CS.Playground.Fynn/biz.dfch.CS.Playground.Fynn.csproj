@@ -423,6 +423,9 @@
     <Compile Include="Design Patterns Guru\Iterator Pattern\Person.cs" />
     <Compile Include="Design Patterns Guru\Iterator Pattern\PersonClassmatesIterator.cs" />
     <Compile Include="Design Patterns Guru\Iterator Pattern\PersonFriendsIterator.cs" />
+    <Compile Include="Design Patterns Guru\Memento Pattern\Canvas.cs" />
+    <Compile Include="Design Patterns Guru\Memento Pattern\CanvasHelper.cs" />
+    <Compile Include="Design Patterns Guru\Memento Pattern\Snapshot.cs" />
     <Compile Include="Design Patterns Guru\Observer Pattern\FootballNewsApp.cs" />
     <Compile Include="Design Patterns Guru\Observer Pattern\FootballNewsManager.cs" />
     <Compile Include="Design Patterns Guru\Observer Pattern\INewsApp.cs" />
