@@ -463,10 +463,16 @@
     <Compile Include="Fluent Interface\SqlDatabaseManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Visitor and Double Dispatch\Circle.cs" />
+    <Compile Include="Visitor and Double Dispatch\CircleWorker.cs" />
+    <Compile Include="Visitor and Double Dispatch\GenericWorker.cs" />
+    <Compile Include="Visitor and Double Dispatch\IShapeWorker.cs" />
     <Compile Include="Visitor and Double Dispatch\Main.cs" />
     <Compile Include="Visitor and Double Dispatch\Rectangle.cs" />
+    <Compile Include="Visitor and Double Dispatch\RectangleWorker.cs" />
     <Compile Include="Visitor and Double Dispatch\Shape.cs" />
+    <Compile Include="Visitor and Double Dispatch\ShapeWorker.cs" />
     <Compile Include="Visitor and Double Dispatch\Triangle.cs" />
+    <Compile Include="Visitor and Double Dispatch\TriangleWorker.cs" />
     <Compile Include="Visitor and Double Dispatch\Worker.cs" />
   </ItemGroup>
   <ItemGroup>

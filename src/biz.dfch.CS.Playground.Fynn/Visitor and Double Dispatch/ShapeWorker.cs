@@ -14,21 +14,16 @@
  * limitations under the License.
  */
 
+using System.Diagnostics;
+
 namespace biz.dfch.CS.Playground.Fynn.Visitor_and_Double_Dispatch
 {
-    public class Main
+    public class ShapeWorker<T> : IShapeWorker<T>
+        where T : Shape
     {
-        public void Work(Shape shape)
+        public void Invoke(T shape)
         {
-            var worker = new Worker();
-            worker.Work(shape);
-        }
-
-        public void GenericWork<T>(T shape) 
-            where T : Shape
-        {
-            var genericWorker = new GenericWorker<T>();
-            genericWorker.Work(shape);
+            Debug.WriteLine("Working on Shape!");
         }
     }
 }

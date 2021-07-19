@@ -34,6 +34,17 @@ namespace biz.dfch.CS.Playground.Fynn.Tests.Visitor_and_Double_Dispatch
         }
 
         [TestMethod]
+        public void CallGenericWorkWithCircle()
+        {
+            // Arrange
+            var sut = new Main();
+            var arbitraryCircle = new Circle();
+
+            // Act
+            sut.GenericWork(arbitraryCircle);
+        }
+
+        [TestMethod]
         public void CallWorkWithRectangle()
         {
             // Arrange

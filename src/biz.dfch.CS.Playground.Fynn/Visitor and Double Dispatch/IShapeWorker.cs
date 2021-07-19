@@ -16,19 +16,9 @@
 
 namespace biz.dfch.CS.Playground.Fynn.Visitor_and_Double_Dispatch
 {
-    public class Main
+    public interface IShapeWorker<in T>
+        where T : Shape
     {
-        public void Work(Shape shape)
-        {
-            var worker = new Worker();
-            worker.Work(shape);
-        }
-
-        public void GenericWork<T>(T shape) 
-            where T : Shape
-        {
-            var genericWorker = new GenericWorker<T>();
-            genericWorker.Work(shape);
-        }
+        void Invoke(T shape);
     }
 }
